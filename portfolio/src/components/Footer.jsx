@@ -1,6 +1,7 @@
 // Footer.jsx
 import "./footer.scss";
 import { Link } from "react-router-dom";
+import GridLayout from "./GridLayout";
 
 const Footer = () => {
   return (
@@ -59,7 +60,15 @@ const Footer = () => {
 
       {/* Copyright */}
       <section className="copyright">
-        <img src="public/placeholder-footer.png" />
+        <GridLayout columns={6}>
+          <h4 className="vertical-text span-two-column">
+            Some photos, <br /> some moving images
+          </h4>
+          <img
+            src="./src/assets/images/artichoke.png"
+            className="span-four-column"
+          />
+        </GridLayout>
         <p>
           © <span>@artichoke.vz</span>
         </p>

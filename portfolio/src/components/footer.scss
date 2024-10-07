@@ -1,13 +1,12 @@
 @import "./../variables";
 
 .footer {
-  background-color: $dark-background-color;
-  color: $dark-text-color;
+  color: $light-text-color;
   text-align: center;
   position: relative;
   justify-content: center;
   gap: 40px;
-
+overflow: hidden;
   .footer-content {
     display: grid;
 grid-column: 5;
@@ -16,7 +15,6 @@ grid-column: 5;
     p {
       margin: 0;
       font-size: 18px;
-      color: $dark-text-color;
     }
   }
 
@@ -40,32 +38,30 @@ grid-column: 5;
       }
 
       a {
-        color: white;
         text-decoration: none;
         font-size: 14px;
         margin-bottom: 5px;
-
-        &:hover {
-          text-decoration: underline;
-          color: $dark-text-color;
-        }
       }
     }
   }
+
+
 .copyright {
   max-height: auto;
-  width: auto;
 img{
-width: 100%;
+    width: max-content;
 }
 p {
-  font-size: 80px;
+  font-size: 64px;
 }
-  span{ color: $dark-text-color;
-    font-size: 160px;
-  font-weight: 900}
+  span{ 
+    font-size: 120px;
+  font-weight: 900;
+
+}
   ;
 }
+
 }
 
 // Responsive adjustments
