@@ -1,14 +1,15 @@
 $grid-gap: 20px;
 
 @mixin grid-container($columns, $gap: $grid-gap) {
-  display: grid;
   grid-template-columns: repeat($columns, 1fr);
   grid-gap: $gap;
 }
 
 .grid-layout {
   display: grid;
-  gap: $grid-gap;
+  width: 100%;
+  margin: 0; // Remove margins
+  padding: 0; // Remove padding
 
   @include grid-container(3);
 
@@ -22,21 +23,20 @@ $grid-gap: 20px;
 }
 
 .grid-item {
-  background-color: #f4f4f4;
-  border: 1px solid #e0e0e0;
-  padding: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; // Include padding and border in width
+  margin: 0; // Remove margins to prevent overflow
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
+}
+
+.span-one-column {
+  grid-column: span 1;
 }
 
 .span-two-columns {
   grid-column: span 2;
-}
-
-.span-four-columns {
-  grid-column: span 4;
 }
