@@ -9,7 +9,10 @@ const Portfolio = ({ projects }) => {
       <h2 className="portfolio-title">My Projects</h2>
       <GridLayout columns={3}>
         {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard
+            key={project.id}
+            project={{ image: "path/to/image.png" }}
+          />
         ))}
       </GridLayout>
     </div>

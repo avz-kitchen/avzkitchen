@@ -1,5 +1,7 @@
 .portfolio {
   text-align: center;
+  height: max-content;
+
 }
 
 .portfolio-title {
@@ -8,8 +10,10 @@
 }
 
 .project-card {
+  width: 100%; 
+  box-sizing: border-box;
   transition: transform 0.3s;
-
+text-align: right;
   &:hover {
     transform: scale(1.05);
   }
@@ -17,6 +21,8 @@
 
 .project-image {
   height: auto;
+    width: 100%; 
+  box-sizing: border-box;
   border-radius: 0.3125rem;
 }
 
@@ -44,7 +50,8 @@
 
 @media (max-width: 75rem) {
   .project-section {
-text-align: left;  }
+    text-align: left;
+  }
 
   .portfolio-title {
     font-size: 1.8rem;

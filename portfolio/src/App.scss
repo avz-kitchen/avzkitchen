@@ -1,31 +1,65 @@
 @import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
+
 
 #root {
-  max-width: 1512px;
+  max-width: 94.5rem; 
   width: 100%;
-  margin: 80px auto;
+  margin: 5rem auto; 
   text-align: center;
 }
 
+body {
+  font-family: 'Tajawal', sans-serif; 
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+background-color: $light-background-color;
+}
+section {
+  padding: 54px 120px;
+text-align: left;}
+a {
+  font-family: 'M PLUS 1 Code', monospace; 
+  text-decoration: none; 
+  color: $dark-primary-color; 
+  
+        &:hover {
+          text-decoration: underline;
+          color: $light-primary-color;
+        }
+          
+        &:active {
+          text-decoration: underline;
+          color: $light-primary-color;
+        }
+}
+
+a:hover {
+  text-decoration: underline; 
+}
+
 .logo {
-  height: 70px;
+  height: 4.375rem; 
   will-change: filter;
   transition: filter 300ms;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 0.125rem #646cffaa); 
 }
 
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 0.125rem #61dafbaa); 
 }
 
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
@@ -38,11 +72,9 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 2rem; 
 }
 
 .read-the-docs {
-  color: #888;
+  color: #888; 
 }
-
-
