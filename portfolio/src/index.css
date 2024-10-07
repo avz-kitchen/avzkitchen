@@ -38,16 +38,25 @@ h4 {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   white-space: nowrap;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
 }
 
+
+
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  display: flex;
+  padding: 24px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: "M PLUS 1 Code";
+  font-size: 34px;
+  background-color: #FBFBFB;
   cursor: pointer;
   transition: border-color 0.25s;
 }

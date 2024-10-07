@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 import PropTypes from "prop-types";
-import "./GridLayout.scss"; // Import the corresponding SCSS file
-
+import "./GridLayout.scss";
+import React from "react";
 const GridLayout = ({ columns, children, gap = 20 }) => {
   const gridStyle = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -9,7 +10,7 @@ const GridLayout = ({ columns, children, gap = 20 }) => {
 
   return (
     <div className="grid-layout" style={gridStyle}>
-      {children.map((child, index) => (
+      {React.Children.map(children, (child, index) => (
         <div key={index} className={`grid-item ${child.props.className || ""}`}>
           {child}
         </div>

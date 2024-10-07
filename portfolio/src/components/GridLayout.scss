@@ -8,9 +8,8 @@ $grid-gap: 20px;
 .grid-layout {
   display: grid;
   width: 100%;
-  margin: 0; // Remove margins
-  padding: 0; // Remove padding
-
+  margin: 0; 
+  padding: 0; 
   @include grid-container(3);
 
   @media (max-width: 1200px) {
@@ -25,8 +24,9 @@ $grid-gap: 20px;
 .grid-item {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  box-sizing: border-box; // Include padding and border in width
-  margin: 0; // Remove margins to prevent overflow
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0;
 
   &:hover {
     transform: translateY(-5px);
@@ -39,4 +39,25 @@ $grid-gap: 20px;
 
 .span-two-columns {
   grid-column: span 2;
+}
+
+ul.span-three-column {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+
+  li {
+    display: inline; 
+    a {
+    font-size: 80px;
+      text-decoration: none; 
+      padding: 10px; 
+      transition: color 0.3s ease;
+    }
+
+
+  }
 }
