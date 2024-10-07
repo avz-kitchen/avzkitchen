@@ -11,8 +11,7 @@
   .logo {
     font-size: 64px;
     font-weight: 800;
-    color: $dark-primary-color;
-background-color: $light-primary-color;
+    color: $light-primary-color;
 border-radius: 120px;
   }
 
@@ -36,7 +35,6 @@ border-radius: 120px;
         justify-content: start; 
         align-items: center; 
         text-decoration: none;
-        color: #030303;
         font-size: 18px;
         height: 70px; 
         transition: border-bottom 0.3s;
@@ -45,12 +43,9 @@ border-radius: 120px;
           text-decoration: underline; 
           text-underline-offset: 8px;
           font-weight: 800;
-          color: $dark-primary-color;
         }
 
-        &:hover {
-          color: $dark-primary-color;
-        }
+  
       }
     }
   }

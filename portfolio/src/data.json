@@ -1,23 +1,26 @@
 {
-    "projects": [
+    "portfolio": [
         {
+            "category": "App",
             "id": 1,
             "title": "WDR Radio App",
             "subtitle": "At home and on the go",
             "type": "Case Study",
-            "img": "public/Untitled1.png",
+            "img": "/public/content5.png",
             "desc": "Lorem ipsum dolor sit",
             "skill": "UX/UI",
-            "isFeatured": true,
+            "isFeatured": false,
+            "isLatest": true,
             "month": "06",
             "year": "2024",
             "tag": "Listen"
         },
         {
+            "category": "App",
             "id": 2,
             "title": "Leo.org",
             "type": "Case Study",
-            "img": "public/Untitled2.png",
+            "img": "/public/content-1.png",
             "desc": "Was heisst das nochmal?",
             "skill": "UX/UI",
             "isFeatured": true,
@@ -26,9 +29,10 @@
             "tag": "Dictionary"
         },
         {
+            "category": "E-Commerce",
             "id": 3,
             "title": "mokebo Rebrand",
-            "subtitle": "Timeless Design",
+            "subtitle": "/public/content-1.png",
             "type": "Case Study",
             "img": "public/placeholder1.png",
             "desc": "Lorem ipsum dolor sit",
@@ -52,11 +56,12 @@
             "tag": "Enjoy"
         },
         {
+            "category": "Branding",
             "id": 5,
             "title": "Madam Do",
             "subtitle": "Delicious to go",
             "type": "Branding",
-            "img": "public/avz-logo-s.png",
+            "img": "/public/content-1.png",
             "desc": "Branding project description",
             "skill": "Branding",
             "isFeatured": true,
@@ -65,11 +70,12 @@
             "tag": "Taste"
         },
         {
+            "category": "Branding",
             "id": 6,
             "title": "Philip Kehela",
             "subtitle": "E-commerce Consultant",
             "type": "Branding",
-            "img": "public/avz-logo-s.png",
+            "img": "/public/content-1.png",
             "desc": "Branding project description",
             "skill": "Branding",
             "isFeatured": true,

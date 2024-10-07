@@ -1,43 +1,38 @@
-/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import { motion } from "framer-motion";
 import GridLayout from "./GridLayout";
-import portfolio from "../data.json";
-import "./Portfolio.scss";
-const ProjectSection = ({
-  title,
-  skill,
-  img,
-  projects = portfolio.projects,
-}) => {
+import ProjectCard from "./ProjectCard";
+import "./Portfolio.scss"; // Import your CSS for styling
+
+const ProjectSection = ({ projects }) => {
   if (!projects || projects.length === 0) {
     return <p>No projects available.</p>;
   }
 
+  // Assuming the latest project is the first in the array
+  const latestProject = projects.find((project) => project.isLatest); // Find the latest featured project
+  const featuredProjects = projects.filter(
+    (project) => project.isFeatured === true
+  );
+
   return (
     <section className="project-section">
-      <GridLayout columns={6}>
-        <div className=" span-two-columns">
-          <span>{skill}</span>
-          <h5 className="project-title span-two-columns">{title}</h5>
+      <GridLayout columns={3}>
+        <div className="span-one-column">
+          <span>{latestProject.skill}</span>
+          <h5 className="project-title span-one-column">
+            {latestProject.title}
+          </h5>
         </div>
         <img
-          src={img}
-          alt="WDR App"
-          className="project-image span-four-columns"
+          src={latestProject.img}
+          alt={latestProject.title}
+          className="project-image span-two-columns"
         />
       </GridLayout>
 
       <GridLayout columns={3}>
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            className="project-card"
-          >
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-          </motion.div>
+        {featuredProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </GridLayout>
     </section>
@@ -45,9 +40,15 @@ const ProjectSection = ({
 };
 
 ProjectSection.propTypes = {
-  title: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  projects: PropTypes.array.isRequired,
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      skill: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default ProjectSection;

@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import GridLayout from "../GridLayout";
-import "./HeroSection.scss";
 
 const HeroSection = ({ title, img, altText = "Hero Image" }) => {
   return (
-    <GridLayout columns={6}>
-      <h1 className="hero-title span-four-columns">{title}</h1>
-      <img src={img} alt={altText} className="hero-image span-two-columns" />
-    </GridLayout>
+    <section>
+      <GridLayout columns={3}>
+        <h1 className="hero-title span-two-columns">{title}</h1>
+        <img src={img} alt={altText} className="hero-image span-one-column" />
+      </GridLayout>
+    </section>
   );
 };
 
