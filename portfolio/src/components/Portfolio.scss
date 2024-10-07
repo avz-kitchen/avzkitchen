@@ -1,0 +1,74 @@
+.portfolio {
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.project-image {
+  height: auto;
+  border-radius: 0.3125rem;
+}
+
+.project-title,
+.project-description {
+  margin: 0.625rem 0;
+}
+
+.project-title {
+  font-size: 1rem;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #666;
+}
+
+.project-section {
+  margin: 0 auto;
+
+  span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 75rem) {
+  .project-section {
+text-align: left;  }
+
+  .portfolio-title {
+    font-size: 1.8rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .portfolio-title {
+    font-size: 1.6rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.8rem;
+  }
+}

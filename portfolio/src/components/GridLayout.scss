@@ -1,0 +1,42 @@
+$grid-gap: 20px;
+
+@mixin grid-container($columns, $gap: $grid-gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $gap;
+}
+
+.grid-layout {
+  display: grid;
+  gap: $grid-gap;
+
+  @include grid-container(3);
+
+  @media (max-width: 1200px) {
+    @include grid-container(2);
+  }
+
+  @media (max-width: 768px) {
+    @include grid-container(1);
+  }
+}
+
+.grid-item {
+  background-color: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.span-two-columns {
+  grid-column: span 2;
+}
+
+.span-four-columns {
+  grid-column: span 4;
+}

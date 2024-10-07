@@ -1,0 +1,74 @@
+@import "../../variables";
+
+.navbar {
+
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  z-index: 1000; 
+  padding: 0 8rem;
+  .logo {
+    font-size: 64px;
+    font-weight: 800;
+    color: $dark-primary-color;
+background-color: $light-primary-color;
+border-radius: 120px;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); /* 4 equal columns */
+      gap: 20px; /* Space between grid items */
+      width: 100%;
+      text-align: center;
+      align-items: center; 
+
+ 
+      a {
+        display: flex; 
+        justify-content: start; 
+        align-items: center; 
+        text-decoration: none;
+        color: #030303;
+        font-size: 18px;
+        height: 70px; 
+        transition: border-bottom 0.3s;
+
+        &.active {
+          text-decoration: underline; 
+          text-underline-offset: 8px;
+          font-weight: 800;
+          color: $dark-primary-color;
+        }
+
+        &:hover {
+          color: $dark-primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .wrapper {
+    .nav-links {
+      grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    .nav-links {
+      grid-template-columns: 1fr; 
+    }
+  }
+}
+}

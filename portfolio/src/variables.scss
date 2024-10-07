@@ -1,0 +1,22 @@
+$light-primary-color: #5E3B4F;
+$light-background-color: #D4E1D5;
+$light-text-color: #363D1F;
+
+$dark-primary-color: #293B3D;
+$dark-background-color: #293B3D;
+$dark-text-color: #D8C0CE;
+
+$font-primary: 'Barlow', sans-serif;
+$font-secondary: 'Georgia', serif;
+
+:root {
+  --primary-color: #{$light-primary-color};
+  --background-color: #{$light-background-color};
+  --text-color: #{$light-text-color};
+}
+
+.dark-mode {
+  --primary-color: #{$dark-primary-color};
+  --background-color: #{$dark-background-color};
+  --text-color: #{$dark-text-color};
+}

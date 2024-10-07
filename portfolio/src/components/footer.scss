@@ -1,0 +1,82 @@
+@import "./../variables";
+
+.footer {
+  background-color: $dark-background-color;
+  color: $dark-text-color;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  gap: 40px;
+
+  .footer-content {
+    display: grid;
+grid-column: 5;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-size: 18px;
+      color: $dark-text-color;
+    }
+  }
+
+  .sitemap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  // 4 equal columns
+    gap: 20px;  // Space between grid items
+    justify-items: start;
+    margin-top: 20px;
+  padding: 0px 120px;
+
+    .sitemap-category {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: $dark-text-color;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        margin-bottom: 5px;
+
+        &:hover {
+          text-decoration: underline;
+          color: $dark-text-color;
+        }
+      }
+    }
+  }
+.copyright {
+  max-height: auto;
+  width: auto;
+img{
+width: 100%;
+}
+p {
+  font-size: 80px;
+}
+  span{ color: $dark-text-color;
+    font-size: 160px;
+  font-weight: 900}
+  ;
+}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .sitemap {
+    grid-template-columns: repeat(2, 1fr); // Change to 2-column grid on smaller screens
+  }
+}
+
+@media (max-width: 480px) {
+  .sitemap {
+    grid-template-columns: 1fr;  // Single column grid for mobile
+  }
+}
