@@ -3,8 +3,8 @@
         {
             "category": "App",
             "id": 1,
-            "title": "WDR Radio App",
-            "subtitle": "At home and on the go",
+            "title": "Ryanair App Redesign",
+            "subtitle": "Enhancing and inspiring ",
             "type": "Case Study",
             "img": "/public/content5.png",
             "desc": "Lorem ipsum dolor sit",
@@ -13,7 +13,8 @@
             "isLatest": true,
             "month": "06",
             "year": "2024",
-            "tag": "Listen"
+            "tag": "Listen",
+            "demo": ""
         },
         {
             "category": "App",
