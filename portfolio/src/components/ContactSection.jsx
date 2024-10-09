@@ -62,18 +62,6 @@ const ContactSection = () => {
             )}
           </motion.form>
         </div>
-
-        <ul className="span-three-column">
-          <li>
-            <a href="/portfolio/">Pictogram</a>
-          </li>
-          <li>
-            <a href="/portfolio/">Design</a>
-          </li>
-          <li>
-            <a href="/portfolio/">Code</a>
-          </li>
-        </ul>
       </GridLayout>
     </section>
   );

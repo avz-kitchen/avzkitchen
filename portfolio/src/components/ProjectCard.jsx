@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
-
-const ProjectCard = ({ project, isBranding }) => {
+import { Link } from "react-router-dom";
+const ProjectCard = ({ project }) => {
   return (
-    <div className={`project-card ${isBranding ? "branding" : ""}`}>
-      <img src={project.img} alt={project.title} className="project-image" />
-      <p className="project-skill">{project.skill}</p>
-      <h3 className="project-title">{project.title}</h3>
+    <div className="project-card">
+      <Link to={`/portfolio/${project.id}`}>
+        <img src={project.img} alt={project.title} className="project-image" />
+        <p className="project-skill">{project.skill}</p>
+        <h3 className="project-title">{project.title}</h3>
+        <button>View Project</button>
+      </Link>
     </div>
   );
 };
@@ -17,7 +20,6 @@ ProjectCard.propTypes = {
     skill: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
   }).isRequired,
-  isBranding: PropTypes.bool,
 };
 
 export default ProjectCard;

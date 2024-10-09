@@ -1,68 +1,77 @@
+@import "./../variables";
+
 .portfolio {
   text-align: center;
-  height: max-content;
-
+  width: 100%;
+  button {
+font-size: 18px; 
+background-color: $light-background-color;
+border: none;
+padding: 16px 0; }
 }
 
 .portfolio-title {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-
+.project-section {
+  display: grid;
+  gap:20px;
+}
 .project-card {
-  width: 100%; 
+  width: 100%;
   box-sizing: border-box;
   transition: transform 0.3s;
-text-align: right;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 2px solid $light-primary-color; // Add border to the card
+
   &:hover {
     transform: scale(1.05);
   }
+
 }
 
 .project-image {
-  height: auto;
-    width: 100%; 
-  box-sizing: border-box;
-  border-radius: 0.3125rem;
+  width: 100%;
+  height: 420px; // Set fixed height for consistency
+  object-fit: cover; // Ensure the image fills the card without distortion
+border: 2px solid $dark-primary-color;
 }
 
-.project-title,
-.project-description {
-  margin: 0.625rem 0;
-}
+
 
 .project-title {
-  font-size: 1rem;
+  font-size: 1.2rem; // Adjust as needed
 }
 
-.project-description {
-  font-size: 1rem;
+.project-skill {
+  font-size: 0.875rem;
   color: #666;
 }
 
-.project-section {
-  margin: 0 auto;
-
-  span {
-    font-size: 1rem;
+.view-project-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff; // Button color
+  color: #fff; // Button text color
+  border: none;
+  border-radius: 0.3125rem; // Optional: Rounded corners
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #0056b3; // Darker button color on hover
   }
 }
 
 @media (max-width: 75rem) {
-  .project-section {
-    text-align: left;
-  }
-
   .portfolio-title {
     font-size: 1.8rem;
   }
 
   .project-title {
     font-size: 1rem;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
   }
 }
 
@@ -73,9 +82,5 @@ text-align: right;
 
   .project-title {
     font-size: 1.2rem;
-  }
-
-  .project-description {
-    font-size: 0.8rem;
   }
 }

@@ -1,45 +1,82 @@
+@import "../../app.scss";
+@import "../../variables.scss";
 
-.about-container {
-  padding: 60px;
-  background-color: #f7f7f7;
-  text-align: center;
-}
+.about-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  gap: 2.5rem; 
+  padding: 2rem;
 
-.about-title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-// Grid items
-.about-item {
-  text-align: left;
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  @media screen and (max-width: 48rem) {
+    grid-template-columns: 1fr; 
   }
 
-  .about-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 15px;
+  .titleContainer,
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .about-item-text {
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+  .titleContainer {
+    text-align: center;
+
+    h1, h2 {
+      margin: 0;
     }
 
-    p {
-      font-size: 1rem;
-      color: #666;
+    b {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 3rem;
+
+      @media screen and (max-width: 48rem) {
+        font-size: 2rem;
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+
+      @media screen and (max-width: 48rem) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .right-section {
+    grid-column: 2 / -1; 
+    justify-self: end; 
+    text-align: center;
+
+    @media screen and (max-width: 48rem) {
+      grid-column: 1 / -1; 
+      justify-self: center; 
+    }
+
+    img {
+
+      max-width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
     }
   }
 }
+

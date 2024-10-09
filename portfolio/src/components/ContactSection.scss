@@ -4,13 +4,9 @@
     max-width: 100vw;
 
 a{font-size: 32px;}
-  li {
-    flex: 1;
-  }
 
   .formContainer {
     grid-column: span 1;
-    display: flex;
     flex-direction: column;
     width: 100%;
 
@@ -59,12 +55,6 @@ a{font-size: 32px;}
 
 
 
-  .span-three-column {
-    grid-column: span 3;
-    padding: 0;
-     list-style: none;
-    justify-content: space-between;
-  }
 
   .grid-layout {
     display: grid;

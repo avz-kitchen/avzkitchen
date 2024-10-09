@@ -6,13 +6,10 @@ import "./Portfolio.scss";
 const Portfolio = ({ projects }) => {
   return (
     <div className="portfolio">
-      <h2 className="portfolio-title">My Projects</h2>
+      <h1 className="portfolio-title">Portfolio</h1>
       <GridLayout columns={3}>
         {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={{ image: "path/to/image.png" }}
-          />
+          <ProjectCard key={project.id} project={project} isBranding />
         ))}
       </GridLayout>
     </div>

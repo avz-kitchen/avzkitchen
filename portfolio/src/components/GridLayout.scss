@@ -10,6 +10,7 @@ $grid-gap: 20px;
   width: 100%;
   margin: 0; 
   padding: 0; 
+   row-gap: 20px;
   @include grid-container(3);
 
   @media (max-width: 1200px) {

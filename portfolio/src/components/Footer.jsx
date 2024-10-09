@@ -6,6 +6,17 @@ import GridLayout from "./GridLayout";
 const Footer = () => {
   return (
     <footer className="footer">
+      <ul className="span-three-column">
+        <li>
+          <a href="/portfolio/">Pictogram</a>
+        </li>
+        <li>
+          <a href="/portfolio/">Design</a>
+        </li>
+        <li>
+          <a href="/portfolio/">Code</a>
+        </li>
+      </ul>
       <div className="footer-content"></div>
 
       {/* Sitemap Grid */}
