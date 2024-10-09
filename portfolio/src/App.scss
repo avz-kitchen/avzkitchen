@@ -19,6 +19,28 @@ body {
   min-height: 100vh;
 background-color: $light-background-color;
 }
+/* Global padding for all pages */
+.page-wrapper {
+  padding: 54px 120px;
+}
+
+@media (max-width: 1200px) {
+  .page-wrapper {
+    padding: 54px 60px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 54px 30px; /* Further adjust for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .page-wrapper {
+    padding: 54px 15px; /* Adjust for mobile */
+  }
+}
 section {
   padding: 54px 120px;
 text-align: left;}
@@ -54,6 +76,20 @@ a:hover {
 
 .logo.react:hover {
   filter: drop-shadow(0 0 0.125rem #61dafbaa); 
+}
+
+.button-p {
+  padding:0 120px;
+  border-bottom: 2px solid $light-primary-color;
+h3 {
+  font-size:80px;
+}
+h6 {
+  font-size:120px;
+}
+  img {
+    width:120px;
+  }
 }
 
 @keyframes logo-spin {
