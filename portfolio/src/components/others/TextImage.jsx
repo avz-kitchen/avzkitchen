@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./TextMedia.module.scss";
+import "./component.scss";
 
 const TextImage = ({ image, text }) => {
   return (

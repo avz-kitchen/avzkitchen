@@ -20,6 +20,8 @@ $grid-gap: 20px;
   @media (max-width: 768px) {
     @include grid-container(1);
   }
+
+
 }
 
 .grid-item {

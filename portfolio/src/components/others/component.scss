@@ -1,0 +1,45 @@
+
+.text-media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  gap: 20px; 
+  text-align: center; 
+  max-width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  img {
+  max-width: 100%; 
+   width: auto;
+  height: auto; 
+  object-fit: contain;
+}
+}
+.shot-demo {
+  flex-direction: column;
+  align-items: start; 
+  justify-content: center; 
+  gap: 20px; 
+  text-align: left; 
+  max-width: 100%;
+  overflow: hidden;
+  a{
+    font-size: 40px;
+  }
+  img {
+  max-width: 100%; 
+   width: auto;
+  height: auto; 
+  max-height: 560px;
+  object-fit: contain;
+}
+p{
+    text-align: center;
+}
+  .demo {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+  }
+}
+

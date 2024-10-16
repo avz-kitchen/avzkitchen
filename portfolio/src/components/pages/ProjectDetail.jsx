@@ -21,10 +21,10 @@ const ProjectDetail = () => {
       <HeroSection title={project.title} img={project.img} />
       <TextMedia
         title={project.subtitle}
-        image={project.img}
+        image={project.main}
         text={project.desc}
       />
-
+      <h2 style={{ textAlign: "left" }}>Insights</h2>
       <div className="project-detail">
         {dropdowns.length > 0 ? (
           dropdowns.map((item, index) => (
@@ -40,11 +40,12 @@ const ProjectDetail = () => {
           <div>No dropdown content available</div>
         )}
       </div>
-      <TextImage image={project.img} text={project.desc} />
+      <TextImage image={project.flow} text={project.text} />
       <ShotDemo
         title={"Conclusion"}
-        image={project.img}
+        image={project.shot}
         text={project.conclusion}
+        demo={project.demo}
       />
     </>
   );

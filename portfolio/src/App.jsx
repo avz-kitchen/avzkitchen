@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import HeroSection from "./components/heroSection/HeroSection";
 import AboutSection from "./components/aboutSection/AboutSection";
@@ -41,18 +41,12 @@ const Home = () => {
     <>
       <HeroSection title="Bit of pictogram, design ..." img="public/hero.png" />
       <ProjectSection projects={portfolioData.portfolio} />
-      <div className="button-p">
-        <h2>
-          <a href="/portfolio">Explore Portfolio</a>{" "}
-          <div className="icon-container">
-            <img
-              src="/public/mouse-pointer-heart_17490452.svg"
-              alt="arrow icon"
-            />
-          </div>
-        </h2>
-      </div>
-      <lr />
+      <Link to="/portfolio">
+        <div className="button-p">
+          <a href="/portfolio">Explore Portfolio</a>
+          <img src="/public/mouse-pointer-heart_17490452.svg" />
+        </div>
+      </Link>
       <AboutSection isAboutPage={false} />
       <ContactSection />
     </>

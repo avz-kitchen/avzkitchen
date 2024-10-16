@@ -3,44 +3,48 @@
         {
             "category": "App",
             "id": 1,
-            "title": "Ryanair App Redesign",
-            "subtitle": "Enhancing and inspiring ",
+            "title": "Flight Booking App",
+            "subtitle": "The journey begins",
             "type": "Case Study",
-            "img": "/public/content5.png",
-            "desc": "Lorem ipsum dolor sit",
+            "img": "portfolio/public/hero.png",
+            "main": "",
+            "desc": "As a frequent traveler, I have always seen flight booking app as a gateway to new adventures. However, during my exploration of the app, I noticed opportunities to enhance the user experience. My goal was to create a more seamless and enjoyable journey for users looking to book their next trip.",
             "skill": "UX/UI",
             "isFeatured": false,
             "isLatest": true,
             "month": "06",
             "year": "2024",
             "tag": "Listen",
-            "demo": "",
+            "demo": "https://www.figma.com/proto/mXRDv1Scb8THEIzC9XNZbj/AVZ_ProjectRyanair_app?page-id=3102%3A60&type=design&node-id=3163-2472&viewport=607%2C382%2C0.18&t=bbRK2fOt9HVWTbxQ-1&scaling=scale-down&starting-point-node-id=3163%3A2472&content-scaling=fixed",
             "beforeImg": "/public/before-image.png",
             "afterImg": "/public/after-image.png",
             "overview": "Overview content goes here...",
             "dropdowns": [
                 {
-                    "title": "Insights",
-                    "image": "/public/content5.png",
-                    "text": "To understand the user experience better, I conducted a thorough UX audit."
+                    "title": "Uncovering the users",
+                    "image": "/public/project/flight-app-main.png",
+                    "text": "A UX audit and analysis of app store feedback revealed key trends among users. While many appreciated features like real-time notifications and personalized recommendations, there was a clear desire for a more streamlined experience. Users found navigation challenging and sought inspiration for exploring new destinations, especially through curated content showcasing unique travel experiences. These insights informed my design, resulting in an intuitive interface that simplifies navigation and enhances discovery."
                 },
                 {
                     "title": "Research Findings",
-                    "image": "/public/content5.png",
-                    "text": "Conducted a UX audit based on user feedback and app reviews."
+                    "image": "/public/project/flight-app-persona.png",
+                    "text": "User stories were created from detailed user personas to capture the diverse motivations and preferences of our audience. For example, a frequent traveler emphasized the need for intuitive discovery and personalized recommendations, while another persona highlighted the importance of seamless social sharing. These insights directly guided design decisions, ensuring the final product meets specific user needs and fosters a more engaging experience."
                 },
                 {
                     "title": "Design Process",
-                    "image": "/public/content5.png",
-                    "text": "Gathered insights through user interviews."
+                    "image": "/public/project/flight-app-process.png",
+                    "text": "After the research phase, an iterative design process was employed using Figma to create app prototypes. This method facilitated continuous refinement by incorporating user feedback at each stage. Starting with low-fidelity wireframes allowed for quick exploration of layout options and functionality, making early user testing efficient."
                 },
                 {
                     "title": "Key Feature",
-                    "image": "/public/content5.png",
-                    "text": "A clearer interface that prioritizes essential features."
+                    "image": "/public/project/flight-app-feature.png",
+                    "text": "The design includes a cleaner interface that emphasizes essential elements, improving overall navigation. A dedicated section for flexible travel options enables users to easily explore various routes. Additionally, engaging content highlights popular destinations and offers travel tips, inspiring users to broaden their travel horizons."
                 }
             ],
-            "conclusion": "conclusion"
+            "text": "Highlighting the streamlined user flow designed to enhance the travel experience, the interface prioritizes intuitive navigation, guiding users effortlessly through the search and booking processes.",
+            "flow": "/public/project/flight-app-flow.png",
+            "conclusion": "Throughout the process, the importance of actively listening to user needs and adapting the design based on feedback became clear. The iterative approach highlighted the value of flexibility in travel options and demonstrated how engaging content can inspire users to explore new horizons. These insights emphasize the significance of user-centered design, transforming travel planning into an enjoyable and enriching experience.",
+            "shot": "/public/project/flight-app-shot.png"
         },
         {
             "category": "App",

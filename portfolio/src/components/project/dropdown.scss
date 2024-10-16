@@ -1,5 +1,5 @@
 .dropdown {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid black;
   margin-bottom: 20px;
 
   .dropdown-header {
@@ -14,33 +14,29 @@
     }
 
     .dropdown-icon {
-      font-size: 24px;
+      font-size: 60px;
       transition: transform 0.3s;
-    }
 
-    .open {
-      transform: rotate(45deg);
+      &.open {
+        transform: rotate(45deg);
+      }
     }
   }
 
   .dropdown-content {
-    padding: 20px;
-    display: grid;
     gap: 20px;
-
+    text-align: left;
     .first-dropdown-layout {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
-      align-items: start;
+      align-items: end;
       gap: 20px;
 
       .dropdown-image {
         img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-          max-width: 100%;
-          border-radius: 8px;
+          @extend %image-styles;
+          max-width: 90%; 
+          max-height: 420px; 
         }
       }
 
@@ -50,39 +46,27 @@
         justify-content: flex-start;
 
         p {
-          margin-top: 0;
-          margin-bottom: 10px;
+          margin: 0 0 10px;
+          font-size: 16px; // Adjust font size if needed
         }
 
-        .close-button {
-          align-self: start;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          padding: 8px 12px;
-          cursor: pointer;
-          border-radius: 4px;
-        }
       }
     }
 
-    .other-dropdown-layout {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
+          .dropdown-text {
 
-      .dropdown-image,
-      .dropdown-text {
-        grid-column: span 1;
-      }
-
-      .dropdown-text {
-        p {
-          font-size: 14px;
-          color: #666;
-          line-height: 1.4;
+        img {
+          @extend %image-styles;
+          max-width: 100%; // Limit image size in other layout
+          max-height: auto; // Further limit height to fit better
         }
       }
-    }
   }
+}
+
+// Define shared styles for images
+%image-styles {
+  object-fit: cover;
+  max-height: 540px; // Limit height based on viewport or container size
+  border-radius: 8px; // Add border-radius for a consistent style
 }

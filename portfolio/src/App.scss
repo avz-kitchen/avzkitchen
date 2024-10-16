@@ -79,17 +79,21 @@ a:hover {
 }
 
 .button-p {
-  padding:0 120px;
   border-bottom: 2px solid $light-primary-color;
-h3 {
-  font-size:80px;
-}
-h6 {
-  font-size:120px;
-}
-  img {
-    width:120px;
+display: flex;
+justify-content: space-between;
+ a {
+  font-size: 80px;
+ }
+img {
+    width:80px;
   }
+}
+
+.icon-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
 }
 
 @keyframes logo-spin {

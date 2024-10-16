@@ -43,7 +43,9 @@ const Footer = () => {
           <Link to="/">
             <h3>Visual Studio</h3>
           </Link>
-          <Link to="/about">About</Link>
+          <Link to="/about">About AVZ</Link>
+          <Link to="/about">Impressum</Link>
+          <Link to="/about">Data & Privacy</Link>
         </div>
 
         {/* Column 4: Contact */}
@@ -51,7 +53,7 @@ const Footer = () => {
           <Link to="/Contact">
             <h3>Contact</h3>
           </Link>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/contact">Contact Me</Link>
           <a
             href="https://github.com"
             target="_blank"
@@ -75,10 +77,7 @@ const Footer = () => {
           <h4 className="vertical-text span-two-column">
             Some photos, <br /> some moving images
           </h4>
-          <img
-            src="./src/assets/images/artichoke.png"
-            className="span-four-column"
-          />
+          <img src="/public/artichoke.png" className="span-four-column" />
         </GridLayout>
         <p>
           © <span>@artichoke.vz</span>

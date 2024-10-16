@@ -28,6 +28,7 @@ const Dropdown = ({ title, image, text, isFirst }) => {
             </div>
           ) : (
             <div className="dropdown-text">
+              <img src={image} alt={title} />
               <p>{text}</p>
             </div>
           )}
