@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import GridLayout from "../others/GridLayout";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import "./ContactSection.module.scss";
+import "./ContactSection.scss";
 
 const ContactSection = () => {
   const formRef = useRef();
