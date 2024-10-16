@@ -5,7 +5,7 @@ import AboutSection from "./components/aboutSection/AboutSection";
 import Portfolio from "./components/Portfolio";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import portfolioData from "./data.json";
+import portfolioData from "./data/data.json";
 import ProjectSection from "./components/ProjectSection";
 import ProjectDetail from "./components/ProjectDetail";
 

@@ -1,0 +1,91 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px; // Adjust height as per your design
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: ew-resize;
+  overflow: hidden;
+
+  .slider-a.slider-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  --slider-position: 50%; // Default position at 50%
+
+  .slider-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.left {
+      left: 0;
+      clip-path: polygon(0 0, var(--slider-position) 0, var(--slider-position) 100%, 0% 100%);
+    }
+
+    &.right {
+      right: 0;
+      clip-path: polygon(var(--slider-position) 0, 100% 0, 100% 100%, var(--slider-position) 100%);
+    }
+  }
+
+  .slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--slider-position) - 10px); // Handle the dynamic position
+    width: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 10;
+  }
+}
+content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    overflow: hidden;
+    color: white;
+    font-size: 2rem;
+    background-size: cover;
+    background-position: center;
+    transition: width 0.3s ease;
+
+    &.left {
+      left: 0;
+      background: url("your-before-image-url") no-repeat center/cover; // Update with your before image
+    }
+
+    &.right {
+      right: 0;
+      background: url("your-after-image-url") no-repeat center/cover; // Update with your after image
+      width: calc(100% - var(--slider-position, 50%));
+    }
+  }
+
+  .slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--slider-position, 50%);
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: ew-resize;
+    transition: left 0.3s ease;
+  }
+}
+ 

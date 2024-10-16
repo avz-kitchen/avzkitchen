@@ -1,0 +1,42 @@
+{
+    "category": "App",
+    "id": 1,
+    "title": "Flight Booking App Redesign",
+    "subtitle": "Enhancing and inspiring ",
+    "type": "Case Study",
+    "img": "/public/content5.png",
+    "desc": "Lorem ipsum dolor sit",
+    "skill": "UX/UI",
+    "isFeatured": false,
+    "isLatest": true,
+    "month": "06",
+    "year": "2024",
+    "tag": "Listen",
+    "demo": "",
+    "beforeImg": "/public/before-image.png",
+    "afterImg": "/public/after-image.png",
+    "overview": "Overview content goes here...",
+    "dropdowns": [
+        {
+            "title": "Insights",
+            "image": "/public/content5.png",
+            "text": "To understand the user experience better, I conducted a thorough UX audit."
+        },
+        {
+            "title": "Research Findings",
+            "image": "/public/content5.png",
+            "text": "Conducted a UX audit based on user feedback and app reviews."
+        },
+        {
+            "title": "Design Process",
+            "image": "/public/content5.png",
+            "text": "Gathered insights through user interviews."
+        },
+        {
+            "title": "Key Feature",
+            "image": "/public/content5.png",
+            "text": "A clearer interface that prioritizes essential features."
+        }
+    ],
+    "conclusion": "In conclusion, the redesign has significantly improved user satisfaction."
+}

@@ -1,25 +1,36 @@
 /* eslint-disable react/prop-types */
-import "./component.scss"; // Import the SCSS file
 import { useState } from "react";
-const Dropdown = ({ title, items }) => {
-  const [isOpen, setIsOpen] = useState(false);
+import "./Dropdown.scss";
+
+const Dropdown = ({ title, image, text, isFirst }) => {
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="dropdown">
-      <button onClick={toggleDropdown} className="dropdown-toggle">
-        {title}
-      </button>
+    <div className={`dropdown ${isFirst ? "first-dropdown-layout" : ""}`}>
+      <div className="dropdown-header" onClick={toggleDropdown}>
+        <h3>{title}</h3>
+        <span className={`dropdown-icon ${isOpen ? "open" : ""}`}>+</span>
+      </div>
       {isOpen && (
-        <div className="dropdown-menu">
-          {items.map((item, index) => (
-            <div key={index} className="dropdown-item">
-              {item}
+        <div className="dropdown-content">
+          {isFirst ? (
+            <div className="first-dropdown-layout">
+              <div className="dropdown-image">
+                <img src={image} alt={title} />
+              </div>
+              <div className="dropdown-text">
+                <p>{text}</p>
+              </div>
             </div>
-          ))}
+          ) : (
+            <div className="dropdown-text">
+              <p>{text}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

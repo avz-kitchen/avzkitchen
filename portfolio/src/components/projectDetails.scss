@@ -49,3 +49,25 @@ $swiper-margin: 20px;
     }
   }
 }
+.project-detail {
+  display: grid;
+  grid-template-columns: 1fr; // Default to a single column
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // Two columns on medium screens and up
+  }
+}
+
+.dropdown {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  background: #f9f9f9;
+
+  &.first-dropdown-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr; // Image on left, text on right
+    gap: 10px;
+  }
+}
