@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import GridLayout from "../others/GridLayout";
 import ProjectCard from "./ProjectCard";
-import "./Portfolio.scss"; // Import your CSS for styling
+import "../pages/Portfolio.scss"; // Import your CSS for styling
 
 const ProjectSection = ({ projects }) => {
   if (!projects || projects.length === 0) {

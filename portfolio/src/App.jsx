@@ -8,7 +8,7 @@ import Footer from "./components/footer/Footer";
 import portfolioData from "./data/data.json";
 import ProjectSection from "./components/project/ProjectSection";
 import ProjectDetail from "./components/pages/ProjectDetail";
-
+import About from "./components/pages/About";
 import "./App.scss";
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
           />
           <Route path="/portfolio/:id" element={<ProjectDetail />} />
           {/* Portfolio page */}
-          <Route path="/about" element={<AboutSection />} /> {/* About page */}
+          <Route path="/about" element={<About />} /> {/* About page */}
           <Route path="/contact" element={<ContactSection />} />{" "}
           {/* Contact page */}
         </Routes>

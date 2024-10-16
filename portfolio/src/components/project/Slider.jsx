@@ -1,4 +1,4 @@
-import "./slider.scss";
+import "./slider.module.scss";
 import PropTypes from "prop-types";
 
 const Slider = ({
