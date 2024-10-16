@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import GridLayout from "../others/GridLayout";
 import ProjectCard from "./ProjectCard";
@@ -16,19 +17,21 @@ const ProjectSection = ({ projects }) => {
 
   return (
     <section className="project-section">
-      <GridLayout columns={3}>
-        <div className="span-one-column">
-          <span>{latestProject.skill}</span>
-          <h5 className="project-title span-one-column">
-            {latestProject.title}
-          </h5>
-        </div>
-        <img
-          src={latestProject.main}
-          alt={latestProject.title}
-          className="project-image span-two-columns"
-        />
-      </GridLayout>
+      <Link to={`/portfolio/${latestProject.id}`}>
+        <GridLayout columns={3}>
+          <div className="span-one-column">
+            <span>{latestProject.skill}</span>
+            <h5 className="project-title span-one-column">
+              {latestProject.title}
+            </h5>
+          </div>
+          <img
+            src={latestProject.main}
+            alt={latestProject.title}
+            className="project-image span-two-columns"
+          />
+        </GridLayout>
+      </Link>
 
       <GridLayout columns={3}>
         {featuredProjects.map((project) => (
