@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useRef } from "react";
 import "./AboutSection.module.scss";
 import { motion, useInView } from "framer-motion";
-import GridLayout from "../GridLayout";
-
+import GridLayout from "../others/GridLayout";
+import { Link } from "react-router-dom";
 const variants = {
   initial: {
     x: -500,
@@ -20,7 +21,7 @@ const variants = {
   },
 };
 
-const AboutSection = () => {
+const AboutSection = ({ isAboutPage }) => {
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-100px" });
 
@@ -55,7 +56,11 @@ const AboutSection = () => {
         </motion.div>
         <motion.div className="right-section">
           <img src="/public/content.png" alt="Some Image" />
-          <button>About Me</button>
+          {!isAboutPage && (
+            <Link to="/about">
+              <button>About Me</button>
+            </Link>
+          )}
         </motion.div>
       </GridLayout>
     </section>

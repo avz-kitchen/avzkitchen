@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import GridLayout from "../GridLayout";
+import GridLayout from "./GridLayout";
 
 const ShotDemo = ({ title, image, text, demo }) => {
   return (

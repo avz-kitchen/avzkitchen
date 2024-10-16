@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import GridLayout from "../GridLayout";
+import GridLayout from "../others/GridLayout";
 
 const HeroSection = ({ title, img, altText = "Hero Image" }) => {
   return (

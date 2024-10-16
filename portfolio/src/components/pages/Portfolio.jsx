@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import GridLayout from "./GridLayout";
-import ProjectCard from "./ProjectCard"; // Assuming you have a ProjectCard component
+import GridLayout from "../others/GridLayout";
+import ProjectCard from "../project/ProjectCard"; // Assuming you have a ProjectCard component
 import "./Portfolio.scss";
 
 const Portfolio = ({ projects }) => {

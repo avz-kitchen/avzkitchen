@@ -1,7 +1,7 @@
 // Footer.jsx
 import "./footer.scss";
 import { Link } from "react-router-dom";
-import GridLayout from "./GridLayout";
+import GridLayout from "../others/GridLayout";
 
 const Footer = () => {
   return (

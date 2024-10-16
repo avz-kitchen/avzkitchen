@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import GridLayout from "./GridLayout";
+import GridLayout from "../others/GridLayout";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./ContactSection.scss";

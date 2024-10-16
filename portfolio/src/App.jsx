@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import HeroSection from "./components/heroSection/HeroSection";
 import AboutSection from "./components/aboutSection/AboutSection";
-import Portfolio from "./components/Portfolio";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
+import Portfolio from "./components/pages/Portfolio";
+import ContactSection from "./components/contactSection/ContactSection";
+import Footer from "./components/footer/Footer";
 import portfolioData from "./data/data.json";
-import ProjectSection from "./components/ProjectSection";
-import ProjectDetail from "./components/ProjectDetail";
+import ProjectSection from "./components/project/ProjectSection";
+import ProjectDetail from "./components/pages/ProjectDetail";
 
 import "./App.scss";
 
@@ -53,7 +53,7 @@ const Home = () => {
         </h2>
       </div>
       <lr />
-      <AboutSection />
+      <AboutSection isAboutPage={false} />
       <ContactSection />
     </>
   );

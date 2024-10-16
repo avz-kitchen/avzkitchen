@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import GridLayout from "./GridLayout";
+import GridLayout from "../others/GridLayout";
 import ProjectCard from "./ProjectCard";
 import "./Portfolio.scss"; // Import your CSS for styling
 
@@ -32,7 +32,7 @@ const ProjectSection = ({ projects }) => {
 
       <GridLayout columns={3}>
         {featuredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.id} project={project} isHomePage={true} />
         ))}
       </GridLayout>
     </section>
