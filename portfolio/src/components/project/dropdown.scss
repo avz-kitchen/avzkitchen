@@ -26,6 +26,8 @@
   .dropdown-content {
     gap: 20px;
     text-align: left;
+       justify-content: center; 
+    align-items: center; 
     .first-dropdown-layout {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
@@ -38,6 +40,7 @@
           max-width: 90%; 
           max-height: 420px; 
         }
+        border-radius: 12px;
       }
 
       .dropdown-text {
@@ -54,11 +57,14 @@
     }
 
           .dropdown-text {
-
+              display: flex;
+      flex-direction: column;
+    align-items: center; 
+      justify-content: center;
         img {
           @extend %image-styles;
-          max-width: 100%; // Limit image size in other layout
-          max-height: auto; // Further limit height to fit better
+          max-width: 100%; 
+          max-height: auto; 
         }
       }
   }
@@ -67,6 +73,5 @@
 // Define shared styles for images
 %image-styles {
   object-fit: cover;
-  max-height: 540px; // Limit height based on viewport or container size
-  border-radius: 8px; // Add border-radius for a consistent style
+  max-height: 540px; 
 }

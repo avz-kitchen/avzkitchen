@@ -38,17 +38,14 @@ const AboutSection = ({ isAboutPage }) => {
           <motion.div className="titleContainer" variants={variants}>
             <div className="title">
               <h1>
-                Hello, {"I'm"}
-                <motion.b whileHover={{ color: "orange" }}>
-                  {" "}
-                  Ang Valenzuela
-                </motion.b>
+                Hello, {"I'm "}
+                <motion.b>Ang Valenzuela</motion.b>
               </h1>
             </div>
             <div className="title">
               <h2>
-                a {"<"}{" "}
-                <motion.b whileHover={{ color: "orange" }}>Designer</motion.b>{" "}
+                a {"<"}
+                <motion.b whileHover={{ color: "blue" }}>Designer</motion.b>
                 {">"}
               </h2>
             </div>

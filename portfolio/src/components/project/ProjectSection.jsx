@@ -24,7 +24,7 @@ const ProjectSection = ({ projects }) => {
           </h5>
         </div>
         <img
-          src={latestProject.img}
+          src={latestProject.main}
           alt={latestProject.title}
           className="project-image span-two-columns"
         />

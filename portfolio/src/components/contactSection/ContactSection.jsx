@@ -34,11 +34,7 @@ const ContactSection = () => {
 
   return (
     <section className="contact-section">
-      <GridLayout columns={3}>
-        <motion.h4 className="vertical-text" whileHover={{ scale: 1.1 }}>
-          Have an Idea?
-        </motion.h4>
-
+      <GridLayout columns={2}>
         <div>
           <h1>Mail to:</h1>
           <a href="mailto:contact@avzkitchen.com">contact@avzkitchen.com</a>

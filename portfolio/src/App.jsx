@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import Navbar from "./components/navbar/Navbar";
 import HeroSection from "./components/heroSection/HeroSection";
 import AboutSection from "./components/aboutSection/AboutSection";
@@ -9,11 +10,12 @@ import portfolioData from "./data/data.json";
 import ProjectSection from "./components/project/ProjectSection";
 import ProjectDetail from "./components/pages/ProjectDetail";
 import About from "./components/pages/About";
+import ScrollToTop from "./components/others/ScrollToTop";
 import "./App.scss";
-
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <div className="page-wrapper">
         <Routes>
@@ -24,8 +26,8 @@ const App = () => {
           />
           <Route path="/portfolio/:id" element={<ProjectDetail />} />
           {/* Portfolio page */}
-          <Route path="/about" element={<About />} /> {/* About page */}
-          <Route path="/contact" element={<ContactSection />} />{" "}
+          <Route path="/about" element={<About />} />{" "}
+          {/* About 
           {/* Contact page */}
         </Routes>
       </div>

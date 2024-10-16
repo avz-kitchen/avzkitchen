@@ -7,14 +7,14 @@
             "subtitle": "The journey begins",
             "type": "Case Study",
             "img": "portfolio/public/hero.png",
-            "main": "",
+            "main": "/public/project/flight-app-main.png",
             "desc": "As a frequent traveler, I have always seen flight booking app as a gateway to new adventures. However, during my exploration of the app, I noticed opportunities to enhance the user experience. My goal was to create a more seamless and enjoyable journey for users looking to book their next trip.",
             "skill": "UX/UI",
             "isFeatured": false,
             "isLatest": true,
             "month": "06",
             "year": "2024",
-            "tag": "Listen",
+            "tag": "Book",
             "demo": "https://www.figma.com/proto/mXRDv1Scb8THEIzC9XNZbj/AVZ_ProjectRyanair_app?page-id=3102%3A60&type=design&node-id=3163-2472&viewport=607%2C382%2C0.18&t=bbRK2fOt9HVWTbxQ-1&scaling=scale-down&starting-point-node-id=3163%3A2472&content-scaling=fixed",
             "beforeImg": "/public/before-image.png",
             "afterImg": "/public/after-image.png",
@@ -37,27 +37,60 @@
                 },
                 {
                     "title": "Key Feature",
-                    "image": "/public/project/flight-app-feature.png",
+                    "image": "/public/project/flight-app-flow.png",
                     "text": "The design includes a cleaner interface that emphasizes essential elements, improving overall navigation. A dedicated section for flexible travel options enables users to easily explore various routes. Additionally, engaging content highlights popular destinations and offers travel tips, inspiring users to broaden their travel horizons."
                 }
             ],
             "text": "Highlighting the streamlined user flow designed to enhance the travel experience, the interface prioritizes intuitive navigation, guiding users effortlessly through the search and booking processes.",
-            "flow": "/public/project/flight-app-flow.png",
+            "flow": "/public/project/flight-app-feature.png",
             "conclusion": "Throughout the process, the importance of actively listening to user needs and adapting the design based on feedback became clear. The iterative approach highlighted the value of flexibility in travel options and demonstrated how engaging content can inspire users to explore new horizons. These insights emphasize the significance of user-centered design, transforming travel planning into an enjoyable and enriching experience.",
             "shot": "/public/project/flight-app-shot.png"
         },
         {
             "category": "App",
             "id": 2,
-            "title": "Leo.org",
+            "title": "Keywi Music App",
+            "subtitle": "Tune into your Taste ",
             "type": "Case Study",
-            "img": "/public/content-1.png",
-            "desc": "Was heisst das nochmal?",
+            "img": "portfolio/public/hero.png",
+            "main": "/public/project/keywi-main.png",
+            "desc": "As a dedicated music enthusiast, I view music recommendation apps as gateways to discovering new artists and genres. While exploring various apps, I recognized exciting opportunities to elevate the user experience. My goal was to design an engaging platform that seamlessly connects users with music that resonates with their tastes, transforming the discovery process into an enjoyable adventure.",
             "skill": "UX/UI",
             "isFeatured": true,
+            "isLatest": false,
             "month": "06",
             "year": "2024",
-            "tag": "Dictionary"
+            "tag": "Listen",
+            "demo": "https://www.figma.com/proto/mXRDv1Scb8THEIzC9XNZbj/AVZ_ProjectRyanair_app?page-id=3102%3A60&type=design&node-id=3163-2472&viewport=607%2C382%2C0.18&t=bbRK2fOt9HVWTbxQ-1&scaling=scale-down&starting-point-node-id=3163%3A2472&content-scaling=fixed",
+            "beforeImg": "/public/before-image.png",
+            "afterImg": "/public/after-image.png",
+            "overview": "Introducing a groundbreaking music recommendation app designed to revolutionize how users discover new songs and connect with their musical identity. With an intuitive swiping interface, users can pre-listen to tracks and find similar music tastes, transforming the music exploration journey into an engaging experience.",
+            "dropdowns": [
+                {
+                    "title": "Uncovering the Users",
+                    "image": "/public/project/keywi-main.png",
+                    "text": "Through a comprehensive UX audit and analysis of app store feedback, we uncovered fascinating insights into user behavior. Many users expressed excitement about features like song previews and personalized playlists, yet they craved a more seamless browsing experience. Users reported spending a significant amount of time searching for new artists and genres, highlighting their desire for curated recommendations that feel tailored to their unique tastes. This research was instrumental in shaping the app's intuitive interface, which simplifies navigation and enhances the discovery process."
+                },
+                {
+                    "title": "Research Findings",
+                    "image": "/public/project/keywi-persona.png",
+                    "text": "Crafting user stories from detailed personas unveiled the diverse motivations that drive our audience. For example, the 'Casual Listener' values quick access to song previews and the thrill of swiping through new tracks, while the 'Music Aficionado' seeks deep dives into unique artists and the joy of sharing curated playlists. This nuanced understanding of user behavior guided our design decisions, ensuring the final product resonates with specific user needs and creates a dynamic, engaging experience."
+                },
+                {
+                    "title": "Design Process",
+                    "image": "/public/project/flight-app-process.png",
+                    "text": "In this self-initiated project, I embraced an iterative design process using Figma to develop prototypes that truly reflect user desires. This method allowed for continuous refinement based on real user feedback at every stage. Starting with low-fidelity wireframes, I rapidly explored various layout options and functionalities, enabling early user testing that informed crucial design choices and enriched the final product."
+                },
+                {
+                    "title": "Key Feature",
+                    "image": "/public/project/keywi-flow.png",
+                    "text": "The redesigned app showcases a vibrant, user-friendly interface that highlights essential features, making music discovery a breeze. A dedicated section for swiping through tracks empowers users to easily find new music that aligns with their tastes. Additionally, engaging content promotes popular tracks and artists, igniting users’ curiosity to explore and expand their musical horizons."
+                }
+            ],
+            "text": "The app’s interface prioritizes intuitive navigation, with a particular focus on the registration and onboarding process, guiding users effortlessly through song previews and engaging swiping actions",
+            "flow": "/public/project/keywi-feature.png",
+            "conclusion": "This self-initiated project underscored the importance of actively listening to user needs and adapting the design based on real-world feedback. The iterative approach not only highlighted the critical role of personalized recommendations but also revealed how compelling content can inspire users to explore new music. These insights reinforce the significance of user-centered design, transforming music discovery into an exciting and enriching journey.",
+            "shot": "/public/project/keywi-shot.png"
         },
         {
             "category": "E-Commerce",
