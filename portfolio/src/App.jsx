@@ -28,6 +28,7 @@ const App = () => {
           />
           <Route path="/portfolio/:id" element={<ProjectDetailRouter />} />
           <Route path="/about" element={<About />} /> {/* About page */}
+          <Route path="/contact" element={<ContactSection />} />
         </Routes>
       </div>
       <Footer />
@@ -42,7 +43,7 @@ const Home = () => {
     <>
       <HeroSection title="Bit of pictogram, design ..." img="public/hero.png" />
       <ProjectSection projects={projects || []} />
-      <Link to="/poartfolio">
+      <Link to="/portfolio">
         <div className="button-p">
           Explore Portfolio
           <img src="/public/mouse-pointer-heart_17490452.svg" alt="Explore" />

@@ -49,23 +49,25 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 
   button {
+    margin: 10px;
+    padding: 10px 20px;
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
+    
+    &:hover {
+      background-color: #0056b3;
+    }
   }
 
   iframe {
-    border: none;
-    border-radius: 8px;
-    width: 90%;
-    height: 600px;
-    margin-top: 10px;
+    border: none; /* Remove border from the iframe */
+    margin: 0 0 20px 0; /* Add some margin below the iframe */
+ 
   }
 }
