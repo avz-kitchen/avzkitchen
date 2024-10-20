@@ -2,42 +2,48 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import GridLayout from "../others/GridLayout";
 import ProjectCard from "./ProjectCard";
-import "../pages/Portfolio.scss"; // Import your CSS for styling
+import "../pages/Portfolio.scss";
 
 const ProjectSection = ({ projects }) => {
-  if (!projects || projects.length === 0) {
+  if (!Array.isArray(projects) || projects.length === 0) {
     return <p>No projects available.</p>;
   }
 
-  // Assuming the latest project is the first in the array
-  const latestProject = projects.find((project) => project.isLatest); // Find the latest featured project
-  const featuredProjects = projects.filter(
-    (project) => project.isFeatured === true
-  );
-
+  // Find the latest project
+  const latestProject = projects.find((project) => project.isLatest);
+  const featuredProjects = projects.filter((project) => project.isFeatured);
+  console.log(projects);
   return (
     <section className="project-section">
-      <Link to={`/portfolio/${latestProject.id}`}>
-        <GridLayout columns={3}>
-          <div className="span-one-column">
-            <span>{latestProject.skill}</span>
-            <h5 className="project-title span-one-column">
-              {latestProject.title}
-            </h5>
-          </div>
-          <img
-            src={latestProject.main}
-            alt={latestProject.title}
-            className="project-image span-two-columns"
-          />
-        </GridLayout>
-      </Link>
+      {latestProject ? (
+        <Link to={`/portfolio/${latestProject.id}`}>
+          <GridLayout columns={3}>
+            <div className="span-one-column">
+              <span>{latestProject.skill}</span>
+              <h5 className="project-title span-one-column">
+                {latestProject.title}
+              </h5>
+            </div>
+            <img
+              src={latestProject.main}
+              alt={latestProject.title}
+              className="project-image span-two-columns"
+            />
+          </GridLayout>
+        </Link>
+      ) : (
+        <p>No latest project available.</p>
+      )}
 
-      <GridLayout columns={3}>
-        {featuredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} isHomePage={true} />
-        ))}
-      </GridLayout>
+      {featuredProjects.length > 0 ? (
+        <GridLayout columns={3}>
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} isHomePage={true} />
+          ))}
+        </GridLayout>
+      ) : (
+        <p>No featured projects available.</p>
+      )}
     </section>
   );
 };
@@ -50,6 +56,9 @@ ProjectSection.propTypes = {
       skill: PropTypes.string.isRequired,
       img: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
+      isFeatured: PropTypes.bool,
+      isLatest: PropTypes.bool,
+      main: PropTypes.string, // Added main property to PropTypes
     })
   ).isRequired,
 };

@@ -27,7 +27,7 @@ const AboutSection = ({ isAboutPage }) => {
 
   return (
     <section className="about-section">
-      <GridLayout>
+      <GridLayout columns={1}>
         <motion.div
           className="about-avz"
           ref={ref}
