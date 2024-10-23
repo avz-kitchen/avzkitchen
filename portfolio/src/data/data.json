@@ -16,8 +16,6 @@
             "year": "2024",
             "tag": "Book",
             "demo": "https://www.figma.com/proto/mXRDv1Scb8THEIzC9XNZbj/AVZ_ProjectRyanair_app?page-id=3102%3A60&type=design&node-id=3163-2472&viewport=607%2C382%2C0.18&t=bbRK2fOt9HVWTbxQ-1&scaling=scale-down&starting-point-node-id=3163%3A2472&content-scaling=fixed",
-            "beforeImg": "/public/before-image.png",
-            "afterImg": "/public/after-image.png",
             "overview": "Overview content goes here...",
             "dropdowns": [
                 {
@@ -62,8 +60,6 @@
             "year": "2024",
             "tag": "Listen",
             "demo": "https://www.figma.com/proto/mXRDv1Scb8THEIzC9XNZbj/AVZ_ProjectRyanair_app?page-id=3102%3A60&type=design&node-id=3163-2472&viewport=607%2C382%2C0.18&t=bbRK2fOt9HVWTbxQ-1&scaling=scale-down&starting-point-node-id=3163%3A2472&content-scaling=fixed",
-            "beforeImg": "/public/before-image.png",
-            "afterImg": "/public/after-image.png",
             "overview": "Introducing a groundbreaking music recommendation app designed to revolutionize how users discover new songs and connect with their musical identity. With an intuitive swiping interface, users can pre-listen to tracks and find similar music tastes, transforming the music exploration journey into an engaging experience.",
             "dropdowns": [
                 {
@@ -96,44 +92,39 @@
             "category": "Branding",
             "id": 3,
             "title": "mokebo Rebrand",
-            "subtitle": "/public/content-1.png",
-            "type": "Case Study",
+            "subtitle": "Timeless icons",
+            "type": "Brand Book",
             "img": "public/placeholder1.png",
-            "desc": "Lorem ipsum dolor sit",
+            "desc": "Mokebo is an innovative e-commerce platform dedicated to providing sustainable furniture solutions. This rebranding project aimed to enhance Mokebo’s online presence, reflecting its commitment to environmentally friendly practices and stylish, functional design.",
             "skill": "Digital Experience",
             "isFeatured": false,
             "month": "06",
             "year": "2024",
-            "tag": "e-commerce",
-            "pdfUrls": "/public/ci-project.pdf"
-        },
-        {
-            "id": 4,
-            "title": "Music App",
-            "subtitle": "Timeless Design",
-            "type": "Case Study",
-            "img": "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "desc": "Lorem ipsum dolor sit",
-            "skill": "UX",
-            "isFeatured": false,
-            "month": "06",
-            "year": "2024",
-            "tag": "Enjoy"
+            "tag": "icons",
+            "pdfUrl": "/files/mokebobrand.pdf",
+            "text": "These icons serve as a visual representation of the brand's commitment to quality and eco-friendly practices. By prioritizing simplicity and elegance, the icons enhance the overall aesthetic of Mokebo's offerings, providing a cohesive identity that resonates with customers. This thoughtful design approach not only elevates the brand's image but also reinforces its dedication to sustainability in the furniture industry.",
+            "flow": "/public/project/mokebo-feature.png",
+            "conclusion": "This project emphasized capturing the essence of Vietnamese cuisine and transforming it into a modern yet authentic brand identity. By blending traditional elements with contemporary design, the branding highlights the rich culinary heritage while appealing to a diverse audience. The iterative process showcased the value of refining design choices based on visual feedback, leading to a vibrant and inviting brand that celebrates authenticity, freshness, and the unique flavors of Vietnamese street food.",
+            "shot": "/public/project/kmadam-do-shot.png"
         },
         {
             "category": "Branding",
             "id": 5,
             "title": "Madam Do",
-            "subtitle": "Delicious to go",
+            "subtitle": "Bahn Mi to go",
             "type": "Branding",
             "img": "/public/content-1.png",
-            "desc": "Branding project description",
+            "desc": "focused on bringing authentic Vietnamese street food to Germany. The branding combines traditional Vietnamese aesthetics with modern design elements to appeal to a diverse audience.",
             "skill": "Branding",
             "isFeatured": true,
-            "month": "06",
-            "year": "2024",
+            "month": "02",
+            "year": "2021",
             "tag": "Brand Book",
-            "pdfUrl": "/files/madamdobrand.pdf"
+            "pdfUrl": "/files/madamdobrand.pdf",
+            "text": "The branding draws inspiration from fresh Vietnamese ingredients, capturing the vibrant colors and textures that define the cuisine. A carefully selected color palette emphasizes freshness, while the Saigon font is used to highlight the brand's authentic origins, evoking the rich culture and flavors of Vietnam.",
+            "flow": "/public/project/madamdo-feature.png",
+            "conclusion": "This project emphasized capturing the essence of Vietnamese cuisine and transforming it into a modern yet authentic brand identity. By blending traditional elements with contemporary design, the branding highlights the rich culinary heritage while appealing to a diverse audience. The iterative process showcased the value of refining design choices based on visual feedback, leading to a vibrant and inviting brand that celebrates authenticity, freshness, and the unique flavors of Vietnamese street food.",
+            "shot": "/public/project/kmadam-do-shot.png"
         },
         {
             "category": "Branding",
@@ -142,12 +133,17 @@
             "subtitle": "E-commerce Consultant",
             "type": "Branding",
             "img": "/public/content-1.png",
-            "desc": "Branding project description",
+            "desc": "Philip Kehela is a digital commerce consultant who wanted to strengthen his online presence with a cohesive and modern personal brand. The project focused on creating a digital identity that conveys his expertise in the field of e-commerce, while ensuring a sleek and functional design for his website.",
             "skill": "Branding",
             "isFeatured": true,
             "month": "06",
             "year": "2024",
-            "tag": "Consult"
+            "tag": "Consult",
+            "pdfUrl": "/files/pkebrand.pdf",
+            "text": " This project involved building a strong personal brand for Philip Kehela, a digital commerce consultant, by designing and launching a refreshed digital presence. We developed a new website using Elementor, which brought his ideas to life through clean and intuitive design. Careful attention was given to selecting logos, fonts, and layout to ensure they communicated his approach to digital commerce effectively. The relaunch resulted in a visually appealing, user-friendly site that supports Philip's work in the industry.",
+            "flow": "/public/project/pke-feature.png",
+            "conclusion": "In conclusion, this project successfully established a modern digital identity for Philip Kehela, enhancing his online presence as a digital commerce consultant. By designing a sleek, user-friendly website with Elementor, we translated his expertise into a visually appealing platform. The careful selection of logos, fonts, and layout effectively communicated his approach to digital commerce. This revitalized presence positions Philip for continued growth and engagement within the e-commerce landscape.",
+            "shot": "/public/project/pke-shot.png"
         }
     ]
 }

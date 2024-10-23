@@ -17,6 +17,7 @@ const BrandingDetail = ({ project }) => {
         image={project.main}
         text={project.desc}
       />
+      <h3>Brand Book</h3>
       {project.pdfUrl && project.pdfUrl.length > 0 ? (
         <PDFSlider pdfUrl={project.pdfUrl} />
       ) : (
