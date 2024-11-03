@@ -1,142 +1,158 @@
 @import "../../variables.scss";
 
 .navbar {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  z-index: 1000; 
-  padding: 0 120px; 
-  background-color: $light-background-color; 
-      @media (max-width: 768px) {
-        padding: 0 20px; 
-      }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 120px;
+  background-color: $light-background-color;
+
   &.menu-open {
-    overflow: hidden; 
+    overflow: hidden;
   }
 
   .wrapper {
-    display: grid; 
-    grid-template-columns: repeat(6, 1fr); 
-    align-items: center; 
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+  }
 
-    @media (max-width: 1200px) {
-    .wrapper {
-        padding: 54px 60px;
-    }
-}
-    .logo {
-      grid-column: span 4; 
-      font-size: 64px;
-      font-weight: 800;
-      color: $light-primary-color;
-      text-align: left; 
-    }
+  // Logo styling
+  .logo {
+    grid-column: span 4;
+    font-size: 64px;
+    font-weight: 800;
+    color: $light-primary-color;
+    text-align: left;
+  }
 
-    nav {
-      grid-column: span 2; 
-      display: grid; 
-      grid-template-columns: repeat(4, 1fr); 
-      gap: 20px; 
-      text-align: center;
+  // Navigation links for desktop
+  nav {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
 
-      a {
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        text-decoration: none;
-        font-size: 18px;
-        height: 70px; 
-        transition: border-bottom 0.3s;
-        width: 100%; 
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 18px;
+      height: 70px;
+      width: 100%;
+      transition: border-bottom 0.3s;
 
-        &.active {
-          text-decoration: underline; 
-          text-underline-offset: 8px;
-          font-weight: 800;
-        }
-      }
-
-      @media (max-width: 768px) {
-        display: none; 
+      &.active {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+        font-weight: 800;
       }
     }
+  }
 
-    .hamburger {
-      display: none; 
-      flex-direction: column;
-      cursor: pointer;
+  // Hamburger menu icon for mobile
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 
-      .line {
-        width: 30px;
-        height: 3px;
-        background-color: $light-primary-color;
-        margin: 4px 0;
-        transition: all 0.3s;
+    .line {
+      width: 30px;
+      height: 3px;
+      background-color: $light-primary-color;
+      margin: 4px 0;
+      transition: all 0.3s;
 
-        &.active {
-          background-color: $dark-primary-color; 
+      &.active {
+        background-color: $dark-primary-color;
+
+        &:nth-child(1) {
           transform: rotate(45deg);
-          &:nth-child(2) {
-            opacity: 0; 
-          }
-          &:nth-child(3) {
-            transform: rotate(-45deg) translateY(-7px);
-          }
         }
-      }
-    }
-
-    .close-button {
-      display: none; 
-      cursor: pointer;
-      font-size: 30px; 
-      color: $dark-primary-color; 
-      margin-top: 20px; 
-
-      @media (max-width: 768px) {
-        display: block; 
-      }
-    }
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex; 
-        width: 100%;
-
-      }
-
-      nav {
-        position: fixed; 
-        top: 0; 
-        left: 0; 
-        right: 0; 
-        height: 100vh; 
-        background-color: $light-background-color; 
-        flex-direction: column; 
-justify-content: space-between; 
-  align-items: center;
-        transition: all 0.3s ease;
-        grid-template-columns: repeat(1, 1fr); 
-        gap: 20px; 
-        display: none; 
-        z-index: 1001; 
-        
-        &.open {
-          display: flex; 
+        &:nth-child(2) {
+          opacity: 0;
         }
-
-        a {
-          height: auto; 
-          padding: 20px 0; 
-          font-size: 24px; 
-          width: 100%; 
-          text-align: center; 
+        &:nth-child(3) {
+          transform: rotate(-45deg) translateY(-7px);
         }
       }
     }
   }
+
+  // Close button styling for mobile nav
+  .close-button {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: $dark-primary-color;
+    margin-top: 20px;
+  }
+
+  // Mobile-specific styles
+  @media (max-width: 768px) {
+    padding: 0 20px;
+
+    .wrapper {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      grid-column: span 1;
+    }
+
+    // Hide desktop navigation on mobile
+    nav {
+      display: none;
+
+      // Mobile full-screen menu
+      &.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: $light-background-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        opacity: 1;
+        visibility: visible;
+        z-index: 1001;
+        transition: opacity 0.3s ease;
+
+        a {
+          font-size: 24px;
+          padding: 20px 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    // Show hamburger menu on mobile
+    .hamburger {
+      display: flex;
+      grid-column: span 1;
+      justify-content: flex-end;
+    }
+
+    // Show close button in mobile full-screen nav
+    .close-button {
+      display: block;
+    }
+  }
 }
 
+// Hide body scroll when the menu is open
 body.menu-open {
-  overflow: hidden; 
+  overflow: hidden;
 }
