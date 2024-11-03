@@ -1,4 +1,39 @@
 @import "../../variables.scss";
+
 .hero-section {
-background-color: $dark-primary-color;
+  padding: 0;  // Remove any padding if it exists
+  margin: 0;   // Remove any margin if it exists
+
+  .hero-title {
+    margin: 0;  // Ensure there's no margin around the title
+  }
+
+  .hero-image {
+    width: 318px;
+    height: 727px;
+    object-fit: cover;
+    margin: 0;  // Ensure there's no margin around the image
+ z-index: -200;
+ border: 2px solid $light-primary-color;
+           overflow:hidden ;
+
+     // Responsive adjustments for mobile
+    @media (max-width: 768px) {
+      width: 33vw;  // Half the width on mobile
+      height: 54vh; // Half the height to maintain aspect ratio
+          object-fit: cover;
+
+    }
+
+}
+
+  .span-two-columns {
+    grid-column: span 4;
+    margin: 0;  // Ensure there's no margin in the grid layout
+  }
+
+  .span-one-column {
+    grid-column: span 2;
+    margin: 0;  // Ensure there's no margin in the grid layout
+  }
 }

@@ -43,9 +43,14 @@ const Home = () => {
     <>
       <HeroSection title="Bit of pictogram, design ..." img="public/hero.png" />
       <ProjectSection projects={projects || []} />
+      <h1>
+        ... and <Link>code</Link> ...
+      </h1>
+      <h2>with some motion in pixels..</h2>
+
       <Link to="/portfolio">
         <div className="button-p">
-          Explore Portfolio
+          <h2>Explore Portfolio</h2>
           <img src="/public/mouse-pointer-heart_17490452.svg" alt="Explore" />
         </div>
       </Link>

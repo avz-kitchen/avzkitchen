@@ -1,4 +1,3 @@
-// Footer.jsx
 import "./footer.scss";
 import { Link } from "react-router-dom";
 import GridLayout from "../others/GridLayout";
@@ -8,27 +7,25 @@ const Footer = () => {
     <footer className="footer">
       <ul className="span-three-column">
         <li>
-          <a href="/portfolio/">Pictogram</a>
+          <h4>
+            <Link to="/portfolio/">Pictogram</Link>
+          </h4>
         </li>
         <li>
-          <a href="/portfolio/">Design</a>
+          <h4>
+            <Link to="/portfolio/">Design</Link>
+          </h4>
         </li>
         <li>
-          <a href="/portfolio/">Code</a>
+          <h4>
+            <Link to="/portfolio/">Code</Link>
+          </h4>
         </li>
       </ul>
       <div className="footer-content"></div>
 
       {/* Sitemap Grid */}
       <div className="sitemap">
-        {/* Column 1: Projects */}
-        <div className="sitemap-category">
-          <p></p>
-        </div>
-        <div className="sitemap-category">
-          <p>Scroll Up</p>
-        </div>
-        {/* Column 2: Projects */}
         <div className="sitemap-category">
           <Link to="/portfolio">
             <h3>Portfolio</h3>
@@ -38,7 +35,6 @@ const Footer = () => {
           <Link to="/portfolio/#webdev">Web Development</Link>
         </div>
 
-        {/* Column 3: Company */}
         <div className="sitemap-category">
           <Link to="/">
             <h3>Visual Studio</h3>
@@ -48,7 +44,6 @@ const Footer = () => {
           <Link to="/about">Data & Privacy</Link>
         </div>
 
-        {/* Column 4: Contact */}
         <div className="sitemap-category">
           <Link to="/Contact">
             <h3>Contact</h3>
@@ -71,7 +66,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
       <section className="copyright">
         <GridLayout columns={6}>
           <h4 className="vertical-text span-two-column">

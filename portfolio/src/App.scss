@@ -8,16 +8,21 @@
   width: 100%;
   margin: 5rem auto; 
   text-align: center;
+  overflow-x: hidden; 
+  margin: 0; 
 }
 
 body {
   font-family: 'Tajawal', sans-serif; 
   margin: 0;
+  margin-top:6%;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
 background-color: $light-background-color;
+ width: 100vw;
+  overflow-x: hidden; 
 }
 /* Global padding for all pages */
 .page-wrapper {
@@ -39,7 +44,7 @@ background-color: $light-background-color;
 
 @media (max-width: 576px) {
   .page-wrapper {
-    padding: 54px 15px; /* Adjust for mobile */
+    padding: 54px 16px; /* Adjust for mobile */
   }
 }
 section {

@@ -7,36 +7,36 @@
   justify-content: center;
   gap: 40px;
   overflow: hidden;
+
   .footer-content {
     display: grid;
-grid-column: 5;
+    grid-column: 5;
     align-items: center;
-
 
     p {
       margin: 0;
       font-size: 18px;
     }
-
-    
   }
+
   li {
     flex: 1;
   }
+
   .span-three-column {
     grid-column: span 3;
-    padding: 0;
-     list-style: none;
+    list-style: none;
     text-align: center;
     padding: 0 120px;
   }
+
   .sitemap {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);  // 4 equal columns
-    gap: 20px;  // Space between grid items
-    justify-items: start;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: flex-end;
     margin-top: 20px;
-  padding: 0px 120px;
+    padding: 0px 120px;
 
     .sitemap-category {
       display: flex;
@@ -51,34 +51,69 @@ grid-column: 5;
     }
   }
 
+  .copyright {
+    max-height: auto;
 
-.copyright {
-  max-height: auto;
-img{
-    width: max-content;
-}
-p {
-  font-size: 64px;
-}
-  span{ 
-    font-size: 54px;
-  font-weight: 900;
+    img {
+      width: max-content;
+    }
 
-}
-  ;
-}
+    p {
+      font-size: 64px;
+    }
 
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  .sitemap {
-    grid-template-columns: repeat(2, 1fr); // Change to 2-column grid on smaller screens
+    span {
+      font-size: 54px;
+      font-weight: 900;
+    }
   }
-}
 
-@media (max-width: 480px) {
-  .sitemap {
-    grid-template-columns: 1fr;  // Single column grid for mobile
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .sitemap {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0px 20px;
+    }
+    ul.span-three-column{
+      justify-content: space-between;
+            padding: 0px 20px;
+
+    }
+
+    ul.span-three-column li a {
+      font-size: 40px;
+    }
+
+  }
+
+  .span-three-column {
+    grid-column: span 2;
+  }
+
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sitemap {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .sitemap-category {
+      align-items: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
