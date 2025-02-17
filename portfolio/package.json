@@ -2,12 +2,15 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://avz-kitchen.github.io/avzstudio",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -32,6 +35,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.3.0",
     "globals": "^15.9.0",
     "sass-embedded": "^1.79.4",
     "vite": "^5.4.8"
