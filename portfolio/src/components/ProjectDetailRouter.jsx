@@ -12,14 +12,10 @@ const ProjectDetailRouter = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log("Received project URL from params:", projectUrl); // Log the projectUrl to verify it's correct
-
     const foundProject = portfolioData.portfolio.find(
       (item) =>
         transformToUrl(item.title).toLowerCase() === projectUrl.toLowerCase()
     );
-
-    console.log("Found project:", foundProject); // Log the found project
 
     if (foundProject) {
       setProject(foundProject);

@@ -6,9 +6,6 @@ import PDFSlider from ".././others/PDFSlider";
 import "./Portfolio.scss";
 
 const BrandingDetail = ({ project }) => {
-  console.log("PDF URL:", project.pdfUrl);
-  console.log("Current project:", project);
-
   return (
     <div className="branding-detail-page">
       <HeroSection title={project.title} img="public/hero.png" />

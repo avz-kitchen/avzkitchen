@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import "./navbar.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,14 +20,16 @@ const Navbar = () => {
   return (
     <div className={`navbar ${menuOpen ? "menu-open" : ""}`}>
       <div className="wrapper">
-        <motion.span
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="logo"
-        >
-          AVZ
-        </motion.span>
+        <Link to="/">
+          <motion.span
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="logo"
+          >
+            AVZ
+          </motion.span>
+        </Link>
         <div className="hamburger" onClick={toggleMenu}>
           <div className={`line ${menuOpen ? "active" : ""}`}></div>
           <div className={`line ${menuOpen ? "active" : ""}`}></div>
