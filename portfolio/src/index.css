@@ -64,7 +64,7 @@ button {
   font-size: clamp(1rem, 2vw + 1rem, 34px);
   /* Responsive font size */
   font-weight: 500;
-  font-family: "M PLUS 1 Code";
+  font-family: "Avenir";
   background-color: #FBFBFB;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -118,6 +118,5 @@ button:focus-visible {
   button {
     font-size: clamp(0.8rem, 2vw + 0.3rem, 1.2em);
     padding: 16px;
-    /* Adjust padding for smaller screens */
   }
 }
