@@ -2,32 +2,34 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BrandingDetail from "./pages/BrandingDetail";
 import ProjectDetail from "./pages/ProjectDetail";
+import portfolioData from "../data/data.json"; // Import directly from data.json
+
+const transformToUrl = (title) => title.replace(/\s+/g, "-").toLowerCase();
 
 const ProjectDetailRouter = () => {
-  const { id } = useParams();
-  const [project, setProject] = useState(undefined); // Initialize as undefined to differentiate loading state
+  const { projectUrl } = useParams();
+  const [project, setProject] = useState(undefined);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/src/data/data.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.json();
-      })
-      .then((data) => {
-        const foundProject = data.portfolio.find(
-          (item) => item.id === parseInt(id)
-        );
-        console.log("Found project:", foundProject);
-        setProject(foundProject || null);
-      })
-      .catch((error) => {
-        console.error("Error loading project data:", error);
-        setProject(null);
-      });
-  }, [id]);
+    console.log("Received project URL from params:", projectUrl); // Log the projectUrl to verify it's correct
 
-  if (project === undefined) return <p>Loading...</p>; // Show loading while fetching
-  if (project === null) return <p>Project not found!</p>; // If project is not found
+    const foundProject = portfolioData.portfolio.find(
+      (item) =>
+        transformToUrl(item.title).toLowerCase() === projectUrl.toLowerCase()
+    );
+
+    console.log("Found project:", foundProject); // Log the found project
+
+    if (foundProject) {
+      setProject(foundProject);
+    } else {
+      setProject(null);
+    }
+  }, [projectUrl]);
+
+  if (project === undefined) return <p>Loading...</p>;
+  if (project === null) return <p>Project not found!</p>;
 
   return project.category === "Branding" ? (
     <BrandingDetail project={project} />

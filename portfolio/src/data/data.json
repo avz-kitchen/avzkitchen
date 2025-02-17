@@ -7,7 +7,7 @@
             "subtitle": "The journey begins",
             "type": "Case Study",
             "img": "/project/flightapp/flight-app-hero.gif",
-            "main": "/project/flight-app/flight-app-hero.gif",
+            "main": "/project/flightapp/flight-app-hero.gif",
             "desc": "As a frequent traveler, I have always seen flight booking app as a gateway to new adventures. However, during my exploration of the app, I noticed opportunities to enhance the user experience. My goal was to create a more seamless and enjoyable journey for users looking to book their next trip.",
             "skill": "UX/UI",
             "isFeatured": false,
@@ -20,29 +20,29 @@
             "dropdowns": [
                 {
                     "title": "Uncovering the users",
-                    "image": "/project/flight-app-main.png",
+                    "image": "/project/flightapp/flight-app-main.png",
                     "text": "A UX audit and analysis of app store feedback revealed key trends among users. While many appreciated features like real-time notifications and personalized recommendations, there was a clear desire for a more streamlined experience. Users found navigation challenging and sought inspiration for exploring new destinations, especially through curated content showcasing unique travel experiences. These insights informed my design, resulting in an intuitive interface that simplifies navigation and enhances discovery."
                 },
                 {
                     "title": "Research Findings",
-                    "image": "/project/flight-app-persona.png",
+                    "image": "/project/flightapp/flight-app-persona.png",
                     "text": "User stories were created from detailed user personas to capture the diverse motivations and preferences of our audience. For example, a frequent traveler emphasized the need for intuitive discovery and personalized recommendations, while another persona highlighted the importance of seamless social sharing. These insights directly guided design decisions, ensuring the final product meets specific user needs and fosters a more engaging experience."
                 },
                 {
                     "title": "Design Process",
-                    "image": "/project/flight-app-process.png",
+                    "image": "/project/flightapp/flight-app-process.png",
                     "text": "After the research phase, an iterative design process was employed using Figma to create app prototypes. This method facilitated continuous refinement by incorporating user feedback at each stage. Starting with low-fidelity wireframes allowed for quick exploration of layout options and functionality, making early user testing efficient."
                 },
                 {
                     "title": "Key Feature",
-                    "image": "/project/flight-app-flow.png",
+                    "image": "/project/flightapp/flight-app-flow.png",
                     "text": "The design includes a cleaner interface that emphasizes essential elements, improving overall navigation. A dedicated section for flexible travel options enables users to easily explore various routes. Additionally, engaging content highlights popular destinations and offers travel tips, inspiring users to broaden their travel horizons."
                 }
             ],
             "text": "Highlighting the streamlined user flow designed to enhance the travel experience, the interface prioritizes intuitive navigation, guiding users effortlessly through the search and booking processes.",
-            "flow": "/project/flight-app-feature.png",
+            "flow": "/project/flightapp/flight-app-feature.png",
             "conclusion": "Throughout the process, the importance of actively listening to user needs and adapting the design based on feedback became clear. The iterative approach highlighted the value of flexibility in travel options and demonstrated how engaging content can inspire users to explore new horizons. These insights emphasize the significance of user-centered design, transforming travel planning into an enjoyable and enriching experience.",
-            "shot": "/project/flight-app-shot.png"
+            "shot": "/project/flightapp/flight-app-shot.png"
         },
         {
             "category": "App",
@@ -74,19 +74,19 @@
                 },
                 {
                     "title": "Design Process",
-                    "image": "/project/flight-app-process.png",
+                    "image": "/project/flightapp/flight-app-process.png",
                     "text": "In this self-initiated project, I embraced an iterative design process using Figma to develop prototypes that truly reflect user desires. This method allowed for continuous refinement based on real user feedback at every stage. Starting with low-fidelity wireframes, I rapidly explored various layout options and functionalities, enabling early user testing that informed crucial design choices and enriched the final product."
                 },
                 {
                     "title": "Key Feature",
-                    "image": "/project/keywi-flow.png",
+                    "image": "/project/keywi/keywi-flow.png",
                     "text": "The redesigned app showcases a vibrant, user-friendly interface that highlights essential features, making music discovery a breeze. A dedicated section for swiping through tracks empowers users to easily find new music that aligns with their tastes. Additionally, engaging content promotes popular tracks and artists, igniting users’ curiosity to explore and expand their musical horizons."
                 }
             ],
             "text": "The app’s interface prioritizes intuitive navigation, with a particular focus on the registration and onboarding process, guiding users effortlessly through song previews and engaging swiping actions",
-            "flow": "/project/keywi-feature.png",
+            "flow": "/project/keywi/keywi-feature.png",
             "conclusion": "This self-initiated project underscored the importance of actively listening to user needs and adapting the design based on real-world feedback. The iterative approach not only highlighted the critical role of personalized recommendations but also revealed how compelling content can inspire users to explore new music. These insights reinforce the significance of user-centered design, transforming music discovery into an exciting and enriching journey.",
-            "shot": "/project/keywi-shot.png"
+            "shot": "//project/keywi/keywi-shot.png"
         },
         {
             "category": "Branding",
@@ -122,9 +122,9 @@
             "tag": "Brand Book",
             "pdfUrl": "/files/madamdobrand.pdf",
             "text": "The branding draws inspiration from fresh Vietnamese ingredients, capturing the vibrant colors and textures that define the cuisine. A carefully selected color palette emphasizes freshness, while the Saigon font is used to highlight the brand's authentic origins, evoking the rich culture and flavors of Vietnam.",
-            "flow": "/project/madamdo-feature.png",
+            "flow": "/project/madamdo/madamdo-feature.png",
             "conclusion": "This project emphasized capturing the essence of Vietnamese cuisine and transforming it into a modern yet authentic brand identity. By blending traditional elements with contemporary design, the branding highlights the rich culinary heritage while appealing to a diverse audience. The iterative process showcased the value of refining design choices based on visual feedback, leading to a vibrant and inviting brand that celebrates authenticity, freshness, and the unique flavors of Vietnamese street food.",
-            "shot": "/project/kmadam-do-shot.png"
+            "shot": "/project/madamdo/kmadam-do-shot.png"
         },
         {
             "category": "Branding",

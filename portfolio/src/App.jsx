@@ -26,7 +26,10 @@ const App = () => {
             path="/portfolio"
             element={<Portfolio projects={projects} />}
           />
-          <Route path="/portfolio/:id" element={<ProjectDetailRouter />} />
+          <Route
+            path="/portfolio/:projectUrl"
+            element={<ProjectDetailRouter />}
+          />
           <Route path="/about" element={<About />} /> {/* About page */}
           <Route path="/contact" element={<ContactSection />} />
         </Routes>

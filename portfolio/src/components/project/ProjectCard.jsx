@@ -1,10 +1,22 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+
+// Function to transform the title into a URL-friendly format
+const transformToUrl = (title) => {
+  const transformed = title.replace(/\s+/g, "-").toLowerCase();
+  console.log("Transformed title:", transformed); // Log the transformation
+  return transformed;
+};
+
 const ProjectCard = ({ project, isHomePage }) => {
+  // Generate URL for the project and log it
+  const projectUrl = transformToUrl(project.title);
+  console.log("Generated URL for project:", projectUrl);
+
   return (
     <div className="project-card">
-      <Link to={`/portfolio/${project.id}`}>
+      <Link to={`/portfolio/${projectUrl}`}>
         <img src={project.img} alt={project.title} className="project-image" />
         <p className="project-skill">{project.skill}</p>
         <h3 className="project-title">{project.title}</h3>

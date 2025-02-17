@@ -16,7 +16,11 @@ const ProjectSection = ({ projects }) => {
   return (
     <section className="project-section">
       {latestProject ? (
-        <Link to={`/portfolio/${latestProject.id}`}>
+        <Link
+          to={`/portfolio/${latestProject.title
+            .replace(/\s+/g, "-")
+            .toLowerCase()}`}
+        >
           <GridLayout columns={3}>
             <div className="span-one-column">
               <span>{latestProject.skill}</span>
