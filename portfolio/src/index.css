@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -57,26 +59,29 @@ h6 {
 
 button {
   display: flex;
-  padding: 24px;
+  padding: 12px 24px;
   justify-content: space-between;
   align-items: center;
-  align-self: stretch;
+  align-self: center;
   font-size: clamp(1rem, 2vw + 1rem, 34px);
   /* Responsive font size */
   font-weight: 500;
   font-family: "Avenir";
-  background-color: #FBFBFB;
+  background-color: #D8C0CE;
   cursor: pointer;
   transition: border-color 0.25s;
+  border-radius: 120px;
 }
 
 button:hover {
-  border-color: #646cff;
+  background-color: #C3A447;
+  color: #702034;
+  border: 2px solid #702034;
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px auto -webkit-focus-ring-color;
 }
 
 /* Media queries for additional breakpoints */

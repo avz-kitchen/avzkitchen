@@ -26,15 +26,7 @@ const Footer = () => {
 
       {/* Sitemap Grid */}
       <div className="sitemap">
-        <div className="sitemap-category">
-          <Link to="/portfolio">
-            <h3>Portfolio</h3>
-          </Link>
-          <Link to="/portfolio/#branding">Branding</Link>
-          <Link to="/portfolio/#uxui">UX/UI Design</Link>
-          <Link to="/portfolio/#webdev">Web Development</Link>
-        </div>
-
+        <div className="sitemap-category"> </div>
         <div className="sitemap-category">
           <Link to="/">
             <h3>Visual Studio</h3>
@@ -42,6 +34,14 @@ const Footer = () => {
           <Link to="/about">About AVZ</Link>
           <Link to="/about">Impressum</Link>
           <Link to="/about">Data & Privacy</Link>
+        </div>
+        <div className="sitemap-category">
+          <Link to="/portfolio">
+            <h3>Portfolio</h3>
+          </Link>
+          <Link to="/portfolio/#branding">Branding</Link>
+          <Link to="/portfolio/#uxui">UX/UI Design</Link>
+          <Link to="/portfolio/#webdev">Web Development</Link>
         </div>
 
         <div className="sitemap-category">
@@ -74,7 +74,7 @@ const Footer = () => {
           <img src="/public/artichoke.png" className="span-four-column" />
         </GridLayout>
         <p>
-          © <span>@artichoke.vz</span>
+          <span>© @artichoke.v</span>
         </p>
       </section>
     </footer>

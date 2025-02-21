@@ -8,6 +8,7 @@
   z-index: 1000;
   padding: 0 120px;
   background-color: $light-background-color;
+    justify-content: space-between;
 
   &.menu-open {
     overflow: hidden;
@@ -15,30 +16,21 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  // Logo styling
-  .logo {
-    grid-column: span 4;
-    font-size: 64px;
-    font-weight: 800;
-    color: $light-primary-color;
-    text-align: left;
-  }
 
   // Navigation links for desktop
   nav {
-    grid-column: span 2;
+    grid-column: span 3;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    text-align: center;
+    text-align: left;
 
     a {
       display: flex;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
       text-decoration: none;
       font-size: 18px;
