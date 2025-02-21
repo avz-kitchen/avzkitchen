@@ -2,7 +2,6 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://avz-kitchen.github.io/avzstudio",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -39,5 +38,10 @@
     "netlify-cli": "^15.11.0",
     "sass-embedded": "^1.79.4",
     "vite": "^5.4.8"
-  }
+  },
+  "description": "npm install react-router-dom npm install framer-motion",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
