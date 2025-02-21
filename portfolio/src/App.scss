@@ -4,7 +4,7 @@
 
 
 #root {
-  max-width: 94.5rem; 
+  max-width: 100%; 
   width: 100%;
   margin: 5rem auto; 
   text-align: center;
@@ -21,7 +21,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 background-color: $light-background-color;
- width: 100vw;
+ width: 100%;
   overflow-x: hidden; 
 }
 /* Global padding for all pages */
@@ -72,10 +72,16 @@ a {
   height: 4.375rem; 
   will-change: filter;
   transition: filter 300ms;
+  grid-column: 1;
+    font-size: 64px;
+    font-weight: 800;
+    color: $light-primary-color;
+    text-align: left;
+
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 0.125rem #646cffaa); 
+  filter: drop-shadow(0 0 0.125rem $dark-primary-color); 
 }
 
 .logo.react:hover {

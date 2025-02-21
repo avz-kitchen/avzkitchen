@@ -49,7 +49,7 @@ const Home = () => {
       <h1>
         ... and <Link>code</Link> ...
       </h1>
-      <h2>with some motion in pixels..</h2>
+      {/* <h2>with some motion in pixels..</h2> */}
 
       <Link to="/portfolio">
         <div className="button-p">
