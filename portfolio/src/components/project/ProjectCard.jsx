@@ -5,14 +5,12 @@ import { Link } from "react-router-dom";
 // Function to transform the title into a URL-friendly format
 const transformToUrl = (title) => {
   const transformed = title.replace(/\s+/g, "-").toLowerCase();
-  console.log("Transformed title:", transformed); // Log the transformation
   return transformed;
 };
 
 const ProjectCard = ({ project, isHomePage }) => {
   // Generate URL for the project and log it
   const projectUrl = transformToUrl(project.title);
-  console.log("Generated URL for project:", projectUrl);
 
   return (
     <div className="project-card">

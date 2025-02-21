@@ -12,7 +12,6 @@ const ProjectSection = ({ projects }) => {
   // Find the latest project
   const latestProject = projects.find((project) => project.isLatest);
   const featuredProjects = projects.filter((project) => project.isFeatured);
-  console.log(projects);
   return (
     <section className="project-section">
       {latestProject ? (
