@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .hero-section {
-  padding: 0;  // Remove any padding if it exists
+  padding: 24px 0px;  // Remove any padding if it exists
   margin: 0;   // Remove any margin if it exists
 
   .hero-title {
@@ -9,7 +9,7 @@
   }
 
   .hero-image {
-    width: 318px;
+    min-width: 324px;
     height: 727px;
     object-fit: cover;
     margin: 0;  // Ensure there's no margin around the image
