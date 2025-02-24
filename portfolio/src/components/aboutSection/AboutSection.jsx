@@ -38,29 +38,26 @@ const AboutSection = ({ isAboutPage }) => {
     <section className="about-section">
       <GridLayout columns={2}>
         <motion.div
-          className="about-avz"
           ref={ref}
           variants={variants}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
         >
-          <motion.div className="titleContainer" variants={variants}>
-            <div className="title">
-              <h1>
-                Hello, {"I'm "}
-                <motion.b>Ang Valenzuela</motion.b>
-              </h1>
-            </div>
-            <div className="title">
-              <h2>
-                a {"< "}
-                <motion.b whileHover={{ color: "blue" }}>
-                  {roles[currentRole]}
-                </motion.b>{" "}
-                {">"}
-              </h2>
-            </div>
-          </motion.div>
+          <div className="title">
+            <h1>
+              Hello, {"I'm "}
+              <motion.b>Ang Valenzuela</motion.b>
+            </h1>
+          </div>
+          <div className="title">
+            <h2>
+              a {"< "}
+              <motion.b whileHover={{ color: "blue" }}>
+                {roles[currentRole]}
+              </motion.b>{" "}
+              {">"}
+            </h2>
+          </div>
         </motion.div>
         <motion.div>
           <img src="/about/avz-anime.gif" alt="animated illustration of av" />
@@ -69,7 +66,6 @@ const AboutSection = ({ isAboutPage }) => {
               <button
                 style={{
                   justifySelf: "center",
-                  marginLeft: "20%",
                 }}
               >
                 About Me

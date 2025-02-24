@@ -51,7 +51,13 @@ const ContactSection = () => {
             <input type="text" required placeholder="Name" name="name" />
             <input type="email" required placeholder="Email" name="email" />
             <textarea rows={8} placeholder="Message" name="message" />
-            <button>Submit</button>
+            <button
+              style={{
+                justifySelf: "center",
+              }}
+            >
+              Submit
+            </button>
             {error && <p className="error-message">Error sending message</p>}
             {success && (
               <p className="success-message">Message sent successfully</p>
