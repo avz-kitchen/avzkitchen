@@ -59,7 +59,7 @@ const AboutSection = ({ isAboutPage }) => {
             </h2>
           </div>
         </motion.div>
-        <motion.div>
+        <div>
           <img src="/about/avz-anime.gif" alt="animated illustration of av" />
           {!isAboutPage && (
             <Link to="/about">
@@ -72,7 +72,7 @@ const AboutSection = ({ isAboutPage }) => {
               </button>
             </Link>
           )}
-        </motion.div>
+        </div>
       </GridLayout>
     </section>
   );
