@@ -37,7 +37,7 @@ const ContactSection = () => {
       <GridLayout className="contact-grid">
         <div>
           <h1>Mail to:</h1>
-          <a href="mailto:contact@avzkitchen.com">contact@avzkitchen.com</a>
+          <a href="mailto:contact@avzkitchen.com">hello@avzkitchen.com</a>
         </div>
 
         <div className="formContainer">
