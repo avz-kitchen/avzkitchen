@@ -12,6 +12,7 @@
     min-width: 324px;
     height: 727px;
     object-fit: cover;
+    object-position: right;
     margin: 0;  // Ensure there's no margin around the image
  z-index: -200;
  border: 2px solid $light-primary-color;
@@ -22,6 +23,8 @@
       width: 33vw;  // Half the width on mobile
       height: 54vh; // Half the height to maintain aspect ratio
           object-fit: cover;
+              object-position: right;
+
 
     }
 

@@ -12,6 +12,7 @@
 
   &.menu-open {
     overflow: hidden;
+    padding: 24px;
   }
 
   .wrapper {
@@ -100,7 +101,7 @@
     }
 
     // Hide desktop navigation on mobile
-    nav {
+    .nav-links {
       display: none;
 
       // Mobile full-screen menu

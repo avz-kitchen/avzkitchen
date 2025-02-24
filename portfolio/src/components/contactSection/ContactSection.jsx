@@ -33,8 +33,8 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="contact-section">
-      <GridLayout columns={2}>
+    <section className="contact-section" columns={"inherit"}>
+      <GridLayout className="contact-grid">
         <div>
           <h1>Mail to:</h1>
           <a href="mailto:contact@avzkitchen.com">contact@avzkitchen.com</a>

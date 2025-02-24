@@ -18,7 +18,7 @@ const ProjectCard = ({ project, isHomePage }) => {
         <img src={project.img} alt={project.title} className="project-image" />
         <p className="project-skill">{project.skill}</p>
         <h3 className="project-title">{project.title}</h3>
-        {!isHomePage && <button>View Project</button>}
+        {!isHomePage && <button className="underlined-b">View Project</button>}
       </Link>
     </div>
   );

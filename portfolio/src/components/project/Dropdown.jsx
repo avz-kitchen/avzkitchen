@@ -19,16 +19,18 @@ const Dropdown = ({ title, image, text, isFirst }) => {
         <div className="dropdown-content">
           {isFirst ? (
             <div className="first-dropdown-layout">
-              <div className="dropdown-image">
-                <img src={image} alt={title} />
-              </div>
+              {image && (
+                <div className="dropdown-image">
+                  <img src={image} alt={title} />
+                </div>
+              )}
               <div className="dropdown-text">
                 <p>{text}</p>
               </div>
             </div>
           ) : (
             <div className="dropdown-text">
-              <img src={image} alt={title} />
+              {image && <img src={image} alt={title} />}
               <p>{text}</p>
             </div>
           )}

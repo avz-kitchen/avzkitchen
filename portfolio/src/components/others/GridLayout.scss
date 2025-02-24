@@ -5,13 +5,24 @@ $grid-gap: 20px;
   grid-gap: $gap;
 }
 
+// Default grid layout: 2 columns
+.contact-grid {
+  @include grid-container(2);  // Use the mixin with 2 columns by default
+
+  // Media query for mobile (1 column)
+  @media (max-width: 768px) {
+    @include grid-container(1);  // Use the mixin with 1 column on mobile
+  }
+}
+
+
 .grid-layout {
   display: grid;
   width: 100%;
   margin: 0; 
   padding: 0; 
    row-gap: 20px;
-  @include grid-container(3);
+  @include grid-container(2);
 
   @media (max-width: 1200px) {
     @include grid-container(2);
@@ -42,6 +53,7 @@ $grid-gap: 20px;
 
 .span-two-columns {
   grid-column: span 2;
+  overflow: hidden;
 }
 
 ul.span-three-column {
@@ -60,7 +72,18 @@ ul.span-three-column {
       padding: 10px; 
       transition: color 0.3s ease;
     }
-
-
   }
+
+  @media (max-width: 640px) {
+    li {
+      display: block; 
+      a {
+        font-size: 32px;
+      }
+    }
+
+  
 }
+}
+
+

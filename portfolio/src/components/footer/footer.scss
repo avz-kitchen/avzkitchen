@@ -78,7 +78,7 @@
 
     .sitemap {
       grid-template-columns: repeat(2, 1fr);  
-      justify-items: center; 
+      justify-items: flex-start; 
 
     }
     .copyright img {
@@ -93,9 +93,6 @@
       padding: 0px 20px;
     }
 
-    ul.span-three-column li a {
-      font-size: 18px;
-    }
   }
 
   // Responsive adjustments for screens <= 640px (One Column)
