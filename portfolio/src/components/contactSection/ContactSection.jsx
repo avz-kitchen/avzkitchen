@@ -15,10 +15,10 @@ const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "service_94y20xo",
-        "template_v10u2oh",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "pX_2hasGmGcuvjXIW"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
@@ -34,10 +34,10 @@ const ContactSection = () => {
 
   return (
     <section className="contact-section" columns={"inherit"}>
-      <GridLayout className="contact-grid">
+      <GridLayout className="responsive-grid">
         <div>
           <h1>Mail to:</h1>
-          <a href="mailto:contact@avzkitchen.com">hello@avzkitchen.com</a>
+          <a href="mailto:hello@avzkitchen.com">hello@avzkitchen.com</a>
         </div>
 
         <div className="formContainer">
@@ -51,6 +51,10 @@ const ContactSection = () => {
             <input type="text" required placeholder="Name" name="name" />
             <input type="email" required placeholder="Email" name="email" />
             <textarea rows={8} placeholder="Message" name="message" />
+            {error && <p className="error-message">Error sending message</p>}
+            {success && (
+              <p className="success-message">Message sent successfully !</p>
+            )}
             <button
               style={{
                 justifySelf: "center",
@@ -58,10 +62,6 @@ const ContactSection = () => {
             >
               Submit
             </button>
-            {error && <p className="error-message">Error sending message</p>}
-            {success && (
-              <p className="success-message">Message sent successfully</p>
-            )}
           </motion.form>
         </div>
       </GridLayout>

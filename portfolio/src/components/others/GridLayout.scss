@@ -6,7 +6,7 @@ $grid-gap: 20px;
 }
 
 // Default grid layout: 2 columns
-.contact-grid {
+.responsive-grid {
   @include grid-container(2);  // Use the mixin with 2 columns by default
 
   // Media query for mobile (1 column)
