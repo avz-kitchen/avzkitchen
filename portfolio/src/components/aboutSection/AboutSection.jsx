@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./AboutSection.module.scss";
 import { motion, useInView } from "framer-motion";
 import GridLayout from "../others/GridLayout";
@@ -20,14 +20,23 @@ const variants = {
     },
   },
 };
+const roles = ["Designer", "Developer", "Illustrator"];
 
 const AboutSection = ({ isAboutPage }) => {
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-100px" });
+  const [currentRole, setCurrentRole] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prevRole) => (prevRole + 1) % roles.length);
+    }, 2000); // Change role every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="about-section">
-      <GridLayout columns={1}>
+      <GridLayout columns={2}>
         <motion.div
           className="about-avz"
           ref={ref}
@@ -44,18 +53,27 @@ const AboutSection = ({ isAboutPage }) => {
             </div>
             <div className="title">
               <h2>
-                a {"<"}
-                <motion.b whileHover={{ color: "blue" }}>Designer</motion.b>
+                a {"< "}
+                <motion.b whileHover={{ color: "blue" }}>
+                  {roles[currentRole]}
+                </motion.b>{" "}
                 {">"}
               </h2>
             </div>
           </motion.div>
         </motion.div>
-        <motion.div className="right-section">
-          <img src="/public/content.png" alt="Some Image" />
+        <motion.div>
+          <img src="/about/avz-anime.gif" alt="animated illustration of av" />
           {!isAboutPage && (
             <Link to="/about">
-              <button>About Me</button>
+              <button
+                style={{
+                  justifySelf: "center",
+                  marginLeft: "20%",
+                }}
+              >
+                About Me
+              </button>
             </Link>
           )}
         </motion.div>
