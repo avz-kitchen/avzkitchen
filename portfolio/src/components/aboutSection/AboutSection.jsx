@@ -6,7 +6,7 @@ import GridLayout from "../others/GridLayout";
 import { Link } from "react-router-dom";
 const variants = {
   initial: {
-    x: -500,
+    x: -300,
     y: 100,
     opacity: 0,
   },
@@ -24,7 +24,7 @@ const roles = ["Designer", "Developer", "Illustrator"];
 
 const AboutSection = ({ isAboutPage }) => {
   const ref = useRef();
-  const isInView = useInView(ref, { margin: "-100px" });
+  const isInView = useInView(ref, { margin: "-80px" });
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const AboutSection = ({ isAboutPage }) => {
   }, []);
   return (
     <section className="about-section">
-      <GridLayout columns={2}>
+      <GridLayout className="responsive-grid">
         <motion.div
           ref={ref}
           variants={variants}

@@ -2,13 +2,7 @@
 @import "../../variables.scss";
 
 .about-section {
-  display: grid;
-
-  @media screen and (max-width: 48rem) {
-    grid-template-columns: 1fr; 
-      gap: 1rem; 
-
-  }
+ 
 
 
   .titleContainer {
