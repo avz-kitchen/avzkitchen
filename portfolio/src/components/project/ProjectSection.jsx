@@ -24,7 +24,8 @@ const ProjectSection = ({ projects }) => {
             <div className="span-one-column">
               <span>{latestProject.skill}</span>
               <h5 className="project-title span-one-column">
-                {latestProject.title}
+                {latestProject.title} : <br />
+                {latestProject.subtitle}
               </h5>
             </div>
             <img

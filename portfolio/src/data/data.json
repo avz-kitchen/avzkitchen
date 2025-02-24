@@ -59,7 +59,7 @@
             "month": "06",
             "year": "2024",
             "tag": "Listen",
-            "demo": "https://www.figma.com/proto/mXRDv1Scb8THEIzC9XNZbj/AVZ_ProjectRyanair_app?page-id=3102%3A60&type=design&node-id=3163-2472&viewport=607%2C382%2C0.18&t=bbRK2fOt9HVWTbxQ-1&scaling=scale-down&starting-point-node-id=3163%3A2472&content-scaling=fixed",
+            "demo": "https://www.figma.com/proto/8bAJqMQWNhHPrbiLqkUQUP/Day-1-%3A-Sign-Up---Find-New-Music?page-id=8%3A256&node-id=11-1608&p=f&viewport=236%2C280%2C0.22&t=LoHXbGwdcNBjWaZR-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=11%3A1608",
             "overview": "Introducing a groundbreaking music recommendation app designed to revolutionize how users discover new songs and connect with their musical identity. With an intuitive swiping interface, users can pre-listen to tracks and find similar music tastes, transforming the music exploration journey into an engaging experience.",
             "dropdowns": [
                 {
@@ -86,7 +86,7 @@
             "text": "The app’s interface prioritizes intuitive navigation, with a particular focus on the registration and onboarding process, guiding users effortlessly through song previews and engaging swiping actions",
             "flow": "/project/keywi/keywi-feature.png",
             "conclusion": "This self-initiated project underscored the importance of actively listening to user needs and adapting the design based on real-world feedback. The iterative approach not only highlighted the critical role of personalized recommendations but also revealed how compelling content can inspire users to explore new music. These insights reinforce the significance of user-centered design, transforming music discovery into an exciting and enriching journey.",
-            "shot": "//project/keywi/keywi-shot.png"
+            "shot": "/project/keywi/keywi-shot.png"
         },
         {
             "category": "Branding",
@@ -95,6 +95,7 @@
             "subtitle": "Bahn Mi to go",
             "type": "Branding",
             "img": "/project/madamdo/madamdo-img.png",
+            "main": "/project/madamdo/madamdo-img.png",
             "desc": "focused on bringing authentic Vietnamese street food to Germany. The branding combines traditional Vietnamese aesthetics with modern design elements to appeal to a diverse audience.",
             "skill": "Branding",
             "isFeatured": true,
@@ -108,14 +109,15 @@
             "shot": "/project/madamdo/kmadam-do-shot.png"
         },
         {
-            "category": "Branding",
+            "category": "Web Development",
             "id": 6,
             "title": "Philip Kehela",
             "subtitle": "E-commerce Consultant",
             "type": "Branding",
             "img": "/project/pke/pke-img.png",
+            "main": "/project/pke/pke-img.png",
             "desc": "Philip Kehela is a digital commerce consultant who wanted to strengthen his online presence with a cohesive and modern personal brand. The project focused on creating a digital identity that conveys his expertise in the field of e-commerce, while ensuring a sleek and functional design for his website.",
-            "skill": "Branding",
+            "skill": "Web Development",
             "isFeatured": true,
             "month": "06",
             "year": "2024",

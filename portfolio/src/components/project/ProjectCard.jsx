@@ -17,7 +17,11 @@ const ProjectCard = ({ project, isHomePage }) => {
       <Link to={`/portfolio/${projectUrl}`}>
         <img src={project.img} alt={project.title} className="project-image" />
         <p className="project-skill">{project.skill}</p>
-        <h3 className="project-title">{project.title}</h3>
+        <h3 className="project-title">
+          {project.title}
+          : <br />
+          {project.subtitle}
+        </h3>
         {!isHomePage && <button className="underlined-b">View Project</button>}
       </Link>
     </div>
