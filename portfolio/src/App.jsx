@@ -11,6 +11,7 @@ import ProjectDetailRouter from "./components/ProjectDetailRouter";
 import About from "./components/pages/About";
 import ScrollToTop from "./components/others/ScrollToTop";
 import "./App.scss";
+import DataPrivacy from "./components/pages/DataPrivacy";
 
 const App = () => {
   const projects = portfolioData.portfolio;
@@ -32,6 +33,7 @@ const App = () => {
           />
           <Route path="/about" element={<About />} /> {/* About page */}
           <Route path="/contact" element={<ContactSection />} />
+          <Route path="/data" element={<DataPrivacy />} />
         </Routes>
       </div>
       <Footer />

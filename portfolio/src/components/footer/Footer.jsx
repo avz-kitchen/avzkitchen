@@ -32,8 +32,7 @@ const Footer = () => {
             <h3>Visual Studio</h3>
           </Link>
           <Link to="/about">About AVZ</Link>
-          <Link to="/about">Impressum</Link>
-          <Link to="/about">Data & Privacy</Link>
+          <Link to="/data">Data & Privacy</Link>
         </div>
         <div className="sitemap-category">
           <Link to="/portfolio">
@@ -50,14 +49,14 @@ const Footer = () => {
           </Link>
           <Link to="/contact">Contact Me</Link>
           <a
-            href="https://github.com"
+            href="https://github.com/avz-kitchen"
             target="_blank"
             rel="noopener noreferrer"
           >
             Github
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/avz-kitchen/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -73,9 +72,13 @@ const Footer = () => {
           </h4>
           <img src="/artichoke.png" className="span-four-column" />
         </GridLayout>
-        <p>
-          <span>© @artichoke.v</span>
-        </p>
+        <a
+          href="https://www.instagram.com/artichoke.v/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          © @artichoke.v{" "}
+        </a>
       </section>
     </footer>
   );
