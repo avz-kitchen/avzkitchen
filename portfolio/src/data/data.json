@@ -109,7 +109,7 @@
             "shot": "/project/madamdo/kmadam-do-shot.png"
         },
         {
-            "category": "Web Development",
+            "category": "Branding",
             "id": 6,
             "title": "Philip Kehela",
             "subtitle": "E-commerce Consultant",
@@ -124,9 +124,9 @@
             "tag": "Consult",
             "pdfUrl": "/files/pkebrand.pdf",
             "text": " This project involved building a strong personal brand for Philip Kehela, a digital commerce consultant, by designing and launching a refreshed digital presence. We developed a new website using Elementor, which brought his ideas to life through clean and intuitive design. Careful attention was given to selecting logos, fonts, and layout to ensure they communicated his approach to digital commerce effectively. The relaunch resulted in a visually appealing, user-friendly site that supports Philip's work in the industry.",
-            "flow": "/project/pke-feature.png",
+            "flow": "/project/pke/pke-feature.png",
             "conclusion": "In conclusion, this project successfully established a modern digital identity for Philip Kehela, enhancing his online presence as a digital commerce consultant. By designing a sleek, user-friendly website with Elementor, we translated his expertise into a visually appealing platform. The careful selection of logos, fonts, and layout effectively communicated his approach to digital commerce. This revitalized presence positions Philip for continued growth and engagement within the e-commerce landscape.",
-            "shot": "/project/pke-shot.png"
+            "shot": "/project/pke/pke-shot.png"
         }
     ]
 }
