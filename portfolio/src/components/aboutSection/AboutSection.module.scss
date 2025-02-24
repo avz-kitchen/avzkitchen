@@ -40,5 +40,11 @@ img{
       width: 420px;
       border-radius: 0.5rem;
       overflow: hidden;
-
+      background-position: center;
+      @media screen and (max-width: 840px) {
+      height: 320px;
+      width: auto;
+      align-self: center;
+    justify-self: center;
+      }
   }
