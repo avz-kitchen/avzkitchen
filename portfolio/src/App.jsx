@@ -44,7 +44,7 @@ const Home = () => {
 
   return (
     <>
-      <HeroSection title="Bit of pictogram, design ..." img="public/hero.png" />
+      <HeroSection title="Bit of pictogram, design ..." img="/hero.png" />
       <ProjectSection projects={projects || []} />
       <h1>
         ... and <Link>code</Link> ...
@@ -54,7 +54,7 @@ const Home = () => {
       <Link to="/portfolio">
         <div className="button-p">
           <h2>Explore Portfolio</h2>
-          <img src="/public/mouse-pointer-heart_17490452.svg" alt="Explore" />
+          <img src="/mouse-pointer-heart_17490452.svg" alt="Explore" />
         </div>
       </Link>
       <AboutSection isAboutPage={false} />

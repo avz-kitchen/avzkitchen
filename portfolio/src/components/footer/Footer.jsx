@@ -71,7 +71,7 @@ const Footer = () => {
           <h4 className="vertical-text span-two-column">
             Some photos, <br /> some moving images
           </h4>
-          <img src="/public/artichoke.png" className="span-four-column" />
+          <img src="/artichoke.png" className="span-four-column" />
         </GridLayout>
         <p>
           <span>© @artichoke.v</span>
