@@ -8,7 +8,7 @@
   z-index: 1000;
   padding: 0 120px;
   background-color: $light-background-color;
-    justify-content: space-between;
+  justify-content: space-between;
 
   &.menu-open {
     overflow: hidden;
@@ -79,10 +79,10 @@
   // Close button styling for mobile nav
   .close-button {
     display: none;
+    align-self: end;
     cursor: pointer;
-    font-size: 30px;
-    color: $dark-primary-color;
-    margin-top: 20px;
+    font-size: 40px;
+    color: $light-primary-color;
   }
 
   // Mobile-specific styles
@@ -114,13 +114,15 @@
         background-color: $light-background-color;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
+        padding: 20px;
         gap: 20px;
         opacity: 1;
         visibility: visible;
         z-index: 1001;
         transition: opacity 0.3s ease;
+      background-color: $dark-primary-color;
 
         a {
           font-size: 24px;
