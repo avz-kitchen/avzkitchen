@@ -77,7 +77,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          © @artichoke.v{" "}
+          © 2025 @artichoke.v
         </a>
       </section>
     </footer>

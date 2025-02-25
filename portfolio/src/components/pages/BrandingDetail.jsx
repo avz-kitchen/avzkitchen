@@ -8,7 +8,7 @@ import "./Portfolio.scss";
 const BrandingDetail = ({ project }) => {
   return (
     <div className="branding-detail-page">
-      <HeroSection title={project.title} img="public/hero.png" />
+      <HeroSection title={project.title} img={project.main} />
       <TextMedia
         title={project.subtitle}
         image={project.main}

@@ -2,49 +2,39 @@
 @import "../../variables.scss";
 
 .about-section {
- 
-
-
-  .titleContainer {
-
-    h1, h2 {
-      margin: 0;
-      padding: 0;
-    }
-
-    b {
-      font-weight: bold;
-      cursor: pointer;
-    }
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
 
     h1 {
-      font-size: 3rem;
-
-      @media screen and (max-width: 48rem) {
-        font-size: 2rem;
-      }
+      font-size: 24px;
     }
 
     h2 {
-      font-size: 2rem;
-
-      @media screen and (max-width: 48rem) {
-        font-size: 1.5rem;
-      }
+      font-size: 20px;
     }
   }
 
-}  
-img{
-
-      width: 420px;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      background-position: center;
-      @media screen and (max-width: 840px) {
-      height: 320px;
-      width: auto;
-      align-self: center;
-    justify-self: center;
-      }
+  .about-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
+
+  @media (max-width: 768px) {
+    .title {
+      h1 {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    .about-image {
+      width: 80%;
+    }
+  }
+}

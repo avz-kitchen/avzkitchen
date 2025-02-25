@@ -60,7 +60,11 @@ const AboutSection = ({ isAboutPage }) => {
           </div>
         </motion.div>
         <div>
-          <img src="/about/avz-anime.gif" alt="animated illustration of av" />
+          <img
+            className="about-image"
+            src="/about/avz-anime.gif"
+            alt="animated illustration of av"
+          />
           {!isAboutPage && (
             <Link to="/about">
               <button
