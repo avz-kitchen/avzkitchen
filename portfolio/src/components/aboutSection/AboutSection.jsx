@@ -52,10 +52,7 @@ const AboutSection = ({ isAboutPage }) => {
           <div className="title">
             <h2>
               a {"< "}
-              <motion.b whileHover={{ color: "blue" }}>
-                {roles[currentRole]}
-              </motion.b>{" "}
-              {">"}
+              <motion.b>{roles[currentRole]}</motion.b> {">"}
             </h2>
           </div>
         </motion.div>
