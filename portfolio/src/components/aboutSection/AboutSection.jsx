@@ -56,9 +56,17 @@ const AboutSection = ({ isAboutPage }) => {
             </h2>
           </div>
         </motion.div>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyItems: "center",
+            alignItems: "center",
+            gap: "1rem",
+          }}
+        >
           <img
-            className="about-image"
+            style={{ width: "85%" }}
             src="/about/avz-anime.gif"
             alt="animated illustration of av"
           />
