@@ -10,13 +10,14 @@
 
   .hero-image {
     min-width: 324px;
-    height: 727px;
+    height: 72vh;
     object-fit: cover;
-    object-position: right;
+    object-position: left;
     margin: 0;  // Ensure there's no margin around the image
  z-index: -200;
- border: 2px solid $light-primary-color;
            overflow:hidden ;
+             border-radius: 2%;
+
 
      // Responsive adjustments for mobile
     @media (max-width: 768px) {
