@@ -1,5 +1,5 @@
 .dropdown {
-  border-bottom: 1px solid black;
+  // border-bottom: 1px solid black;
   margin-bottom: 20px;
 
   .dropdown-header {
@@ -9,7 +9,7 @@
     cursor: pointer;
 
     h3 {
-      font-size: 24px;
+      font-size: 48px;
       margin: 0;
     }
 
@@ -31,12 +31,13 @@
     .first-dropdown-layout {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
-      align-items: end;
+      align-items: center;
       gap: 20px;
-
+padding-bottom: 24px;
       .dropdown-image {
-
-        border-radius: 12px;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 520px;
       }
 
       .dropdown-text {
@@ -50,8 +51,8 @@
         }
         img {
           @extend %image-styles;
-          max-width: 100%; 
-          max-height: auto; 
+          max-width: auto; 
+          height: 340px; 
         }
       }
     }
@@ -63,8 +64,8 @@
       justify-content: center;
         img {
           @extend %image-styles;
-          width: 80%; 
-          max-height: auto; 
+            max-width: auto; 
+          height: 540px; 
         }
       }
   }
@@ -73,5 +74,5 @@
 // Define shared styles for images
 %image-styles {
   object-fit: cover;
-  max-height: 540px; 
+  max-height: 520px; 
 }

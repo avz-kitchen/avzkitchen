@@ -12,13 +12,18 @@ const ProjectDetail = ({ project }) => {
 
   return (
     <>
-      <HeroSection title={project.title} img={project.img} />
+      <HeroSection
+        title={project.title}
+        img={project.img}
+        category={project.category}
+        year={project.year}
+      />
       <TextMedia
         title={project.subtitle}
         image={project.main}
         text={project.desc}
       />
-      <h2 style={{ textAlign: "left" }}>Insights</h2>
+      <h2 style={{ textAlign: "center" }}>Insights</h2>
       <div className="project-detail">
         {dropdowns.length > 0 ? (
           dropdowns.map((item, index) => (

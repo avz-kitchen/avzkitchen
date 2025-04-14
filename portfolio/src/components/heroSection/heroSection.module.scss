@@ -7,6 +7,15 @@
   .hero-title {
     margin: 0;  // Ensure there's no margin around the title
   }
+  .date {
+    font-size: 16px;
+    
+  }
+.tag{
+  background-color: grey;
+  padding: 4px 12px;
+  border-radius: 24%;
+}
 
   .hero-image {
     min-width: 324px;
