@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import GridLayout from "./GridLayout";
 import "./component.scss";
-const ShotDemo = ({ title, image, text, demo }) => {
+const ShotDemo = ({ title, image, subtitle, text, demo }) => {
   return (
     <section className="shot-demo">
       <h2>{title}</h2>
@@ -10,6 +10,7 @@ const ShotDemo = ({ title, image, text, demo }) => {
         <GridLayout columns={2}>
           {image && <img src={image} alt={image} />}
           <div className="demoBanner">
+            <h2>{subtitle}</h2>
             <p>{text}</p>
             <Link to={demo}>Demo App on Figma</Link>
           </div>

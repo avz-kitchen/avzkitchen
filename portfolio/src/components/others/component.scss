@@ -1,63 +1,73 @@
 $padding: 2rem;
+
 .text-media-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-  gap: 20px;
+  flex-direction: column; // Default to row layout
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; // Consistent spacing between columns
   max-width: 100%;
-   flex-wrap: wrap; 
-height: 80%;
+  flex-wrap: wrap;
+text-align: center;;
   h2 {
-    display: block; // Block so text wraps naturally
-    width: 66%;
-    max-width: 66%;
-    word-break: break-word;
+    flex: 1; // Allow h2 to take up available space
+    max-width: 66%; // Limit the width to prevent overlap
+    word-break: break-word; // Ensure long words break properly
     overflow-wrap: break-word;
     margin: 0;
-    font-size: clamp(2rem, 5vw, 4rem); // Makes sure the font doesn’t blow up
+    font-size: clamp(2rem, 5vw, 4rem); // Responsive font size
     line-height: 1.2;
-     flex-wrap: wrap; 
   }
 
   .rich-text {
-    width: 100%;
-    max-width: 34%;
-    word-break: break-word;
+    flex: 1; // Allow .rich-text to take up available space
+    max-width: 100%; // Limit the width to prevent overlap
+    word-break: break-word; // Ensure long words break properly
     overflow-wrap: break-word;
   }
 
   img {
-    max-width: 100%;
+    max-width: 60%;
     width: 60%;
     height: auto;
     object-fit: contain;
     border-radius: 12px;
   }
 
+  // Responsive layout for smaller screens
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: column; // Switch to column layout
+    align-items: center; // Center align items in column layout
 
     h2,
     .rich-text {
-      width: 100%;
+      width: 100%; // Full width for both
+      max-width: 100%; // Ensure no overlap
+      text-align: left; // Align text to the left for better readability
+      margin-bottom: 1rem; // Add spacing between elements
+    }
+
+    img {
+      width: 100%; // Make images responsive
       max-width: 100%;
+      margin-bottom: 1rem; // Add spacing below the image
     }
   }
 }
+
 .shot-demo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 2rem; // Consistent spacing
   text-align: center;
   max-width: 100%;
   overflow: hidden;
 
   h2 {
     margin: 0;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem); // Responsive font size
   }
 
   img {

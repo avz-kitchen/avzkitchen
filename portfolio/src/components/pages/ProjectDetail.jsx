@@ -45,6 +45,7 @@ const ProjectDetail = ({ project }) => {
         image={project.main}
         text={project.conclusion}
         demo={project.demo}
+        subtitle={project.subtitle}
       />
     </>
   );
