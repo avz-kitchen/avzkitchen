@@ -18,12 +18,13 @@ const BrandingDetail = ({ project }) => {
         image={project.main}
         text={project.desc}
       />
-      <h3>Brand Book</h3>
-      {project.pdfUrl && project.pdfUrl.length > 0 ? (
-        <PDFSlider pdfUrl={project.pdfUrl} />
-      ) : (
-        <p>No PDFs available for this project.</p>
-      )}
+      <h2>{project.title2}</h2>
+      <div className="two-images">
+        <img src={project.img} />
+        <img src={project.img2} />
+      </div>
+      <img src={project.design} className="full-image" />
+
       <TextImage image={project.flow} text={project.text} />
     </div>
   );

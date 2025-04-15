@@ -1,5 +1,29 @@
 $padding: 2rem;
-
+.two-images {
+  display: flex;
+    flex-direction: row; 
+    width: 100%;
+    gap : 2rem; // Consistent spacing between images
+    img{
+      width: 50%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+}
+.full-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding:  $padding 0;
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+}
 .text-media-container {
   display: flex;
   flex-direction: column; // Default to row layout
@@ -15,7 +39,6 @@ text-align: center;;
     word-break: break-word; // Ensure long words break properly
     overflow-wrap: break-word;
     margin: 0;
-    font-size: clamp(2rem, 5vw, 4rem); // Responsive font size
     line-height: 1.2;
   }
 
