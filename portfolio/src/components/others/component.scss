@@ -28,11 +28,13 @@ $padding: 2rem;
   display: flex;
   flex-direction: column; // Default to row layout
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 2rem; // Consistent spacing between columns
   max-width: 100%;
   flex-wrap: wrap;
 text-align: center;;
+height: auto;
+padding: 240px 0px;
   h2 {
     flex: 1; // Allow h2 to take up available space
     max-width: 100%; // Limit the width to prevent overlap
@@ -50,8 +52,8 @@ text-align: center;;
   }
 
   img {
-    max-width: 60%;
-    width: 60%;
+    max-width: 100%;
+    min-width: 80%;
     height: auto;
     object-fit: contain;
     border-radius: 12px;

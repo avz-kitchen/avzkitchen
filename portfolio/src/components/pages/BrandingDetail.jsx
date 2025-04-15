@@ -1,7 +1,7 @@
 import HeroSection from "../heroSection/HeroSection";
 import TextMedia from "../others/TextMedia";
 import TextImage from "../others/TextImage";
-import PDFSlider from ".././others/PDFSlider";
+import ShotDemo from "../others/ShotDemo";
 import "./Portfolio.scss";
 
 const BrandingDetail = ({ project }) => {
@@ -26,6 +26,12 @@ const BrandingDetail = ({ project }) => {
       <img src={project.design} className="full-image" />
 
       <TextImage image={project.flow} text={project.text} />
+      <ShotDemo
+        title={"Conclusion"}
+        image={project.main}
+        text={project.conclusion}
+        subtitle={project.subtitle}
+      />
     </div>
   );
 };

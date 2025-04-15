@@ -74,12 +74,12 @@
                 },
                 {
                     "title": "Building the Framework for Discovery",
-                    "image": "/project/keywi/keywi-process.png",
+                    "image": "/project/keywi/keywi-design.png",
                     "text": "With personas in mind, I developed a **dynamic, modular system** that adapts to user preferences. The goal was to create an app that doesn’t just recommend music—it evolves based on individual listening habits. I worked through multiple iterations in Figma, making sure every feature—from genre-based playlists to collaborative sessions—was tested for usability and social engagement."
                 },
                 {
                     "title": "Features That Bring Music to Life",
-                    "image": "/project/keywi/keywi-flow.png",
+                    "image": "/project/keywi/keywi-shots.png",
                     "text": "The final product incorporates features that make music discovery fun and social. Key functionalities include: real-time playlist sharing with friends, genre-based music explorations, and personalized suggestions based on listening behavior. The app also encourages collaboration by enabling users to contribute to shared playlists, making discovering new music feel like a team effort."
                 }
             ],
@@ -95,6 +95,7 @@
             "subtitle": "Bahn Mi to go",
             "type": "Branding",
             "img": "/project/madamdo/madamdo-logo.png",
+            "img2": "/project/madamdo/madamdo-img2.png",
             "main": "/project/madamdo/madamdo-img.png",
             "design": "/project/madamdo/madamdo-design.png",
             "desc": "focused on bringing authentic Vietnamese street food to Germany. The branding combines traditional Vietnamese aesthetics with modern design elements to appeal to a diverse audience.",
