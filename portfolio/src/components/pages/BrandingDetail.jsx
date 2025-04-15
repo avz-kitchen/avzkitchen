@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import HeroSection from "../heroSection/HeroSection";
 import TextMedia from "../others/TextMedia";
 import TextImage from "../others/TextImage";
@@ -8,7 +7,12 @@ import "./Portfolio.scss";
 const BrandingDetail = ({ project }) => {
   return (
     <div className="branding-detail-page">
-      <HeroSection title={project.title} img={project.main} />
+      <HeroSection
+        title={project.title}
+        img={project.main}
+        category={project.category}
+        year={project.year}
+      />
       <TextMedia
         title={project.subtitle}
         image={project.main}
