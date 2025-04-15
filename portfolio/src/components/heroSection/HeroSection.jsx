@@ -12,9 +12,9 @@ const HeroSection = ({
     <section className={styles["hero-section"]}>
       <GridLayout columns={6}>
         <div className={styles["span-two-columns"]}>
-          <span className={styles["tag"]}>{category}</span>
+          {category && <span className={styles["tag"]}>{category}</span>}
           <h1 className={`${styles["hero-title"]} `}>{title}</h1>
-          <span className={styles["date"]}>Year : {year}</span>
+          {year && <span className={styles["date"]}>Year : {year}</span>}{" "}
         </div>
         <img
           src={img}

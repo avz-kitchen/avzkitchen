@@ -1,16 +1,16 @@
 
 .text-media-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center; 
-  justify-content: center; 
+  justify-content: space-between; 
   gap: 20px; 
-  text-align: center; 
+  text-align: left; 
   max-width: 100%;
-  overflow: hidden;
+
   img {
   max-width: 100%; 
-   width: auto;
+   width: 60%;
   height: auto; 
   object-fit: contain;
     border-radius: 12px;
@@ -20,12 +20,15 @@
 .shot-demo {
   flex-direction: column;
   justify-content: center; 
+  align-items: center;
   gap: 20px; 
   text-align: left; 
   max-width: 100%;
   overflow: hidden;
+  
   a{
-    font-size: 40px;
+    font-size: 30px;
+
   }
   img {
   max-width: 100%; 
@@ -36,11 +39,12 @@
 }
 p{
     text-align: center;
+      padding: 0 80px;
+
 }
   .demo {
     background-color: #FFFFFF;
     border-radius: 12px;
-    align-items: end;
   }
 }
 

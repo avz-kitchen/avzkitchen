@@ -12,16 +12,16 @@
     
   }
 .tag{
-  background-color: grey;
+  background-color: #8CBEB7;
   padding: 4px 12px;
-  border-radius: 24%;
+  border-radius: 12px;
 }
 
   .hero-image {
     min-width: 324px;
     height: 72vh;
     object-fit: cover;
-    object-position: left;
+    object-position: right;
     margin: 0;  // Ensure there's no margin around the image
  z-index: -200;
            overflow:hidden ;

@@ -23,7 +23,7 @@ const ProjectDetail = ({ project }) => {
         image={project.main}
         text={project.desc}
       />
-      <h2 style={{ textAlign: "center" }}>Insights</h2>
+      {/* <h2 style={{ textAlign: "left" }}>Insights</h2> */}
       <div className="project-detail">
         {dropdowns.length > 0 ? (
           dropdowns.map((item, index) => (

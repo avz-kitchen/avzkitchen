@@ -26,7 +26,7 @@ background-color: $light-background-color;
 }
 /* Global padding for all pages */
 .page-wrapper {
-  padding: 54px 120px;
+  padding: 3.5rem 7.5rem;
 }
 
 @media (max-width: 1200px) {
@@ -51,7 +51,7 @@ section {
 text-align: left;
 padding: 0;}
 a {
-  font-family: 'M PLUS 1 Code', monospace; 
+  font-family: 'DM Sans', monospace; 
   text-decoration: none; 
   color: $light-primary-color; 
   
