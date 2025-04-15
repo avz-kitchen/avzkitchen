@@ -35,7 +35,7 @@ $padding: 2rem;
 text-align: center;;
   h2 {
     flex: 1; // Allow h2 to take up available space
-    max-width: 66%; // Limit the width to prevent overlap
+    max-width: 100%; // Limit the width to prevent overlap
     word-break: break-word; // Ensure long words break properly
     overflow-wrap: break-word;
     margin: 0;
