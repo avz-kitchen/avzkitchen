@@ -30,8 +30,9 @@ const Dropdown = ({ title, image, text, isFirst }) => {
             </div>
           ) : (
             <div className="dropdown-text">
-              {image && <img src={image} alt={title} />}
               <p>{text}</p>
+
+              {image && <img src={image} alt={title} />}
             </div>
           )}
         </div>

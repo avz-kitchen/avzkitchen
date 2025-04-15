@@ -1,77 +1,106 @@
-
+$padding: 2rem;
 .text-media-container {
   display: flex;
   flex-direction: row;
-  align-items: center; 
-  justify-content: space-between; 
-  gap: 20px; 
-  text-align: left; 
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 20px;
   max-width: 100%;
+   flex-wrap: wrap; 
+height: 80%;
+  h2 {
+    display: block; // Block so text wraps naturally
+    width: 66%;
+    max-width: 66%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 4rem); // Makes sure the font doesn’t blow up
+    line-height: 1.2;
+     flex-wrap: wrap; 
+  }
+
+  .rich-text {
+    width: 100%;
+    max-width: 34%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 
   img {
-  max-width: 100%; 
-   width: 60%;
-  height: auto; 
-  object-fit: contain;
+    max-width: 100%;
+    width: 60%;
+    height: auto;
+    object-fit: contain;
     border-radius: 12px;
+  }
 
-}
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    h2,
+    .rich-text {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
 }
 .shot-demo {
+  display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  gap: 20px; 
-  text-align: left; 
+  gap: 20px;
+  text-align: center;
   max-width: 100%;
   overflow: hidden;
-  
-  a{
-    font-size: 30px;
 
+  h2 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
   }
-  img {
-  max-width: 100%; 
-   width: auto;
-  height: auto; 
-  max-height: 560px;
-  object-fit: contain;
-}
-p{
-    text-align: center;
-      padding: 0 80px;
 
-}
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: $padding 0 0 $padding;
+
+    // ✅ Force centering inside grid cell
+    justify-self: center;
+    align-self: center;
+  }
+
   .demo {
     background-color: #FFFFFF;
     border-radius: 12px;
+    width: 100%;
   }
-}
 
-// PDFSlider
-.pdf-slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  .demoBanner {
+    background-color: #a1b0bf;
+    border-radius: 0 $padding $padding 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 
-  button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
-    &:hover {
-      background-color: #0056b3;
+    p {
+      text-align: center;
+      padding: 0 1rem;
     }
-  }
 
-  iframe {
-    border: none; /* Remove border from the iframe */
-    margin: 0 0 20px 0; /* Add some margin below the iframe */
- 
+    a {
+      border: 2px solid #23364a;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-radius: 8rem;
+      margin-top: 1rem;
+      display: inline-block;
+      text-decoration: none;
+    }
   }
 }

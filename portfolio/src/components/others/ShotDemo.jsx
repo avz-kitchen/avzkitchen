@@ -9,7 +9,7 @@ const ShotDemo = ({ title, image, text, demo }) => {
       <div className="demo">
         <GridLayout columns={2}>
           {image && <img src={image} alt={image} />}
-          <div>
+          <div className="demoBanner">
             <p>{text}</p>
             <Link to={demo}>Demo App on Figma</Link>
           </div>

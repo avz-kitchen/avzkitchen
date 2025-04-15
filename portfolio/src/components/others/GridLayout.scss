@@ -1,50 +1,34 @@
-$grid-gap: 20px;
+$grid-gap: 1.25rem; // 20px converted to rem
 
 @mixin grid-container($columns, $gap: $grid-gap) {
   grid-template-columns: repeat($columns, 1fr);
   grid-gap: $gap;
 }
 
-// Default grid layout: 2 columns
-.responsive-grid {
-  @include grid-container(2);  // Use the mixin with 2 columns by default
-
-  // Media query for mobile (1 column)
-  @media (max-width: 768px) {
-    @include grid-container(1);  // Use the mixin with 1 column on mobile
-  }
-}
-
-
+// Default grid layout
 .grid-layout {
   display: grid;
   width: 100%;
-  margin: 0; 
-  padding: 0; 
-   row-gap: 20px;
-  @include grid-container(2);
+  margin: 0;
+  padding: 0;
+  row-gap: $grid-gap;
+  @include grid-container(2); // Default to 2 columns
 
-  @media (max-width: 1200px) {
-    @include grid-container(2);
+  @media (max-width: 75rem) { // 1200px converted to rem
+    @include grid-container(2); // Keep 2 columns for medium screens
   }
 
-  @media (max-width: 768px) {
-    @include grid-container(1);
+  @media (max-width: 48rem) { // 768px converted to rem
+    @include grid-container(1); // Switch to 1 column for smaller screens
   }
-
-
 }
 
 .grid-item {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  box-sizing: border-box; 
-  margin: 0; 
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
 }
 
 .span-one-column {
@@ -57,33 +41,33 @@ $grid-gap: 20px;
 }
 
 ul.span-three-column {
-  list-style: none; 
+  list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; 
-  justify-content: flex-start; 
-  align-items: flex-start; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   li {
-    display: inline; 
+    display: inline;
+
     a {
-    font-size: 80px;
-      text-decoration: none; 
-      padding: 10px; 
+      font-size: 5rem; // 80px converted to rem
+      text-decoration: none;
+      padding: 0.625rem; // 10px converted to rem
       transition: color 0.3s ease;
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 40rem) { // 640px converted to rem
     li {
-      display: block; 
+      display: block;
+
       a {
-        font-size: 32px;
+        font-size: 2rem; // 32px converted to rem
       }
     }
-
-  
-}
+  }
 }
 
 

@@ -42,7 +42,7 @@ const ProjectDetail = ({ project }) => {
       <TextImage image={project.flow} text={project.text} />
       <ShotDemo
         title={"Conclusion"}
-        image={project.shot}
+        image={project.main}
         text={project.conclusion}
         demo={project.demo}
       />

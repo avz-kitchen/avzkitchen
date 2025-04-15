@@ -26,6 +26,7 @@ h1 {
 
 h2 {
   font-size: clamp(1.5rem, 5vw + 1rem, 80px);
+  font-family: IBM Plex serif, serif;
   /* Responsive font size */
   white-space: nowrap;
 }
