@@ -1,10 +1,6 @@
 .dropdown {
   margin-bottom: 2rem;
 
-  p {
-    font-size: 1rem;
-  }
-
   .dropdown-header {
     display: flex;
     justify-content: space-between;
@@ -12,13 +8,13 @@
     cursor: pointer;
 
     h3 {
-      font-size: 3rem;
+      font-size: 2rem;
       margin: 0;
       text-align: left;
     }
 
     .dropdown-icon {
-      font-size: 3.75rem;
+      font-size: 2.5rem;
       transition: transform 0.3s;
 
       &.open {
@@ -28,72 +24,60 @@
   }
 
   .dropdown-content {
+    display: grid;
     gap: 2rem;
-    text-align: left;
-    justify-content: center;
     align-items: center;
+    text-align: left;
 
-    .first-dropdown-layout {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      align-items: center;
-      gap: 2rem;
-      padding-bottom: 1.5rem;
+    &.image-left-text-right {
+      grid-template-columns: 1fr 1fr; // Image on the left, text on the right
+    }
 
-      .dropdown-image {
-        border-radius: 0.5rem;
-        overflow: hidden;
-        height: 32.5rem; // 520px converted to rem
-      }
-
-      .dropdown-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-
-        p {
-          margin: 0 0 0.625rem; // 10px converted to rem
-        }
-
-        img {
-          @extend %image-styles;
-          height: 21.25rem; // 340px converted to rem
-        }
-      }
+    &.image-right-text-left {
+      grid-template-columns: 1fr 2fr; // Text on the left, image on the right
     }
 
     .dropdown-text {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      p {
+        margin: 0 0 1rem;
+      }
+    }
+
+    .dropdown-image {
+      border-radius: 0.5rem;
+      overflow: hidden;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
 
       img {
-        @extend %image-styles;
-        height: 26.25rem; // 420px converted to rem
+        width: 100%;
+        height: 80%;
+        object-fit: cover; // Ensure the image fills the container while maintaining aspect ratio
       }
     }
   }
 
   // Responsive layout for smaller screens
-  @media (max-width: 48rem) { // 768px converted to rem
+  @media (max-width: 768px) {
     .dropdown-content {
-      flex-direction: column;
+      display: flex;
+      flex-direction: column; // Stack items vertically
+      gap: 1rem;
+
+      &.image-left-text-right,
+      &.image-right-text-left {
+        flex-direction: column; // Ensure consistent stacking for mobile
+      }
     }
 
-    .first-dropdown-layout {
-      grid-template-columns: 1fr;
-    }
-
-    .dropdown-text {
-      flex-direction: column;
+    .dropdown-image {
+      width: 100%; // Ensure the image takes full width
+      height: auto; // Maintain aspect ratio
     }
   }
-}
-
-// Define shared styles for images
-%image-styles {
-  object-fit: cover;
-  max-height: 32.5rem; // 520px converted to rem
 }
