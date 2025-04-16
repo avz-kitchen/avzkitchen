@@ -1,25 +1,24 @@
-$grid-gap: 1.25rem; // 20px converted to rem
+$grid-gap: 1.25rem;
 
 @mixin grid-container($columns, $gap: $grid-gap) {
   grid-template-columns: repeat($columns, 1fr);
   grid-gap: $gap;
 }
 
-// Default grid layout
 .grid-layout {
   display: grid;
   width: 100%;
   margin: 0;
   padding: 0;
   row-gap: $grid-gap;
-  @include grid-container(2); // Default to 2 columns
+  @include grid-container(2);
 
-  @media (max-width: 75rem) { // 1200px converted to rem
-    @include grid-container(2); // Keep 2 columns for medium screens
+  @media (max-width: 1200px) {
+    @include grid-container(2);
   }
 
-  @media (max-width: 48rem) { // 768px converted to rem
-    @include grid-container(1); // Switch to 1 column for smaller screens
+  @media (max-width: 768px) {
+    @include grid-container(1);
   }
 }
 
@@ -52,22 +51,20 @@ ul.span-three-column {
     display: inline;
 
     a {
-      font-size: 5rem; // 80px converted to rem
+      font-size: 5rem;
       text-decoration: none;
-      padding: 0.625rem; // 10px converted to rem
+      padding: 0.625rem;
       transition: color 0.3s ease;
     }
   }
 
-  @media (max-width: 40rem) { // 640px converted to rem
+  @media (max-width: 640px) {
     li {
       display: block;
 
       a {
-        font-size: 2rem; // 32px converted to rem
+        font-size: 2rem;
       }
     }
   }
 }
-
-

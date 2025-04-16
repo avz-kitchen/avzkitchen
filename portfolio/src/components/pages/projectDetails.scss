@@ -42,7 +42,7 @@ $swiper-margin: 20px;
 }
 .project-detail {
   display: grid;
-  grid-template-columns: 1fr; // Default to a single column
+  grid-template-columns: 2fr; // Default to a single column
   gap: 20px;
 
   @media (min-width: 768px) {

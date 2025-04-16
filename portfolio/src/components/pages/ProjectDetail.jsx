@@ -24,7 +24,7 @@ const ProjectDetail = ({ project }) => {
         text={project.desc}
       />
       {/* <h2 style={{ textAlign: "left" }}>Insights</h2> */}
-      <div className="project-detail">
+      <div className="project-detail ">
         {dropdowns.length > 0 ? (
           dropdowns.map((item, index) => (
             <Dropdown

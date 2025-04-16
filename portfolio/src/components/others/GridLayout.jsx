@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import "./GridLayout.scss";
 import React from "react";
+
 const GridLayout = ({ columns, children, gap = 20 }) => {
   const gridStyle = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -20,9 +21,14 @@ const GridLayout = ({ columns, children, gap = 20 }) => {
 };
 
 GridLayout.propTypes = {
-  columns: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired,
-  gap: PropTypes.number,
+  columns: PropTypes.number.isRequired, // Number of columns for the grid
+  children: PropTypes.node.isRequired, // Grid items
+  gap: PropTypes.number, // Gap between grid items
+};
+
+GridLayout.defaultProps = {
+  columns: 2, // Default to 2 columns
+  gap: 20, // Default gap of 20px
 };
 
 export default GridLayout;

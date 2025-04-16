@@ -6,16 +6,14 @@ const ShotDemo = ({ title, image, subtitle, text, demo }) => {
   return (
     <section className="shot-demo">
       <h2>{title}</h2>
-      <div className="demo">
-        <GridLayout columns={2}>
-          {image && <img src={image} alt={image} />}
-          <div className="demoBanner">
-            <h2>{subtitle}</h2>
-            <p>{text}</p>
-            <Link to={demo}>Demo App on Figma</Link>
-          </div>
-        </GridLayout>
-      </div>
+      <GridLayout columns={2}>
+        {image && <img src={image} alt={image} />}
+        <div className="demoBanner">
+          <h2>{subtitle}</h2>
+          <p>{text}</p>
+          <Link to={demo}>Discover</Link>
+        </div>
+      </GridLayout>
     </section>
   );
 };

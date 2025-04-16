@@ -12,33 +12,36 @@ const ProjectSection = ({ projects }) => {
   // Find the latest project
   const latestProject = projects.find((project) => project.isLatest);
   const featuredProjects = projects.filter((project) => project.isFeatured);
+
   return (
     <section className="project-section">
-      {latestProject ? (
-        <Link
-          to={`/portfolio/${latestProject.title
-            .replace(/\s+/g, "-")
-            .toLowerCase()}`}
-        >
-          <GridLayout columns={3}>
-            <div className="span-one-column">
-              <span>{latestProject.skill}</span>
-              <h5 className="project-title span-one-column">
-                {latestProject.title} : <br />
-                {latestProject.subtitle}
-              </h5>
+      {/* Render the latest project */}
+      {latestProject && (
+        <div className="latest-project">
+          <Link
+            to={`/portfolio/${latestProject.title
+              .replace(/\s+/g, "-")
+              .toLowerCase()}`}
+          >
+            <div className="latest-project-card">
+              <div className="latest-project-details">
+                <span>{latestProject.skill}</span>
+                <h3 className="project-title">
+                  {latestProject.title} : <br />
+                  {latestProject.subtitle}
+                </h3>
+              </div>
+              <img
+                src={latestProject.img}
+                alt={latestProject.title}
+                className="project-image"
+              />
             </div>
-            <img
-              src={latestProject.img}
-              alt={latestProject.title}
-              className="project-image span-two-columns"
-            />
-          </GridLayout>
-        </Link>
-      ) : (
-        <p>No latest project available.</p>
+          </Link>
+        </div>
       )}
 
+      {/* Render featured projects */}
       {featuredProjects.length > 0 ? (
         <GridLayout columns={3}>
           {featuredProjects.map((project) => (
