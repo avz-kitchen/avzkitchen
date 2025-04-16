@@ -48,9 +48,7 @@ const Home = () => {
     <>
       <HeroSection title="Bit of pictogram, design ..." img="/hero.png" />
       <ProjectSection projects={projects || []} />
-      <h1>
-        ... and <Link>code</Link> ...
-      </h1>
+
       {/* <h2>with some motion in pixels..</h2> */}
 
       <Link to="/portfolio">

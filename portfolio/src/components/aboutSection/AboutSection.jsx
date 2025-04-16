@@ -37,12 +37,7 @@ const AboutSection = ({ isAboutPage }) => {
   return (
     <section className="about-section">
       <GridLayout className="responsive-grid">
-        <motion.div
-          ref={ref}
-          variants={variants}
-          initial="initial"
-          animate={isInView ? "animate" : "initial"}
-        >
+        <div>
           <div className="title">
             <h1>
               Hello, {"I'm "}
@@ -55,7 +50,7 @@ const AboutSection = ({ isAboutPage }) => {
               <motion.b>{roles[currentRole]}</motion.b> {">"}
             </h2>
           </div>
-        </motion.div>
+        </div>
         <div
           style={{
             display: "flex",

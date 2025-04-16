@@ -1,58 +1,125 @@
 @import "../../variables.scss";
 
 .contact-section {
-  max-width: 100vw;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  a {
-    font-size: 32px;
-  }
-
-  .formContainer {
-    grid-column: span 1;
-    flex-direction: column;
+  .contact-container {
+    display: flex;
+    flex-direction: row; // Default to column layout
+    gap: 2rem;
     width: 100%;
-    padding: 1rem; // Default padding for larger screens
-  gap: 2rem;
-    @media screen and (max-width: 48rem) {
-      grid-column: span 1;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem; // Space between rows
-    }
+    max-width: 1200px;
 
+    .mail-to {
+      text-align: center;
 
-  }
-    form {
+      a {
+        font-size: 4rem;
+        color: $light-primary-color;
+        text-decoration: none;
 
-
-      input,
-      textarea {
-        padding: 1rem;
-        background-color: transparent;
-        border: 2px solid $light-primary-color;
-        color: $light-text-color;
-        border-radius: 0.3125rem;
-width: 100%;
-        @media screen and (max-width: 48rem) {
-          padding: 0.75rem; // Reduced padding for smaller screens
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
-  // Ensure the form is responsive on mobile by stacking in rows
-  @media screen and (max-width: 48rem) {
+
     .formContainer {
       display: flex;
-      flex-direction: row;
-      gap: 1.25rem; // Spacing between form elements on mobile
-    }
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
 
-    .formContainer form {
-      flex-direction: column; // Ensure the form elements are in rows (default behavior)
-    }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
 
-    .formContainer form input,
-    .formContainer form textarea {
-      width: 100%; // Ensure form elements take full width in mobile view
+        input,
+        textarea {
+          padding: 1rem;
+          background-color: transparent;
+          border: 2px solid $light-primary-color;
+          color: $light-text-color;
+          border-radius: 0.3125rem;
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+            border-color: #90A252;
+          }
+        }
+
+        button {
+          padding: 1rem 2rem;
+          background-color: $light-primary-color;
+          color: $light-background-color;
+          border: none;
+          border-radius: 120px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #90A252;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .error-message {
+          color: red;
+          font-size: 0.875rem;
+        }
+
+        .success-message {
+          color: green;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact-container {
+      flex-direction: column; // Switch to row layout on mobile
+      gap: 1rem;
+      .mail-to,
+      .formContainer {
+        flex: 1; // Allow equal space for both sections
+      }
+
+      .mail-to {
+        text-align: left;
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        a {
+          font-size: 2rem;
+        }
+      }
+
+      .formContainer {
+        form {
+          gap: 0.75rem;
+
+          input,
+          textarea {
+            padding: 0.75rem;
+          }
+
+          button {
+            padding: 0.75rem;
+          }
+        }
+      }
     }
   }
 }

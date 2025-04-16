@@ -69,16 +69,16 @@ button {
   /* Responsive font size */
   font-weight: 500;
   font-family: "Avenir";
-  background-color: #D8C0CE;
+  background-color: #85A9AD;
   cursor: pointer;
-  transition: border-color 0.25s;
   border-radius: 120px;
+  color: #F9FBFB;
+  border: none;
 }
 
 button:hover {
-  background-color: #C3A447;
-  color: #702034;
-  border: 2px solid #702034;
+  background-color: #738242;
+  color: #F9FBFB;
 
 }
 

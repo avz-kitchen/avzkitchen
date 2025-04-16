@@ -1,16 +1,23 @@
 @import "../../variables.scss";
+
 .footer {
   color: $light-text-color;
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 40px;
   overflow: hidden;
+  padding: 2rem;
+
   .footer-content {
     display: grid;
-    grid-column: 3;
+    grid-template-columns: repeat(3, 1fr); // Default to 3 columns
+    gap: 2rem;
     align-items: start;
-    text-align: left; 
+    text-align: left;
+
     p {
       margin: 0;
       font-size: 18px;
@@ -25,27 +32,30 @@
     grid-column: span 3;
     list-style: none;
     text-align: center;
-    padding: 0 120px;
   }
 
   .sitemap {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); // Default to 4 columns
     gap: 20px;
-    justify-items: start; // Centers content inside the grid
+    justify-items: start;
     align-items: center;
     margin-top: 20px;
-    padding: 0px 120px;
+    padding: 0 120px;
 
     .sitemap-category {
       display: flex;
       flex-direction: column;
-      align-items: start; // Centering items inside category
+      align-items: flex-start;
 
       a {
         text-decoration: none;
         font-size: 18px;
         margin-bottom: 5px;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -54,11 +64,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 
     img {
-      width:max-content ;
+      width: max-content;
       height: auto;
-      display:block;
+      display: block;
       margin: auto;
     }
 
@@ -72,35 +83,45 @@
     }
   }
 
+  // Responsive adjustments for screens <= 1024px (Two Columns)
+  @media (max-width: 1024px) {
+    .sitemap {
+      grid-template-columns: repeat(2, 1fr); // Switch to 2 columns
+      padding: 0 48px;
+    }
+
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr); // Adjust to 2 columns
+    }
+
+    .copyright img {
+      width: 400px;
+    }
+  }
+
   // Responsive adjustments for screens <= 768px (Two Columns)
   @media (max-width: 768px) {
-
     .sitemap {
-      grid-template-columns: repeat(2, 1fr);  
-      justify-items: flex-start; 
-    padding: 12px 24px;
+      grid-template-columns: repeat(2, 1fr); // Keep 2 columns
+      justify-items: flex-start;
+      padding: 12px 24px;
+    }
 
-    }
-    .copyright img {
-      width: 520px; 
-    }
     .sitemap-category {
-      align-items: center; 
-
-    ul.span-three-column {
-      display: flex;
-      justify-content: space-between;
+      align-items: flex-start;
     }
 
+    .copyright img {
+      width: 320px;
+    }
   }
 
   // Responsive adjustments for screens <= 640px (One Column)
   @media (max-width: 640px) {
     .sitemap {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; // Switch to 1 column
       text-align: center;
-          padding: 12px 24px;
-
+      padding: 12px 24px;
     }
 
     .sitemap-category {
@@ -112,6 +133,13 @@
       flex-direction: column;
       align-items: center;
     }
+
+    .copyright img {
+      width: 240px;
+    }
+
+    .copyright span {
+      font-size: 36px;
+    }
   }
-}
 }
