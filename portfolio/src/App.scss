@@ -61,14 +61,14 @@ a {
 
 .logo {
   height: 4.375rem;
-  font-size: 64px;
+  font-size: 44px;
   font-weight: 800;
-  color: $light-primary-color;
+  color: $light-secondary-color;
   text-align: left;
   transition: filter 300ms;
-
   &:hover {
-    filter: drop-shadow(0 0 0.125rem $dark-primary-color);
+   color: $dark-primary-color;
+    filter: brightness(0.8);
   }
 }
 

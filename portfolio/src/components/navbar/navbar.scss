@@ -129,6 +129,7 @@
           padding: 20px 0;
           width: 100%;
           text-align: center;
+          color: $dark-text-color;
         }
       }
     }
@@ -138,11 +139,14 @@
       display: flex;
       grid-column: span 1;
       justify-content: flex-end;
+      
     }
 
     // Show close button in mobile full-screen nav
     .close-button {
       display: block;
+                color: $dark-text-color;
+
     }
   }
 }
