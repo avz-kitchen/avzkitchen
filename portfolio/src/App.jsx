@@ -9,6 +9,7 @@ import portfolioData from "./data/data.json";
 import ProjectSection from "./components/project/ProjectSection";
 import ProjectDetailRouter from "./components/ProjectDetailRouter";
 import About from "./components/pages/About";
+import Resume from "./components/pages/Resume";
 import ScrollToTop from "./components/others/ScrollToTop";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
@@ -33,6 +34,7 @@ const App = () => {
           />
           <Route path="/about" element={<About />} /> {/* About page */}
           <Route path="/contact" element={<ContactSection />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="/data" element={<DataPrivacy />} />
         </Routes>
       </div>
