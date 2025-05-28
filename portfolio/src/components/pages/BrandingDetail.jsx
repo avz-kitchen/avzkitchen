@@ -31,6 +31,7 @@ const BrandingDetail = ({ project }) => {
         image={project.main}
         text={project.conclusion}
         subtitle={project.subtitle}
+        demo={project.demo}
       />
     </div>
   );

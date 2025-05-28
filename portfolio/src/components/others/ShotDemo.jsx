@@ -11,7 +11,9 @@ const ShotDemo = ({ title, image, subtitle, text, demo }) => {
         <div className="demoBanner">
           <h2>{subtitle}</h2>
           <p>{text}</p>
-          <Link to={demo}>Discover</Link>
+          <Link to={demo} target="_blank" rel="noopener noreferrer">
+            Discover
+          </Link>
         </div>
       </GridLayout>
     </section>
