@@ -18,19 +18,15 @@ const DataPrivacy = () => {
         (GDPR) is:
       </p>
       <p style={{ fontWeight: "bold" }}>
-        AVZ Kitchen
+        AVZ Kitchen Angelica Valenzuela
         <br />
-        70862 Höchenschwand
+        Germany <br />
         <br />
-        Germany
-        <br />
-        Tel.: +49 174 670 5843
-        <br />
-        E-Mail: hello@avzkitchen.com
+        E-Mail: hello@avzkitchen.de
       </p>
       <h3>2. Collection of General Data and Information</h3>
       <p>
-        The website of [Your Company] collects a series of general data and
+        The website of AVZ Kitchen collects a series of general data and
         information when a data subject or an automated system calls up the
         website. This general data and information are stored in the server log
         files.
