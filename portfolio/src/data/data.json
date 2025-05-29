@@ -134,6 +134,30 @@
             "conclusion": "In conclusion, this project successfully established a modern digital identity for Philip Kehela, enhancing his online presence as a digital commerce consultant. By designing a sleek, user-friendly website with Elementor, we translated his expertise into a visually appealing platform. The careful selection of logos, fonts, and layout effectively communicated his approach to digital commerce. This revitalized presence positions Philip for continued growth and engagement within the e-commerce landscape.",
             "shot": "/project/pke/pke-shot.png",
             "demo": "https://philipkehela.de/"
+        },
+        {
+            "category": "Branding",
+            "id": 6,
+            "title": "HsSHo",
+            "subtitle": "Hay,soSpicyHotoil",
+            "type": "Branding",
+            "img": "/project/hssho/hssho-logo.png",
+            "img2": "/project/hssho/hssho-img2.jpg",
+            "main": "/project/hssho/hssho-main.png",
+            "design": "/project/hssho/hssho-design.png",
+            "desc": "HsSHo is a concept brand born from the slow burn of homemade chili oil and transformed into a visual language of heat, mystique, and attitude. What started in the kitchen now lives in bold graphics and wearable design — led by a signature T-shirt collection that channels fire into form. It’s a brand that lingers — sharp, seductive, and unapologetically bold.",
+            "skill": "Illustration",
+            "isFeatured": true,
+            "month": "05",
+            "year": "2025",
+            "tag": "Consult",
+            "pdfUrl": "",
+            "title2": "A little lingers",
+            "text": "Inspired by the homemade chili oil my mother makes, Hay,SoSpicyHotOil is a self-initiated branding project that explores the ritual, fire, and sensuality behind handcrafted heat. I developed the visual identity, custom illustration, and packaging design to reflect a bold, seductive tone — where flavor lingers and fire speaks in whispers. The process blended traditional inspiration with modern aesthetics, using storytelling and strong sensory cues to create a product that feels as mysterious as it is mouthwatering.",
+            "flow": "/project/hssho/hssho-label.png",
+            "conclusion": "This project allowed me to fully integrate illustration, branding, and packaging into a cohesive digital experience — blending bold visual storytelling with strategic design thinking. From concept to execution, Hay,SoSpicyHotOil reflects my ability to craft emotionally resonant, visually striking work rooted in narrative.",
+            "shot": "/project/pke/pke-shot.png",
+            "demo": "https://www.behance.net/gallery/227050435/HaysoSpiceHotoil"
         }
     ]
 }
