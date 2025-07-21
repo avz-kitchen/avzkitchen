@@ -37,7 +37,7 @@ const ContactSection = () => {
       <div className="contact-container">
         <div className="mail-to">
           <h1>Mail to:</h1>
-          <a href="mailto:hello@avzkitchen.com">hello@avzkitchen.com</a>
+          <a href="mailto:avzkitchen@gmail.com">avzkitchen@gmail.com</a>
         </div>
 
         <div className="formContainer">
