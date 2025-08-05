@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useRef, useState, useEffect } from "react";
-import '../../app.scss';
+import "../../App.scss";
 import { motion, useInView } from "framer-motion";
 import GridLayout from "../others/GridLayout";
 import { Link } from "react-router-dom";
