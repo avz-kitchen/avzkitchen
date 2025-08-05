@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import "./Dropdown.scss";
+import "./dropdown.scss";
 
 const Dropdown = ({ title, image, text, isFirst }) => {
   const [isOpen, setIsOpen] = useState(true); // Default to closed
