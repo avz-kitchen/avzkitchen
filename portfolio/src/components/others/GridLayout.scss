@@ -1,4 +1,4 @@
-$grid-gap: 1.25rem;
+$grid-gap: 1rem;
 
 @mixin grid-container($columns, $gap: $grid-gap) {
   grid-template-columns: repeat($columns, 1fr);
@@ -7,17 +7,18 @@ $grid-gap: 1.25rem;
 
 .grid-layout {
   display: grid;
-  width: 100%;
   margin: 0;
   padding: 0;
+  column-gap: $grid-gap; 
   row-gap: $grid-gap;
+  
   @include grid-container(2);
 
   @media (max-width: 1200px) {
     @include grid-container(2);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     @include grid-container(1);
   }
 }
@@ -28,6 +29,7 @@ $grid-gap: 1.25rem;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  align-self: center;
 }
 
 .span-one-column {
@@ -37,7 +39,12 @@ $grid-gap: 1.25rem;
 .span-two-columns {
   grid-column: span 2;
   overflow: hidden;
+
+  @media (max-width: 900px) {
+    grid-column: span 1;
+  }
 }
+
 
 ul.span-three-column {
   list-style: none;
@@ -58,13 +65,49 @@ ul.span-three-column {
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+
     li {
       display: block;
 
       a {
         font-size: 2rem;
       }
+    }
+  }
+}
+
+/* Extra responsiveness for mobile */
+@media (max-width: 600px) {
+  .grid-layout {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+ height: fit-content;
+  }
+
+  .grid-layout > * {
+    width: 100% !important;   // Ensure all children fill the container
+    box-sizing: border-box;
+  }
+
+  .span-two-columns,
+  .span-one-column {
+    width: 100% !important;
+    grid-column: auto;
+
+  }
+
+  ul.span-three-column {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    li a {
+      font-size: 1.2rem;
+      word-break: break-word;
     }
   }
 }

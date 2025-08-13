@@ -5,22 +5,24 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-padding: 2rem;
-gap: 0.5rem;
+  padding: 2rem;
+  gap: 0.5rem;
+
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // Default to 3 columns
+    grid-template-columns: repeat(3, 1fr);
     align-items: start;
     text-align: left;
     height: 40vh;
+    width: 100%;
+    gap: 2rem;
   }
-
-
 
   .sitemap {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 
     .sitemap-category {
       display: flex;
@@ -38,95 +40,139 @@ gap: 0.5rem;
       }
     }
   }
-.contact-links{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-.social-links {
+
+  .contact-links {
     display: flex;
-    gap: 1rem;
-    align-items: center;}
-  a {
-    text-decoration: none;
-    font-size: 18px;
-    padding: 0.3rem 0.8rem;
-    border: 1.5px solid $light-primary-color;
-    border-radius: 2rem;
-    font-size: 1.25rem;
-    color: $light-primary-color;
-    background: transparent;    &:hover {
-      text-decoration: underline;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    flex-wrap: wrap;
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 1.25rem;
+      padding: 0.3rem 0.8rem;
+      border: 1.5px solid $light-primary-color;
+      border-radius: 2rem;
+      color: $light-primary-color;
+      background: transparent;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
-}
-.copyright {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; // Distribute items with space between
-  align-items: center;
-  padding-top: 2rem;
 
+  .copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    width: 100%;
 
+    a,
+    span,
+    img {
+      margin: 0 0.5rem;
+      font-size: 1rem;
+      word-break: break-word;
+    }
+  }
 
-}
   // Responsive adjustments for screens <= 1024px (Two Columns)
   @media (max-width: 1024px) {
-    .sitemap {
-      grid-template-columns: repeat(2, 1fr); // Switch to 2 columns
-      padding: 0 48px;
-    }
-
     .footer-content {
-      grid-template-columns: repeat(2, 1fr); // Adjust to 2 columns
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
 
-    .copyright img {
-      width: 400px;
-    }
-  }
-
-  // Responsive adjustments for screens <= 768px (Two Columns)
-  @media (max-width: 768px) {
     .sitemap {
-      grid-template-columns: repeat(2, 1fr); // Keep 2 columns
-      justify-items: flex-start;
-      padding: 12px 24px;
-    }
-
-    .sitemap-category {
+      flex-direction: column;
       align-items: flex-start;
+      gap: 1.5rem;
+      padding: 0 24px;
     }
 
     .copyright img {
-      width: 320px;
+      width: 200px;
     }
   }
 
-  // Responsive adjustments for screens <= 640px (One Column)
-  @media (max-width: 640px) {
-    .sitemap {
-      grid-template-columns: 1fr; // Switch to 1 column
-      text-align: center;
-      padding: 12px 24px;
-    }
-
-    .sitemap-category {
-      align-items: center;
-    }
-
+  // Responsive adjustments for screens <= 768px (Stacked)
+  @media (max-width: 768px) {
     .footer-content {
-      display: flex;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .sitemap {
       flex-direction: column;
       align-items: center;
+      gap: 1rem;
+      padding: 12px 12px;
+    }
+
+    .sitemap-category {
+      align-items: center;
+    }
+
+    .contact-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      a {
+        font-size: 1rem;
+      }
+    }
+
+    .copyright {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 1rem;
+
+      a,
+      span {
+        margin: 0.25rem 0;
+        font-size: 0.95rem;
+      }
+    }
+
+
+    .copyright span {
+      font-size: 28px;
+    }
+  }
+
+  // Responsive adjustments for screens <= 480px (Single Column)
+  @media (max-width: 480px) {
+    padding: 1rem 0.5rem;
+margin: 0;
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      padding: 0;
+    }
+
+    .sitemap {
+      padding: 0 4px;
     }
 
     .copyright img {
-      width: 240px;
+      width: 100px;
     }
 
     .copyright span {
-      font-size: 36px;
+      font-size: 20px;
     }
   }
 }

@@ -27,7 +27,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             className="logo"
           >
-            AVZKitchen
+            AVZKITCHEN
           </motion.span>
         </Link>
         <div className="hamburger" onClick={toggleMenu}>
