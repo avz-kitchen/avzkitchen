@@ -62,8 +62,8 @@ const AboutSection = ({ isAboutPage }) => {
         >
           <img
             style={{ width: "85%" }}
-            src="/about/avz-anime.gif"
-            alt="animated illustration of av"
+            src="/about/avz-profile.png"
+            alt="a Portrait of Angelica Valenzuela"
           />
           {!isAboutPage && (
             <Link to="/about">
