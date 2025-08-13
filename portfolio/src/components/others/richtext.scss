@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+
+.richtext {
+  .richtext-paragraph {
+    font-size: clamp(1.2rem, 6vw, 5rem); // More responsive scaling
+    line-height: 1.2;
+    text-align: left;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: $light-text-color;
+    word-break: break-word;
+  }
+
+  .richtext-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .richtext-tag {
+    padding: 0.3rem 0.8rem;
+    border: 1.5px solid $light-primary-color;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    color: $light-primary-color;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover {
+      background: $light-primary-color;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .richtext-paragraph {
+      font-size: clamp(1rem, 8vw, 2.5rem);
+      line-height: 1.1;
+    }
+    .richtext-tag {
+      font-size: 0.95rem;
+      padding: 0.25rem 0.6rem;
+    }
+  }
+}

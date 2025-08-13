@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import GridLayout from "../others/GridLayout";
 import ProjectCard from "./ProjectCard";
+import Button from "../others/Button";
 import "../pages/Portfolio.scss";
 
 const ProjectSection = ({ projects }) => {
@@ -12,45 +14,88 @@ const ProjectSection = ({ projects }) => {
   // Find the latest project
   const latestProject = projects.find((project) => project.isLatest);
   const featuredProjects = projects.filter((project) => project.isFeatured);
+const [activeIndex, setActiveIndex] = useState(
+  Math.floor(featuredProjects.length / 6)
+);
+  const handleScroll = (e) => {
+    const scrollLeft = e.target.scrollLeft;
+    const cardWidth = e.target.firstChild?.offsetWidth || 0.5;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    setActiveIndex(newIndex);
+  };
 
   return (
     <section className="project-section">
-      {/* Render the latest project */}
-      {latestProject && (
-        <div className="latest-project">
-          <Link
-            to={`/portfolio/${latestProject.title
-              .replace(/\s+/g, "-")
-              .toLowerCase()}`}
-          >
-            <div className="latest-project-card">
-              <div className="latest-project-details">
-                <span>{latestProject.skill}</span>
-                <h3 className="project-title">
-                  {latestProject.title} : <br />
-                  {latestProject.subtitle}
-                </h3>
-              </div>
-              <img
-                src={latestProject.img}
-                alt={latestProject.title}
-                className="project-image"
-              />
-            </div>
-          </Link>
-        </div>
-      )}
+      <GridLayout columns={4}>
+          <h1 className="span-three-columns">Selected Works</h1>
+          <h4>A collection of my recent projects showcasing <br /> my skills in design and development.
+          <br />
+          <Button variant="secondary" to="/portfolio" className="hide-on-mobile">View All Projects</Button>
+          <br />
+          </h4>
 
-      {/* Render featured projects */}
-      {featuredProjects.length > 0 ? (
-        <GridLayout columns={3}>
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} isHomePage={true} />
-          ))}
-        </GridLayout>
-      ) : (
-        <p>No featured projects available.</p>
-      )}
+      </GridLayout>
+      {/* Render the latest project */}
+
+{latestProject && (
+  <Link to={`/portfolio/${latestProject.title.replace(/\s+/g, "-").toLowerCase()}`}>
+  <div className="latest-project">
+    {/* Left: Only the image */}
+    <div className="latest-project-left-image">
+      <img
+        src={latestProject.main}
+        alt={latestProject.title}
+      />
+    </div>
+    {/* Right: Image + details */}
+    <div className="latest-project-card">
+      <img
+        src={latestProject.cover}
+        alt={latestProject.title}
+        className="project-image"
+      />
+      <div className="latest-project-details">
+                <span>({latestProject.skill})</span>
+
+        <h2 className="project-title">
+          {latestProject.title} 
+        </h2>
+        <p className="project-subtitle">{latestProject.desc}</p>
+        <Button variant="primary">View Project</Button>
+      </div>
+    </div>
+  </div>
+  </Link>
+)}
+
+      {/* Render featured projects */}  
+<div className="featured-projects">
+  <div
+    className="featured-projects-slider"
+    onScroll={handleScroll}
+    tabIndex={0}
+  >
+    {featuredProjects.map((project, idx) => (
+      <div
+        key={project.id}
+        className={`slider-card${idx === activeIndex ? " active" : ""}${
+          Math.abs(idx - activeIndex) === 1 ? " adjacent" : ""
+        }`}
+        style={{
+          opacity: idx === activeIndex ? 1 : 0.45,
+          transform:
+            idx === activeIndex
+              ? "scale(1.00)"
+              : "scale(0.82)",
+        }}
+        onClick={() => setActiveIndex(idx)}
+      >
+        <ProjectCard project={project} isHomePage={true} />
+      </div>
+    ))}
+  </div>
+</div>
+
     </section>
   );
 };

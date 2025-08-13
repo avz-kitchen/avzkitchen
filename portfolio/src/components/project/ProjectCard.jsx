@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Button from "../others/Button";
 
 // Function to transform the title into a URL-friendly format
 const transformToUrl = (title) => {
@@ -15,14 +16,17 @@ const ProjectCard = ({ project, isHomePage }) => {
   return (
     <div className="project-card">
       <Link to={`/portfolio/${projectUrl}`}>
-        <img src={project.main} alt={project.title} className="project-image" />
-        <p className="project-skill">{project.skill}</p>
-        <h3 className="project-title">
-          {project.title}
-          : <br />
-          {project.subtitle}
-        </h3>
-        {!isHomePage && <button className="underlined-b">View Project</button>}
+        <img  src={isHomePage ? project.logo : project.main}
+alt={project.title} className="project-image" />
+        <p className="project-skill">({project.skill})</p>
+{isHomePage ? (
+  <h2 className="project-title">{project.title}</h2>
+) : (
+  <h3>{project.title}</h3>
+)}
+        <p className="project-subtitle">{project.subtitle}</p>
+        <br/>
+      <Button variant="secondary">View Project</Button>
       </Link>
     </div>
   );
