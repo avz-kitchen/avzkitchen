@@ -6,10 +6,10 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 120px;
   background-color: $light-background-color;
   justify-content: space-between;
-
+  border-bottom: 2px dashed $dark-primary-color;
+  padding: 0.5rem 4rem;
   &.menu-open {
     overflow: hidden;
     padding: 24px;
@@ -18,8 +18,31 @@
   .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-  }
+    align-items: center;
+    justify-items: stretch;
+    width:100%;
+    
 
+  }
+  a {
+    align-self: start;
+    justify-self: start;
+    &.active {
+        font-weight: 800;
+      }
+  }
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: $light-secondary-color;
+  text-align: left;
+  transition: filter 300ms;
+    justify-self: start;
+  &:hover {
+   color: $dark-primary-color;
+    filter: brightness(0.8);
+  }
+}
 
   // Navigation links for desktop
   nav {
@@ -28,14 +51,14 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     text-align: left;
-
-    a {
+.nav-links{
+      a {
       display: flex;
-      justify-content: start;
+      justify-content: center;
       align-items: center;
       text-decoration: none;
-      font-size: 18px;
-      height: 70px;
+      font-size: 16px;
+      height: 60px;
       width: 100%;
       transition: border-bottom 0.3s;
 
@@ -45,6 +68,9 @@
         font-weight: 800;
       }
     }
+}
+
+
   }
 
   // Hamburger menu icon for mobile
@@ -93,16 +119,18 @@
       padding: 0;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: end;
     }
 
     .logo {
       grid-column: span 1;
+      font-size: 32px;
     }
 
     // Hide desktop navigation on mobile
     .nav-links {
       display: none;
+
 
       // Mobile full-screen menu
       &.open {

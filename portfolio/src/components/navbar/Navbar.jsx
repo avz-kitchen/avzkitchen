@@ -27,7 +27,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             className="logo"
           >
-            AVZ
+            AVZKitchen
           </motion.span>
         </Link>
         <div className="hamburger" onClick={toggleMenu}>
@@ -40,6 +40,7 @@ const Navbar = () => {
           <div className="close-button" onClick={toggleMenu}>
             &times;
           </div>
+
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? "active" : "textUc")}
@@ -55,11 +56,11 @@ const Navbar = () => {
             Portfolio
           </NavLink>
           <NavLink
-            to="/about"
+            to="/bio"
             className={({ isActive }) => (isActive ? "active" : "")}
             onClick={handleLinkClick}
           >
-            About
+            Bio
           </NavLink>
           <NavLink
             to="/contact"
