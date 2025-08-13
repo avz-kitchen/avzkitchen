@@ -30,7 +30,7 @@ const [activeIndex, setActiveIndex] = useState(
           <h1 className="span-three-columns">Selected Works</h1>
           <h4>A collection of my recent projects showcasing <br /> my skills in design and development.
           <br />
-          <Button variant="secondary" to="/portfolio" className="hide-on-mobile">View All Projects</Button>
+          <Button variant="secondary" to="/portfolio" >View All Projects</Button>
           <br />
           </h4>
 
@@ -60,7 +60,7 @@ const [activeIndex, setActiveIndex] = useState(
         <h2 className="project-title">
           {latestProject.title} 
         </h2>
-        <p className="project-subtitle">{latestProject.desc}</p>
+        <p className="project-subtitle">{latestProject.shortDesc}</p>
         <Button variant="primary">View Project</Button>
       </div>
     </div>
