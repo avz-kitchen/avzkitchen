@@ -1,8 +1,7 @@
 @import "./variables.scss";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,73 +14,56 @@ a {
   font-weight: 500;
   text-decoration: inherit;
   color: var(--text-color);
+  font-family: 'DM Sans', monospace;
 }
 
-/* Use clamp for responsive font sizes */
 h1 {
-  font-size: clamp(2rem, 8vw + 2rem, 8rem);
-  /* Responsive font size */
-  line-height: 1.1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(2.5rem, 10vw, 8rem);
+  text-transform: uppercase;
+  line-height: 1;
   text-align: left;
-  font-family: IBM Plex serif, serif;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 5vw + 1rem, 8rem);
-  font-family: IBM Plex serif, serif;
-  /* Responsive font size */
-  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
 }
 
 h3 {
-  font-size: clamp(1rem, 3vw + 0.5rem, 1.2rem);
-  /* Responsive font size */
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 h4 {
-  font-size: clamp(2rem, 6vw + 1rem, 1rem);
-  /* Responsive font size */
-  font-weight: 100;
-  text-transform: uppercase;
-  font-family: 'M PLUS 1 Code', monospace;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-h6 {
-  font-size: clamp(2.5rem, 10vw + 1rem, 120px);
-  /* Responsive font size */
+h5, h6 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-.vertical-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  white-space: nowrap;
-  width: 80%;
-  height: 100%;
-  display: flex;
-  justify-content: end;
+p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0;
 }
 
 button {
-  display: flex;
-  padding: 12px 24px;
-  justify-content: space-between;
-  align-items: center;
-  align-self: center;
-  font-size: clamp(1rem, 2vw + 1rem, 1rem);
-  /* Responsive font size */
-  font-weight: 500;
-  font-family: "Avenir";
-  background-color: var(--button-color);
-  cursor: pointer;
-  border-radius: 120px;
-  color: #F9FBFB;
-  border: none;
-}
-
-button:hover {
-  background-color: var(--accent-color);
-  color: #F9FBFB;
-
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .underlined-b:hover {
@@ -94,24 +76,23 @@ button:focus-visible {
   outline: 2px auto -webkit-focus-ring-color;
 }
 
-/* Media queries for additional breakpoints */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
-    font-size: clamp(1.5rem, 6vw + 1rem, 4rem);
+    font-size: 8rem;
   }
-
   h2 {
-    font-size: clamp(1.2rem, 4vw + 0.5rem, 2rem);
+    font-size: clamp(1.2rem, 8vw, 2.5rem);
   }
-
+  h3 {
+    font-size: clamp(1.1rem, 4vw, 2rem);
+  }
   h4 {
-    font-size: clamp(1.5rem, 5vw + 0.5rem, 2.5em);
+    font-size: clamp(1rem, 3vw, 1.5rem);
   }
-
   button {
-    font-size: clamp(0.9rem, 3vw + 0.5rem, 1.5em);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
   }
-
   a {
     font-size: 16px;
   }
@@ -119,19 +100,19 @@ button:focus-visible {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: clamp(1rem, 5vw + 0.5rem, 2.5rem);
+    font-size: clamp(1.2rem, 12vw, 2.5rem);
   }
-
   h2 {
-    font-size: clamp(1rem, 4vw + 0.5rem, 1.5rem);
+    font-size: clamp(2rem, 3vw, 2.5rem);
   }
-
+  h3 {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
   h4 {
-    font-size: clamp(1rem, 5vw + 0.5rem, 2rem);
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
   }
-
   button {
-    font-size: clamp(0.8rem, 2vw + 0.3rem, 1.2em);
-    padding: 16px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: 12px;
   }
 }
