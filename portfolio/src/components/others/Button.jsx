@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./Button.scss";
+import "./button.scss";
 
 const Button = ({ children, variant = "primary", to, href, ...props }) => {
   const className = `btn ${variant}`;
