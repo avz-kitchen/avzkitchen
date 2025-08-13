@@ -1,31 +1,26 @@
 @import "../../variables.scss";
 .service-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
   align-items: center;
-  flex-direction: column;
 }
 .service-list {
   list-style: none;
   padding: 0;
-  margin: auto;
+  margin: 0;
+  word-break: break-word;  
 }
 
 .service-list-item {
   margin-bottom: 2rem;
-  padding: 1.5rem 1rem;
+  padding-bottom: 2rem;
   border-bottom: 2px solid $light-primary-color;
-
-  h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
+  width: 100%;
+  box-sizing: border-box;  
 
   p {
     margin: 0;
-    color: #555;
-    font-size: 1rem;
+    line-height: 1.2;
+    word-break: break-word; // Ensures long text breaks
   }
 }
