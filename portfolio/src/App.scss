@@ -4,11 +4,15 @@
 #root {
   max-width: 100%;
   width: 100%;
-  margin: 0 auto;
   text-align: center;
   overflow-x: hidden;
+  
 }
-
+html, body, #root {
+  height: 100%;
+  min-height: 60vh;
+  
+}
 body {
   font-family: 'DM Sans', sans-serif;
   margin: 0;
@@ -20,27 +24,42 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+h1 , h2, h3, h4, h5, h6 , p {
+    line-height: 1;
+    margin:0;
+    
+
+}
 
 /* Global padding for all pages */
 .page-wrapper {
-  padding: 8rem 7.5rem;
-
   @media (max-width: 1200px) {
     padding: 6rem 4rem;
   }
 
-  @media (max-width: 768px) {
-    padding: 6rem 2rem;
+  @media (max-width: 900px) {
+    padding: 3rem 1.5rem;
   }
 
-  @media (max-width: 576px) {
-    padding: 6rem 1rem;
+  @media (max-width: 600px) {
+    padding: 2rem 0rem;
   }
 }
 
+
 section {
+    padding: 8rem 4rem;
   text-align: left;
-  padding: 0;
+
+  @media (max-width: 1200px) {
+    padding: 6rem 2rem;
+  }
+  @media (max-width: 900px) {
+    padding: 4rem 1rem;
+  }
+  @media (max-width: 600px) {
+    padding: 2rem 0.5rem;
+  }
 }
 
 a {
@@ -59,18 +78,27 @@ a {
   }
 }
 
-.logo {
-  height: 4.375rem;
-  font-size: 44px;
-  font-weight: 800;
-  color: $light-secondary-color;
-  text-align: left;
-  transition: filter 300ms;
-  &:hover {
-   color: $dark-primary-color;
-    filter: brightness(0.8);
+
+.xxxl {
+font-size: clamp(2.5rem, 16vw, 20rem); 
+  font-family: DM Sans, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 0.8;
+}
+.xxl {
+  font-size: clamp(2.5rem, 10vw, 16rem);
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 20px;
+  @media (max-width: 600px) {
+    font-size: clamp(3.5rem, 10vw, 10rem);
+    line-height: 1;
+    margin-bottom: 0;
   }
 }
+
 
 .button-p {
   border-bottom: 2px solid $light-primary-color;
@@ -86,6 +114,38 @@ a {
   img {
     width: 80px;
   }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    a, img {
+      font-size: 40px;
+      width: 40px;
+    }
+    padding: 24px 0;
+  }
+}
+
+  .span-two-columns {
+    grid-column: span 4;
+    margin: 0;  
+      @media (max-width: 900px) {
+    grid-column: span 2;
+  }
+  @media (max-width: 600px) {
+    grid-column: span 1;
+  }
+  }
+
+.span-three-columns {
+  grid-column: span 3;
+  @media (max-width: 900px) {
+    grid-column: span 2;
+  }
+  @media (max-width: 600px) {
+    grid-column: span 1;
+  }
 }
 
 .icon-container {
@@ -100,4 +160,19 @@ a {
 
 .read-the-docs {
   color: #888;
+}
+.footer {
+  flex-shrink: 0;
+  padding: 2rem 4rem;
+  @media (max-width: 900px) {
+    padding: 2rem 1rem;
+  }
+  @media (max-width: 600px) {
+    padding: 2rem 0.5rem;
+  }
+}
+.hide-on-mobile {
+  @media (max-width: 600px) {
+    display: none !important;
+  }
 }
