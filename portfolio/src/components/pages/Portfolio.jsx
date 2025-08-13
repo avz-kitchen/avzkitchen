@@ -5,14 +5,14 @@ import "./Portfolio.scss";
 
 const Portfolio = ({ projects }) => {
   return (
-    <div className="portfolio">
-      <h1 className="portfolio-title">Portfolio</h1>
-      <GridLayout columns={3}>
+    <section className="portfolio-section">
+      <h1>Portfolio</h1>
+      <div className="portfolio">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} isBranding />
         ))}
-      </GridLayout>
-    </div>
+        </div>
+    </section>
   );
 };
 
