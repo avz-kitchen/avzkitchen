@@ -8,12 +8,7 @@
     align-items: center;
     cursor: pointer;
 
-    h3 {
-      font-size: 2rem;
-      margin: 0;
-      text-align: left;
-    }
-
+  
     .dropdown-icon {
       font-size: 2.5rem;
       transition: transform 0.3s;
@@ -24,44 +19,94 @@
     }
   }
 
-  .dropdown-content {
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    text-align: left;
+.dropdown-content {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  text-align: left;
 
-    &.image-left-text-right {
-      grid-template-columns: 1fr 1fr; // Image on the left, text on the right
-    }
+.text-left-image-right {
+  display: grid;
+  grid-template-columns: 1fr 2fr; // Text left, image right
+  gap: 2rem;
+  align-items: start;
+  padding-top: 2rem;
+}
 
-    &.image-right-text-left {
-      grid-template-columns: 1fr 2fr; // Text on the left, image on the right
-    }
+.image-right-text-left {
+  display: grid;
+  grid-template-columns: 1fr 2fr; // Image on the left, text on the right
+}
 
     .dropdown-text {
+      margin-top: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-
-      p {
-        margin: 0 0 1rem;
-      }
     }
 
+    .dropdown-image-first{
+      border-radius: 0.5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        width: 100%;   // Fixed width
+  height: 220px;  // Fixed height
+
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Fill the box and crop as needed
+    display: block;
+  }
+    }
     .dropdown-image {
       border-radius: 0.5rem;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      img {
-        width: 100%;
-        height: 80%;
-        object-fit: cover; // Ensure the image fills the container while maintaining aspect ratio
-      }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Fill the box and crop as needed
+    display: block;
+  }
     }
   }
+
+.dropdown-last-row {
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+
+  .dropdown-image {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dropdown-text {
+    width: 100%;
+    max-width: 60%;
+        text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .dropdown-last-row {
+    flex-direction: column;
+    .dropdown-image, .dropdown-text {
+      width: 100%;
+      max-width: 100%;
+    }
+    .dropdown-text {
+      text-align: left;
+    }
+  }
+}
 
   // Responsive layout for smaller screens
   @media (max-width: 768px) {

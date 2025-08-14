@@ -3,28 +3,28 @@ import GridLayout from "../others/GridLayout";
 
 const services = [
       {
-    title: "Brand Strategy & Identity",
-    content: "I help brands find their voice and visual language, creating cohesive identities that tell a story and connect deeply with their audience. From logos and typography to color systems and messaging, I ensure every element reflects the brand’s purpose and values.",
+    title: "Brand Strategy – Selecting the Core Ingredients:",
+    content: "Every successful product begins with clarity. I define your brand’s purpose, audience, and values to create a strong foundation that informs every design and product decision.",
   },
   {
-    title: "Product Design",
-    content: "User experience and designing accessible interfaces that prioritize usability for all users and scalable systems that ensure consistency across digital products",
+    title: "Product Design – Blending Flavors:",
+    content: "Interfaces and interactions are crafted with care, combining usability, visual storytelling, and thoughtful detail to create experiences that resonate with users.",
   },
 
   {
-    title: "Coding",
-    content: "Bringing designs to life with HTML, CSS, JavaScript, React, and Next.js, ensuring responsive and high-performing websites.",
+    title: "Coding – Bringing the Recipe to Life:",
+    content: "Designs become tangible through clean, efficient code, delivering responsive, reliable, and high-performing digital products across all platforms.",
   },
     {
-    title: "Design Systems",
-    content: "Creating design systems that ensure consistency and scalability across products, enabling teams to deliver cohesive user experiences efficiently.",
+    title: "Design Systems - The Finishing Touch:",
+    content: "The finishing touch brings harmony to the table. I develop reusable components, visual systems, and guidelines that keep your brand consistent, scalable, and instantly recognizable.",
   },
 ];
 
 const ServiceSection = () => (
   <section className="service-section">
     <GridLayout columns={2}>
-        <h2>What I do</h2>
+        <h1>Cooking Up <br/> Visual Experiences</h1>
       <div>
         <ul className="service-list">
           {services.map((service, idx) => (
