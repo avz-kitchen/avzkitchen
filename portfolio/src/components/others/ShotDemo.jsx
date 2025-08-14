@@ -1,22 +1,22 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import GridLayout from "./GridLayout";
 import "./component.scss";
+import Button from "./Button";
 const ShotDemo = ({ title, image, subtitle, text, demo }) => {
   return (
-    <section className="shot-demo">
+    <div className="shot-demo">
       <h2>{title}</h2>
-      <GridLayout columns={2}>
+      <div className="shot-demo-content">
         {image && <img src={image} alt={image} />}
-        <div className="demoBanner">
-          <h2>{subtitle}</h2>
+        <div >
+          <h3>{subtitle}</h3>
           <p>{text}</p>
-          <Link to={demo} target="_blank" rel="noopener noreferrer">
-            Discover
-          </Link>
+          <Button variant="tertiary" href={demo} target="_blank" rel="noopener noreferrer">
+            View Dxemo
+          </Button>
         </div>
-      </GridLayout>
-    </section>
+      </div>
+    </div>
   );
 };
 

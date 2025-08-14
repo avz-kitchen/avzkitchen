@@ -2,7 +2,8 @@
 
 .hero-section {
   margin: 0;   // Remove any margin if it exists
-
+  padding: 0;
+  width: 100%;
   .hero-title {
     margin: 0;  // Ensure there's no margin around the title
   }
@@ -17,7 +18,7 @@
 }
 
   .hero-image {
-    min-width: 324px;
+    min-width: 50%;
     height: 72vh;
     object-fit: cover;
     object-position: right;

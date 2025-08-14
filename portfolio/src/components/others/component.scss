@@ -1,3 +1,4 @@
+@import "../../variables.scss";
 $padding: 2rem;
 
 .two-images {
@@ -27,18 +28,21 @@ $padding: 2rem;
     border-radius: 12px;
   }
 }
-
+.project-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 2rem;
+  padding: $padding;
+}
 .text-media-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-start;
   gap: 2rem;
-  max-width: 100%;
   flex-wrap: wrap;
-  text-align: center;
-  padding: 240px 0;
-
+  text-align: left;
+  width: 60%;
   h2,
   .rich-text {
     flex: 1;
@@ -79,49 +83,27 @@ $padding: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   text-align: center;
   max-width: 100%;
   overflow: hidden;
-
-  h2 {
-    margin: 0;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: $padding 0 0 $padding;
-  }
-
-  .demoBanner {
-    background-color: #a1b0bf;
-    border-radius: 0 $padding $padding 0;
-    display: flex;
-    flex-direction: column;
+gap:2rem;
+  .shot-demo-content {
+      max-height: 50%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    background-color: $light-text-color;
+    border-radius: $padding ;
+    overflow: hidden;
+  padding-right: $padding;
+  color: $dark-text-color;
 
-    p {
-      text-align: center;
-      padding: 0 1rem;
-    }
-
-    a {
-      border: 2px solid #23364a;
-      padding: 1rem 2rem;
-      border-radius: 8rem;
-      margin-top: 1rem;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-    }
   }
+
+
 
   @media (max-width: 768px) {
     flex-direction: column;

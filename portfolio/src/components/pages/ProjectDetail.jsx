@@ -11,12 +11,13 @@ const ProjectDetail = ({ project }) => {
   const dropdowns = project.dropdowns || []; // Default to empty array if undefined
 
   return (
-    <>
+    <div className="project-detail-wrapper">
       <HeroSection
         title={project.title}
-        img={project.img}
+        img={project.main}
         category={project.category}
         year={project.year}
+        skills={project.skills}
       />
       <TextMedia
         title={project.subtitle}
@@ -33,21 +34,22 @@ const ProjectDetail = ({ project }) => {
               image={item.image}
               text={item.text}
               isFirst={index === 0} // Pass this to handle different layout for the first dropdown
+              isLast={index === dropdowns.length - 1} // Pass this to handle different layout for the last dropdown
             />
           ))
         ) : (
           <div>No dropdown content available</div>
         )}
       </div>
-      <TextImage image={project.flow} text={project.text} />
+      {/* <TextImage image={project.flow} text={project.text} /> */}
       <ShotDemo
-        title={"Conclusion"}
+        title={"Reflection"}
         image={project.main}
         text={project.conclusion}
         demo={project.demo}
         subtitle={project.subtitle}
       />
-    </>
+    </div>
   );
 };
 

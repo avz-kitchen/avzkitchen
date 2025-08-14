@@ -1,10 +1,6 @@
 @import "../../variables.scss";
 
-.project-section {
-  display: grid;
-  gap: 8rem;
-  
-}
+
 
 .latest-project {
   display: flex;
@@ -12,15 +8,16 @@
   gap: 1.5rem;
   width: 100%;
   margin-bottom: 2rem;
-  align-items: stretch;
+  align-items: center;
   height: 100%;
-
+margin-top: 1rem;;
   .latest-project-left-image {
-    width: 50%;
+    width:80%;
     height: 100%;
+    overflow: hidden;
     img {
-      width: 100%;
-      height: 74%;
+      width: 50%;
+      height:auto;
       object-fit: cover;
       border-radius: 8px;
     }
@@ -32,11 +29,12 @@
     width: 50%;
     border-radius: 8px;
     gap: 2rem;
-    height: 74%;
+    height: 100%;
 
     .project-image {
       width: auto;
-      height: 64%;
+      height: 54%;
+      max-height: 600px;
       object-fit: cover;
       border-radius: 8px;
     }
@@ -46,7 +44,6 @@
       flex-direction: column;
       justify-content: center;
       text-align: left;
-      gap: 1rem;
     }
   }
 }
