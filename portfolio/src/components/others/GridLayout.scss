@@ -11,7 +11,8 @@ $grid-gap: 1rem;
   padding: 0;
   column-gap: $grid-gap; 
   row-gap: $grid-gap;
-  
+    max-width: 100vw;
+
   @include grid-container(2);
 
   @media (max-width: 1200px) {

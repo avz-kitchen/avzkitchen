@@ -25,12 +25,12 @@ const [activeIndex, setActiveIndex] = useState(
   };
 
   return (
-    <section className="project-section">
+    <section >
       <GridLayout columns={4}>
           <h1 className="span-three-columns">Selected Works</h1>
-          <h4>A collection of my recent projects showcasing <br /> my skills in design and development.
+          <h4>each a carefully plated experience from my visual kitchen.
           <br />
-          <Button variant="secondary" to="/portfolio" >View All Projects</Button>
+          <Button variant="secondary" to="/portfolio" >See Portfolio</Button>
           <br />
           </h4>
 
@@ -55,8 +55,13 @@ const [activeIndex, setActiveIndex] = useState(
         className="project-image"
       />
       <div className="latest-project-details">
-                <span>({latestProject.skill})</span>
-
+  <span>
+    (
+    {latestProject.skills && latestProject.skills.length > 0
+      ? latestProject.skills.join(", ")
+      : ""}
+    )
+  </span>
         <h2 className="project-title">
           {latestProject.title} 
         </h2>

@@ -18,14 +18,14 @@ const ProjectCard = ({ project, isHomePage }) => {
       <Link to={`/portfolio/${projectUrl}`}>
         <img  src={isHomePage ? project.logo : project.main}
 alt={project.title} className="project-image" />
-        <p className="project-skill">({project.skill})</p>
-{isHomePage ? (
+<p className="project-skill">
+  ({Array.isArray(project.skills) ? project.skills.join(", ") : project.skills})
+</p>{isHomePage ? (
   <h2 className="project-title">{project.title}</h2>
 ) : (
   <h3>{project.title}</h3>
 )}
         <p className="project-subtitle">{project.subtitle}</p>
-        <br/>
       <Button variant="secondary">View Project</Button>
       </Link>
     </div>
@@ -36,7 +36,7 @@ ProjectCard.propTypes = {
   project: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    skill: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string), 
     img: PropTypes.string.isRequired,
     isHomePage: PropTypes.bool,
   }).isRequired,
