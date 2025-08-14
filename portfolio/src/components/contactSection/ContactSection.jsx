@@ -36,7 +36,7 @@ const ContactSection = () => {
     <section className="contact-section">
       <div className="contact-container">
                   <h1>Let's Collaborate</h1>
-          <p>I'm always open to new projects and collaborations. If you're looking for a designer who combines creativity with technical expertise and a commitment to accessibility, let's connect!</p>
+          <p>I’m always excited to take on new projects and partnerships. If you’re looking for a designer who blends creativity, technical expertise, and a focus on accessibility, let’s connect and bring your ideas to life.</p>
                   <a href="mailto:avzkitchen@gmail.com">avzkitchen@gmail.com</a>
 
         <div className="formContainer">
