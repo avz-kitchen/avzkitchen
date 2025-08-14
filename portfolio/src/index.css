@@ -29,7 +29,7 @@ h2 {
   font-family: 'DM Sans', sans-serif;
   font-size: clamp(1.8rem, 5vw, 4rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 h3 {
@@ -57,7 +57,7 @@ h5, h6 {
 p {
   font-family: 'DM Sans', sans-serif;
   font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.6;
+  line-height: 1.2;
   margin: 0;
 }
 
@@ -116,3 +116,13 @@ button:focus-visible {
     padding: 12px;
   }
 }
+
+  ul {
+    margin: 0 0 0rem 1.5rem;
+    padding: 0;
+    list-style-type: disc;
+  }
+  li {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
