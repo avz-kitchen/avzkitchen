@@ -7,8 +7,10 @@ const ShotDemo = ({ title, image, subtitle, text, demo }) => {
     <div className="shot-demo">
       <h2>{title}</h2>
       <div className="shot-demo-content">
-        {image && <img src={image} alt={image} />}
-        <div >
+        <div className="shot-demo-image">
+          {image && <img src={image} alt={image} />}
+        </div>
+        <div>
           <h3>{subtitle}</h3>
           <p>{text}</p>
           <Button variant="tertiary" href={demo} target="_blank" rel="noopener noreferrer">

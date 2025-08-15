@@ -6,7 +6,7 @@ import "./Portfolio.scss";
 
 const BrandingDetail = ({ project }) => {
   return (
-    <div className="branding-detail-page">
+    <section>
       <HeroSection
         title={project.title}
         img={project.main}
@@ -33,7 +33,7 @@ const BrandingDetail = ({ project }) => {
         subtitle={project.subtitle}
         demo={project.demo}
       />
-    </div>
+    </section>
   );
 };
 

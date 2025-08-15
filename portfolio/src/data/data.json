@@ -33,7 +33,7 @@
                 {
                     "title": "A Modular System for a Streamlined Experience",
                     "image": "/project/flightapp/flight-app-design.png",
-"text": "<p>I took an iterative, research-driven approach:</p><ul><li><strong>Wireframes:</strong> Tested initial flows and layouts quickly in Figma</li><li><strong>Adaptive Filters:</strong> Redesigned filters to appear contextually and remain relevant to the user</li><li><strong>High-Fidelity Prototypes:</strong> Polished interfaces with modular components for scalability</li><li><strong>User Feedback:</strong> Iteratively refined the experience to increase clarity and ease of use</li></ul><p>The goal was to create a streamlined, responsive system that guides users through the booking process without overwhelming them.</p>"                },
+                    "text": "<p>I took an iterative, research-driven approach:</p><ul><li><strong>Wireframes:</strong> Tested initial flows and layouts quickly in Figma</li><li><strong>Adaptive Filters:</strong> Redesigned filters to appear contextually and remain relevant to the user</li><li><strong>High-Fidelity Prototypes:</strong> Polished interfaces with modular components for scalability</li><li><strong>User Feedback:</strong> Iteratively refined the experience to increase clarity and ease of use</li></ul><p>The goal was to create a streamlined, responsive system that guides users through the booking process without overwhelming them.</p>"                },
                 {
                     "title": "Features That Take Off",
                     "image": "/project/flightapp/flight-app-shots.png",
@@ -54,7 +54,7 @@
             "logo": "/project/keywi/keywi_logo.png",
             "img": "/project/keywi/keywi-img.png",
             "main": "/project/keywi/keywi-img.png",
-            "desc": "As a music lover, I’ve spent countless hours exploring new tracks and sharing discoveries with friends. The process can be exciting—but finding music that resonates with my tastes, and that of my friends, often feels like a guessing game. Inspired by this frustration, I set out to design a music discovery app that feels more like a conversation: *sharing, discovering, and experiencing music together.*",
+            "desc": "As a music lover, I've spent countless hours exploring new tracks and sharing discoveries with friends. The process can be exciting—but finding music that resonates with my tastes, and that of my friends, often feels like a guessing game. Inspired by this frustration, I set out to design a music discovery app that feels more like a conversation: *sharing, discovering, and experiencing music together.*",
             "skills": ["UX/UI", "Prototyping", "Visual Design"],
             "isFeatured": true,
             "isLatest": false,
@@ -84,7 +84,7 @@
                     "image": "/project/keywi/keywi-shots.png",
                     "text": "<p>The final product incorporates features that make music discovery fun and social. Key functionalities include: real-time playlist sharing with friends, genre-based music explorations, and personalized suggestions based on listening behavior. The app also encourages collaboration by enabling users to contribute to shared playlists, making discovering new music feel like a team effort.</p>"
                 }
-                ]  ,
+                ],
             "text": "Key features of Keywi revolve around enhancing the social experience of music discovery. The interface encourages users to explore genres, share recommendations, and collaborate on playlists—all while receiving personalized suggestions based on listening habits. The goal was to create an app that feels natural to interact with, like chatting with friends about the latest track or artist they’ve discovered.",
             "flow": "/project/keywi/keywi-feature.png",
             "conclusion": "This project was a celebration of my love for music and the communities that form around it. It taught me the importance of building not just for the individual user, but for those moments of social interaction that make discovering new tracks exciting. I also learned how personalization can be seamlessly woven into a social experience to enhance user engagement. Through this project, I realized that great design doesn’t just meet the needs of a user—it amplifies their passions and connects them with others who share the same love for discovery.",
