@@ -4,14 +4,14 @@
             "category": "App",
             "id": 1,
             "title": "Flight Booking App",
-            "subtitle": "Along the Journey",
-            "shortDesc": "Born from countless clunky booking experiences, this concept app rethinks how we plan flights. Making it as smooth and spontaneous as travel itself.",
+            "subtitle": "Why Is Booking a Flight So Clunky?",
+            "shortDesc": "A self-initiated project where I whipped up a smoother, faster flight booking experience, blending UX strategy, visual design, and intuitive interactions into a polished, user-friendly interface.",
             "type": "Case Study",
             "img": "/project/flightapp/flight-app-feature.png",
             "main": "/project/flightapp/flight-app-hero.gif",
             "cover": "/project/flightapp/flight-app-cover.png",
-            "desc": "In today’s world, where travel can be booked on a whim or months in advance, flight booking should be effortless—yet for many, the mobile experience feels frustrating and outdated. This self-initiated project started with one simple question: Why does booking a flight on mobile still feel so clunky?I reimagined the process through a user-centered design approach, crafting a concept app that streamlines every step while enhancing clarity, trust, and joy for the traveler. The result is a cleaner, faster, and more intuitive way to plan your journey—whether it’s tomorrow or next summer.",
-            "skill": "UX/UI",
+            "desc": "In today’s world, travel can be planned on a whim or months in advance, yet mobile flight booking remains surprisingly clunky. Buttons are small, filters are buried, and users often feel overwhelmed by options. I started with a simple but crucial question: Why does booking a flight on mobile still feel complicated and stressful? This question became the foundation for a self-initiated redesign aimed at streamlining the process, enhancing clarity, and creating a more intuitive experience for travelers.",
+            "skills": ["UX/UI", "Research", "Prototyping"],
             "isFeatured": false,
             "isLatest": true,
             "month": "06",
@@ -21,24 +21,23 @@
             "overview": "Overview content goes here...",
             "dropdowns": [
                 {
-                    "title": "Voices from the Sky",
+                    "title": "Understanding the Users",
                     "image": "/project/flightapp/flight-app-main.png",
-                    "text": "Before diving into design, I turned to where travelers express their frustrations the most: app store reviews. By analyzing over 100 reviews from major flight booking apps, recurring frustrations surfaced. Users felt overwhelmed, filters were too rigid, and personalization was lacking. A key takeaway: many felt the app didn’t ‘get’ them, which led to decision fatigue. This insight led to the question: What if the search experience *learned* from you, adapting over time and surfacing relevant options as you go?"
+                    "text": "<p>The first step was listening. I analyzed over 100 app store reviews from popular flight apps to uncover patterns in user frustration:</p><ul><li>Overwhelmed by too many options</li><li>Filters were hidden or hard to use</li><li>The experience lacked personalization</li></ul><p>From these insights, I asked: How might we create a system that adapts to travelers’ needs, reduces friction, and builds trust?</p>"
                 },
                 {
                     "title": "Personas on the Move",
                     "image": "/project/flightapp/flight-app-persona.png",
-                    "text": "Rather than designing for abstract personas, I focused on the *real behaviors* of travelers. Three main user profiles emerged from the research: the **Spontaneous Explorer**, the **Price Tracker**, and the **Planner**. These personas represent different motivations when booking a flight—ranging from urgent, last-minute plans to highly detailed, price-conscious decision-making. Designing for these unique behaviors helped shape the app’s flexibility, ensuring it could meet the needs of diverse travelers."
+                    "text": "<p>Instead of generic personas, I focused on real user behaviors. Three profiles emerged:</p><ul><li><strong>Spontaneous Explorer:</strong> Books last-minute trips</li><li><strong>Price Tracker:</strong> Carefully monitors fares to find the best deal</li><li><strong>Planner:</strong> Organizes travel months in advance</li></ul><p>Designing for these diverse behaviors ensured the app could meet the needs of a wide audience, from quick, impulsive bookings to detailed planning.</p>"
                 },
                 {
                     "title": "A Modular System for a Streamlined Experience",
                     "image": "/project/flightapp/flight-app-design.png",
-                    "text": "The design process was iterative. After gathering insights from users, I began with low-fidelity wireframes in Figma, testing ideas quickly and refining based on feedback. The main goal was to make the filter system **adaptive**: no more static, buried settings. Filters should be dynamic, intuitive, and visible when needed. This modular system ensures that users can narrow down flights without feeling bogged down by options."
-                },
+"text": "<p>I took an iterative, research-driven approach:</p><ul><li><strong>Wireframes:</strong> Tested initial flows and layouts quickly in Figma</li><li><strong>Adaptive Filters:</strong> Redesigned filters to appear contextually and remain relevant to the user</li><li><strong>High-Fidelity Prototypes:</strong> Polished interfaces with modular components for scalability</li><li><strong>User Feedback:</strong> Iteratively refined the experience to increase clarity and ease of use</li></ul><p>The goal was to create a streamlined, responsive system that guides users through the booking process without overwhelming them.</p>"                },
                 {
                     "title": "Features That Take Off",
                     "image": "/project/flightapp/flight-app-shots.png",
-                    "text": "Key features include smarter, adaptive search results that prioritize relevant options based on the user’s preferences and behaviors. Filters appear dynamically—no need to dig through menus. The result: faster, more personalized flight options. I also included a flexible travel section that allows users to toggle through various routes or times based on their preferences. The aim was to make booking feel more like a seamless journey than a tedious task."
+                    "text": "<p>Key features include smarter, adaptive search results that prioritize relevant options based on the user’s preferences and behaviors. Filters appear dynamically—no need to dig through menus. The result: faster, more personalized flight options. I also included a flexible travel section that allows users to toggle through various routes or times based on their preferences. The aim was to make booking feel more like a seamless journey than a tedious task.</p>"
                 }
             ],
             "text": "At the heart of this design is a seamless search experience—one that adapts based on how you interact with it. The system remembers your preferences, dynamically adjusts the filters, and provides a clean, clutter-free interface that makes navigation simple and quick. By focusing on personalization, it transforms what’s often a frustrating process into something smoother and more intuitive.",
@@ -56,7 +55,7 @@
             "img": "/project/keywi/keywi-img.png",
             "main": "/project/keywi/keywi-img.png",
             "desc": "As a music lover, I’ve spent countless hours exploring new tracks and sharing discoveries with friends. The process can be exciting—but finding music that resonates with my tastes, and that of my friends, often feels like a guessing game. Inspired by this frustration, I set out to design a music discovery app that feels more like a conversation: *sharing, discovering, and experiencing music together.*",
-            "skill": "UX/UI",
+            "skills": ["UX/UI", "Prototyping", "Visual Design"],
             "isFeatured": true,
             "isLatest": false,
             "month": "04",
@@ -64,28 +63,28 @@
             "tag": "Discover",
             "demo": "https://www.figma.com/proto/mXRDv1Scb8THEIzC9XNZbj/AVZ_ProjectKeywi_app?page-id=3102%3A60&type=design&node-id=3163-2472&viewport=607%2C382%2C0.18&t=bbRK2fOt9HVWTbxQ-1&scaling=scale-down&starting-point-node-id=3163%3A2472&content-scaling=fixed",
             "overview": "Overview content goes here...",
-            "dropdowns": [
+                "dropdowns": [
                 {
                     "title": "Voices of Music Lovers",
                     "image": "/project/keywi/keywi-main.png",
-                    "text": "Before jumping into the design process, I wanted to hear from real users. I studied how people talk about discovering music on platforms like Spotify, Apple Music, and more niche communities. The key takeaway? Music discovery is too often a solitary, fragmented experience. There’s no easy way to sync up with friends and share tracks in real-time. Users were craving a platform that made music discovery more social and personalized."
+                    "text": "<p>Before jumping into the design process, I wanted to hear from real users. I studied how people talk about discovering music on platforms like Spotify, Apple Music, and more niche communities. The key takeaway? Music discovery is too often a solitary, fragmented experience. There’s no easy way to sync up with friends and share tracks in real-time. Users were craving a platform that made music discovery more social and personalized.</p>"
                 },
                 {
                     "title": "Personas that Share the Beat",
                     "image": "/project/keywi/keywi-persona.png",
-                    "text": "From these insights, I created three primary personas: the **Casual Explorer**, the **Genre Enthusiast**, and the **Social Sharer**. These personas reflect the variety of ways people engage with music—whether it’s stumbling upon new genres, following specific artist journeys, or sharing their latest find with friends. By designing around their unique behaviors, the app could adapt to their needs while encouraging social interaction."
+                    "text": "<p>From these insights, I created three primary personas: the <strong>Casual Explorer</strong>, the <strong>Genre Enthusiast</strong>, and the <strong>Social Sharer</strong>. These personas reflect the variety of ways people engage with music—whether it’s stumbling upon new genres, following specific artist journeys, or sharing their latest find with friends. By designing around their unique behaviors, the app could adapt to their needs while encouraging social interaction.</p>"
                 },
                 {
                     "title": "Building the Framework for Discovery",
                     "image": "/project/keywi/keywi-design.png",
-                    "text": "With personas in mind, I developed a **dynamic, modular system** that adapts to user preferences. The goal was to create an app that doesn’t just recommend music—it evolves based on individual listening habits. I worked through multiple iterations in Figma, making sure every feature—from genre-based playlists to collaborative sessions—was tested for usability and social engagement."
+                    "text": "<p>With personas in mind, I developed a <strong>dynamic, modular system</strong> that adapts to user preferences. The goal was to create an app that doesn’t just recommend music—it evolves based on individual listening habits. I worked through multiple iterations in Figma, making sure every feature—from genre-based playlists to collaborative sessions—was tested for usability and social engagement.</p>"
                 },
                 {
                     "title": "Features That Bring Music to Life",
                     "image": "/project/keywi/keywi-shots.png",
-                    "text": "The final product incorporates features that make music discovery fun and social. Key functionalities include: real-time playlist sharing with friends, genre-based music explorations, and personalized suggestions based on listening behavior. The app also encourages collaboration by enabling users to contribute to shared playlists, making discovering new music feel like a team effort."
+                    "text": "<p>The final product incorporates features that make music discovery fun and social. Key functionalities include: real-time playlist sharing with friends, genre-based music explorations, and personalized suggestions based on listening behavior. The app also encourages collaboration by enabling users to contribute to shared playlists, making discovering new music feel like a team effort.</p>"
                 }
-            ],
+                ]  ,
             "text": "Key features of Keywi revolve around enhancing the social experience of music discovery. The interface encourages users to explore genres, share recommendations, and collaborate on playlists—all while receiving personalized suggestions based on listening habits. The goal was to create an app that feels natural to interact with, like chatting with friends about the latest track or artist they’ve discovered.",
             "flow": "/project/keywi/keywi-feature.png",
             "conclusion": "This project was a celebration of my love for music and the communities that form around it. It taught me the importance of building not just for the individual user, but for those moments of social interaction that make discovering new tracks exciting. I also learned how personalization can be seamlessly woven into a social experience to enhance user engagement. Through this project, I realized that great design doesn’t just meet the needs of a user—it amplifies their passions and connects them with others who share the same love for discovery.",
