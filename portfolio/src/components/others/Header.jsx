@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <section >
       <GridLayout columns={4}>
-        <h1 className="xxl span-three-columns">Hello there</h1>
-        <h4>I'm Angelica, welcome to the visual kitchen, <br/> where ideas simmer. <Button variant="primary" to="/bio">Angelica's Bio</Button>
+        <h1 className="xxl span-three-columns">Hello there,</h1>
+        <h4>I'm Angelica❋, welcome to my visual kitchen. <Button variant="primary" to="/bio"> ❋ Bio</Button>
         </h4>
       </GridLayout >
       {/* <img

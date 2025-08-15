@@ -24,3 +24,38 @@
     word-break: break-word; // Ensures long text breaks
   }
 }
+.two-column-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.two-column-list-left {
+  h1 {
+    margin-bottom: 1rem;
+  }
+  p {
+    color: #555;
+  }
+}
+
+.two-column-list-right {
+  .service-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+  .service-list-item {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .two-column-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

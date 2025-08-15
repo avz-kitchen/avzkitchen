@@ -27,15 +27,22 @@ const Dropdown = ({ title, image, text, isFirst , isLast }) => {
             <div dangerouslySetInnerHTML={{ __html: text }} />
           )}
           {!isFirst && !isLast && (
-            <div className="text-left-image-right">
+            image ? (
+              <div className="text-left-image-right">
+                <div
+                  className="dropdown-text"
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
+                <div className="dropdown-image">
+                  <img src={image} alt={title} />
+                </div>
+              </div>
+            ) : (
               <div
                 className="dropdown-text"
                 dangerouslySetInnerHTML={{ __html: text }}
               />
-              <div className="dropdown-image">
-                <img src={image} alt={title} />
-              </div>
-            </div>
+            )
           )}
         {isLast && (
           <div className="dropdown-last-row">

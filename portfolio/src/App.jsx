@@ -51,7 +51,7 @@ const App = () => {
 const Home = () => {
 const projects = portfolioData.portfolio;
 const headerTags = ["Branding", "Product Design", "Code"];
-const headerText = "As a creative digital nomad, I draw from travel, culture, and human connection, turning those influences into immersive websites, memorable brand systems, and conversion-driven brand strategies.";
+const headerText = "I gather insights ✐, design ✦, and tech ☍ - blending them into digital products & brands that leave a lasting taste ❋.";
   return (
     <>
       <Header />
