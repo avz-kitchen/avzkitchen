@@ -4,7 +4,7 @@
             "category": "App",
             "id": 1,
             "title": "Flight Booking App",
-            "subtitle": "Why Is Booking a Flight So Clunky?",
+            "subtitle": "Along the journey",
             "shortDesc": "A self-initiated project where I whipped up a smoother, faster flight booking experience, blending UX strategy, visual design, and intuitive interactions into a polished, user-friendly interface.",
             "type": "Case Study",
             "img": "/project/flightapp/flight-app-feature.png",
@@ -127,7 +127,8 @@
             "design": "/project/pke/pke-design.png",
             "desc": "Philip Kehela is a digital commerce consultant who wanted to strengthen his online presence with a cohesive and modern personal brand. The project focused on creating a digital identity that conveys his expertise in the field of e-commerce, while ensuring a sleek and functional design for his website.",
             "skills": ["Web Development", "Branding"],
-            "isFeatured": true,
+            "isFeatured": false,
+            "isLatest": true,
             "month": "06",
             "year": "2024",
             "tag": "Consult",
@@ -136,7 +137,7 @@
             "text": " This project involved building a strong personal brand for Philip Kehela, a digital commerce consultant, by designing and launching a refreshed digital presence. We developed a new website using Elementor, which brought his ideas to life through clean and intuitive design. Careful attention was given to selecting logos, fonts, and layout to ensure they communicated his approach to digital commerce effectively. The relaunch resulted in a visually appealing, user-friendly site that supports Philip's work in the industry.",
             "flow": "/project/pke/pke-feature.png",
             "conclusion": "In conclusion, this project successfully established a modern digital identity for Philip Kehela, enhancing his online presence as a digital commerce consultant. By designing a sleek, user-friendly website with Elementor, we translated his expertise into a visually appealing platform. The careful selection of logos, fonts, and layout effectively communicated his approach to digital commerce. This revitalized presence positions Philip for continued growth and engagement within the e-commerce landscape.",
-            "shot": "/project/pke/pke-shot.png",
+            "shot": "/project/pke/pke-feature.png",
             "demo": "https://philipkehela.de/"
         },
         {
@@ -163,7 +164,7 @@
             "text": "Inspired by the homemade chili oil my mother makes, Hay,SoSpicyHotOil is a self-initiated branding project that explores the ritual, fire, and sensuality behind handcrafted heat. I developed the visual identity, custom illustration, and packaging design to reflect a bold, seductive tone — where flavor lingers and fire speaks in whispers. The process blended traditional inspiration with modern aesthetics, using storytelling and strong sensory cues to create a product that feels as mysterious as it is mouthwatering.",
             "flow": "/project/hssho/hssho-label.png",
             "conclusion": "This project allowed me to fully integrate illustration, branding, and packaging into a cohesive digital experience — blending bold visual storytelling with strategic design thinking. From concept to execution, Hay,SoSpicyHotOil reflects my ability to craft emotionally resonant, visually striking work rooted in narrative.",
-            "shot": "/project/pke/pke-shot.png",
+            "shot": "/project/hssho/hssho-label.png",
             "demo": "https://www.behance.net/gallery/227050435/HaysoSpiceHotoil"
         }
     ]

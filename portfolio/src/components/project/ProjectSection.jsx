@@ -12,7 +12,7 @@ const ProjectSection = ({ projects }) => {
   }
 
   // Find the latest project
-  const latestProject = projects.find((project) => project.isLatest);
+  const latestProjects = projects.filter((project) => project.isLatest);
   const featuredProjects = projects.filter((project) => project.isFeatured);
 const [activeIndex, setActiveIndex] = useState(
   Math.floor(featuredProjects.length / 6)
@@ -35,43 +35,39 @@ const [activeIndex, setActiveIndex] = useState(
           </h4>
 
       </GridLayout>
-      {/* Render the latest project */}
-
-{latestProject && (
-  <Link to={`/portfolio/${latestProject.title.replace(/\s+/g, "-").toLowerCase()}`}>
-  <div className="latest-project">
-    {/* Left: Only the image */}
-    <div className="latest-project-left-image">
-      <img
-        src={latestProject.main}
-        alt={latestProject.title}
-      />
-    </div>
-    {/* Right: Image + details */}
-    <div className="latest-project-card">
-      <img
-        src={latestProject.cover}
-        alt={latestProject.title}
-        className="project-image"
-      />
-      <div className="latest-project-details">
-  <span>
-    (
-    {latestProject.skills && latestProject.skills.length > 0
-      ? latestProject.skills.join(", ")
-      : ""}
-    )
-  </span>
-        <h2 className="project-title">
-          {latestProject.title} 
-        </h2>
-        <p className="project-subtitle">{latestProject.shortDesc}</p>
-        <Button variant="primary">View Project</Button>
+     {/* Render all latest projects in a grid */}
+      <div className="latest-projects-grid">
+        {latestProjects.map((latestProject) => (
+          <Link
+            key={latestProject.id}
+            to={`/portfolio/${latestProject.title.replace(/\s+/g, "-").toLowerCase()}`}
+          >
+            <div className="latest-project">
+              {/* Right: Image + details */}
+              <div className="latest-project-card-new">
+                <p className="project-title">{latestProject.title}</p>
+                <h2 className="project-subtitle">{latestProject.subtitle}</h2>
+                <img
+                  src={latestProject.shot}
+                  alt={latestProject.title}
+                  className="project-image"
+                />
+                <div className="latest-project-details">
+                  <div className="project-skills">
+                    {latestProject.skills &&
+                      latestProject.skills.length > 0 &&
+                      latestProject.skills.map((skill, idx) => (
+                        <span key={idx} className="tag">
+                          {skill}
+                        </span>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
-    </div>
-  </div>
-  </Link>
-)}
 
       {/* Render featured projects */}  
 <div className="featured-projects">
