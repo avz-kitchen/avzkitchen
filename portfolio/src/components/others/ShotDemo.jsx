@@ -12,7 +12,7 @@ const ShotDemo = ({ title, image, subtitle, text, demo }) => {
           <h3>{subtitle}</h3>
           <p>{text}</p>
           <Button variant="tertiary" href={demo} target="_blank" rel="noopener noreferrer">
-            View Dxemo
+            View Demo
           </Button>
         </div>
       </div>

@@ -14,17 +14,23 @@ const ProjectCard = ({ project, isHomePage }) => {
   const projectUrl = transformToUrl(project.title);
 
   return (
-    <div className="project-card">
-      <Link to={`/portfolio/${projectUrl}`}>
-        <img  src={isHomePage ? project.logo : project.main}
-alt={project.title} className="project-image" />
-<p className="project-skill">
-  ({Array.isArray(project.skills) ? project.skills.join(", ") : project.skills})
-</p>{isHomePage ? (
-  <h2 className="project-title">{project.title}</h2>
-) : (
-  <h3>{project.title}</h3>
-)}
+<div
+  className={`project-card${isHomePage ? " center" : ""}`}
+>
+  <Link to={`/portfolio/${projectUrl}`}>
+    <img
+      src={isHomePage ? project.logo : project.main}
+      alt={project.title}
+      className="project-image"
+    />
+    <p className="project-skill">
+      ({Array.isArray(project.skills) ? project.skills.join(", ") : project.skills})
+    </p>
+    {isHomePage ? (
+      <h2 className="project-title">{project.title}</h2>
+    ) : (
+      <h3>{project.title}</h3>
+    )}
         <p className="project-subtitle">{project.subtitle}</p>
       <Button variant="secondary">View Project</Button>
       </Link>

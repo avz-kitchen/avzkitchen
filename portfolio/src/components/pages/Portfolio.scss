@@ -1,7 +1,9 @@
 @import "../../variables.scss";
 
 
-
+.project-detail{
+  text-align: left;
+}
 .latest-project {
   display: flex;
   flex-direction: row;
