@@ -41,7 +41,7 @@ const AboutSection = ({ isAboutPage }) => {
           <div className="title">
             <h1>
               Hello, {"I'm "}
-              <motion.b>Ang Valenzuela</motion.b>
+              <motion.b>Angelica Valenzuela</motion.b>
             </h1>
           </div>
           <div className="title">

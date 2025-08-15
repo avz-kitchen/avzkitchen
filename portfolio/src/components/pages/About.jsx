@@ -1,48 +1,51 @@
 import GridLayout from ".././others/GridLayout";
 import Dropdown from ".././project/Dropdown";
+import TechStack from "../aboutSection/TechStack";
 import AboutSection from "../aboutSection/AboutSection";
+import Richtext from "../others/Richtext";
+import TwoColumnList from "../others/TwoColumnList";
 
 const About = () => {
-  const skills = [
-    {
-      title: "As a creative illustrator",
-      text: "I find joy in capturing the beauty of diverse cultures and experiences. Every piece I create is a reflection of my inspirations, inviting others to see the world through my eyes.",
-    },
-    {
-      title: "UX/UI Design",
-      image: "/about/avz-glasses.png",
-      text: "This artistic foundation guides my work in UX/UI design, where I focus on creating user experiences that resonate on a personal level. I believe design should be intuitive, engaging, and respectful of our environment.",
-    },
-    {
-      title: "In Branding",
-      text: "I love helping brands articulate their unique stories, crafting visual identities that connect with people and embraces sustainability and our environtment",
-    },
-    {
-      title: "Web Development",
-      image: "/about/Avz-Illustration.png",
-      text: "In the realm of web development, I find the sweet blend of creativity and logic. Each project is a chance to transform ideas into reality, and I draw inspiration from the natural world around me. I’m dedicated to building websites that are not only user-friendly and visually appealing but also eco-conscious. My goal is to collaborate with like-minded individuals to create digital solutions that empower users while honoring our planet.",
-    },
-  ];
+
+  const aboutText = "blending strategy, design & tech ☍ in my visual kitchen ✦, where ideas simmer, flavors merge, and every project is carefully plated. I transform concepts into digital experiences that are not only visually compelling but also intuitive, functional, and built to leave a lasting impression ☜.";
+  const headerTags = ["Branding", "Product Design", "Code"];
+const skills = [
+  {
+    title: "Brand & Design Systems ✐",
+    text: "I build cohesive design systems that give brands a clear, consistent voice across every touchpoint. From visual identity to reusable components, I ensure every element is carefully plated for impact and scalability.",
+  },
+  {
+    title: "UX/UI & Information Architecture ✦",
+    image: "/about/avz-glasses.png",
+    text: "I structure experiences that feel intuitive and engaging. By mapping flows, organizing content, and prioritizing clarity, I create interfaces that guide users effortlessly — every interaction thoughtfully crafted.",
+  },
+  {
+    title: "Accessibility & Inclusive Design ➹",
+    image: "/about/Avz-Illustration.png",
+    text: "Design should be for everyone. I focus on creating experiences that are accessible, inclusive, and usable by all, making sure every digital interaction is considerate and empowering.",
+  },
+  {
+    title: "Front-End Development & Code </> ",
+    text: "I bring designs to life with clean, efficient code. From responsive layouts to interactive components, I ensure that every project not only looks great but performs seamlessly across devices and platforms.",
+  },
+  {
+    title: "Creative Illustration & Visual Storytelling ✎",
+    text: "I translate ideas into visuals that connect and inspire. From illustrations to motion and iconography, I craft imagery that enhances storytelling and enriches user experiences.",
+  },
+];
+
 
   return (
-    <>
+    <div >
       <AboutSection isAboutPage={true} />
-      <GridLayout columns={2}>
-        <div> </div>
+      <Richtext paragraph={aboutText} tags={headerTags} />
+      <TwoColumnList
+        heading="What I do"
+        items={skills}
+      />
+      <TechStack />
 
-        <div>
-          {/* Step 2: Map over skills to create dropdowns */}
-          {skills.map((item, index) => (
-            <Dropdown
-              key={index} // Use index as key; consider a unique id if available
-              title={item.title}
-              image={item.image}
-              text={item.text}
-            />
-          ))}
-        </div>
-      </GridLayout>
-    </>
+    </div>
   );
 };
 
