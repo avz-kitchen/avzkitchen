@@ -2,12 +2,12 @@ import React from "react";
 
 const DataPrivacy = () => {
   return (
-    <div style={{ textAlign: "left" }}>
+    <section style={{ textAlign: "left" }}>
       <h1>Data Protection and Privacy</h1>
       <p>
         We are very pleased about your interest in our company. Data protection
-        has a particularly high priority for the management of [Your Company].
-        The use of the Internet pages of [Your Company] is possible without any
+        has a particularly high priority for the management of AVZKITCHEN.
+        The use of the Internet pages of AVZKITCHEN is possible without any
         indication of personal data. However, if a data subject wants to use
         special services of our company via our website, processing of personal
         data could become necessary.
@@ -18,15 +18,18 @@ const DataPrivacy = () => {
         (GDPR) is:
       </p>
       <p style={{ fontWeight: "bold" }}>
-        AVZ Kitchen Angelica Valenzuela
+        AVZKITCHEN
+        <br />
+        Angelica Valenzuela
+
         <br />
         Germany <br />
         <br />
-        E-Mail: hello@avzkitchen.de
+        E-Mail: info@avzkitchen.com
       </p>
       <h3>2. Collection of General Data and Information</h3>
       <p>
-        The website of AVZ Kitchen collects a series of general data and
+        The website of AVZKITCHEN collects a series of general data and
         information when a data subject or an automated system calls up the
         website. This general data and information are stored in the server log
         files.
@@ -80,7 +83,7 @@ const DataPrivacy = () => {
         </a>
         .
       </p>
-    </div>
+    </section>
   );
 };
 
