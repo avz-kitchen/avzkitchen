@@ -44,7 +44,7 @@ const Footer = () => {
             Instagram
           </a>
           </span>
-                    <a href="mailto:avzkitchen@gmail.com">avzkitchen@gmail.com</a>
+                    <a href="mailto:hello@avzkitchen.com">hello@avzkitchen.com</a>
 
         </div>
       <div className="copyright">
