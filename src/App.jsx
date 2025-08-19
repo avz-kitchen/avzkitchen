@@ -21,6 +21,8 @@ const App = () => {
     <>
         <Helmet>
         <title>Angelica Valenzuela | Freelance Product Designer & Developer</title>
+          <meta name="robots" content="index, follow" />
+
         <meta
           name="description"
           content="Angelica Valenzuela – Freelance Product Designer & Developer creating digital products, e-commerce solutions, and brands that leave a lasting impression."

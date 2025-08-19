@@ -1,4 +1,4 @@
-# Allow all search engines to crawl the site
+# Allow all search engines to crawl the site, except private folders
 User-agent: *
 Disallow: /admin/
 Disallow: /drafts/
@@ -6,7 +6,7 @@ Disallow: /private/
 Disallow: /tmp/
 Disallow: /backup/
 
-# Allow crawling of public portfolio, projects, and blog
+# Allow everything else
 Allow: /
 
 # Sitemap location for better indexing
