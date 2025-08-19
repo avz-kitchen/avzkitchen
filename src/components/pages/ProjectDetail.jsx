@@ -3,6 +3,7 @@ import HeroSection from "../heroSection/HeroSection";
 import Dropdown from "../project/Dropdown";
 import TextMedia from "../others/TextMedia";
 import ShotDemo from "../others/ShotDemo";
+import ProjectJSONLD from "../structuredData/ProjectJSONLD";
 
 // Utility function to transform project title to URL format
 
@@ -16,6 +17,8 @@ const ProjectDetail = ({ project }) => {
         <title>AVZKITCHEN Project | {project.title} – {project.subtitle}</title>
         <meta name="description" content={project.desc} />
         <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
+        <ProjectJSONLD project={project} />
+
       </Helmet>
       <HeroSection
         title={project.title}

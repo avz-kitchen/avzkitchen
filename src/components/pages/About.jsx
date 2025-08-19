@@ -40,6 +40,21 @@ const skills = [
         <title>AVZKITCHEN | About Angelica Valenzuela – Freelance Digital Product Designer & Developer</title>
         <meta name="description" content="Learn about Angelica Valenzuela, a freelance product designer and developer blending strategy, design, and tech to create digital products that leave a lasting taste." />
         <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica , Angelica Valenzuela, UX, UI, Digital Products , Freelance, Front-End Development , Illustration" />
+              <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://avzkitchen.com/bio" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Angelica Valenzuela",
+            "url": "https://avzkitchen.com/bio",
+            "author": {
+              "@type": "Person",
+              "name": "Angelica Valenzuela",
+              "url": "https://avzkitchen.com"
+            }
+          })}
+        </script>
       </Helmet>
       <AboutSection isAboutPage={true} />
       <Richtext paragraph={aboutText} tags={headerTags} />

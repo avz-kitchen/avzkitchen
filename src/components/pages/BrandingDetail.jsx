@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import ProjectJSONLD from "../structuredData/ProjectJSONLD";
 import HeroSection from "../heroSection/HeroSection";
 import TextMedia from "../others/TextMedia";
 import TextImage from "../others/TextImage";
@@ -8,10 +9,13 @@ import "./Portfolio.scss";
 const BrandingDetail = ({ project }) => {
   return (
     <section>
+
       <Helmet>
         <title>AVZKITCHEN Branding | {project.title} – {project.subtitle}</title>
         <meta name="description" content={project.desc} />
         <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
+           <ProjectJSONLD project={project} />
+
       </Helmet>
       <HeroSection
         title={project.title}
