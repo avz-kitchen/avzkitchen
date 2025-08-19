@@ -5,8 +5,8 @@ const Header = () => {
     <section >
       <GridLayout columns={4}>
         <h1 className="xxl span-three-columns">Hello there,</h1>
-        <h4>I'm Angelica❋, welcome to my visual kitchen. <Button variant="primary" to="/bio"> ❋ Bio</Button>
-        </h4>
+        <h1 style={{ fontSize: "clamp(1rem, 5vw, 2rem)", textTransform: "none" }}>I'm Angelica❋, welcome to my visual kitchen. <Button variant="primary" to="/bio"> ❋ Bio</Button>
+        </h1>
       </GridLayout >
       {/* <img
         src="public/project/flightapp/flight-app-hero.gif"
