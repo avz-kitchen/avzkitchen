@@ -9,7 +9,7 @@ const BrandingDetail = ({ project }) => {
   return (
     <section>
       <Helmet>
-        <title>AVZKITCHEN | {project.title} – {project.subtitle}</title>
+        <title>AVZKITCHEN Branding | {project.title} – {project.subtitle}</title>
         <meta name="description" content={project.desc} />
         <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
       </Helmet>

@@ -37,9 +37,9 @@ const skills = [
   return (
     <div >
       <Helmet>
-        <title>AVZKITCHEN | About Angelica – Digital Product Designer & Developer</title>
-        <meta name="description" content="Learn about Angelica, a freelance product designer and developer blending strategy, design, and tech to create digital products that leave a lasting taste." />
-        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration" />
+        <title>AVZKITCHEN | About Angelica Valenzuela – Freelance Digital Product Designer & Developer</title>
+        <meta name="description" content="Learn about Angelica Valenzuela, a freelance product designer and developer blending strategy, design, and tech to create digital products that leave a lasting taste." />
+        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica , Angelica Valenzuela, UX, UI, Digital Products , Freelance, Front-End Development , Illustration" />
       </Helmet>
       <AboutSection isAboutPage={true} />
       <Richtext paragraph={aboutText} tags={headerTags} />

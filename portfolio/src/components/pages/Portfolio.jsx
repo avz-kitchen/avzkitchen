@@ -7,7 +7,7 @@ const Portfolio = ({ projects }) => {
   return (
     <section className="portfolio-section">
       <Helmet>
-        <title>AVZKITCHEN | Angelica Valenzuela's Portfolio Product Design & Development</title>
+        <title>AVZKITCHEN Portfolio | Angelica Valenzuela's Projects Freelance Product Design & Development</title>
         <meta name="description" content="Explore Angelica Valenzuela's portfolio of digital product designs and development projects, featuring web apps, mobile experiences, and creative solutions." />
         <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica Valenzuela, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
       </Helmet>

@@ -13,7 +13,7 @@ const ProjectDetail = ({ project }) => {
   return (
     <div className="project-detail-wrapper">
       <Helmet>
-        <title>AVZKITCHEN | {project.title} – {project.subtitle}</title>
+        <title>AVZKITCHEN Project | {project.title} – {project.subtitle}</title>
         <meta name="description" content={project.desc} />
         <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
       </Helmet>
