@@ -1,0 +1,13 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Allow crawling of public portfolio, projects, and blog
+Allow: /
+
+# Sitemap location for better indexing
+Sitemap: https://avzkitchen.com/sitemap.xml
