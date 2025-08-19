@@ -19,7 +19,7 @@ const ProjectCard = ({ project, isHomePage }) => {
 >
   <Link to={`/portfolio/${projectUrl}`}>
     <img
-      src={isHomePage ? project.logo : project.main}
+      src={isHomePage ? project.logo : project.cover}
       alt={project.title}
       className="project-image"
     />

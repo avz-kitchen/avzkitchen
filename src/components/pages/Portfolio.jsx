@@ -9,10 +9,14 @@ import { useState, useEffect } from "react";
 
 const TABS = [
   { label: "All", value: "All", hash: "" },
+  { label: "Branding", value: "Branding", hash: "#branding" },
   { label: "UX/UI", value: "UX/UI", hash: "#uxui" },
   { label: "Web Development", value: "Web Development", hash: "#webdev" },
   { label: "Illustration", value: "Illustration", hash: "#illustration" },
-  { label: "Branding", value: "Branding", hash: "#branding" },
+  { label: "Amazon", value: "Amazon", hash: "#amazon" },
+  { label: "E-Commerce", value: "E-Commerce", hash: "#e-commerce" },
+
+
 ];
 
 const Portfolio = ({ projects }) => {
@@ -54,22 +58,21 @@ const Portfolio = ({ projects }) => {
   }, []);
 
   // Filtering logic: checks project.skills or project.category or project.tags
-  const filteredProjects = selectedTab === "All"
-    ? projects
-    : projects
-        .map((project, idx) => ({ project, idx }))
-        .filter(({ project }) => {
-          const skills = project.skills || [];
-          const category = project.category || "";
-          const tag = project.tag || "";
-          return (
-            skills.includes(selectedTab) ||
-            category === selectedTab ||
-            tag === selectedTab
-          );
-        })
-        .sort((a, b) => a.idx - b.idx)
-        .map(({ project }) => project);
+  const filteredProjects = projects
+    .map((project, idx) => ({ project, idx }))
+    .filter(({ project }) => {
+      if (selectedTab === "All") return true;
+      const skills = project.skills || [];
+      const category = project.category || "";
+      const tag = project.tag || "";
+      return (
+        skills.includes(selectedTab) ||
+        category === selectedTab ||
+        tag === selectedTab
+      );
+    })
+    .sort((a, b) => b.idx - a.idx)
+    .map(({ project }) => project);
 
   return (
     <section className="portfolio-section">

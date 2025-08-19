@@ -22,7 +22,7 @@ const ProjectDetail = ({ project }) => {
       </Helmet>
       <HeroSection
         title={project.title}
-        img={project.main}
+        img={project.cover}
         category={project.category}
         year={project.year}
         skills={project.skills}

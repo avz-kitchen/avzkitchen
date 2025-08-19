@@ -54,6 +54,8 @@
             "logo": "/project/keywi/keywi_logo.png",
             "img": "/project/keywi/keywi-img.png",
             "main": "/project/keywi/keywi-img.png",
+             "cover": "/project/keywi/keywi-img.png",
+
             "desc": "As a music lover, I've spent countless hours exploring new tracks and sharing discoveries with friends. The process can be exciting—but finding music that resonates with my tastes, and that of my friends, often feels like a guessing game. Inspired by this frustration, I set out to design a music discovery app that feels more like a conversation: *sharing, discovering, and experiencing music together.*",
             "skills": ["UX/UI", "Prototyping", "Visual Design"],
             "isFeatured": true,
@@ -98,6 +100,7 @@
             "type": "Branding",
             "logo": "/project/madamdo/madamdo-logo.png",    
             "img": "/project/madamdo/madamdo-logo.png",
+            "cover": "/project/madamdo/madamdo-img.png",
             "img2": "/project/madamdo/madamdo-img2.png",
             "main": "/project/madamdo/madamdo-img.png",
             "design": "/project/madamdo/madamdo-design.png",
@@ -124,6 +127,7 @@
             "img": "/project/pke/pke-logo.png",
             "img2": "/project/pke/pke-img2.png",
             "main": "/project/pke/pke-img.png",
+            "cover": "/project/pke/pke-img.png",
             "design": "/project/pke/pke-design.png",
             "desc": "Philip Kehela is a digital commerce consultant who wanted to strengthen his online presence with a cohesive and modern personal brand. The project focused on creating a digital identity that conveys his expertise in the field of e-commerce, while ensuring a sleek and functional design for his website.",
             "skills": ["Web Development", "Branding"],
@@ -150,7 +154,7 @@
              "img": "/project/hssho/hssho-logo.png",
             "img2": "/project/hssho/hssho-img2.jpg",
             "main": "/project/hssho/hssho-img2.png",
-            "cover": "/project/hssho/hssho-cover.png",
+            "cover": "/project/hssho/hssho-img2.png",
             "design": "/project/hssho/hssho-design.png",
             "desc": "HsSHo is a concept brand born from the slow burn of homemade chili oil and transformed into a visual language of heat, mystique, and attitude. What started in the kitchen now lives in bold graphics and wearable design — led by a signature T-shirt collection that channels fire into form. It’s a brand that lingers — sharp, seductive, and unapologetically bold.",
             "skills": ["Branding", "Illustration"],
@@ -166,6 +170,144 @@
             "conclusion": "This project allowed me to fully integrate illustration, branding, and packaging into a cohesive digital experience — blending bold visual storytelling with strategic design thinking. From concept to execution, Hay,SoSpicyHotOil reflects my ability to craft emotionally resonant, visually striking work rooted in narrative.",
             "shot": "/project/hssho/hssho-label.png",
             "demo": "https://www.behance.net/gallery/227050435/HaysoSpiceHotoil"
-        }
+        },
+                {
+            "category": "Amazon",
+            "id": 7,
+            "title": "onua",
+            "subtitle": "Designed for adventurers",
+            "shortDesc": "A client project where I redesigned onua’s Amazon product listing, crafting premium visuals, persuasive content, and a seamless shopping experience to boost engagement and conversions.",
+            "type": "Case Study",
+            "img": "/project/onua/onua-feature.png",
+            "main": "/project/onua/onua-cover.png",
+            "cover": "/project/onua/onua-cover.png",
+             "desc": "Onua is a startup that creates high-performance outdoor jackets for women, combining style, durability, and sustainability. Designed for adventurers who value both functionality and fashion, onua empowers women to explore the outdoors with confidence.",
+            "skills": ["UX/UI", "Amazon", "A+ Content"],
+            "isFeatured": false,
+            "isLatest": false,
+            "month": "02",
+            "year": "2025",
+            "tag": "e-commerce",
+            "demo": "https://www.amazon.de/-/en/Transition-Lightweight-Quilted-Outdoor-Colours/dp/B0DX2H7WY3/ref=sr_1_2?dib=eyJ2IjoiMSJ9.blunXegOP1_ARqaETEq_nb8sfHlz70dPVSZVqcnwUKj5rv1HvyJ2gYOD5DIYDWz2.nx5zNuMxvKej8FYxpR34wpz373HjkLrQQxQ60D6pA8I&dib_tag=se&qid=1755619015&refinements=p_4%3AONUA&s=apparel&sr=1-2",
+            "overview": "Overview content goes here...",
+            "dropdowns": [
+                {
+                    "title": "Creating Premium A+ content",
+                    "image": "/project/flightapp/flight-app-main.png",
+                    "text": "<p>For onua, I focused on creating A+ premium content that effectively communicated the brand's unique value proposition. Through creative imagery and well-structured product information, I crafted a visually appealing and user-friendly experience that aligned with onua’s sustainable and outdoor-focused branding, ultimately enhancing the product's visibility and engagement.</p>"
+                },
+                {
+                    "title": "Expanding the A+ Premium Content Concept",
+                    "image": "/project/onua/onua-shots.png",
+                    "text": "<p>I applied the core design concept used for onua's outdoor jacket across multiple products, ensuring brand consistency and a cohesive visual identity. By reusing the same design principles—such as clear, impactful visuals and a focus on product benefits—I created a seamless user experience across the range, making sure each product stood out while maintaining the brand’s premium, outdoor-focused aesthetic.</p>"
+                },
+{
+                    "title": "Turning Features Into Value",
+                    "image": "/project/onua/onua-img.png",
+            "text": "<p>Key product features—quilted warmth, removable hood, lightweight design, and versatile style—were presented prominently. Lifestyle imagery reinforces quality and usability. The goal was to create an Amazon listing that’s not only visually appealing but also drives shopper confidence and conversions.</p>"
+                }
+            ],
+            "text": "At the core of this project was creating a premium, intuitive shopping experience. Every design decision—from visuals to copy—was made to enhance clarity, build trust, and highlight the lifestyle appeal of the onua jacket.",
+            "flow": "/project/flightapp/flight-app-feature.png",
+             "conclusion": "This client project demonstrated the power of thoughtful e-commerce design. By understanding the shopper, crafting clear, persuasive content, and presenting products with premium visuals, we elevated onua’s Amazon presence and improved user engagement and conversion.",
+            "shot": "/project/flightapp/flight-app-shot.png"
+        },
+                        {
+            "category": "E-Commerce",
+            "id": 8,
+            "title": "NaturGut",
+            "subtitle": "Product from Nature",
+             "shortDesc": "A project focused on enhancing Naturgut's e-commerce presence by designing cohesive, story-driven product listings across Amazon and Shopify, emphasizing sustainability, premium quality, and brand consistency.",
+            "type": "Case Study",
+            "img": "/project/naturgut/naturgut-feature.png",
+            "main": "/project/naturgut/naturgut-cover.png",
+            "cover": "/project/naturgut/naturgut-cover.png",
+             "desc": "Naturgut is an e-commerce platform offering premium natural products sourced from the Black Forest, focusing on sustainability and eco-friendly living. Their mission is to provide customers with high-quality, organic goods that promote a healthy, environmentally conscious lifestyle.",
+            "skills": ["UX/UI", "Amazon", "A+ Content", "E-Commerce Design" , "Branding" , "Shopify"],
+            "isFeatured": false,
+            "isLatest": false,
+            "month": "12",
+            "year": "2024",
+            "tag": "e-commerce",
+            "demo": "https://www.amazon.de/-/en/Citrus-Zauber-Room-Spray-Laundry-Fragrance/dp/B0036DJ1A8/ref=sr_1_9?crid=1BN1LOVRVHCPS&dib=eyJ2IjoiMSJ9.GRsQFS3hivh4L3xGJrqRviPkizOvMscUXuIubjKOxFr5mdCPKBr45ZQe-2dSuf6v2HUr-ROZKPFykCX5dTVxB5OB8Y1UvaJABol0TwsX6xJrIM6Dy_Dspelc98bFkuISONDOf3hqBBX9Ef6oLe_HeaLVY4Tmrmn6VhTfPa4fnCMHpyiHsXsnfDOn8rvjfNBt_GV38gNcUNROrHv31SzH3RETMoJkZKhpUBF4EvyD9vxb_w7MC_yqeB0dqublKzHYXx-_VsEUu487KxBjKTEaNKgZ9iNpAewjbCVgZvcqohg.PNQyMq9h4zKqcpRtRP-pYbze2lilPLwvs_YtH9nhq0E&dib_tag=se&keywords=naturgut&qid=1755623077&sprefix=naturgut%2Caps%2C156&sr=8-9",
+            "overview": "Overview content goes here...",
+                "dropdowns": [
+                    {
+                        "title": "Extracting the Essence of Each Product",
+                        "image": "/project/naturgut/naturgut-product.png",
+                        "text": "<p>Every Naturgut product carries a story—its origin, its benefits, its eco-conscious promise. I focused on distilling this essence into product visuals and copy that educate, inspire, and build trust. By highlighting organic sourcing, natural benefits, and eco-friendly packaging, I crafted an experience that communicates both quality and sustainability.</p>"
+                    },
+                    {
+                        "title": "Creating Cohesive A+ Premium Content",
+                        "image": "/project/naturgut/naturgut-feature.png",
+                        "text": "<p>For Amazon, I designed A+ premium content that combined rich imagery, strong headlines, and detailed product information. Each layout reinforced Naturgut’s values, highlighted key benefits, and used storytelling to connect with the customer. The result: enhanced trust, engagement, and conversion potential.</p>"
+                    },
+                    {
+                        "title": "Campaign-Driven Website Adjustments",
+                        "image": "/project/naturgut/naturgut-website.png",
+                        "text": "<p>I developed seasonal campaign-specific landing pages, such as for holiday promotions, directly within the Shopify environment. This involved coding custom sections, optimizing mobile performance, and adapting layouts to match marketing goals. Pages were created using Shopify's Liquid templating, HTML/CSS, and JavaScript, ensuring reusability and clean structure.</p>"
+                    },
+                    {
+                        "title": "A Balance of Quality and Trust",
+                        "image": "/project/naturgut/naturgut-img.png",
+                        "text": "<p>Key product attributes—organic sourcing, natural benefits, eco-friendly packaging—were presented clearly with visually appealing graphics and concise, educational copy. Strong headlines and 'Made in Germany' messaging reinforced quality and reliability. By connecting features to real-world value, each listing inspires confidence and aligns with the customer’s commitment to sustainable living.</p>"
+                    }
+                ],
+            "text": "At the heart of this project was the desire to create Amazon listings that tell a story. By emphasizing sustainability, premium quality, and product benefits, I transformed Naturgut’s product pages into an engaging, trustworthy, and visually cohesive shopping experience. A key focus was aligning the brand’s visual identity and messaging across both Shopify and Amazon, ensuring customers encounter a consistent and recognizable Naturgut experience no matter where they shop.",
+            "flow": "/project/naturgut/naturgut-feature.png",
+            "conclusion": "Designing Naturgut’s A+ content highlighted the importance of empathy, storytelling, and clarity in e-commerce. By focusing on sustainability, premium quality, and brand alignment, I helped Naturgut communicate its values effectively, maintain visual consistency across Shopify and Amazon, and deliver a high-converting, user-friendly shopping experience that builds trust and reinforces the brand’s identity.",
+            "shot": "/project/naturgut/naturgut-shot.png"
+        },
+                                {
+            "category": "App",
+            "id": 9,
+            "title": "WDR Radio App",
+            "subtitle": "Tune in for everyone",
+            "shortDesc": "A project focused on enhancing WDR's radio app by designing a user-friendly interface and improving accessibility features.",
+            "type": "Case Study",
+            "img": "/project/wdr/wdr-feature.png",
+            "main": "/project/wdr/wdr-img.png",
+            "cover": "/project/wdr/wdr-cover.png",
+             "desc": "The WDR Radio App underwent a comprehensive modernization over a year to ensure intuitive navigation, an exploratory design, and full accessibility. The goal was to create a contemporary, user-centric platform that optimally showcases radio and media content.",
+            "skills": ["UX/UI", "Accessibility"],
+            "isFeatured": false,
+            "isLatest": false,
+            "month": "12",
+            "year": "2024",
+            "tag": "e-commerce",
+            "demo": "https://www.amazon.de/-/en/Citrus-Zauber-Room-Spray-Laundry-Fragrance/dp/B0036DJ1A8/ref=sr_1_9?crid=1BN1LOVRVHCPS&dib=eyJ2IjoiMSJ9.GRsQFS3hivh4L3xGJrqRviPkizOvMscUXuIubjKOxFr5mdCPKBr45ZQe-2dSuf6v2HUr-ROZKPFykCX5dTVxB5OB8Y1UvaJABol0TwsX6xJrIM6Dy_Dspelc98bFkuISONDOf3hqBBX9Ef6oLe_HeaLVY4Tmrmn6VhTfPa4fnCMHpyiHsXsnfDOn8rvjfNBt_GV38gNcUNROrHv31SzH3RETMoJkZKhpUBF4EvyD9vxb_w7MC_yqeB0dqublKzHYXx-_VsEUu487KxBjKTEaNKgZ9iNpAewjbCVgZvcqohg.PNQyMq9h4zKqcpRtRP-pYbze2lilPLwvs_YtH9nhq0E&dib_tag=se&keywords=naturgut&qid=1755623077&sprefix=naturgut%2Caps%2C156&sr=8-9",
+            "overview": "From research to prototyping, the project focused on understanding diverse users and creating a platform that feels intuitive, engaging, and inclusive. Design decisions prioritized clarity, accessibility, and a consistent experience across all WDR radio stations.",
+                "dropdowns": [
+                    {
+                        "title": "Listening to Users",
+                        "image": "/project/wdr/wdr-research.png",
+                        "text": "<p>The journey began with exploring how users engage with multiple WDR apps, analyzing age demographics and mobile listening patterns. Insights inspired a design that adapts to diverse needs, ensuring everyone can discover and enjoy content effortlessly.</p>"
+                    },
+                    {
+                        "title": "Crafting a Unified Experience",
+                        "image": "/project/wdr/wdr-design.png",
+                        "text": "<p>We reimagined WDR’s apps as a single, cohesive platform. By aligning interface patterns and navigation, listeners can move seamlessly between stations and content. The design feels familiar yet modern, guiding users intuitively through the listening journey.</p>"
+                    },
+                    {
+                        "title": "Designing for Everyone",
+                        "image": "/project/wdr/wdr-accesibility.png",
+                        "text": "<p>Accessibility was embedded into every design decision. Features were built to comply with accessibility standards, ensuring that users of all abilities could enjoy a rich and inclusive listening experience without barriers.</p>"
+                    },
+                    {
+                        "title": "A Mobile-First Approach",
+                        "image": "/project/wdr/wdr-mobile.png",
+                        "text": "<p>Optimizing for mobile devices was key. We designed intuitive touch interactions, exploratory navigation, and adaptive layouts, allowing users to easily discover stations, live content, and personalized recommendations wherever they are.</p>"
+                    },
+                    {
+                        "title": "A Listening Experience that Connects",
+                        "image": "/project/wdr/wdr-feature.png",
+                        "text": "<p>The final product blends usability, engagement, and inclusivity. Listeners now enjoy a consistent, approachable, and modern interface. The redesign encourages exploration, fosters loyalty, and ensures WDR’s radio content reaches a broad audience effectively.</p>"
+                    }
+                ],
+                "text": "At the heart of the redesign was a commitment to simplicity, inclusivity, and seamless discovery. By understanding listener behavior and aligning design with accessibility and mobile best practices, the WDR Radio Apps became a unified, user-friendly platform that feels responsive, approachable, and modern.",
+                "flow": "/project/wdr/wdr-feature.png",
+                "conclusion": "This project demonstrated the power of thoughtful design in transforming a fragmented ecosystem into a coherent experience. By crafting a unified, mobile-optimized, and accessible app, WDR listeners now enjoy intuitive navigation, engaging features, and consistent usability across all stations, fostering connection and trust.",
+                "shot": "/project/wdr/wdr-shot.png"
+                    }
     ]
 }
