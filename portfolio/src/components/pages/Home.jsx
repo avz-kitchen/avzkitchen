@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>AVZKITCHEN | Angelica Valenzuela's Portfolio – Digital Product Designer & Developer</title>
+        <title>AVZKITCHEN | Angelica Valenzuela's Portfolio – Freelance Digital Product Designer & Developer</title>
         <meta name="description" content="Angelica Valenzuela – Freelance Product Designer & Developer. Blending design, insights, and technology to craft digital products, e-commerce solutions, and brands that leave a lasting impression." />
         <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica Valenzuela, UX, UI, Digital Products , Freelance, Front-End Development , Illustration ,  Amazon , Shopify ,  Elementor" />
       </Helmet>
