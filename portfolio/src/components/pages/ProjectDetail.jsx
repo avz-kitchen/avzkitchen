@@ -12,10 +12,10 @@ const ProjectDetail = ({ project }) => {
 
   return (
     <div className="project-detail-wrapper">
-            <Helmet>
-        <title>AVZKITCHEN | Portfolio Projects </title>
-        <meta name="description" content="Explore AVZ's portfolio of digital product designs and development projects, featuring web apps, mobile experiences, and creative solutions." />
-        <meta name="keywords" content="product design projects, UI/UX work, front-end development portfolio, web apps ,Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon" />
+      <Helmet>
+        <title>AVZKITCHEN | {project.title} – {project.subtitle}</title>
+        <meta name="description" content={project.desc} />
+        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
       </Helmet>
       <HeroSection
         title={project.title}

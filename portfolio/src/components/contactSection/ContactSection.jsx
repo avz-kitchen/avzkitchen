@@ -35,9 +35,9 @@ const ContactSection = () => {
   return (
     <section className="contact-section">
             <Helmet>
-        <title>AVZKITCHEN | Digital Product Designer & Developer</title>
-        <meta name="description" content="Get in touch with Angelica for design and development projects, collaborations, or freelance opportunities." />
-        <meta name="keywords" content="contact digital designer, hire UI/UX developer, Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Front End Development , Amazon ,  Shopify , Elementor" />
+        <title>AVZKITCHEN | Contact Angelica Valenzuela Digital Product Designer & Developer</title>
+        <meta name="description" content="Get in touch with Angelica Valenzuela for design and development projects, collaborations, or freelance opportunities." />
+        <meta name="keywords" content="Angelica Valenzuela , contact digital designer, hire UI/UX developer, Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Front End Development , Amazon ,  Shopify , Elementor" />
       </Helmet>
       <div className="contact-container">
                   <h1>Let's Collaborate</h1>
