@@ -1,6 +1,16 @@
 @import "../../variables.scss";
 
-
+.portfolio-tabs{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  .tag{
+    &.active {
+      background-color: $dark-primary-color;
+      color: $dark-text-color;
+    }
+  }
+}
 .project-detail{
   text-align: left;
 }
