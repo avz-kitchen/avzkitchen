@@ -1,14 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import Header from "./components/others/Header";
-import HeroSection from "./components/heroSection/HeroSection";
-import AboutSection from "./components/aboutSection/AboutSection";
+import Home from "./components/pages/Home";
 import Portfolio from "./components/pages/Portfolio";
-import ServiceSection from "./components/serviceSection/ServiceSection";
 import ContactSection from "./components/contactSection/ContactSection";
 import Footer from "./components/footer/Footer";
 import portfolioData from "./data/data.json";
-import ProjectSection from "./components/project/ProjectSection";
 import ProjectDetailRouter from "./components/ProjectDetailRouter";
 import About from "./components/pages/About";
 import Resume from "./components/pages/Resume";
@@ -16,7 +12,6 @@ import UXPortfolio from "./components/pages/uxportfolio";
 import ScrollToTop from "./components/others/ScrollToTop";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
-import Richtext from "./components/others/Richtext";
 
 const App = () => {
   const projects = portfolioData.portfolio;
@@ -27,7 +22,7 @@ const App = () => {
       <Navbar />
       <div className="page-wrapper">
         <Routes>
-          <Route path="/" element={<Home />} /> {/* Render all sections */}
+          <Route path="/" element={<Home />} />
           <Route
             path="/portfolio"
             element={<Portfolio projects={projects} />}
@@ -48,19 +43,6 @@ const App = () => {
   );
 };
 
-const Home = () => {
-const projects = portfolioData.portfolio;
-const headerTags = ["Branding", "Product Design", "Code"];
-const headerText = "I gather insights ✐, design ✦, and tech ☍ - blending them into digital products & brands that leave a lasting taste ❋.";
-  return (
-    <>
-      <Header />
-      <Richtext paragraph={headerText} tags={headerTags} />
-      <ProjectSection projects={projects || []} />
-      <ServiceSection/>
-      <ContactSection />
-    </>
-  );
-};
+
 
 export default App;

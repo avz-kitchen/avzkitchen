@@ -1,7 +1,7 @@
+import { Helmet } from "react-helmet";
 import HeroSection from "../heroSection/HeroSection";
 import Dropdown from "../project/Dropdown";
 import TextMedia from "../others/TextMedia";
-import TextImage from "../others/TextImage";
 import ShotDemo from "../others/ShotDemo";
 
 // Utility function to transform project title to URL format
@@ -12,6 +12,11 @@ const ProjectDetail = ({ project }) => {
 
   return (
     <div className="project-detail-wrapper">
+            <Helmet>
+        <title>AVZKITCHEN | Portfolio Projects </title>
+        <meta name="description" content="Explore AVZ's portfolio of digital product designs and development projects, featuring web apps, mobile experiences, and creative solutions." />
+        <meta name="keywords" content="product design projects, UI/UX work, front-end development portfolio, web apps ,Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon" />
+      </Helmet>
       <HeroSection
         title={project.title}
         img={project.main}

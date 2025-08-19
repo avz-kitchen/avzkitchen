@@ -1,5 +1,4 @@
-import GridLayout from ".././others/GridLayout";
-import Dropdown from ".././project/Dropdown";
+import { Helmet } from "react-helmet";
 import TechStack from "../aboutSection/TechStack";
 import AboutSection from "../aboutSection/AboutSection";
 import Richtext from "../others/Richtext";
@@ -37,6 +36,11 @@ const skills = [
 
   return (
     <div >
+      <Helmet>
+        <title>AVZKITCHEN | About Angelica – Digital Product Designer & Developer</title>
+        <meta name="description" content="Learn about Angelica, a freelance product designer and developer blending strategy, design, and tech to create digital products that leave a lasting taste." />
+        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Freelance, Front-End Development , Illustration" />
+      </Helmet>
       <AboutSection isAboutPage={true} />
       <Richtext paragraph={aboutText} tags={headerTags} />
       <TwoColumnList
