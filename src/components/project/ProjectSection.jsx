@@ -14,9 +14,13 @@ const ProjectSection = ({ projects }) => {
   // Find the latest project
   const latestProjects = projects.filter((project) => project.isLatest);
   const featuredProjects = projects.filter((project) => project.isFeatured);
-const [activeIndex, setActiveIndex] = useState(
-  Math.floor(featuredProjects.length / 6)
-);
+  // Clone first and last for infinite effect
+  const infiniteProjects = [
+    featuredProjects[featuredProjects.length - 1],
+    ...featuredProjects,
+    featuredProjects[0],
+  ];
+  const [activeIndex, setActiveIndex] = useState(1); // Start at first real slide
   const handleScroll = (e) => {
     const scrollLeft = e.target.scrollLeft;
     const cardWidth = e.target.firstChild?.offsetWidth || 0.5;
@@ -76,9 +80,9 @@ const [activeIndex, setActiveIndex] = useState(
     onScroll={handleScroll}
     tabIndex={0}
   >
-    {featuredProjects.map((project, idx) => (
+    {infiniteProjects.map((project, idx) => (
       <div
-        key={project.id}
+        key={idx + '-' + (project?.id || 'clone')}
         className={`slider-card${idx === activeIndex ? " active" : ""}${
           Math.abs(idx - activeIndex) === 1 ? " adjacent" : ""
         }`}
@@ -89,7 +93,16 @@ const [activeIndex, setActiveIndex] = useState(
               ? "scale(1.00)"
               : "scale(0.82)",
         }}
-        onClick={() => setActiveIndex(idx)}
+        onClick={() => {
+          // Infinite loop logic
+          if (idx === 0) {
+            setActiveIndex(infiniteProjects.length - 2); // jump to last real
+          } else if (idx === infiniteProjects.length - 1) {
+            setActiveIndex(1); // jump to first real
+          } else {
+            setActiveIndex(idx);
+          }
+        }}
       >
         <ProjectCard project={project} isHomePage={true} />
       </div>
