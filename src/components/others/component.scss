@@ -1,6 +1,8 @@
 @import "../../variables.scss";
 $padding: 2rem;
-
+.padding-side {
+  padding: $padding;
+}
 .two-images {
   display: flex;
   gap: 2rem;
@@ -147,4 +149,43 @@ gap:2rem;
     justify-content: center;
     align-items: center;
   }
+}
+
+.circular-gallery {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: grab;
+  color: var(--light-text-color)
+}
+
+.circular-gallery:active {
+  cursor: grabbing;
+}
+
+
+.circular-text {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 700px;
+  position: relative;
+  height: 700px;
+  font-weight: bold;
+  color: var(--light-text-color);
+  font-weight: 900;
+  text-align: center;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.circular-text span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 120px;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
 }

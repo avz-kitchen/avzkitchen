@@ -131,7 +131,7 @@
             "design": "/project/pke/pke-design.png",
             "desc": "Philip Kehela is a digital commerce consultant who wanted to strengthen his online presence with a cohesive and modern personal brand. The project focused on creating a digital identity that conveys his expertise in the field of e-commerce, while ensuring a sleek and functional design for his website.",
             "skills": ["Web Development", "Branding"],
-            "isFeatured": false,
+            "isFeatured": true,
             "isLatest": true,
             "month": "06",
             "year": "2024",

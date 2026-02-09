@@ -1,10 +1,24 @@
 import GridLayout from "./GridLayout";
 import Button from "../others/Button";
+import BlurText from "./BlurText";
+
 const Header = () => {
+
+  const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
   return (
     <section >
       <GridLayout columns={4}>
-        <h1 className="xxl span-three-columns">Hello there,</h1>
+
+                <BlurText
+          text="Hello There"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="xxl font-bold mb-8 span-three-columns"
+        />
         <h1 style={{ fontSize: "clamp(1rem, 5vw, 2rem)", textTransform: "none" }}>I'm Angelica❋, welcome to my visual kitchen. <Button variant="primary" to="/bio"> ❋ Bio</Button>
         </h1>
       </GridLayout >

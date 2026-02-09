@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import GridLayout from "../others/GridLayout";
-import ProjectCard from "./ProjectCard";
 import Button from "../others/Button";
+import BlurText from "../others/BlurText";
+import CircularGallery from "../others/CircularGallery";
+import data from "../../data/data.json";
 import "../pages/Portfolio.scss";
 
 const ProjectSection = ({ projects }) => {
@@ -11,27 +13,27 @@ const ProjectSection = ({ projects }) => {
     return <p>No projects available.</p>;
   }
 
+  const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
+
   // Find the latest project
   const latestProjects = projects.filter((project) => project.isLatest);
   const featuredProjects = projects.filter((project) => project.isFeatured);
-  // Clone first and last for infinite effect
-  const infiniteProjects = [
-    featuredProjects[featuredProjects.length - 1],
-    ...featuredProjects,
-    featuredProjects[0],
-  ];
-  const [activeIndex, setActiveIndex] = useState(1); // Start at first real slide
-  const handleScroll = (e) => {
-    const scrollLeft = e.target.scrollLeft;
-    const cardWidth = e.target.firstChild?.offsetWidth || 0.5;
-    const newIndex = Math.round(scrollLeft / cardWidth);
-    setActiveIndex(newIndex);
-  };
+;
 
   return (
-    <section >
+    <section className="portfolio-section">
       <GridLayout columns={4}>
-          <h1 className="span-three-columns">Selected Works</h1>
+
+          <BlurText
+          text="Selected Works"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="xxl font-bold mb-8 span-three-columns padding-side"
+        />
           <h4>each a carefully plated experience from my visual kitchen.
           <br />
           <Button variant="secondary" to="/portfolio" >See Portfolio</Button>
@@ -40,7 +42,7 @@ const ProjectSection = ({ projects }) => {
 
       </GridLayout>
      {/* Render all latest projects in a grid */}
-      <div className="latest-projects-grid">
+      <div className="latest-projects-grid padding-side">
         {latestProjects.map((latestProject) => (
           <Link
             key={latestProject.id}
@@ -74,40 +76,24 @@ const ProjectSection = ({ projects }) => {
       </div>
 
       {/* Render featured projects */}  
-<div className="featured-projects">
-  <div
-    className="featured-projects-slider"
-    onScroll={handleScroll}
-    tabIndex={0}
-  >
-    {infiniteProjects.map((project, idx) => (
-      <div
-        key={idx + '-' + (project?.id || 'clone')}
-        className={`slider-card${idx === activeIndex ? " active" : ""}${
-          Math.abs(idx - activeIndex) === 1 ? " adjacent" : ""
-        }`}
-        style={{
-          opacity: idx === activeIndex ? 1 : 0.45,
-          transform:
-            idx === activeIndex
-              ? "scale(1.00)"
-              : "scale(0.82)",
-        }}
-        onClick={() => {
-          // Infinite loop logic
-          if (idx === 0) {
-            setActiveIndex(infiniteProjects.length - 2); // jump to last real
-          } else if (idx === infiniteProjects.length - 1) {
-            setActiveIndex(1); // jump to first real
-          } else {
-            setActiveIndex(idx);
-          }
-        }}
-      >
-        <ProjectCard project={project} isHomePage={true} />
-      </div>
-    ))}
-  </div>
+
+<div style={{ height: '600px', position: 'relative' }}>
+  {data.portfolio && (
+    <CircularGallery 
+   items={data.portfolio
+  .filter(project => project.isFeatured)
+  .map(project => ({
+    image: project.logo,
+    text: project.title,
+    subtitle: project.subtitle || project.skill,
+      }))}
+      bend={1}
+      textColor="var(--light-text-color)"
+      borderRadius={0.05}
+      scrollSpeed={2}
+      scrollEase={0.05}
+    />
+  )}
 </div>
 
     </section>
