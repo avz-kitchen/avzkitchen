@@ -26,7 +26,7 @@
 
   }
   a {
-    align-self: start;
+    align-self: center;
     justify-self: start;
     &.active {
         font-weight: 800;
@@ -39,6 +39,7 @@
   text-align: left;
   transition: filter 300ms;
     justify-self: start;
+    align-self: center;
   &:hover {
    color: $dark-primary-color;
     filter: brightness(0.8);
@@ -60,7 +61,7 @@
       align-items: center;
       text-decoration: none;
       font-size: 16px;
-      height: 60px;
+      height: 44px;
       width: 100%;
       cursor: pointer;
       outline-offset: 2px;
