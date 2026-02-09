@@ -48,7 +48,7 @@ const ProjectSection = ({ projects }) => {
             key={latestProject.id}
             to={`/portfolio/${latestProject.title.replace(/\s+/g, "-").toLowerCase()}`}
           >
-            <div className="latest-project">
+            <div className="latest-project" style={{ width: '100%', position: 'relative' }}>
               {/* Right: Image + details */}
               <div className="latest-project-card-new">
                 <p className="project-title">{latestProject.title}</p>

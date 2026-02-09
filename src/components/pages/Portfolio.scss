@@ -101,6 +101,27 @@ padding: 0%;
   }
 }
 
+.latest-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  align-content: center;
+  width: 100%;
+  
+  .latest-project {
+    width: 100%;
+    
+    &:nth-child(1) {
+      grid-column: span 1;
+    }
+    
+    &:nth-child(2) {
+      grid-column: span 2;
+    }
+  }
+}
+
 // .project-title {
 //   font-size: 4rem;
 // }
@@ -285,6 +306,7 @@ padding: 0%;
   }
 }
 
+
 @media (max-width: 1024px) {
   .portfolio {
     grid-template-columns: 1fr 1fr;
@@ -304,16 +326,19 @@ padding: 0%;
     width: 100%;
   }
 }
-.latest-projects-grid {
-  display: flex;
-  gap: 2.5rem;
-  margin-bottom: 3rem;
-  align-content: center;
-}
 
 @media (max-width: 900px) {
   .latest-projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    
+    .latest-project {
+      &:nth-child(1),
+      &:nth-child(2) {
+        grid-column: span 1;
+      }
+    }
   }
 }
+
+
