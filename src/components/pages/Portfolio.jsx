@@ -75,7 +75,7 @@ const Portfolio = ({ projects }) => {
     .map(({ project }) => project);
 
   return (
-    <section className="portfolio-section">
+    <section className="portfolio-page">
       <Helmet>
         <title>AVZKITCHEN Portfolio | Angelica Valenzuela's Projects Freelance Product Design & Development</title>
         <meta name="description" content="Explore Angelica Valenzuela's portfolio of digital product designs and development projects, featuring web apps, mobile experiences, and creative solutions." />

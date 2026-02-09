@@ -19,8 +19,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    justify-items: stretch;
     width:100%;
+    max-width: 1500px;
+    margin: 0 auto;
     
 
   }
@@ -51,8 +52,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     text-align: left;
-.nav-links{
-      a {
+
+    .nav-tab {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -60,17 +62,26 @@
       font-size: 16px;
       height: 60px;
       width: 100%;
-      transition: border-bottom 0.3s;
+      cursor: pointer;
+      outline-offset: 2px;
+      transition: color 0.3s;
+      -webkit-tap-highlight-color: transparent;
 
-      &.active {
-        text-decoration: underline;
-        text-underline-offset: 8px;
-        font-weight: 800;
+      .active-indicator {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        background-color: $dark-primary-color;
+        opacity: 0.1;
+      }
+
+      .nav-tab-label {
+        position: relative;
+        z-index: 20;
+        mix-blend-mode: difference;
+        color: white;
       }
     }
-}
-
-
   }
 
   // Hamburger menu icon for mobile
@@ -150,14 +161,18 @@
         visibility: visible;
         z-index: 1001;
         transition: opacity 0.3s ease;
-      background-color: $dark-primary-color;
+        background-color: $dark-primary-color;
 
-        a {
+        .nav-tab {
           font-size: 24px;
           padding: 20px 0;
           width: 100%;
           text-align: center;
-          color: $dark-text-color;
+          
+          .nav-tab-label {
+            color: $dark-text-color;
+            mix-blend-mode: normal;
+          }
         }
       }
     }

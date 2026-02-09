@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
 
+const navTabs = [
+  { id: "/", label: "Visual Studio" },
+  { id: "/portfolio", label: "Portfolio" },
+  { id: "/bio", label: "Bio" },
+  { id: "/contact", label: "Contact" },
+];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState(location.pathname);
+
+  useEffect(() => {
+    setActiveTab(location.pathname);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -41,34 +54,27 @@ const Navbar = () => {
             &times;
           </div>
 
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? "active" : "textUc")}
-            onClick={handleLinkClick}
-          >
-            Visual Studio
-          </NavLink>
-          <NavLink
-            to="/portfolio"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={handleLinkClick}
-          >
-            Portfolio
-          </NavLink>
-          <NavLink
-            to="/bio"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={handleLinkClick}
-          >
-            Bio
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={handleLinkClick}
-          >
-            Contact
-          </NavLink>
+          {navTabs.map((tab) => (
+            <NavLink
+              key={tab.id}
+              to={tab.id}
+              onClick={handleLinkClick}
+              className="nav-tab"
+              style={{
+                WebkitTapHighlightColor: "transparent",
+              }}
+            >
+              {activeTab === tab.id && (
+                <motion.span
+                  layoutId="bubble"
+                  className="active-indicator"
+                  style={{ borderRadius: 9999 }}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span className="nav-tab-label">{tab.label}</span>
+            </NavLink>
+          ))}
         </nav>
       </div>
     </div>

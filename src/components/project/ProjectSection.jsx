@@ -34,7 +34,7 @@ const ProjectSection = ({ projects }) => {
           onAnimationComplete={handleAnimationComplete}
           className="xxl font-bold mb-8 span-three-columns padding-side"
         />
-          <h4>each a carefully plated experience from my visual kitchen.
+          <h4 className="padding-side">each a carefully plated experience from my visual kitchen.
           <br />
           <Button variant="secondary" to="/portfolio" >See Portfolio</Button>
           <br />
