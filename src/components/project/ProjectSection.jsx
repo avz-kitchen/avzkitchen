@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import GridLayout from "../others/GridLayout";
@@ -19,9 +19,9 @@ const ProjectSection = ({ projects }) => {
   console.log('Animation completed!');
 };
 
-  const handleProjectClick = (link) => {
+  const handleProjectClick = useCallback((link) => {
     navigate(link);
-  };
+  }, [navigate]);
 
   // Find the latest project
   const latestProjects = projects.filter((project) => project.isLatest);
@@ -48,7 +48,7 @@ const ProjectSection = ({ projects }) => {
 
       </GridLayout>
      {/* Render all latest projects in a grid */}
-      <div className="latest-projects-grid padding-side">
+      <div className="latest-projects-grid padding-side z-100">
         {latestProjects.map((latestProject) => (
           <Link
             key={latestProject.id}
@@ -83,15 +83,15 @@ const ProjectSection = ({ projects }) => {
 
       {/* Render featured projects */}  
 
-<div style={{ height: '600px', position: 'relative' }}>
+<div style={{ height: '600px', position: 'relative', zIndex: 50 }}>
   {data.portfolio && (
     <CircularGallery 
    items={data.portfolio
   .filter(project => project.isFeatured)
   .map(project => ({
-    image: project.logo,
-    text: project.title,
-    subtitle: project.subtitle || project.skill,
+    image: project.logo || project.img || project.main,
+    text: "",
+    subtitle: project.subtitle || (project.skills && project.skills[0]),
     link: `/portfolio/${project.title.replace(/\s+/g, "-").toLowerCase()}`
       }))}
       bend={1}

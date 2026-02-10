@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./ContactSection.scss";
+import BlurText from "./../others/BlurText";
 
 const ContactSection = () => {
   const formRef = useRef();
@@ -40,6 +41,7 @@ const ContactSection = () => {
         <meta name="keywords" content="Angelica Valenzuela , contact digital designer, hire UI/UX developer,  hire designer , amazon specialist , Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Front End Development , Amazon ,  Shopify , Elementor" />
       </Helmet>
       <div className="contact-container">
+   
                   <h1>Let's Collaborate</h1>
           <p>I’m always excited to take on new projects and partnerships. If you’re looking for a designer who blends creativity, technical expertise, and a focus on accessibility, let’s connect and bring your ideas to life.</p>
                   <a href="mailto:hello@avzkitchen.com">hello@avzkitchen.com</a>

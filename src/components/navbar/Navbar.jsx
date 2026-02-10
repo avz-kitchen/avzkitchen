@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { motion } from "framer-motion";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./navbar.scss";
@@ -29,11 +29,11 @@ const Navbar = () => {
     }));
   }, []);
 
-  const handleProjectClick = (link) => {
+  const handleProjectClick = useCallback((link) => {
     navigate(link);
     setMenuOpen(false);
     document.body.classList.remove("menu-open");
-  };
+  }, [navigate]);
 
   useEffect(() => {
     setActiveTab(location.pathname);
@@ -138,7 +138,7 @@ const Navbar = () => {
               <CircularGallery 
                  items={featuredProjects}
                     bend={1}
-                    textColor="white"
+                    textColor="#ffffff"
                     borderRadius={0.05}
                     font="bold 28px"
                     size={160}

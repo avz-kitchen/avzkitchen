@@ -1,5 +1,6 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
+import { jsx as _jsx } from 'react/jsx-runtime';
 
 import './component.scss';
 
@@ -24,27 +25,49 @@ function autoBind(instance) {
   });
 }
 
-function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'var(--light-text-color)') {
+function createTextTexture(gl, text, font = 'bold 30px monospace', color = '#292F5D') {
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
+  
+  // Extract font size from font string
+  const fontSizeMatch = font.match(/(\d+)px/);
+  const fontSize = fontSizeMatch ? parseInt(fontSizeMatch[1], 10) : 30;
+  
   context.font = font;
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
-  const textHeight = Math.ceil(parseInt(font, 10) * 1);
-  canvas.width = textWidth + 20;
-  canvas.height = textHeight + 20;
+  const textHeight = Math.ceil(fontSize * 1.2);
+  
+  canvas.width = textWidth + 0.5;
+  canvas.height = textHeight + 0.5;
+  
+  // Re-apply font and settings after canvas resize
   context.font = font;
   context.fillStyle = color;
   context.textBaseline = 'middle';
   context.textAlign = 'center';
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.fillText(text, canvas.width / 2, canvas.height / 2);
+  
   const texture = new Texture(gl, { generateMipmaps: false });
   texture.image = canvas;
   return { texture, width: canvas.width, height: canvas.height };
 }
 
 class Title {
+  gl: any;
+  plane: any;
+  renderer: any;
+  text: string;
+  subtitle: string | undefined;
+  textColor: string;
+  font: string;
+  meshes: any[];
+  titleMesh: any;
+  subtitleMesh: any;
+  buttonMesh: any;
+
+
   constructor({ gl, plane, renderer, text, subtitle, textColor = '#292F5D', font = '30px sans-serif' }) {
     autoBind(this);
     this.gl = gl;
@@ -90,7 +113,7 @@ class Title {
     });
     this.titleMesh = new Mesh(this.gl, { geometry: titleGeometry, program: titleProgram });
     const titleAspect = titleWidth / titleHeight;
-    const textHeight = this.plane.scale.y * 0.12;
+    const textHeight = this.plane.scale.y * 0.5;
     const textWidth = textHeight * titleAspect;
     this.titleMesh.scale.set(textWidth, textHeight, 1);
     this.titleMesh.position.y = currentY - textHeight * 0.5 - 0.05;
@@ -139,48 +162,42 @@ class Title {
       currentY = this.subtitleMesh.position.y - subtitleScaleHeight * 0.5;
     }
 
-    // Create button
-    const buttonText = 'View Project';
-    const buttonFont = 'bold 22px sans-serif';
-    const { texture: buttonTexture, width: buttonWidth, height: buttonHeight } = createTextTexture(this.gl, buttonText, buttonFont, this.textColor);
-    const buttonGeometry = new Plane(this.gl);
-    const buttonProgram = new Program(this.gl, {
-      vertex: `
-        attribute vec3 position;
-        attribute vec2 uv;
-        uniform mat4 modelViewMatrix;
-        uniform mat4 projectionMatrix;
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragment: `
-        precision highp float;
-        uniform sampler2D tMap;
-        varying vec2 vUv;
-        void main() {
-          vec4 color = texture2D(tMap, vUv);
-          if (color.a < 0.1) discard;
-          gl_FragColor = color;
-        }
-      `,
-      uniforms: { tMap: { value: buttonTexture } },
-      transparent: true
-    });
-    this.buttonMesh = new Mesh(this.gl, { geometry: buttonGeometry, program: buttonProgram });
-    const buttonAspect = buttonWidth / buttonHeight;
-    const btnHeight = this.plane.scale.y * 0.09;
-    const btnWidth = btnHeight * buttonAspect;
-    this.buttonMesh.scale.set(btnWidth, btnHeight, 1);
-    this.buttonMesh.position.y = currentY - btnHeight * 0.5 - 0.05;
-    this.buttonMesh.setParent(this.plane);
-    this.meshes.push(this.buttonMesh);
+
   }
 }
 
+
 class Media {
+  extra: number;
+  geometry: any;
+  gl: any;
+  image: string;
+  index: number;
+  length: number;
+  renderer: any;
+  scene: any;
+  screen: any;
+  text: string;
+  subtitle: string | undefined;
+  viewport: any;
+  bend: number;
+  textColor: string;
+  borderRadius: number;
+  font: string;
+  customSize: number | undefined;
+  link: string | undefined;
+  program: any;
+  plane: any;
+  title: any;
+  scale: number;
+  speed: number;
+  isBefore: boolean;
+  isAfter: boolean;
+  widthTotal: number;
+  width: number;
+  x: number;
+  padding: number;
+
   constructor({
     geometry,
     gl,
@@ -218,10 +235,20 @@ class Media {
     this.font = font;
     this.customSize = customSize;
     this.link = link;
+    
+    if (index === 0) {
+      console.log('=== FIRST MEDIA ITEM DEBUG ===');
+      console.log('Media constructor:', { text, subtitle, textColor, font, index });
+    }
+    
     this.createShader();
     this.createMesh();
     this.createTitle();
     this.onResize();
+    
+    if (index === 0) {
+      console.log('=== FIRST MEDIA ITEM COMPLETE ===');
+    }
   }
   createShader() {
     const texture = new Texture(this.gl, {
@@ -267,20 +294,27 @@ fragment: `
       vUv.x * ratio.x + (1.0 - ratio.x) * 0.5,
       vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
     );
+    
     vec4 color = texture2D(tMap, uv);
     
     float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
     float edgeSmooth = 0.002;
     float borderWidth = 0.005; // 1px border
     
+    // Background color (F2F2F2)
+    vec3 backgroundColor = vec3(0.949, 0.949, 0.949);
+    
     // Create border effect
     float outerEdge = 1.0 - smoothstep(-edgeSmooth, edgeSmooth, d);
     float innerEdge = 1.0 - smoothstep(-edgeSmooth, edgeSmooth, d + borderWidth);
     float borderAlpha = outerEdge - innerEdge;
     
+    // Mix background with image based on alpha
+    vec3 imageWithBg = mix(backgroundColor, color.rgb, color.a);
+    
     // Border color (dark)
     vec3 borderColor = vec3(0.2, 0.2, 0.2);
-    vec3 finalColor = mix(color.rgb, borderColor, borderAlpha);
+    vec3 finalColor = mix(imageWithBg, borderColor, borderAlpha);
     
     gl_FragColor = vec4(finalColor, outerEdge);
   }
@@ -318,7 +352,7 @@ fragment: `
       text: this.text,
       subtitle: this.subtitle,
       textColor: this.textColor,
-      fontFamily: this.font
+      font: this.font
     });
   }
   update(scroll, direction) {
@@ -362,7 +396,7 @@ fragment: `
       this.isBefore = this.isAfter = false;
     }
   }
-onResize({ screen, viewport } = {}) {
+onResize({ screen, viewport }: { screen?: any; viewport?: any } = {}) {
   if (screen) this.screen = screen;
   if (viewport) {
     this.viewport = viewport;
@@ -391,19 +425,44 @@ onResize({ screen, viewport } = {}) {
 }
 
 class App {
+  container: HTMLElement;
+  scrollSpeed: number;
+  customSize: number | undefined;
+  onItemClick: ((link: string) => void) | undefined;
+  scroll: { ease: number; current: number; target: number; last: number; position?: number };
+  onCheckDebounce: any;
+  renderer: any;
+  gl: any;
+  camera: any;
+  scene: any;
+  screen: { width: number; height: number };
+  planeGeometry: any;
+  medias: Media[];
+  mediasImages: any[];
+  viewport: { width: number; height: number };
+  isDown: boolean;
+  start: number;
+  clickStartTime: number;
+  raf: number;
+  boundOnResize: any;
+  boundOnWheel: any;
+  boundOnTouchDown: any;
+  boundOnTouchMove: any;
+  boundOnTouchUp: any;
+
   constructor(
-    container,
+    container: HTMLElement,
     {
       items,
       bend,
-      textColor = '#ffffff',
+      textColor = '#292F5D',
       borderRadius = 0,
       font = 'bold 30px Figtree',
       scrollSpeed = 2,
       scrollEase = 0.05,
       size,
       onItemClick
-    } = {}
+    } = {} as any
   ) {
     document.documentElement.classList.remove('no-js');
     this.container = container;
@@ -489,38 +548,11 @@ class App {
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
     this.scroll.target = this.scroll.position + distance;
   }
-  onTouchUp(e) {
+  onTouchUp(e: any) {
     this.isDown = false;
-    const clickDuration = Date.now() - this.clickStartTime;
-    const movement = Math.abs(this.scroll.current - this.scroll.position);
-    
-    // If it was a quick click without much movement, treat as click
-    if (clickDuration < 300 && movement < 5) {
-      this.handleClick(e);
-    }
-    
     this.onCheck();
   }
   
-  handleClick() {
-    if (!this.onItemClick || !this.medias) return;
-    
-    // Find the media closest to center
-    let closestMedia = null;
-    let minDistance = Infinity;
-    
-    this.medias.forEach(media => {
-      const distance = Math.abs(media.plane.position.x);
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestMedia = media;
-      }
-    });
-    
-    if (closestMedia && closestMedia.link) {
-      this.onItemClick(closestMedia.link);
-    }
-  }
   onWheel(e) {
     const delta = e.deltaY || e.wheelDelta || e.detail;
     this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
@@ -558,6 +590,7 @@ class App {
     }
     this.renderer.render({ scene: this.scene, camera: this.camera });
     this.scroll.last = this.scroll.current;
+    
     this.raf = window.requestAnimationFrame(this.update.bind(this));
   }
   addEventListeners() {
@@ -598,18 +631,21 @@ export default function CircularGallery({
   bend = 3,
   textColor = '#292F5D',
   borderRadius = 0.05,
-  font = 'bold 28px ',
+  font = 'bold 40px ',
   scrollSpeed = 2,
   scrollEase = 0.05,
   size,
   onItemClick
-}) {
-  const containerRef = useRef(null);
+}: any) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
+    if (!containerRef.current) return;
     const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, size, onItemClick });
     return () => {
       app.destroy();
     };
   }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, size, onItemClick]);
-  return <div className="circular-gallery" ref={containerRef} style={{ cursor: 'pointer' }} />;
+  
+  return _jsx('div', { className: 'circular-gallery', ref: containerRef, style: { cursor: 'pointer' } });
 }

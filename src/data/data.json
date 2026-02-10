@@ -146,7 +146,7 @@
         },
         {
             "category": "Branding",
-            "id": 6,
+            "id": 7,
             "title": "HsSHo",
             "subtitle": "Hay,soSpicyHotoil",
             "type": "Branding",
@@ -173,7 +173,7 @@
         },
                 {
             "category": "Amazon",
-            "id": 7,
+            "id": 8,
             "title": "onua",
             "subtitle": "Designed for adventurers",
             "shortDesc": "A client project where I redesigned onua’s Amazon product listing, crafting premium visuals, persuasive content, and a seamless shopping experience to boost engagement and conversions.",
@@ -215,7 +215,7 @@
         },
                         {
             "category": "E-Commerce",
-            "id": 8,
+            "id": 9,
             "title": "NaturGut",
             "subtitle": "Product from Nature",
              "shortDesc": "A project focused on enhancing Naturgut's e-commerce presence by designing cohesive, story-driven product listings across Amazon and Shopify, emphasizing sustainability, premium quality, and brand consistency.",
@@ -261,7 +261,7 @@
         },
                                 {
             "category": "App",
-            "id": 9,
+            "id": 10,
             "title": "WDR Radio App",
             "subtitle": "Tune in for everyone",
             "shortDesc": "A project focused on enhancing WDR's radio app by designing a user-friendly interface and improving accessibility features.",
