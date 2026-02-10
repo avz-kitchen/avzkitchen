@@ -240,7 +240,6 @@ padding: 0%;
   gap: 2.5rem;
   margin-bottom: 3rem;
   align-content: center;
-  width: 100%;
   
   .latest-project {
     width: 100%;
@@ -483,8 +482,8 @@ padding: 0%;
   .latest-projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-
     .latest-project {
+      
       &:nth-child(1),
       &:nth-child(2) {
         grid-column: span 1;
