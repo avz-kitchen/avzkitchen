@@ -24,7 +24,7 @@ function autoBind(instance) {
   });
 }
 
-function createTextTexture(gl, text, font = 'bold 30px monospace', color = '#292F5D') {
+function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'var(--light-text-color)') {
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
   context.font = font;
@@ -196,7 +196,9 @@ class Media {
     bend,
     textColor,
     borderRadius = 0,
-    font
+    font,
+    customSize,
+    link
   }) {
     this.extra = 0;
     this.geometry = geometry;
@@ -214,6 +216,8 @@ class Media {
     this.textColor = textColor;
     this.borderRadius = borderRadius;
     this.font = font;
+    this.customSize = customSize;
+    this.link = link;
     this.createShader();
     this.createMesh();
     this.createTitle();
@@ -366,10 +370,18 @@ onResize({ screen, viewport } = {}) {
       this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
     }
   }
-  this.scale = this.screen.height / 1500;
-  const size = 900; // Square size
-  this.plane.scale.y = (this.viewport.height * (size * this.scale)) / this.screen.height;
-  this.plane.scale.x = (this.viewport.width * (size * this.scale)) / this.screen.width;
+  
+  // Use custom size if provided, otherwise scale
+  let size;
+  if (this.customSize) {
+    size = this.customSize;
+  } else {
+    this.scale = this.screen.height / 1500;
+    size = 900 * this.scale; // Square size with scaling
+  }
+  
+  this.plane.scale.y = (this.viewport.height * size) / this.screen.height;
+  this.plane.scale.x = (this.viewport.width * size) / this.screen.width;
   this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
   this.padding = 2;
   this.width = this.plane.scale.x + this.padding;
@@ -388,12 +400,16 @@ class App {
       borderRadius = 0,
       font = 'bold 30px Figtree',
       scrollSpeed = 2,
-      scrollEase = 0.05
+      scrollEase = 0.05,
+      size,
+      onItemClick
     } = {}
   ) {
     document.documentElement.classList.remove('no-js');
     this.container = container;
     this.scrollSpeed = scrollSpeed;
+    this.customSize = size;
+    this.onItemClick = onItemClick;
     this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
     this.onCheckDebounce = debounce(this.onCheck, 200);
     this.createRenderer();
@@ -455,7 +471,9 @@ class App {
         bend,
         textColor,
         borderRadius,
-        font
+        font,
+        customSize: this.customSize,
+        link: data.link
       });
     });
   }
@@ -463,6 +481,7 @@ class App {
     this.isDown = true;
     this.scroll.position = this.scroll.current;
     this.start = e.touches ? e.touches[0].clientX : e.clientX;
+    this.clickStartTime = Date.now();
   }
   onTouchMove(e) {
     if (!this.isDown) return;
@@ -470,9 +489,37 @@ class App {
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
     this.scroll.target = this.scroll.position + distance;
   }
-  onTouchUp() {
+  onTouchUp(e) {
     this.isDown = false;
+    const clickDuration = Date.now() - this.clickStartTime;
+    const movement = Math.abs(this.scroll.current - this.scroll.position);
+    
+    // If it was a quick click without much movement, treat as click
+    if (clickDuration < 300 && movement < 5) {
+      this.handleClick(e);
+    }
+    
     this.onCheck();
+  }
+  
+  handleClick() {
+    if (!this.onItemClick || !this.medias) return;
+    
+    // Find the media closest to center
+    let closestMedia = null;
+    let minDistance = Infinity;
+    
+    this.medias.forEach(media => {
+      const distance = Math.abs(media.plane.position.x);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestMedia = media;
+      }
+    });
+    
+    if (closestMedia && closestMedia.link) {
+      this.onItemClick(closestMedia.link);
+    }
   }
   onWheel(e) {
     const delta = e.deltaY || e.wheelDelta || e.detail;
@@ -551,16 +598,18 @@ export default function CircularGallery({
   bend = 3,
   textColor = '#292F5D',
   borderRadius = 0.05,
-  font = 'bold 30px ',
+  font = 'bold 28px ',
   scrollSpeed = 2,
-  scrollEase = 0.05
+  scrollEase = 0.05,
+  size,
+  onItemClick
 }) {
   const containerRef = useRef(null);
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
+    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, size, onItemClick });
     return () => {
       app.destroy();
     };
-  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
-  return <div className="circular-gallery" ref={containerRef} />;
+  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, size, onItemClick]);
+  return <div className="circular-gallery" ref={containerRef} style={{ cursor: 'pointer' }} />;
 }

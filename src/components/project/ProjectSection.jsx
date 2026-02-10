@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import GridLayout from "../others/GridLayout";
 import Button from "../others/Button";
@@ -9,6 +9,8 @@ import data from "../../data/data.json";
 import "../pages/Portfolio.scss";
 
 const ProjectSection = ({ projects }) => {
+  const navigate = useNavigate();
+  
   if (!Array.isArray(projects) || projects.length === 0) {
     return <p>No projects available.</p>;
   }
@@ -16,6 +18,10 @@ const ProjectSection = ({ projects }) => {
   const handleAnimationComplete = () => {
   console.log('Animation completed!');
 };
+
+  const handleProjectClick = (link) => {
+    navigate(link);
+  };
 
   // Find the latest project
   const latestProjects = projects.filter((project) => project.isLatest);
@@ -86,12 +92,16 @@ const ProjectSection = ({ projects }) => {
     image: project.logo,
     text: project.title,
     subtitle: project.subtitle || project.skill,
+    link: `/portfolio/${project.title.replace(/\s+/g, "-").toLowerCase()}`
       }))}
       bend={1}
-      textColor="var(--light-text-color)"
+      textColor="#292F5D"
       borderRadius={0.05}
       scrollSpeed={2}
       scrollEase={0.05}
+      size={320}
+
+      onItemClick={handleProjectClick}
     />
   )}
 </div>

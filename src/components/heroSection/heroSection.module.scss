@@ -2,10 +2,43 @@
 
 .hero-section {
   margin: 0;   // Remove any margin if it exists
-  padding: 0;
+  padding: 0 !important;
   width: 100%;
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 18px;
+    padding-bottom: 1rem;
+
+    a {
+      color: $light-secondary-color;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $dark-primary-color;
+      }
+    }
+
+    .separator {
+      color: rgba($light-text-color, 0.5);
+      margin: 0 0.25rem;
+    }
+
+    .current {
+      color: $light-text-color;
+      font-weight: 500;
+    }
+  }
+
   .hero-title {
     margin: 0;  // Ensure there's no margin around the title
+    @media screen and (max-width:900px) {
+      padding: 20px 0;
+    }
   }
   .date {
     font-size: 16px;
@@ -14,8 +47,7 @@
 .tag{
   background-color: #8CBEB7;
   padding: 4px 12px;
-  border-radius: 24%;
-}
+  border-radius: 120px;}
 
   .hero-image {
     min-width: 50%;
@@ -30,7 +62,6 @@
 
      // Responsive adjustments for mobile
     @media (max-width: 768px) {
-      width: 33vw;  // Half the width on mobile
       height: 54vh; // Half the height to maintain aspect ratio
           object-fit: cover;
               object-position: right;
@@ -43,6 +74,7 @@
   .span-two-columns {
     grid-column: span 4;
     margin: 0;  // Ensure there's no margin in the grid layout
+
   }
 
   .span-one-column {

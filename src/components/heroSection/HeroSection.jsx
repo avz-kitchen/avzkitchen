@@ -1,16 +1,19 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import GridLayout from "../others/GridLayout";
 import styles from "./heroSection.module.scss";
-import Button from "../others/Button";
 
 function HeroSection({ title, year, img, category, skills = [], altText = "Hero Image" }) {
   return (
-    <section className={styles["hero-section"]}>
-      <Button variant="secondary" link="/projects">
-        Back to Projects
-      </Button>
+    <section className={styles["hero-section" ]}>
+      <nav className={styles["breadcrumb"]}>
+   
+        <Link to="/portfolio">Portfolio</Link>
+        <span className={styles["separator"]}>/</span>
+        <span className={styles["current"]}>{title}</span>
+      </nav>
       <GridLayout columns={6}>
-        <div className={styles["span-two-columns"]}>
+        <div className= "span-two-columns ">
           {category && <span className={styles["tag"]}>{category}</span>}
           <h1 className={styles["hero-title"]}>{title}</h1>
           {year && <span className={styles["date"]}>Year : {year}</span>}

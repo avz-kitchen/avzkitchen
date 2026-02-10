@@ -39,7 +39,6 @@ $grid-gap: 1rem;
 
 .span-two-columns {
   grid-column: span 2;
-  overflow: hidden;
 
   @media (max-width: 900px) {
     grid-column: span 1;
@@ -99,6 +98,8 @@ ul.span-three-column {
   .span-one-column {
     width: 100% !important;
     grid-column: auto;
+  
+    
 
   }
 

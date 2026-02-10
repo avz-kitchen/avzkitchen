@@ -31,6 +31,11 @@
   gap: 2rem;
   align-items: start;
   padding-top: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Stack vertically on mobile
+    gap: 1rem;
+  }
 }
 
 .image-right-text-left {

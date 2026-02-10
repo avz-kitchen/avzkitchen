@@ -139,9 +139,13 @@ font-size: clamp(2.5rem, 16vw, 16rem);
     margin: 0;  
       @media (max-width: 900px) {
     grid-column: span 2;
+    
+
   }
   @media (max-width: 600px) {
     grid-column: span 1;
+
+
   }
   }
 
@@ -187,7 +191,7 @@ font-size: clamp(2.5rem, 16vw, 16rem);
  .tag {
     padding: 0.3rem 0.8rem;
     border: 1.5px solid $light-text-color;
-    border-radius: 2rem;
+    border-radius: 50rem;
     font-size: 1.1rem;
     background: transparent;
     transition: background 0.2s, color 0.2s;
@@ -236,3 +240,5 @@ font-size: clamp(2.5rem, 16vw, 16rem);
     }
     
   }
+
+  

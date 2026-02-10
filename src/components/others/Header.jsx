@@ -19,7 +19,7 @@ const Header = () => {
           onAnimationComplete={handleAnimationComplete}
           className="xxl font-bold mb-8 span-three-columns"
         />
-        <h1 style={{ fontSize: "clamp(1rem, 5vw, 2rem)", textTransform: "none" }}>I'm Angelica❋, welcome to my visual kitchen. <Button variant="primary" to="/bio"> ❋ Bio</Button>
+        <h1 style={{ fontSize: "clamp(1rem, 5vw, 2rem)", textTransform: "none" , fontWeight:"500"}}>I'm Angelica❋, welcome to my visual kitchen. <Button variant="primary" to="/bio"> ❋ Bio</Button>
         </h1>
       </GridLayout >
       {/* <img
@@ -34,7 +34,7 @@ const Header = () => {
         alt="AVZ Kitchen"
         height="720px"
         width="100%"
-        style={{ objectFit: "cover",     objectPosition: "center", borderRadius: "8px", filter: "grayscale(100%)" }} // Ensures the video covers the area without distortion
+        style={{ objectFit: "cover",  marginTop:"2rem",   objectPosition: "center", borderRadius: "8px", filter: "grayscale(100%)" }} // Ensures the video covers the area without distortion
         autoPlay
         loop
         muted
