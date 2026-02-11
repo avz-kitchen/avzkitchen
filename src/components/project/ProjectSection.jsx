@@ -48,7 +48,7 @@ const ProjectSection = ({ projects }) => {
 
       </GridLayout>
      {/* Render all latest projects in a grid */}
-      <div className="latest-projects-grid padding-side z-100">
+      <div className="latest-projects-grid  z-100">
         {latestProjects.map((latestProject) => (
           <Link
             key={latestProject.id}
@@ -83,18 +83,41 @@ const ProjectSection = ({ projects }) => {
 
       {/* Render featured projects */}  
 
-<div style={{ height: '600px', position: 'relative', zIndex: 50 }}>
+<div style={{ height: '640px', position: 'relative', zIndex: 50 }}>
+<div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '5%',
+    height: '100%',
+    background: 'linear-gradient(to right, #F2F2F2 0%, transparent 100%)',
+    zIndex: 60,
+    pointerEvents: 'none' // Crucial: allows clicks to pass through to the gallery
+  }} />
+
+  {/* Right Fade Overlay */}
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: '5%',
+    height: '100%',
+    background: 'linear-gradient(to left, #F2F2F2 0%, transparent 100%)',
+    zIndex: 60,
+    pointerEvents: 'none'
+  }} />
+
   {data.portfolio && (
     <CircularGallery 
    items={data.portfolio
   .filter(project => project.isFeatured)
   .map(project => ({
     image: project.logo || project.img || project.main,
-    text: "",
+    text: project.title,
     subtitle: project.subtitle || (project.skills && project.skills[0]),
     link: `/portfolio/${project.title.replace(/\s+/g, "-").toLowerCase()}`
       }))}
-      bend={1}
+      bend={2}
       textColor="#292F5D"
       borderRadius={0.05}
       scrollSpeed={2}
