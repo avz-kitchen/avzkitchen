@@ -1,46 +1,32 @@
+// 
+
 import GridLayout from "./GridLayout";
 import Button from "../others/Button";
 import BlurText from "./BlurText";
-
+import "./Header.scss";
 const Header = () => {
-
-  const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
   return (
-    <section >
+    <section className="seated-header">
       <GridLayout columns={4}>
+        {/* Empty space on the left (Columns 1 & 2) */}
+        <div className="span-two-columns hide-mobile" />
 
-                <BlurText
-          text="Hello There"
-          delay={200}
-          animateBy="words"
-          direction="top"
-          onAnimationComplete={handleAnimationComplete}
-          className="xxl font-bold mb-8 span-three-columns"
-        />
-        <h1 style={{ fontSize: "clamp(1rem, 5vw, 2rem)", textTransform: "none" , fontWeight:"500"}}>I'm Angelica❋, welcome to my visual kitchen. <Button variant="primary" to="/bio"> ❋ Bio</Button>
-        </h1>
-      </GridLayout >
-      {/* <img
-        src="public/project/flightapp/flight-app-hero.gif"
-        alt="AVZ Kitchen" 
-        height="720px"
-        width="100%"
-        style={{ objectFit: "cover", borderRadius: "8px" }} // Ensures the image covers the area without
-      /> */}
-  <video
-    src="https://res.cloudinary.com/dtleseja7/video/upload/avz-video.mp4"
-        alt="AVZ Kitchen"
-        height="720px"
-        width="100%"
-        style={{ objectFit: "cover",  marginTop:"2rem",   objectPosition: "center", borderRadius: "8px", filter: "grayscale(100%)" }} // Ensures the video covers the area without distortion
-        autoPlay
-        loop
-        muted
-      />
+        {/* Content on the right (Columns 3 & 4) */}
+        <div className="span-two-columns seated-content-block">
+          <BlurText
+            text="Hello There"
+            delay={200}
+            animateBy="words"
+            direction="top"
+            className="xxl font-bold"
+          />
+          <h1 className="seated-sub-headline">
+            I'm Angelica❋, welcome to my visual kitchen. 
+            <Button variant="primary" to="/bio"> ❋ Bio</Button>
+          </h1>
+        </div>
+      </GridLayout>
     </section>
   );
 };
-
 export default Header;

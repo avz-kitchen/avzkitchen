@@ -1,0 +1,123 @@
+@import "./../../variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Space+Mono&family=DM+Sans:wght@900&display=swap');
+.seated-hero-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Forces the gap between top text and bottom name
+  height: 90vh;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+
+  .hero-top-section {
+    .mission-container {
+      text-align: left;
+      
+      .unified-mission-text {
+        font-size: 2rem; 
+        line-height: 1.3;
+        text-transform: uppercase;
+        max-width: 540px; // Keeps the paragraph from getting too long
+        color: $light-primary-color;
+        font-weight: 500;
+
+        // Ensure icons don't break line-height
+        span, i { font-style: normal; }
+        @media (max-width: 600px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+.span-two-columns {
+    grid-column: span 2;
+    margin: 0;
+}
+  .hero-bottom-section {
+    width: 100%;
+    border-top: 1px solid $light-primary-color;
+    padding-top: 15px;
+
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .giant-name-container {
+        display: flex;
+        flex-direction: column;
+      width: 100%;
+      overflow: hidden; // Prevents horizontal scroll if text is too big
+    }
+
+    }       
+}
+
+.giant-hero-text {
+  font-size: clamp(2.5rem, 18vw, 14rem);
+  text-transform: uppercase;
+  line-height: 0.8;
+  text-align: left;
+  transform: scaleY(1.8); // The global stretch you liked
+  transform-origin: bottom;
+  display: block;
+  white-space: nowrap;
+  letter-spacing: 0em;
+animation: float 6s ease-in-out infinite;
+  .morphing-prefix {
+    display: inline-block;
+    /* FIX THE WIDTH HERE */
+    /* 3ch means the width of 3 '0' characters. Adjust this until 'KITCHEN' sits perfectly */
+    width: 30%;            
+    text-align: right;        // Keeps AVZ anchored to the left
+    overflow: visible;       // Ensures the 1.9x height isn't clipped
+    animation: prefixMorph 6s infinite ease-in-out;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: prefixMorph 6s infinite ease-in-out, shine 3s infinite linear;
+  }
+
+  .static-suffix {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 900;
+  }
+
+  /* 3. Mobile Refinement */
+  @media (max-width: 768px) {
+    font-size: clamp(2.5rem, 14vw, 8rem);
+    letter-spacing: -0.05em;
+    
+    .morphing-prefix {
+      width: 28vw; // Slightly wider for mobile fonts
+    }
+  }
+}
+
+@keyframes prefixMorph {
+  /* 1. THE PREP (Marker) */
+0%, 25% {
+    font-family: 'Kalam', cursive;
+    font-weight: 800;
+    text-transform: lowercase;
+  }
+  
+  /* PHASE 2: THE BLUEPRINT (Architectural Tech) */
+  45%, 70% {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    text-transform: none;
+  }
+  /* 3. THE FINAL PLATE (DM Sans) */
+  80%, 100% {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}

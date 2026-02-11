@@ -1,5 +1,9 @@
 import { Helmet } from "react-helmet";
 import Header from "../others/Header";
+import Button from "../others/Button";
+import HeroNew from "./../animated/HeroNew";
+import BlurText from "./../others/BlurText";
+import GridLayout from "../others/GridLayout";
 import Richtext from "../others/Richtext";
 import ProjectSection from "../project/ProjectSection";
 import ServiceSection from "../serviceSection/ServiceSection";
@@ -20,9 +24,44 @@ const headerContent = (
   
   return (
     <>
+<HeroNew>
+<div className="seated-hero-layout">
+          {/* TOP SECTION: Mission Statement on the Right */}
+          <div className="hero-top-section">
+            <GridLayout columns={4}>
+              <div className="span-two-columns hide-mobile"></div>
+              <div className="span-two-columns mission-container">
+                <p className="unified-mission-text">
+HI, I’M ANGELICA. I OPERATE A DIGITAL KITCHEN WHERE 
+    <span className="emphasize"> CODE MEETS CRAFT.</span><br />
+    I DON’T JUST BUILD INTERFACES; I ENGINEER 
+    <span className="emphasize"> BALANCE</span>—ELIMINATING THE EXCESS 
+    TO CREATE SOLUTIONS THAT ARE INTUITIVE BY DESIGN 
+    AND RIGOROUS BY NATURE. <Button variant="primary" to="/bio"> ❋ BIO</Button>
+                </p>
+              </div>
+            </GridLayout>
+          </div>
 
-      <Header />
-      <Richtext paragraph={headerContent} tags={headerTags} />
+          {/* BOTTOM SECTION: The Massive "AVZKITCHEN"
+          <div className="hero-bottom-section">
+            <div className="stats-row">
+              <span>BRANDING</span>
+              <span>PRODUCT DESIGN</span>
+              <span>CODE</span>
+            </div> */}
+            {/* We use a div here if BlurText is causing squashing issues */}
+          <div className="giant-name-container">
+            <h1 className="giant-hero-text">
+              <span className="morphing-prefix">aVz</span>
+              <span className="static-suffix">KITCHEN</span>
+            </h1>
+          </div>
+          </div>        
+          {/* </div>   */}
+      </HeroNew>
+          <Richtext paragraph={headerContent} tags={headerTags} />
+
       <ProjectSection projects={projects || []} />
       <ServiceSection/>
       <ContactSection />

@@ -1,0 +1,28 @@
+.seated-header {
+  padding-top: 10vh; // Give it air at the top
+  border-bottom: 1px solid #000; // Sharp line like in the reference
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+
+  .seated-content-block {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .xxl {
+    font-size: clamp(3rem, 10vw, 8rem); // Big impact like "SEATED" text
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+
+  .seated-sub-headline {
+    font-size: 1rem; // Small, readable paragraph style
+    line-height: 1.4;
+    max-width: 400px; // Keeps the paragraph from stretching too wide
+    font-weight: 400;
+    color: #333;
+  }
+}

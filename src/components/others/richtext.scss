@@ -50,7 +50,7 @@
 
   @media (max-width: 600px) {
     .richtext-paragraph {
-      font-size: clamp(1rem, 8vw, 2.5rem);
+      font-size: clamp(1rem, 8vw, 1rem);
       line-height: 1.1;
     }
     .richtext-tag {
@@ -83,6 +83,14 @@
   .w-1 { animation-delay: 0.8s; }
   .w-2 { animation-delay: 2.2s; }
   .w-3 { animation-delay: 3.6s; }
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem; 
+    .type-word {
+      font-size: 1.5rem; 
+    }
+    
+  }
 }
 
 @keyframes typing-stay {

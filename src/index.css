@@ -14,6 +14,8 @@
   color: var(--text-color);
 }
 
+
+
 a {
   font-weight: 500;
   text-decoration: inherit;
@@ -27,6 +29,18 @@ h1 {
   text-transform: uppercase;
   line-height: 1;
   text-align: left;
+
+}
+.giant-hero-text {
+h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(2.5rem, 10vw, 15rem);
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: left;
+  transform: scaleY(1.9);    /* Stretches the height by 130% */
+  transform-origin: bottom;
+}
 }
 
 h2 {
