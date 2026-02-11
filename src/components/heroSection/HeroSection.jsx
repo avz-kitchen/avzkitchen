@@ -31,6 +31,8 @@ function HeroSection({ title, year, img, category, skills = [], altText = "Hero 
           src={img}
           alt={altText}
           className={`${styles["hero-image"]} ${styles["span-one-column"]}`}
+          fetchpriority="high"
+           decoding="sync"
         />
       </GridLayout>
     </section>
