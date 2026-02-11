@@ -9,12 +9,20 @@ import portfolioData from "../../data/data.json";
 const Home = () => {
   const projects = portfolioData.portfolio;
   const headerTags = ["Branding", "Product Design", "Code"];
-  const headerText = "I gather insights ✐, design ✦, and tech ☍ - blending them into digital products & brands that leave a lasting taste ❋.";
+const headerContent = (
+    <span className="unified-paragraph">
+      I harvest <span className="type-word w-1">insights ✐</span>, 
+      craft <span className="type-word w-2">designs ✦</span>, 
+      and develop <span className="type-word w-3">tech ☍</span> 
+      — plating digital products and brands that leave a lasting taste ❋.
+    </span>
+  );
+  
   return (
     <>
 
       <Header />
-      <Richtext paragraph={headerText} tags={headerTags} />
+      <Richtext paragraph={headerContent} tags={headerTags} />
       <ProjectSection projects={projects || []} />
       <ServiceSection/>
       <ContactSection />

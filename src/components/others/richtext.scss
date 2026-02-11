@@ -12,6 +12,19 @@
     margin-bottom: 1rem;
     color: $light-text-color;
     word-break: break-word;
+
+    span {
+    display: inline-block; 
+    vertical-align: top;
+  }
+
+  .Typewriter__wrapper {
+    color: $dark-primary-color; // Make the changing words pop
+  }
+
+  .Typewriter__cursor {
+    color: $light-primary-color; // Match your brand accent
+  }
   }
 
   .richtext-tags {
@@ -45,4 +58,41 @@
       padding: 0.25rem 0.6rem;
     }
   }
+}
+
+.unified-paragraph {
+  display: block; // The container is a block
+  line-height: 1.5;
+  text-align: center; //
+  font-size: 4rem; 
+  color: $light-text-color;
+
+  .type-word {
+    display: inline-block; // Allows width animation while staying on the line
+    overflow: hidden;
+    vertical-align: bottom;
+    white-space: nowrap;
+    color: $dark-primary-color;
+    font-weight: 700;
+    border-right: 3px solid $light-primary-color;
+    width: 0; 
+    animation: typing-stay 1s steps(15) forwards;
+  }
+
+  // Staggered timing so it reads like a sentence being written
+  .w-1 { animation-delay: 0.8s; }
+  .w-2 { animation-delay: 2.2s; }
+  .w-3 { animation-delay: 3.6s; }
+}
+
+@keyframes typing-stay {
+  from { width: 0; }
+  to { 
+    width: max-content; // You may need to adjust this per word or use 'max-content'
+    border-color: transparent; 
+  }
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; border-color: transparent; } // Hide cursor when finished
 }
