@@ -7,9 +7,9 @@
             "subtitle": "Along the journey",
             "shortDesc": "A self-initiated project where I whipped up a smoother, faster flight booking experience, blending UX strategy, visual design, and intuitive interactions into a polished, user-friendly interface.",
             "type": "Case Study",
-            "img": "/project/flightapp/flight-app-feature.png",
-            "main": "/project/flightapp/flight-app-cover.png",
-            "cover": "/project/flightapp/flight-app-hero.gif",
+            "img": "/optimized/project/flightapp/flight-app-feature.webp",
+            "main": "/optimized/project/flightapp/flight-app-cover.webp",
+            "cover": "/optimized/project/flightapp/flight-app-hero.gif",
             "desc": "In today’s world, travel can be planned on a whim or months in advance, yet mobile flight booking remains surprisingly clunky. Buttons are small, filters are buried, and users often feel overwhelmed by options. I started with a simple but crucial question: Why does booking a flight on mobile still feel complicated and stressful? This question became the foundation for a self-initiated redesign aimed at streamlining the process, enhancing clarity, and creating a more intuitive experience for travelers.",
             "skills": ["UX/UI", "Research", "Prototyping"],
             "isFeatured": false,
@@ -22,28 +22,28 @@
             "dropdowns": [
                 {
                     "title": "Understanding the Users",
-                    "image": "/project/flightapp/flight-app-main.png",
+                    "image": "/optimized/project/flightapp/flight-app-main.webp",
                     "text": "<p>The first step was listening. I analyzed over 100 app store reviews from popular flight apps to uncover patterns in user frustration:</p><ul><li>Overwhelmed by too many options</li><li>Filters were hidden or hard to use</li><li>The experience lacked personalization</li></ul><p>From these insights, I asked: How might we create a system that adapts to travelers’ needs, reduces friction, and builds trust?</p>"
                 },
                 {
                     "title": "Personas on the Move",
-                    "image": "/project/flightapp/flight-app-persona.png",
+                    "image": "/optimized/project/flightapp/flight-app-persona.webp",
                     "text": "<p>Instead of generic personas, I focused on real user behaviors. Three profiles emerged:</p><ul><li><strong>Spontaneous Explorer:</strong> Books last-minute trips</li><li><strong>Price Tracker:</strong> Carefully monitors fares to find the best deal</li><li><strong>Planner:</strong> Organizes travel months in advance</li></ul><p>Designing for these diverse behaviors ensured the app could meet the needs of a wide audience, from quick, impulsive bookings to detailed planning.</p>"
                 },
                 {
                     "title": "A Modular System for a Streamlined Experience",
-                    "image": "/project/flightapp/flight-app-design.png",
+                    "image": "/optimized/project/flightapp/flight-app-design.webp",
                     "text": "<p>I took an iterative, research-driven approach:</p><ul><li><strong>Wireframes:</strong> Tested initial flows and layouts quickly in Figma</li><li><strong>Adaptive Filters:</strong> Redesigned filters to appear contextually and remain relevant to the user</li><li><strong>High-Fidelity Prototypes:</strong> Polished interfaces with modular components for scalability</li><li><strong>User Feedback:</strong> Iteratively refined the experience to increase clarity and ease of use</li></ul><p>The goal was to create a streamlined, responsive system that guides users through the booking process without overwhelming them.</p>"                },
                 {
                     "title": "Features That Take Off",
-                    "image": "/project/flightapp/flight-app-shots.png",
+                    "image": "/optimized/project/flightapp/flight-app-shots.webp",
                     "text": "<p>Key features include smarter, adaptive search results that prioritize relevant options based on the user’s preferences and behaviors. Filters appear dynamically—no need to dig through menus. The result: faster, more personalized flight options. I also included a flexible travel section that allows users to toggle through various routes or times based on their preferences. The aim was to make booking feel more like a seamless journey than a tedious task.</p>"
                 }
             ],
             "text": "At the heart of this design is a seamless search experience—one that adapts based on how you interact with it. The system remembers your preferences, dynamically adjusts the filters, and provides a clean, clutter-free interface that makes navigation simple and quick. By focusing on personalization, it transforms what’s often a frustrating process into something smoother and more intuitive.",
-            "flow": "/project/flightapp/flight-app-feature.png",
+            "flow": "/optimized/project/flightapp/flight-app-feature.webp",
             "conclusion": "This project was a personal learning journey, where I had the freedom to explore every layer—from user research to prototyping. The biggest takeaway was that effective design isn’t just about delivering a clean interface. It’s about empathy: understanding how users think, and crafting an experience that helps them make decisions with ease. Through this process, I was able to design a system that feels both intuitive and intelligent, responding to the traveler’s needs in real-time.",
-            "shot": "/project/flightapp/flight-app-shot.png"
+            "shot": "/optimized/project/flightapp/flight-app-shot.webp"
         },
         {
             "category": "App",
@@ -51,10 +51,10 @@
             "title": "Keywi Music App",
             "subtitle": "Discovering Music Together",
             "type": "Case Study",
-            "logo": "/project/keywi/keywi_logo.png",
-            "img": "/project/keywi/keywi-img.png",
-            "main": "/project/keywi/keywi-img.png",
-             "cover": "/project/keywi/keywi-img.png",
+            "logo": "/optimized/project/keywi/keywi_logo.webp",
+            "img": "/optimized/project/keywi/keywi-img.webp",
+            "main": "/optimized/project/keywi/keywi-img.webp",
+             "cover": "/optimized/project/keywi/keywi-img.webp",
 
             "desc": "As a music lover, I've spent countless hours exploring new tracks and sharing discoveries with friends. The process can be exciting—but finding music that resonates with my tastes, and that of my friends, often feels like a guessing game. Inspired by this frustration, I set out to design a music discovery app that feels more like a conversation: *sharing, discovering, and experiencing music together.*",
             "skills": ["UX/UI", "Prototyping", "Visual Design"],
@@ -68,29 +68,29 @@
                 "dropdowns": [
                 {
                     "title": "Voices of Music Lovers",
-                    "image": "/project/keywi/keywi-main.png",
+                    "image": "/optimized/project/keywi/keywi-main.webp",
                     "text": "<p>Before jumping into the design process, I wanted to hear from real users. I studied how people talk about discovering music on platforms like Spotify, Apple Music, and more niche communities. The key takeaway? Music discovery is too often a solitary, fragmented experience. There’s no easy way to sync up with friends and share tracks in real-time. Users were craving a platform that made music discovery more social and personalized.</p>"
                 },
                 {
                     "title": "Personas that Share the Beat",
-                    "image": "/project/keywi/keywi-persona.png",
+                    "image": "/optimized/project/keywi/keywi-persona.webp",
                     "text": "<p>From these insights, I created three primary personas: the <strong>Casual Explorer</strong>, the <strong>Genre Enthusiast</strong>, and the <strong>Social Sharer</strong>. These personas reflect the variety of ways people engage with music—whether it’s stumbling upon new genres, following specific artist journeys, or sharing their latest find with friends. By designing around their unique behaviors, the app could adapt to their needs while encouraging social interaction.</p>"
                 },
                 {
                     "title": "Building the Framework for Discovery",
-                    "image": "/project/keywi/keywi-design.png",
+                    "image": "/optimized/project/keywi/keywi-design.webp",
                     "text": "<p>With personas in mind, I developed a <strong>dynamic, modular system</strong> that adapts to user preferences. The goal was to create an app that doesn’t just recommend music—it evolves based on individual listening habits. I worked through multiple iterations in Figma, making sure every feature—from genre-based playlists to collaborative sessions—was tested for usability and social engagement.</p>"
                 },
                 {
                     "title": "Features That Bring Music to Life",
-                    "image": "/project/keywi/keywi-shots.png",
+                    "image": "/optimized/project/keywi/keywi-shots.webp",
                     "text": "<p>The final product incorporates features that make music discovery fun and social. Key functionalities include: real-time playlist sharing with friends, genre-based music explorations, and personalized suggestions based on listening behavior. The app also encourages collaboration by enabling users to contribute to shared playlists, making discovering new music feel like a team effort.</p>"
                 }
                 ],
             "text": "Key features of Keywi revolve around enhancing the social experience of music discovery. The interface encourages users to explore genres, share recommendations, and collaborate on playlists—all while receiving personalized suggestions based on listening habits. The goal was to create an app that feels natural to interact with, like chatting with friends about the latest track or artist they’ve discovered.",
-            "flow": "/project/keywi/keywi-feature.png",
+            "flow": "/optimized/project/keywi/keywi-feature.webp",
             "conclusion": "This project was a celebration of my love for music and the communities that form around it. It taught me the importance of building not just for the individual user, but for those moments of social interaction that make discovering new tracks exciting. I also learned how personalization can be seamlessly woven into a social experience to enhance user engagement. Through this project, I realized that great design doesn’t just meet the needs of a user—it amplifies their passions and connects them with others who share the same love for discovery.",
-            "shot": "/project/keywi/keywi-shot.png"
+            "shot": "/optimized/project/keywi/keywi-shot.webp"
         },
         {
             "category": "Branding",
@@ -98,12 +98,12 @@
             "title": "Madam Do",
             "subtitle": "Bánh Mì To Go",
             "type": "Branding",
-            "logo": "/project/madamdo/madamdo-logo.png",    
-            "img": "/project/madamdo/madamdo-logo.png",
-            "cover": "/project/madamdo/madamdo-img.png",
-            "img2": "/project/madamdo/madamdo-img2.png",
-            "main": "/project/madamdo/madamdo-img.png",
-            "design": "/project/madamdo/madamdo-design.png",
+            "logo": "/optimized/project/madamdo/madamdo-logo.webp",    
+            "img": "/optimized/project/madamdo/madamdo-logo.webp",
+            "cover": "/optimized/project/madamdo/madamdo-img.webp",
+            "img2": "/optimized/project/madamdo/madamdo-img2.webp",
+            "main": "/optimized/project/madamdo/madamdo-img.webp",
+            "design": "/optimized/project/madamdo/madamdo-design.webp",
             "desc": "Madam Do is a modern street food brand rooted in the vibrant flavors of Vietnam. The vision was to bring the energy of Saigon's food culture to Germany—wrapped in the warmth of fresh bánh mì and a brand identity that feels both nostalgic and bold. This self-initiated branding concept explores how tradition and modernity can meet at the table.",
             "skills": ["Branding","Illustration"],
             "isFeatured": true,
@@ -112,9 +112,9 @@
             "tag": "Brand Book",
             "pdfUrl": "/files/madamdobrand.pdf",
             "text": "Drawing inspiration from fresh herbs, vibrant vegetables, and the dynamic street food culture of Vietnam, the branding for Madam Do embraces a colorful palette that feels natural and energizing. The Saigon typeface anchors the identity in its roots, while minimalist layout and iconography add a contemporary edge—making the brand accessible, fresh, and unmistakably Vietnamese.",
-            "flow": "/project/madamdo/madamdo-feature.png",
+            "flow": "/optimized/project/madamdo/madamdo-feature.webp",
             "conclusion": "Designing Madam Do was an exploration in cultural storytelling through visuals. I wanted every element—from color to typography—to reflect the spirit of Vietnamese cuisine: honest, flavorful, and full of life. This project taught me how branding can serve as a bridge between cultures and how design systems must adapt to evoke emotion while staying flexible for real-world applications.",
-            "shot": "/project/madamdo/kmadam-do-shot.png",
+            "shot": "/optimized/project/madamdo/kmadam-do-shot.webp",
             "demo": "www."
         },
         {
@@ -123,12 +123,12 @@
             "title": "Philip Kehela",
             "subtitle": "E-commerce Consultant",
             "type": "Branding",
-            "logo": "/project/pke/pke-logo-icon.png",
-            "img": "/project/pke/pke-logo.png",
-            "img2": "/project/pke/pke-img2.png",
-            "main": "/project/pke/pke-img.png",
-            "cover": "/project/pke/pke-img.png",
-            "design": "/project/pke/pke-design.png",
+            "logo": "/optimized/project/pke/pke-logo-icon.webp",
+            "img": "/optimized/project/pke/pke-logo.webp",
+            "img2": "/optimized/project/pke/pke-img2.webp",
+            "main": "/optimized/project/pke/pke-img.webp",
+            "cover": "/optimized/project/pke/pke-img.webp",
+            "design": "/optimized/project/pke/pke-design.webp",
             "desc": "Philip Kehela is a digital commerce consultant who wanted to strengthen his online presence with a cohesive and modern personal brand. The project focused on creating a digital identity that conveys his expertise in the field of e-commerce, while ensuring a sleek and functional design for his website.",
             "skills": ["Web Development", "Branding"],
             "isFeatured": true,
@@ -139,9 +139,9 @@
             "pdfUrl": "/files/pkebrand.pdf",
             "title2": "Personal Identity",
             "text": " This project involved building a strong personal brand for Philip Kehela, a digital commerce consultant, by designing and launching a refreshed digital presence. We developed a new website using Elementor, which brought his ideas to life through clean and intuitive design. Careful attention was given to selecting logos, fonts, and layout to ensure they communicated his approach to digital commerce effectively. The relaunch resulted in a visually appealing, user-friendly site that supports Philip's work in the industry.",
-            "flow": "/project/pke/pke-feature.png",
+            "flow": "/optimized/project/pke/pke-feature.webp",
             "conclusion": "In conclusion, this project successfully established a modern digital identity for Philip Kehela, enhancing his online presence as a digital commerce consultant. By designing a sleek, user-friendly website with Elementor, we translated his expertise into a visually appealing platform. The careful selection of logos, fonts, and layout effectively communicated his approach to digital commerce. This revitalized presence positions Philip for continued growth and engagement within the e-commerce landscape.",
-            "shot": "/project/pke/pke-feature.png",
+            "shot": "/optimized/project/pke/pke-feature.webp",
             "demo": "https://philipkehela.de/"
         },
         {
@@ -150,12 +150,12 @@
             "title": "HsSHo",
             "subtitle": "Hay,soSpicyHotoil",
             "type": "Branding",
-            "logo": "/project/hssho/hssho-logo.png",
-             "img": "/project/hssho/hssho-logo.png",
-            "img2": "/project/hssho/hssho-img2.jpg",
-            "main": "/project/hssho/hssho-img2.png",
-            "cover": "/project/hssho/hssho-img2.png",
-            "design": "/project/hssho/hssho-design.png",
+            "logo": "/optimized/project/hssho/hssho-logo.webp",
+             "img": "/optimized/project/hssho/hssho-logo.webp",
+            "img2": "/optimized/project/hssho/hssho-img2.jpg",
+            "main": "/optimized/project/hssho/hssho-img2.webp",
+            "cover": "/optimized/project/hssho/hssho-img2.webp",
+            "design": "/optimized/project/hssho/hssho-design.webp",
             "desc": "HsSHo is a concept brand born from the slow burn of homemade chili oil and transformed into a visual language of heat, mystique, and attitude. What started in the kitchen now lives in bold graphics and wearable design — led by a signature T-shirt collection that channels fire into form. It’s a brand that lingers — sharp, seductive, and unapologetically bold.",
             "skills": ["Branding", "Illustration"],
             "isFeatured": true,
@@ -166,9 +166,9 @@
             "pdfUrl": "",
             "title2": "A little lingers",
             "text": "Inspired by the homemade chili oil my mother makes, Hay,SoSpicyHotOil is a self-initiated branding project that explores the ritual, fire, and sensuality behind handcrafted heat. I developed the visual identity, custom illustration, and packaging design to reflect a bold, seductive tone — where flavor lingers and fire speaks in whispers. The process blended traditional inspiration with modern aesthetics, using storytelling and strong sensory cues to create a product that feels as mysterious as it is mouthwatering.",
-            "flow": "/project/hssho/hssho-label.png",
+            "flow": "/optimized/project/hssho/hssho-label.webp",
             "conclusion": "This project allowed me to fully integrate illustration, branding, and packaging into a cohesive digital experience — blending bold visual storytelling with strategic design thinking. From concept to execution, Hay,SoSpicyHotOil reflects my ability to craft emotionally resonant, visually striking work rooted in narrative.",
-            "shot": "/project/hssho/hssho-label.png",
+            "shot": "/optimized/project/hssho/hssho-label.webp",
             "demo": "https://www.behance.net/gallery/227050435/HaysoSpiceHotoil"
         },
                 {
@@ -178,10 +178,10 @@
             "subtitle": "Designed for adventurers",
             "shortDesc": "A client project where I redesigned onua’s Amazon product listing, crafting premium visuals, persuasive content, and a seamless shopping experience to boost engagement and conversions.",
             "type": "Case Study",
-            "img": "/project/onua/onua-feature.png",
-            "main": "/project/onua/onua-cover.png",
-            "logo": "/project/onua/onua-logo.png",
-            "cover": "/project/onua/onua-cover.png",
+            "img": "/optimized/project/onua/onua-feature.webp",
+            "main": "/optimized/project/onua/onua-cover.webp",
+            "logo": "/optimized/project/onua/onua-logo.webp",
+            "cover": "/optimized/project/onua/onua-cover.webp",
              "desc": "Onua is a startup that creates high-performance outdoor jackets for women, combining style, durability, and sustainability. Designed for adventurers who value both functionality and fashion, onua empowers women to explore the outdoors with confidence.",
             "skills": ["UX/UI", "Amazon", "A+ Content"],
             "isFeatured": true,
@@ -194,24 +194,24 @@
             "dropdowns": [
                 {
                     "title": "Creating Premium A+ content",
-                    "image": "/project/flightapp/flight-app-main.png",
+                    "image": "/optimized/project/flightapp/flight-app-main.webp",
                     "text": "<p>For onua, I focused on creating A+ premium content that effectively communicated the brand's unique value proposition. Through creative imagery and well-structured product information, I crafted a visually appealing and user-friendly experience that aligned with onua’s sustainable and outdoor-focused branding, ultimately enhancing the product's visibility and engagement.</p>"
                 },
                 {
                     "title": "Expanding the A+ Premium Content Concept",
-                    "image": "/project/onua/onua-shots.png",
+                    "image": "/optimized/project/onua/onua-shots.webp",
                     "text": "<p>I applied the core design concept used for onua's outdoor jacket across multiple products, ensuring brand consistency and a cohesive visual identity. By reusing the same design principles—such as clear, impactful visuals and a focus on product benefits—I created a seamless user experience across the range, making sure each product stood out while maintaining the brand’s premium, outdoor-focused aesthetic.</p>"
                 },
 {
                     "title": "Turning Features Into Value",
-                    "image": "/project/onua/onua-img.png",
+                    "image": "/optimized/project/onua/onua-img.webp",
             "text": "<p>Key product features—quilted warmth, removable hood, lightweight design, and versatile style—were presented prominently. Lifestyle imagery reinforces quality and usability. The goal was to create an Amazon listing that’s not only visually appealing but also drives shopper confidence and conversions.</p>"
                 }
             ],
             "text": "At the core of this project was creating a premium, intuitive shopping experience. Every design decision—from visuals to copy—was made to enhance clarity, build trust, and highlight the lifestyle appeal of the onua jacket.",
-            "flow": "/project/flightapp/flight-app-feature.png",
+            "flow": "/optimized/project/flightapp/flight-app-feature.webp",
              "conclusion": "This client project demonstrated the power of thoughtful e-commerce design. By understanding the shopper, crafting clear, persuasive content, and presenting products with premium visuals, we elevated onua’s Amazon presence and improved user engagement and conversion.",
-            "shot": "/project/flightapp/flight-app-shot.png"
+            "shot": "/optimized/project/flightapp/flight-app-shot.webp"
         },
                         {
             "category": "E-Commerce",
@@ -220,9 +220,9 @@
             "subtitle": "Product from Nature",
              "shortDesc": "A project focused on enhancing Naturgut's e-commerce presence by designing cohesive, story-driven product listings across Amazon and Shopify, emphasizing sustainability, premium quality, and brand consistency.",
             "type": "Case Study",
-            "img": "/project/naturgut/naturgut-feature.png",
-            "main": "/project/naturgut/naturgut-cover.png",
-            "cover": "/project/naturgut/naturgut-cover.png",
+            "img": "/optimized/project/naturgut/naturgut-feature.webp",
+            "main": "/optimized/project/naturgut/naturgut-cover.webp",
+            "cover": "/optimized/project/naturgut/naturgut-cover.webp",
              "desc": "Naturgut is an e-commerce platform offering premium natural products sourced from the Black Forest, focusing on sustainability and eco-friendly living. Their mission is to provide customers with high-quality, organic goods that promote a healthy, environmentally conscious lifestyle.",
             "skills": ["UX/UI", "Amazon", "A+ Content", "E-Commerce Design" , "Branding" , "Shopify"],
             "isFeatured": false,
@@ -235,29 +235,29 @@
                 "dropdowns": [
                     {
                         "title": "Extracting the Essence of Each Product",
-                        "image": "/project/naturgut/naturgut-product.png",
+                        "image": "/optimized/project/naturgut/naturgut-product.webp",
                         "text": "<p>Every Naturgut product carries a story—its origin, its benefits, its eco-conscious promise. I focused on distilling this essence into product visuals and copy that educate, inspire, and build trust. By highlighting organic sourcing, natural benefits, and eco-friendly packaging, I crafted an experience that communicates both quality and sustainability.</p>"
                     },
                     {
                         "title": "Creating Cohesive A+ Premium Content",
-                        "image": "/project/naturgut/naturgut-feature.png",
+                        "image": "/optimized/project/naturgut/naturgut-feature.webp",
                         "text": "<p>For Amazon, I designed A+ premium content that combined rich imagery, strong headlines, and detailed product information. Each layout reinforced Naturgut’s values, highlighted key benefits, and used storytelling to connect with the customer. The result: enhanced trust, engagement, and conversion potential.</p>"
                     },
                     {
                         "title": "Campaign-Driven Website Adjustments",
-                        "image": "/project/naturgut/naturgut-website.png",
+                        "image": "/optimized/project/naturgut/naturgut-website.webp",
                         "text": "<p>I developed seasonal campaign-specific landing pages, such as for holiday promotions, directly within the Shopify environment. This involved coding custom sections, optimizing mobile performance, and adapting layouts to match marketing goals. Pages were created using Shopify's Liquid templating, HTML/CSS, and JavaScript, ensuring reusability and clean structure.</p>"
                     },
                     {
                         "title": "A Balance of Quality and Trust",
-                        "image": "/project/naturgut/naturgut-img.png",
+                        "image": "/optimized/project/naturgut/naturgut-img.webp",
                         "text": "<p>Key product attributes—organic sourcing, natural benefits, eco-friendly packaging—were presented clearly with visually appealing graphics and concise, educational copy. Strong headlines and 'Made in Germany' messaging reinforced quality and reliability. By connecting features to real-world value, each listing inspires confidence and aligns with the customer’s commitment to sustainable living.</p>"
                     }
                 ],
             "text": "At the heart of this project was the desire to create Amazon listings that tell a story. By emphasizing sustainability, premium quality, and product benefits, I transformed Naturgut’s product pages into an engaging, trustworthy, and visually cohesive shopping experience. A key focus was aligning the brand’s visual identity and messaging across both Shopify and Amazon, ensuring customers encounter a consistent and recognizable Naturgut experience no matter where they shop.",
-            "flow": "/project/naturgut/naturgut-feature.png",
+            "flow": "/optimized/project/naturgut/naturgut-feature.webp",
             "conclusion": "Designing Naturgut’s A+ content highlighted the importance of empathy, storytelling, and clarity in e-commerce. By focusing on sustainability, premium quality, and brand alignment, I helped Naturgut communicate its values effectively, maintain visual consistency across Shopify and Amazon, and deliver a high-converting, user-friendly shopping experience that builds trust and reinforces the brand’s identity.",
-            "shot": "/project/naturgut/naturgut-shot.png"
+            "shot": "/optimized/project/naturgut/naturgut-shot.webp"
         },
                                 {
             "category": "App",
@@ -266,10 +266,10 @@
             "subtitle": "Tune in for everyone",
             "shortDesc": "A project focused on enhancing WDR's radio app by designing a user-friendly interface and improving accessibility features.",
             "type": "Case Study",
-            "img": "/project/wdr/wdr-feature.png",
-            "main": "/project/wdr/wdr-img.png",
-            "logo": "/project/wdr/wdr-logo.png",
-            "cover": "/project/wdr/wdr-cover.png",
+            "img": "/optimized/project/wdr/wdr-feature.webp",
+            "main": "/optimized/project/wdr/wdr-img.webp",
+            "logo": "/optimized/project/wdr/wdr-logo.webp",
+            "cover": "/optimized/project/wdr/wdr-cover.webp",
              "desc": "The WDR Radio App underwent a comprehensive modernization over a year to ensure intuitive navigation, an exploratory design, and full accessibility. The goal was to create a contemporary, user-centric platform that optimally showcases radio and media content.",
             "skills": ["UX/UI", "Accessibility"],
             "isFeatured": true,
@@ -282,34 +282,34 @@
                 "dropdowns": [
                     {
                         "title": "Listening to Users",
-                        "image": "/project/wdr/wdr-research.png",
+                        "image": "/optimized/project/wdr/wdr-research.webp",
                         "text": "<p>The journey began with exploring how users engage with multiple WDR apps, analyzing age demographics and mobile listening patterns. Insights inspired a design that adapts to diverse needs, ensuring everyone can discover and enjoy content effortlessly.</p>"
                     },
                     {
                         "title": "Crafting a Unified Experience",
-                        "image": "/project/wdr/wdr-design.png",
+                        "image": "/optimized/project/wdr/wdr-design.webp",
                         "text": "<p>We reimagined WDR’s apps as a single, cohesive platform. By aligning interface patterns and navigation, listeners can move seamlessly between stations and content. The design feels familiar yet modern, guiding users intuitively through the listening journey.</p>"
                     },
                     {
                         "title": "Designing for Everyone",
-                        "image": "/project/wdr/wdr-accesibility.png",
+                        "image": "/optimized/project/wdr/wdr-accesibility.webp",
                         "text": "<p>Accessibility was embedded into every design decision. Features were built to comply with accessibility standards, ensuring that users of all abilities could enjoy a rich and inclusive listening experience without barriers.</p>"
                     },
                     {
                         "title": "A Mobile-First Approach",
-                        "image": "/project/wdr/wdr-mobile.png",
+                        "image": "/optimized/project/wdr/wdr-mobile.webp",
                         "text": "<p>Optimizing for mobile devices was key. We designed intuitive touch interactions, exploratory navigation, and adaptive layouts, allowing users to easily discover stations, live content, and personalized recommendations wherever they are.</p>"
                     },
                     {
                         "title": "A Listening Experience that Connects",
-                        "image": "/project/wdr/wdr-feature.png",
+                        "image": "/optimized/project/wdr/wdr-feature.webp",
                         "text": "<p>The final product blends usability, engagement, and inclusivity. Listeners now enjoy a consistent, approachable, and modern interface. The redesign encourages exploration, fosters loyalty, and ensures WDR’s radio content reaches a broad audience effectively.</p>"
                     }
                 ],
                 "text": "At the heart of the redesign was a commitment to simplicity, inclusivity, and seamless discovery. By understanding listener behavior and aligning design with accessibility and mobile best practices, the WDR Radio Apps became a unified, user-friendly platform that feels responsive, approachable, and modern.",
-                "flow": "/project/wdr/wdr-feature.png",
+                "flow": "/optimized/project/wdr/wdr-feature.webp",
                 "conclusion": "This project demonstrated the power of thoughtful design in transforming a fragmented ecosystem into a coherent experience. By crafting a unified, mobile-optimized, and accessible app, WDR listeners now enjoy intuitive navigation, engaging features, and consistent usability across all stations, fostering connection and trust.",
-                "shot": "/project/wdr/wdr-shot.png"
+                "shot": "/optimized/project/wdr/wdr-shot.webp"
                     }
     ]
 }
