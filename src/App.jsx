@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useState, useEffect } from "react";
+import Preloader from "./components/loader/Preloader";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/pages/Home";
 import Portfolio from "./components/pages/Portfolio";
@@ -16,9 +18,37 @@ import DataPrivacy from "./components/pages/DataPrivacy";
 
 const App = () => {
   const projects = portfolioData.portfolio;
+const [isLoading, setIsLoading] = useState(true);
 
+// Effect 1: Handle the Loading Logic
+  useEffect(() => {
+    const onPageLoad = () => {
+      // Minimum time of 1.5s so the pancake actually flips!
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+    };
+
+    // If the window is already loaded (common during local dev/hot reload)
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []); // Empty array: only runs once on mount
+
+  // Effect 2: Handle Scroll Locking
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isLoading]); // Runs only when isLoading changes
   return (
     <>
+    {isLoading && <Preloader />}
         <Helmet>
         <title>Angelica Valenzuela | Freelance Product Designer & Developer</title>
           <meta name="robots" content="index, follow" />
@@ -47,29 +77,26 @@ const App = () => {
           `}
         </script>
       </Helmet>
-    <Router>
-      <ScrollToTop />
-      <Navbar />
-      <div className="page-wrapper">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/portfolio"
-            element={<Portfolio projects={projects} />}
-          />
-          <Route
-            path="/portfolio/:projectUrl"
-            element={<ProjectDetailRouter />}
-          />
-          <Route path="/bio" element={<About />} /> {/* About page */}
-          <Route path="/contact" element={<ContactSection />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/productdesign" element={<UXPortfolio />} />
-          <Route path="/data" element={<DataPrivacy />} />
-        </Routes>
+      <div className={`main-app-content ${!isLoading ? 'content-visible' : 'content-hidden'}`}>
+        <Router>
+          <ScrollToTop />
+          <Navbar />
+          <div className="page-wrapper">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/portfolio" element={<Portfolio projects={projects} />} />
+              <Route path="/portfolio/:projectUrl" element={<ProjectDetailRouter />} />
+              <Route path="/bio" element={<About />} />
+              <Route path="/contact" element={<ContactSection />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/productdesign" element={<UXPortfolio />} />
+              <Route path="/data" element={<DataPrivacy />} />
+            </Routes>
+          </div>
+          <Footer />
+        </Router>
       </div>
-      <Footer />
-    </Router>
+    
     </>
   );
 };
