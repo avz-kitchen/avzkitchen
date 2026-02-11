@@ -233,19 +233,12 @@ class Media {
     this.customSize = customSize;
     this.link = link;
     
-    if (index === 0) {
-      console.log('=== FIRST MEDIA ITEM DEBUG ===');
-      console.log('Media constructor:', { text, subtitle, textColor, font, index });
-    }
-    
+
     this.createShader();
     this.createMesh();
     this.createTitle();
     this.onResize();
     
-    if (index === 0) {
-      console.log('=== FIRST MEDIA ITEM COMPLETE ===');
-    }
   }
   createShader() {
     const texture = new Texture(this.gl, {

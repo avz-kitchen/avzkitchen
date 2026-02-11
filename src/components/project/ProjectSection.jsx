@@ -15,9 +15,6 @@ const ProjectSection = ({ projects }) => {
     return <p>No projects available.</p>;
   }
 
-  const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
 
   const handleProjectClick = useCallback((link) => {
     navigate(link);
@@ -37,7 +34,6 @@ const ProjectSection = ({ projects }) => {
           delay={200}
           animateBy="words"
           direction="top"
-          onAnimationComplete={handleAnimationComplete}
           className="xxl font-bold mb-8 span-three-columns"
         />
           <h4 className="">each a carefully plated experience from my visual kitchen.
