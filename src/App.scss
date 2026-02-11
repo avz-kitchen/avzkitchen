@@ -55,7 +55,7 @@ h1 , h2, h3, h4, h5, h6 , p {
 
 
 section {
-    padding: 8rem 4rem;
+    padding: 8rem 1rem;
   text-align: left;
 margin: 0 auto;
   @media (max-width: 1200px) {
@@ -197,7 +197,15 @@ font-size: clamp(2.5rem, 16vw, 16rem);
     transition: background 0.2s, color 0.2s;
     width: fit-content;
   }
-
+ .tag-light {
+    padding: 0.3rem 0.8rem;
+    border: 1.5px solid $dark-text-color;
+    border-radius: 50rem;
+    font-size: 1.1rem;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+    width: fit-content;
+  }
   .spacing{
     display: flex;
     gap: 0.5rem;

@@ -7,7 +7,6 @@
   right: 0;
   z-index: 1000;
   background-color: $light-background-color;
-  border-bottom: 2px dashed $dark-primary-color;
   padding: 0.5rem 4rem;
 
   .wrapper {
@@ -17,6 +16,7 @@
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
+    padding: 0 1rem;
   }
 
   a {

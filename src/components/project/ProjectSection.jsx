@@ -38,9 +38,9 @@ const ProjectSection = ({ projects }) => {
           animateBy="words"
           direction="top"
           onAnimationComplete={handleAnimationComplete}
-          className="xxl font-bold mb-8 span-three-columns padding-side"
+          className="xxl font-bold mb-8 span-three-columns"
         />
-          <h4 className="padding-side">each a carefully plated experience from my visual kitchen.
+          <h4 className="">each a carefully plated experience from my visual kitchen.
           <br />
           <Button variant="secondary" to="/portfolio" >See Portfolio</Button>
           <br />
@@ -69,7 +69,7 @@ const ProjectSection = ({ projects }) => {
                     {latestProject.skills &&
                       latestProject.skills.length > 0 &&
                       latestProject.skills.map((skill, idx) => (
-                        <span key={idx} className="tag">
+                        <span key={idx} className="tag-light">
                           {skill}
                         </span>
                       ))}
