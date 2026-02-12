@@ -32,12 +32,11 @@ const headerContent = (
               <div className="span-two-columns hide-mobile"></div>
               <div className="span-two-columns mission-container">
                 <p className="unified-mission-text">
-HI, I’M ANGELICA. I OPERATE A DIGITAL KITCHEN WHERE 
-    <span className="emphasize"> CODE MEETS CRAFT.</span><br />
-    I DON’T JUST BUILD INTERFACES; I ENGINEER 
-    <span className="emphasize"> BALANCE</span>—ELIMINATING THE EXCESS 
-    TO CREATE SOLUTIONS THAT ARE INTUITIVE BY DESIGN 
-    AND RIGOROUS BY NATURE. <Button variant="primary" to="/bio"> ❋ BIO</Button>
+    I OPERATE A VISUAL KITCHEN WHERE CREATIVITY ISN'T A PROCESS— 
+    IT’S AN <span className="emphasize">INGREDIENT</span>. I BRING A 
+    PERSONALIZED TOUCH AND A DASH OF ARTISTIC SPICE TO 
+    EVERY PROJECT, TURNING RAW CONCEPTS INTO BOLD REALITIES.
+  <Button variant="primary" to="/bio"> ❋ BIO</Button>
                 </p>
               </div>
             </GridLayout>
