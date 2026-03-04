@@ -35,7 +35,7 @@ const headerContent = (
     I OPERATE A VISUAL KITCHEN WHERE CREATIVITY ISN'T A PROCESS— 
     IT’S AN <span className="emphasize">INGREDIENT</span>. I BRING A 
     PERSONALIZED TOUCH AND A DASH OF ARTISTIC SPICE TO 
-    EVERY PROJECT, TURNING RAW CONCEPTS INTO BOLD REALITIES.
+    EVERY PROJECT, TURNING RAW CONCEPTS INTO BOLD REALITIES. 
   <Button variant="primary" to="/bio"> ❋ BIO</Button>
                 </p>
               </div>

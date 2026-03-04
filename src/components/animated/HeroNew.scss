@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Space+Mono&family=DM+Sans:wght@900&display=swap');
 .seated-hero-layout {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between; // Forces the gap between top text and bottom name
+  
   height: 90vh;
   padding: 3rem 2rem;
   box-sizing: border-box;
@@ -13,7 +15,7 @@
       text-align: left;
       
       .unified-mission-text {
-        font-size: 2rem; 
+        font-size: 1.5rem; 
         line-height: 1.3;
         text-transform: uppercase;
         max-width: 540px; // Keeps the paragraph from getting too long
@@ -27,6 +29,21 @@
         }
       }
     }
+  }
+
+  .giant-name-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 0;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
   }
 .span-two-columns {
     grid-column: span 2;
@@ -50,29 +67,27 @@
     .giant-name-container {
         display: flex;
         flex-direction: column;
+        position: relative;
       width: 100%;
-      overflow: hidden; // Prevents horizontal scroll if text is too big
+      overflow-x: hidden; // Prevents horizontal scroll if text is too big
+      overflow-y: visible; // Avoids clipping scaled text
     }
 
     }       
 }
 
 .giant-hero-text {
-  font-size: clamp(2.5rem, 18vw, 14rem);
+  font-size: clamp(2rem, 12vw, 10rem);
   text-transform: uppercase;
-  line-height: 0.8;
+  line-height: 1;
   text-align: left;
-  transform: scaleY(1.8); // The global stretch you liked
-  transform-origin: bottom;
   display: block;
   white-space: nowrap;
-  letter-spacing: 0em;
+  letter-spacing: -0.02em;
 animation: float 6s ease-in-out infinite;
   .morphing-prefix {
     display: inline-block;
-    /* FIX THE WIDTH HERE */
-    /* 3ch means the width of 3 '0' characters. Adjust this until 'KITCHEN' sits perfectly */
-    width: 30%;            
+    width: 3.5ch;
     text-align: right;        // Keeps AVZ anchored to the left
     overflow: visible;       // Ensures the 1.9x height isn't clipped
     animation: prefixMorph 6s infinite ease-in-out;
@@ -90,11 +105,12 @@ animation: float 6s ease-in-out infinite;
 
   /* 3. Mobile Refinement */
   @media (max-width: 768px) {
-    font-size: clamp(2.5rem, 14vw, 8rem);
+    font-size: clamp(1.8rem, 13vw, 4.8rem);
+    line-height: 1;
     letter-spacing: -0.05em;
     
     .morphing-prefix {
-      width: 28vw; // Slightly wider for mobile fonts
+      width: 3.3ch;
     }
   }
 }
