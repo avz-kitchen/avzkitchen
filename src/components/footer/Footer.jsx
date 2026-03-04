@@ -17,7 +17,6 @@ const Footer = () => {
           <Link to="/portfolio/#branding">Branding</Link>
           <Link to="/portfolio/#uxui">UX/UI Design</Link>
           <Link to="/portfolio/#webdev">Web Development</Link>
-          <Link to="/resume">Resume</Link>
 </div>
 
         <div className="contact-links">
