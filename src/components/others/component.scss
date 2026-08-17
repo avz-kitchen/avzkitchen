@@ -162,19 +162,18 @@ $padding: 2rem;
   max-width: 100%;
   overflow: hidden;
   gap: 2rem;
-  
+
   .shot-demo-content {
     max-height: 100%;
-    width: 90%;
+    width: min(90%, 1200px);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+    gap: 0;
     align-items: center;
     justify-content: center;
     background-color: $light-text-color;
     border-radius: $padding;
     overflow: hidden;
-    padding-right: $padding;
     color: $dark-text-color;
 
     .shot-demo-image {
@@ -183,12 +182,37 @@ $padding: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-width: 0;
+      padding: 0;
+      box-sizing: border-box;
 
       img {
         width: 100%;
+        max-width: 100%;
         max-height: 60vh;
         height: auto;
         object-fit: cover;
+        display: block;
+        border-radius: 1.25rem 0 0 1.25rem;
+      }
+    }
+
+    > div:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      padding: clamp(1.5rem, 3vw, 4rem);
+      padding-left: clamp(1.25rem, 2.5vw, 3rem);
+      padding-top: clamp(1.5rem, 3vw, 4rem);
+      padding-bottom: clamp(1.5rem, 3vw, 4rem);
+      box-sizing: border-box;
+
+      h3,
+      p,
+      a {
+        text-align: left;
       }
     }
   }
@@ -196,15 +220,27 @@ $padding: 2rem;
   @media (max-width: 900px) {
     gap: 1.5rem;
     padding: 0;
-    
+
     .shot-demo-content {
+      width: 100%;
       gap: 1.5rem;
       border-radius: 1.5rem;
-          padding-right: 0;
-          padding-bottom: 2rem;
+      padding-right: 0;
+      padding-bottom: 2rem;
+      grid-template-columns: 1fr;
 
-      .shot-demo-image img {
-        max-height: 50vh;
+      .shot-demo-image {
+        width: 100%;
+        padding: 1rem 1rem 0;
+
+        img {
+          border-radius: 1rem;
+          max-height: 50vh;
+        }
+      }
+
+      > div:last-child {
+        padding: 1.5rem 1.25rem 0;
       }
     }
   }
@@ -212,14 +248,20 @@ $padding: 2rem;
   @media (max-width: 600px) {
     gap: 1rem;
 
-    
     .shot-demo-content {
       grid-template-columns: 1fr;
       gap: 1rem;
       border-radius: 24px;
+      width: 100%;
+
+      > div:last-child {
+        padding: 1rem 1rem 0;
+      }
+
       p {
-  padding: 2rem;
-}
+        padding: 0;
+      }
+
       .shot-demo-image img {
         max-height: 50vh;
       }
@@ -231,16 +273,6 @@ $padding: 2rem;
       a {
         width: 100%;
       }
-    }
-  }
-
-  @media (max-width: 600px) {
-    .shot-demo-content {
-      gap: 0.75rem;
-        margin-top: 0;
-padding-top: 0;
-
-  
     }
   }
 }

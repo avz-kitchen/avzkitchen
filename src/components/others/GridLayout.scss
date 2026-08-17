@@ -11,7 +11,9 @@ $grid-gap: 1rem;
   padding: 0;
   column-gap: $grid-gap; 
   row-gap: $grid-gap;
-    max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 
   @include grid-container(2);
 
@@ -21,6 +23,7 @@ $grid-gap: 1rem;
 
   @media (max-width: 900px) {
     @include grid-container(1);
+    width: 100%;
   }
 }
 
@@ -31,6 +34,8 @@ $grid-gap: 1rem;
   margin: 0;
   padding: 0;
   align-self: center;
+  min-width: 0;
+  text-align: left;
 }
 
 .span-one-column {

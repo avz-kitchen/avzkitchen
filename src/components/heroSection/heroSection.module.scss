@@ -4,6 +4,7 @@
   margin: 0;   // Remove any margin if it exists
   padding: 0 !important;
   width: 100%;
+  text-align: left;
 
   .breadcrumb {
     display: flex;
@@ -36,49 +37,78 @@
 
   .hero-title {
     margin: 0;  // Ensure there's no margin around the title
+    text-align: left;
     @media screen and (max-width:900px) {
       padding: 20px 0;
     }
   }
+
   .date {
     font-size: 16px;
-    
+    text-align: left;
+    display: block;
   }
-.tag{
-  background-color: #8CBEB7;
-  padding: 4px 12px;
-  border-radius: 120px;}
+
+  .spacing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+
+  .tag {
+    background-color: #8CBEB7;
+    padding: 4px 12px;
+    border-radius: 120px;
+  }
 
   .hero-image {
-    min-width: 50%;
-    height: 72vh;
-    object-fit: cover;
-    object-position: right;
-    margin: 0;  // Ensure there's no margin around the image
- z-index: -200;
-           overflow:hidden ;
-             border-radius: 2%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0;
+    z-index: -200;
+    overflow: hidden;
+    border-radius: 2%;
 
-
-     // Responsive adjustments for mobile
     @media (max-width: 768px) {
-      height: 54vh; // Half the height to maintain aspect ratio
-          object-fit: cover;
-              object-position: right;
-
-
+      aspect-ratio: 4 / 5;
+      object-fit: contain;
+      object-position: center;
     }
-
-}
+  }
 
   .span-two-columns {
     grid-column: span 4;
-    margin: 0;  // Ensure there's no margin in the grid layout
-
+    margin: 0;
+    text-align: left;
+    width: 100%;
   }
 
   .span-one-column {
     grid-column: span 2;
-    margin: 0;  // Ensure there's no margin in the grid layout
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .span-two-columns,
+    .span-one-column {
+      grid-column: 1 / -1;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }
