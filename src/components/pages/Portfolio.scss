@@ -44,12 +44,14 @@
 }
 // --- Global Page Wrappers ---
 .portfolio-page {
-  max-width: 1560px;
-  margin: 0 auto;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
+  padding: 8rem 0 0;
+  box-sizing: border-box;
 
-  @media (max-width: 900px) { padding: 8rem 1.5rem; }
-  @media (max-width: 600px) { padding: 6rem 1rem; }
+  @media (max-width: 900px) { padding: 8rem 0 0; }
+  @media (max-width: 600px) { padding: 6rem 0 0; }
 }
 
 // --- Components: Tabs & Navigation ---

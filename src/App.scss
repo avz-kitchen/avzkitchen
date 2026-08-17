@@ -52,22 +52,23 @@ h1 , h2, h3, h4, h5, h6 , p {
 
 /* Global padding for all pages */
 .page-wrapper {
-
-  max-width: 1500px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+
   @media (max-width: 1200px) {
-    padding: 4rem 4rem;
-    max-width: 1500px;
-
-
+    padding: 0 2rem;
+    max-width: 1200px;
   }
 
   @media (max-width: 900px) {
-    padding: 3rem 1.5rem;
+    padding: 0 1.5rem;
   }
 
   @media (max-width: 600px) {
-    padding: 2rem 0rem;
+    padding: 0 1rem;
   }
 }
 
