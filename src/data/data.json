@@ -13,7 +13,7 @@
             "desc": "In today’s world, travel can be planned on a whim or months in advance, yet mobile flight booking remains surprisingly clunky. Buttons are small, filters are buried, and users often feel overwhelmed by options. I started with a simple but crucial question: Why does booking a flight on mobile still feel complicated and stressful? This question became the foundation for a self-initiated redesign aimed at streamlining the process, enhancing clarity, and creating a more intuitive experience for travelers.",
             "skills": ["UX/UI", "Research", "Prototyping"],
             "isFeatured": false,
-            "isLatest": true,
+            "isLatest": false,
             "month": "06",
             "year": "2024",
             "tag": "Book",
@@ -259,7 +259,7 @@
             "conclusion": "Designing Naturgut’s A+ content highlighted the importance of empathy, storytelling, and clarity in e-commerce. By focusing on sustainability, premium quality, and brand alignment, I helped Naturgut communicate its values effectively, maintain visual consistency across Shopify and Amazon, and deliver a high-converting, user-friendly shopping experience that builds trust and reinforces the brand’s identity.",
             "shot": "/optimized/project/naturgut/naturgut-shot.webp"
         },
-                                {
+      {
             "category": "App",
             "id": 10,
             "title": "WDR Radio App",
@@ -310,6 +310,61 @@
                 "flow": "/optimized/project/wdr/wdr-feature.webp",
                 "conclusion": "This project demonstrated the power of thoughtful design in transforming a fragmented ecosystem into a coherent experience. By crafting a unified, mobile-optimized, and accessible app, WDR listeners now enjoy intuitive navigation, engaging features, and consistent usability across all stations, fostering connection and trust.",
                 "shot": "/optimized/project/wdr/wdr-shot.webp"
-                    }
+     },
+{
+  "title": "Partner Tech",
+  "subtitle": "POS & Self-Checkout Modernization",
+  "shortDesc": "A project focused on modernizing Partner Tech Europe’s digital presence using React and Builder.io to deliver a seamless, flexible B2B product showcase.",
+  "type": "Case Study",
+  "img": "/optimized/project/partner-tech/partner-tech-catalog.png",
+  "main": "/optimized/project/partner-tech/partner-tech-img.webp",
+  "logo": "/optimized/project/partner-tech/icon.png",
+  "cover": "/optimized/project/partner-tech/partner-tech-img.webp",
+  "desc": "Partner Tech Europe underwent a frontend transformation to unify its multi-category hardware catalog, including POS systems, self-checkout kiosks, and peripherals. The goal was to build a performant, modular web application that balances developer control with marketing agility.",
+  "skills": ["Fullstack Development", "React", "Builder.io"],
+  "isFeatured": true,
+  "isLatest": true,
+  "month": "08",
+  "year": "2026",
+  "tag": "web development",
+  "demo": "https://partner-tech.eu",
+  "overview": "From visual content modeling to custom React component development, the project focused on empowering content creators while maintaining enterprise-grade performance. Design and architectural decisions prioritized visual flexibility, fast page loads, and structured product presentation across European markets.",
+  "dropdowns": [
+    {
+      "title": "Visual Editing with Builder.io",
+      "image": "/optimized/project/partner-tech/partner-tech-cms.webp",
+      "text": "<p>We integrated Builder.io as a headless CMS, bridging the gap between design systems and content creation. Marketing teams can now build and deploy custom landing pages visually without requiring continuous developer intervention.</p>"
+    },
+    {
+      "title": "Modular React Component Library",
+      "image": "/optimized/project/partner-tech/partner-tech-components.webp",
+      "text": "<p>We engineered a suite of custom React components registered directly within Builder.io. From dynamic product cards to feature grids, these reusable building blocks maintain strict brand consistency while offering full layout flexibility.</p>"
+    },
+    {
+      "title": "Enterprise Multi-Language Localization",
+      "image": "/optimized/project/partner-tech/partner-tech-localization.webp",
+      "text": "<p>To serve Partner Tech's diverse European audience, we integrated advanced localization pipelines using Lokalise and Crowdin. This allowed seamless synchronization between design copy, developer code, and professional translation workflows across multiple languages.</p>"
+    },
+    {
+      "title": "Streamlined Hardware Catalog",
+      "image": "/optimized/project/partner-tech/partner-tech-catalog.webp",
+      "text": "<p>Enterprise buyers need clear specs and quick access to POS solutions. We structured complex product categories—ranging from self-checkout kiosks to mobile terminals—into clean, scannable layouts that simplify B2B decision-making.</p>"
+    },
+    {
+      "title": "Performance & B2B Optimization",
+      "image": "/optimized/project/partner-tech/partner-tech-scene-2.json",
+      "text": "<p>Speed and responsiveness were essential for enterprise traffic. By optimizing asset delivery, server-side rendering strategies, and component re-renders, we achieved fast page loads and smooth navigation across modern devices.</p>"
+    },
+    {
+      "title": "A Future-Ready Enterprise Platform",
+      "image": "/optimized/project/partner-tech/partner-tech-scene.json",
+      "text": "<p>The redesigned digital platform delivers a cohesive, modern web experience for Partner Tech Europe. It successfully showcases their cutting-edge hardware innovations while drastically accelerating internal content publishing workflows.</p>"
+    }
+  ],
+  "text": "At the core of the project was a balance between performance, maintainability, and visual freedom. By combining React with Builder.io, the platform provides a modern, fast, and adaptable B2B showcase that easily scales alongside Partner Tech's growing product ecosystem.",
+  "flow": "/optimized/project/partner-tech/partner-tech-feature.webp",
+  "conclusion": "This project demonstrated the power of a modern headless stack in bridging marketing agility and software performance. By decoupling content management with Builder.io while maintaining custom React engineering, Partner Tech Europe now benefits from faster publishing workflows, modular product display, and an elevated digital brand presence.",
+  "shot": "/optimized/project/partner-tech/partner-tech-catalog.png"
+}
     ]
 }
