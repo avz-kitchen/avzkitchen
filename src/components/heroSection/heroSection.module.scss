@@ -68,18 +68,18 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5;
-    object-fit: contain;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
     object-position: center;
     display: block;
     margin: 0;
     z-index: -200;
     overflow: hidden;
-    border-radius: 2%;
+    border-radius: 1.5rem;
 
     @media (max-width: 768px) {
-      aspect-ratio: 4 / 5;
-      object-fit: contain;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
       object-position: center;
     }
   }

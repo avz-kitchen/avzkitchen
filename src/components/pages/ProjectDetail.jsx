@@ -41,8 +41,9 @@ const ProjectDetail = ({ project }) => {
               title={item.title}
               image={item.image}
               text={item.text}
-              isFirst={index === 0} // Pass this to handle different layout for the first dropdown
-              isLast={index === dropdowns.length - 1} // Pass this to handle different layout for the last dropdown
+              index={index}
+              isFirst={index === 0}
+              isLast={index === dropdowns.length - 1}
             />
           ))
         ) : (

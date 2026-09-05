@@ -13,6 +13,7 @@ import About from "./components/pages/About";
 import Resume from "./components/pages/Resume";
 import UXPortfolio from "./components/pages/uxportfolio";
 import ScrollToTop from "./components/others/ScrollToTop";
+import ServicesPage from "./components/pages/ServicesPage";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
 
@@ -87,6 +88,7 @@ const [isLoading, setIsLoading] = useState(true);
               <Route path="/portfolio" element={<Portfolio projects={projects} />} />
               <Route path="/portfolio/:projectUrl" element={<ProjectDetailRouter />} />
               <Route path="/bio" element={<About />} />
+              <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<ContactSection />} />
               <Route path="/resume" element={<Resume />} />
               <Route path="/productdesign" element={<UXPortfolio />} />

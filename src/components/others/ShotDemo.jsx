@@ -1,21 +1,28 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 import "./component.scss";
 import Button from "./Button";
+
 const ShotDemo = ({ title, image, subtitle, text, demo }) => {
+  const hasImage = Boolean(image && image.trim());
+
   return (
     <div className="shot-demo">
       <h2>{title}</h2>
-      <div className="shot-demo-content">
-        <div className="shot-demo-image">
-          {image && <img src={image} alt={image} />}
-        </div>
-        <div>
-          <h3>{subtitle}</h3>
-          <p>{text}</p>
-          <Button variant="tertiary" href={demo} target="_blank" rel="noopener noreferrer">
-            View Demo
-          </Button>
+      <div className={`shot-demo-content ${hasImage ? "has-image" : "no-image"}`}>
+        {hasImage && (
+          <div className="shot-demo-image">
+            <img src={image} alt={subtitle || title || "Project preview"} />
+          </div>
+        )}
+
+        <div className="shot-demo-copy">
+          {subtitle && <h3>{subtitle}</h3>}
+          {text && <p>{text}</p>}
+          {demo && (
+            <Button variant="tertiary" href={demo} target="_blank" rel="noopener noreferrer">
+              View Demo
+            </Button>
+          )}
         </div>
       </div>
     </div>

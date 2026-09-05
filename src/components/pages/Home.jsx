@@ -12,8 +12,8 @@ import portfolioData from "../../data/data.json";
 
 const Home = () => {
   const projects = portfolioData.portfolio;
-  const headerTags = ["Branding", "Product Design", "Code"];
-const headerContent = (
+  const headerTags = ["Branding", "Product Design", "Code", "E-commerce"];
+  const headerContent = (
     <span className="unified-paragraph">
       I harvest <span className="type-word w-1">insights ✐</span>, 
       craft <span className="type-word w-2">designs ✦</span>, 
@@ -21,45 +21,36 @@ const headerContent = (
       — plating digital products and brands that leave a lasting taste ❋.
     </span>
   );
-  
+
   return (
     <>
-<HeroNew>
-<div className="seated-hero-layout">
-          {/* TOP SECTION: Mission Statement on the Right */}
+      <HeroNew>
+        <div className="seated-hero-layout">
           <div className="hero-top-section">
             <GridLayout columns={4}>
               <div className="span-two-columns hide-mobile"></div>
               <div className="span-two-columns mission-container">
-                <p className="unified-mission-text">
-    I OPERATE A VISUAL KITCHEN WHERE CREATIVITY ISN'T A PROCESS— 
-    IT’S AN <span className="emphasize">INGREDIENT</span>. I BRING A 
-    PERSONALIZED TOUCH AND A DASH OF ARTISTIC SPICE TO 
-    EVERY PROJECT, TURNING RAW CONCEPTS INTO BOLD REALITIES. 
-  <Button variant="primary" to="/bio"> ❋ BIO</Button>
-                </p>
+                <div className="mission-glass-card">
+                  <p className="unified-mission-text">
+                    I build bold digital experiences with a personal touch — blending strategy,
+                    design, and code into brands and products that feel memorable and convert.
+                  </p>
+                  <Button variant="primary" to="/bio">❋ Bio</Button>
+                </div>
               </div>
             </GridLayout>
           </div>
 
-          {/* BOTTOM SECTION: The Massive "AVZKITCHEN"
-          <div className="hero-bottom-section">
-            <div className="stats-row">
-              <span>BRANDING</span>
-              <span>PRODUCT DESIGN</span>
-              <span>CODE</span>
-            </div> */}
-            {/* We use a div here if BlurText is causing squashing issues */}
           <div className="giant-name-container">
             <h1 className="giant-hero-text">
               <span className="morphing-prefix">aVz</span>
               <span className="static-suffix">KITCHEN</span>
             </h1>
           </div>
-          </div>        
-          {/* </div>   */}
+        </div>
       </HeroNew>
-          <Richtext paragraph={headerContent} tags={headerTags} />
+
+      <Richtext paragraph={headerContent} tags={headerTags} />
 
       <ProjectSection projects={projects || []} />
       <ServiceSection/>

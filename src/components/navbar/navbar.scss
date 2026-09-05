@@ -6,17 +6,20 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: $light-background-color;
-  padding: 0.5rem 4rem;
+  padding: 0.8rem 1rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(247, 244, 242, 0.66);
 
   .wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    padding: 0 1rem;
+    gap: 1rem;
+    padding: 0 0.5rem;
   }
 
   a {
@@ -28,27 +31,33 @@
   }
 
   .logo {
-    font-size: 24px;
-    font-weight: 800;
-    color: $light-secondary-color;
+    grid-column: 1;
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    color: $dark-primary-color;
     text-align: left;
-    transition: filter 300ms;
+    transition: opacity 200ms ease;
     justify-self: start;
     align-self: center;
+    text-transform: uppercase;
 
     &:hover {
-      color: $dark-primary-color;
-      filter: brightness(0.8);
+      opacity: 0.8;
     }
   }
 
-  // Navigation links for desktop
   nav {
-    grid-column: span 3;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    text-align: left;
+    grid-column: 2;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 999px;
 
     .nav-tab {
       position: relative;
@@ -56,28 +65,35 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      font-size: 16px;
-      height: 44px;
-      width: 100%;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      height: 40px;
+      padding: 0 1rem;
+      border-radius: 999px;
+      color: rgba(41, 47, 93, 0.78);
       cursor: pointer;
       outline-offset: 2px;
-      transition: color 0.3s;
+      transition: color 0.2s ease, background-color 0.2s ease;
       -webkit-tap-highlight-color: transparent;
 
+      &.active {
+        color: #fff;
+      }
 
       .active-indicator {
         position: absolute;
         inset: 0;
         z-index: 10;
-        background-color: $dark-primary-color;
-        opacity: 0.1;
+        background: linear-gradient(135deg, rgba(41, 47, 93, 0.96), rgba(50, 16, 44, 0.9));
+        box-shadow: 0 10px 24px rgba(41, 47, 93, 0.14);
       }
 
       .nav-tab-label {
         position: relative;
         z-index: 20;
-        mix-blend-mode: difference;
-        color: white;
+        color: inherit;
       }
     }
   }
@@ -89,6 +105,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0;
     }
 
     nav {

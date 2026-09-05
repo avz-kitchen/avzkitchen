@@ -11,6 +11,7 @@ const navTabs = [
   { id: "/", label: "Visual Studio" },
   { id: "/portfolio", label: "Portfolio" },
   { id: "/bio", label: "Bio" },
+  { id: "/services", label: "Services" },
   { id: "/contact", label: "Contact" },
 ];
 
@@ -36,7 +37,11 @@ const Navbar = () => {
   }, [navigate]);
 
   useEffect(() => {
-    setActiveTab(location.pathname);
+    const normalizedPath = location.pathname.startsWith("/portfolio")
+      ? "/portfolio"
+      : location.pathname;
+
+    setActiveTab(normalizedPath);
   }, [location.pathname]);
 
   const toggleMenu = () => {
@@ -71,6 +76,7 @@ const Navbar = () => {
               <NavLink
                 key={tab.id}
                 to={tab.id}
+                onClick={handleLinkClick}
                 className="nav-tab"
                 style={{
                   WebkitTapHighlightColor: "transparent",

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import AnimatedMedia from "../others/AnimatedMedia";
 import "./dropdown.scss";
 
-const Dropdown = ({ title, image, text, isFirst, isLast }) => {
+const Dropdown = ({ title, image, text, isFirst, isLast, index = 0 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [animationData, setAnimationData] = useState(null);
 
@@ -54,43 +54,67 @@ const Dropdown = ({ title, image, text, isFirst, isLast }) => {
 
       {isOpen && (
         <div className="dropdown-content">
-          {isFirst && <div dangerouslySetInnerHTML={{ __html: text }} />}
+          {isFirst && (
+            <div className="dropdown-panel intro-panel">
+              <div className="dropdown-text" dangerouslySetInnerHTML={{ __html: text }} />
+            </div>
+          )}
 
           {!isFirst && !isLast && (
             image ? (
-              <div className="text-left-image-right">
-                <div
-                  className="dropdown-text"
-                  dangerouslySetInnerHTML={{ __html: text }}
-                />
-                <div className="dropdown-image">
-                  <AnimatedMedia
-                    image={image}
-                    animationData={animationData}
-                    alt={title}
-                    className="dropdown-media"
-                  />
-                </div>
+              <div
+                className={`dropdown-panel split-panel ${index % 2 === 0 ? "image-right" : "image-left"}`}
+              >
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="dropdown-text" dangerouslySetInnerHTML={{ __html: text }} />
+                    <div className="dropdown-image">
+                      <AnimatedMedia
+                        image={image}
+                        animationData={animationData}
+                        alt={title}
+                        className="dropdown-media"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="dropdown-image">
+                      <AnimatedMedia
+                        image={image}
+                        animationData={animationData}
+                        alt={title}
+                        className="dropdown-media"
+                      />
+                    </div>
+                    <div className="dropdown-text" dangerouslySetInnerHTML={{ __html: text }} />
+                  </>
+                )}
               </div>
             ) : (
-              <div
-                className="dropdown-text"
-                dangerouslySetInnerHTML={{ __html: text }}
-              />
+              <div className="dropdown-panel single-panel">
+                <div className="dropdown-text" dangerouslySetInnerHTML={{ __html: text }} />
+              </div>
             )
           )}
 
           {isLast && (
-            <div className="dropdown-last-row">
-              <div className="dropdown-image">
-                <AnimatedMedia
-                  image={image}
-                  animationData={animationData}
-                  alt={title}
-                  className="dropdown-media"
-                />
-              </div>
-              <div className="dropdown-text" dangerouslySetInnerHTML={{ __html: text }} />
+            <div className={`dropdown-panel last-panel ${!image ? "no-image" : "image-stack"}`}>
+              {image ? (
+                <>
+                  <div className="dropdown-image">
+                    <AnimatedMedia
+                      image={image}
+                      animationData={animationData}
+                      alt={title}
+                      className="dropdown-media"
+                    />
+                  </div>
+                  <div className="dropdown-text" dangerouslySetInnerHTML={{ __html: text }} />
+                </>
+              ) : (
+                <div className="dropdown-text" dangerouslySetInnerHTML={{ __html: text }} />
+              )}
             </div>
           )}
         </div>

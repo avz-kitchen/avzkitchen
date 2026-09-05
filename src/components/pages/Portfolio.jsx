@@ -88,19 +88,44 @@ const Portfolio = ({ projects }) => {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
-  // Filtering logic: checks project.skills or project.category or project.tags
+  const normalizeFilterValue = (value) =>
+    String(value ?? "")
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "");
+
+  const tabKeywords = {
+    All: [],
+    Branding: ["branding", "brand", "identity"],
+    "UX/UI": ["ux", "ui", "uxui", "userexperience", "userinterface", "design"],
+    "Web Development": ["webdevelopment", "webdev", "frontend", "fullstack", "development", "react", "builderio"],
+    Illustration: ["illustration", "visualdesign", "artdirection", "iconography"],
+    Amazon: ["amazon", "a+content", "amazoncontent"],
+    "E-Commerce": ["ecommerce", "commerce", "shopify"],
+  };
+
+  const matchesSelectedTab = (value) => {
+    if (selectedTab === "All") return true;
+
+    const targetValue = normalizeFilterValue(value);
+    const selectedKeywords = tabKeywords[selectedTab] || [normalizeFilterValue(selectedTab)];
+
+    return selectedKeywords.some((keyword) => {
+      const normalizedKeyword = normalizeFilterValue(keyword);
+      return normalizedKeyword && (targetValue.includes(normalizedKeyword) || normalizedKeyword.includes(targetValue));
+    });
+  };
+
   const filteredProjects = projects
     .map((project, idx) => ({ project, idx }))
     .filter(({ project }) => {
       if (selectedTab === "All") return true;
-      const skills = project.skills || [];
-      const category = project.category || "";
-      const tag = project.tag || "";
-      return (
-        skills.includes(selectedTab) ||
-        category === selectedTab ||
-        tag === selectedTab
-      );
+
+      const skillMatches = (project.skills || []).some((skill) => matchesSelectedTab(skill));
+      const categoryMatches = matchesSelectedTab(project.category);
+      const tagMatches = matchesSelectedTab(project.tag);
+
+      return skillMatches || categoryMatches || tagMatches;
     })
     .sort((a, b) => b.idx - a.idx)
     .map(({ project }) => project);
@@ -145,7 +170,9 @@ const Portfolio = ({ projects }) => {
         {TABS.map((tab) => (
           <button
             key={tab.value}
+            type="button"
             className={`tag${selectedTab === tab.value ? " active" : ""}`}
+            aria-pressed={selectedTab === tab.value}
             onClick={() => {
               setSelectedTab(tab.value);
               window.scrollTo({ top: 0, left: 0, behavior: "instant" });

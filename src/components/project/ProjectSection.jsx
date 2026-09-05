@@ -51,15 +51,17 @@ const ProjectSection = ({ projects }) => {
             to={`/portfolio/${latestProject.title.replace(/\s+/g, "-").toLowerCase()}`}
           >
             <div className="latest-project" style={{ width: '100%', position: 'relative' }}>
-              {/* Right: Image + details */}
-              <div className="latest-project-card-new">
-                <p className="project-title">{latestProject.title}</p>
-                <h2 className="project-subtitle">{latestProject.subtitle}</h2>
-                <img
-                  src={latestProject.shot}
-                  alt={latestProject.title}
-                  className="project-image"
-                />
+              <div
+                className="latest-project-card-new"
+                style={{
+                  backgroundImage: ` url(${latestProject.cover || latestProject.shot})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                <h2 className="project-title">{latestProject.title}</h2>
+                <p className="project-subtitle">{latestProject.subtitle}</p>
                 <div className="latest-project-details">
                   <div className="project-skills">
                     {latestProject.skills &&

@@ -1,23 +1,35 @@
 @import "../../variables.scss";
 
 .btn {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  line-height: 1;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   width: fit-content;
-margin-top: 1rem;
+  text-decoration: none;
+  margin-top: 1rem;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
   &.primary {
-    background: $light-secondary-color;
-    color: $light-background-color;
+    background: rgba(50, 16, 44, 0.96);
+    border-color: rgba(50, 16, 44, 0.18);
+    color: #f6eef3;
+    box-shadow: 0 10px 20px rgba(50, 16, 44, 0.12);
 
     &:hover {
-      background: $dark-primary-color;
+      background: rgba(76, 14, 65, 1);
       color: #fff;
+      box-shadow: 0 12px 24px rgba(50, 16, 44, 0.16);
     }
   }
 
@@ -31,8 +43,8 @@ margin-top: 1rem;
       color: $light-background-color;
     }
   }
+
   &.tertiary {
-    
     background: $dark-accent-color;
     color: $dark-background-color;
 
@@ -41,13 +53,14 @@ margin-top: 1rem;
       color: $dark-background-color;
     }
   }
+
   @media (max-width: 600px) {
     font-size: 1rem;
-    padding: 0.4rem 1rem;
+    padding: 0.55rem 1.1rem;
   }
 
   @media (max-width: 400px) {
     font-size: 0.95rem;
-    padding: 0.3rem 0.7rem;
+    padding: 0.5rem 1rem;
   }
 }

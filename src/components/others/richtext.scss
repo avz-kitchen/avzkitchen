@@ -3,104 +3,115 @@
 .richtext {
   align-items: center;
   justify-items: center;
+  padding: clamp(1.5rem, 3vw, 3rem) 1rem 0;
+
   .richtext-paragraph {
-    font-size: clamp(1.2rem, 6vw, 4rem); // More responsive scaling
-    line-height: 1.1;
-    width: 60%;
+    font-size: clamp(1.2rem, 5vw, 3.3rem);
+    line-height: 1.15;
+    width: min(100%, 1000px);
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
     color: $light-text-color;
     word-break: break-word;
+    letter-spacing: -0.04em;
 
     span {
-    display: inline-block; 
-    vertical-align: top;
-  }
+      display: inline-block;
+      vertical-align: top;
+    }
 
-  .Typewriter__wrapper {
-    color: $dark-primary-color; // Make the changing words pop
-  }
+    .Typewriter__wrapper {
+      color: $dark-primary-color;
+    }
 
-  .Typewriter__cursor {
-    color: $light-primary-color; // Match your brand accent
-  }
+    .Typewriter__cursor {
+      color: $light-primary-color;
+    }
   }
 
   .richtext-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
   }
 
   .richtext-tag {
-    padding: 0.3rem 0.8rem;
-    border: 1.5px solid $light-primary-color;
-    border-radius: 2rem;
-    font-size: 1.1rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid rgba(50, 16, 44, 0.2);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: $light-primary-color;
-    background: transparent;
-    transition: background 0.2s, color 0.2s;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 
     &:hover {
       background: $light-primary-color;
       color: #fff;
+      transform: translateY(-1px);
     }
   }
 
   @media (max-width: 600px) {
     .richtext-paragraph {
-      font-size: clamp(1rem, 8vw, 1rem);
-      line-height: 1.1;
+      font-size: clamp(1.05rem, 7vw, 1.6rem);
+      line-height: 1.2;
     }
+
     .richtext-tag {
-      font-size: 0.95rem;
-      padding: 0.25rem 0.6rem;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.7rem;
+      letter-spacing: 0.06em;
     }
   }
 }
 
 .unified-paragraph {
-  display: block; // The container is a block
-  line-height: 1.5;
-  text-align: center; //
-  font-size: 4rem; 
+  display: block;
+  line-height: 1.4;
+  text-align: center;
+  font-size: clamp(1.2rem, 4vw, 3.2rem);
   color: $light-text-color;
 
   .type-word {
-    display: inline-block; // Allows width animation while staying on the line
+    display: inline-block;
     overflow: hidden;
     vertical-align: bottom;
     white-space: nowrap;
     color: $dark-primary-color;
     font-weight: 700;
     border-right: 3px solid $light-primary-color;
-    width: 0; 
+    width: 0;
     animation: typing-stay 1s steps(15) forwards;
   }
 
-  // Staggered timing so it reads like a sentence being written
-  .w-1 { animation-delay: 0.8s; }
-  .w-2 { animation-delay: 2.2s; }
-  .w-3 { animation-delay: 3.6s; }
+  .w-1 { animation-delay: 0.7s; }
+  .w-2 { animation-delay: 2s; }
+  .w-3 { animation-delay: 3.3s; }
 
   @media screen and (max-width: 600px) {
-    font-size: 1.5rem; 
+    font-size: clamp(1.05rem, 6vw, 1.8rem);
+
     .type-word {
-      font-size: 1.5rem; 
+      font-size: clamp(1.05rem, 6vw, 1.8rem);
     }
-    
   }
 }
 
 @keyframes typing-stay {
   from { width: 0; }
-  to { 
-    width: max-content; // You may need to adjust this per word or use 'max-content'
-    border-color: transparent; 
+  to {
+    width: max-content;
+    border-color: transparent;
   }
 }
+
 @keyframes typing {
   from { width: 0; }
-  to { width: 100%; border-color: transparent; } // Hide cursor when finished
+  to { width: 100%; border-color: transparent; }
 }

@@ -9,7 +9,13 @@ const GridLayout = ({ columns, children, gap = 20 }) => {
     gap: `${gap}px`,
   };
 
-  const layoutClasses = ["span-one-column", "span-two-columns", "span-three-columns", "span-four-columns", "hide-mobile"];
+  const layoutClasses = [
+    "span-one-column",
+    "span-two-columns",
+    "span-three-columns",
+    "span-four-columns",
+    "hide-mobile",
+  ];
 
   return (
     <div className="grid-layout" style={gridStyle}>
@@ -18,8 +24,15 @@ const GridLayout = ({ columns, children, gap = 20 }) => {
         const wrapperClasses = ["grid-item"];
 
         childClassName.split(/\s+/).forEach((className) => {
-          if (layoutClasses.includes(className) && className) {
-            wrapperClasses.push(className);
+          const normalized = className.trim();
+          if (!normalized) return;
+
+          const matchedLayoutClass = layoutClasses.find((layoutClass) =>
+            normalized.includes(layoutClass)
+          );
+
+          if (matchedLayoutClass) {
+            wrapperClasses.push(normalized);
           }
         });
 
