@@ -56,7 +56,7 @@ h1 , h2, h3, h4, h5, h6 , p {
   }
 
   @media (max-width: 600px) {
-    padding: calc(var(--header-offset, 10rem) + 1rem) 1rem 0;
+    padding: calc(var(--header-offset, 1rem) + 1rem) 1rem 0;
   }
 }
 

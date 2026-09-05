@@ -125,9 +125,14 @@
   }
 
   @media (max-width: 900px) {
+    .dropdown-panel,
     .split-panel,
-    .last-panel {
-      grid-template-columns: 1fr;
+    .split-panel.image-left,
+    .last-panel,
+    .last-panel.image-stack,
+    .last-panel.no-image,
+    .intro-panel {
+      grid-template-columns: 1fr !important;
     }
 
     .dropdown-image {
