@@ -4,27 +4,31 @@
 #root {
   max-width: 100%;
   width: 100%;
+  min-height: 100vh;
   text-align: center;
   overflow-x: hidden;
-  
 }
+
 html, body, #root {
-  height: 100%;
-  min-height: 60vh;
-  
+  height: auto;
+  min-height: 100vh;
+}
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: auto;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   background-color: $light-background-color;
   width: 100%;
-  
-  overflow-x: visible;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 h1 , h2, h3, h4, h5, h6 , p {
     line-height: 1;
@@ -38,20 +42,21 @@ h1 , h2, h3, h4, h5, h6 , p {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: calc(var(--header-offset, 5rem) + 2rem) 2rem 0;
   box-sizing: border-box;
+  transition: padding-top 0.28s ease;
 
   @media (max-width: 1200px) {
-    padding: 0 2rem;
+    padding: calc(var(--header-offset, 15rem) + 1.5rem) 2rem 0;
     max-width: 1200px;
   }
 
   @media (max-width: 900px) {
-    padding: 0 1.5rem;
+    padding: calc(var(--header-offset, 12rem) + 1.25rem) 1.5rem 0;
   }
 
   @media (max-width: 600px) {
-    padding: 0 1rem;
+    padding: calc(var(--header-offset, 10rem) + 1rem) 1rem 0;
   }
 }
 

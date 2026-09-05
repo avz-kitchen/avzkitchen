@@ -42,10 +42,7 @@ const Home = () => {
           </div>
 
           <div className="giant-name-container">
-            <h1 className="giant-hero-text">
-              <span className="morphing-prefix">aVz</span>
-              <span className="static-suffix">KITCHEN</span>
-            </h1>
+
           </div>
         </div>
       </HeroNew>

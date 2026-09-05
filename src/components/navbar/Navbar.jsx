@@ -15,8 +15,16 @@ const navTabs = [
   { id: "/contact", label: "Contact" },
 ];
 
+const subheaderNavTabs = [
+  { id: "/portfolio", label: "Portfolio" },
+  { id: "/services", label: "Services" },
+  { id: "/bio", label: "Bio" },
+  { id: "/contact", label: "Contact" },
+];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(location.pathname);
@@ -44,6 +52,22 @@ const Navbar = () => {
     setActiveTab(normalizedPath);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    document.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
     document.body.classList.toggle("menu-open", !menuOpen);
@@ -57,43 +81,52 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`navbar ${menuOpen ? "menu-open" : ""}`}>
+      <div className={`navbar ${menuOpen ? "menu-open" : ""} ${isScrolled ? "scrolled" : ""}`}>
         <div className="wrapper">
-          <Link to="/">
-            <motion.span
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="logo"
-            >
-              AVZKITCHEN
-            </motion.span>
-          </Link>
-          
-          {/* Desktop navigation */}
-          <nav>
-            {navTabs.map((tab) => (
-              <NavLink
-                key={tab.id}
-                to={tab.id}
-                onClick={handleLinkClick}
-                className="nav-tab"
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                }}
+          <div className="brand-stack">
+            <Link to="/">
+              <motion.span
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="logo"
               >
-                {activeTab === tab.id && (
-                  <motion.span
-                    layoutId="bubble"
-                    className="active-indicator"
-                    style={{ borderRadius: 9999 }}
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="nav-tab-label">{tab.label}</span>
-              </NavLink>
-            ))}
-          </nav>
+                AVZKITCHEN
+              </motion.span>
+            </Link>
+
+            <div className="subheader-row">
+              <span className="studio-tag">Visual Studio</span>
+
+              <nav className="subheader-nav" aria-label="Main navigation">
+                {subheaderNavTabs.map((tab) => (
+                  <NavLink
+                    key={tab.id}
+                    to={tab.id}
+                    onClick={handleLinkClick}
+                    className="nav-tab"
+                    style={{
+                      WebkitTapHighlightColor: "transparent",
+                    }}
+                  >
+                    {activeTab === tab.id && (
+                      <motion.span
+                        layoutId="bubble"
+                        className="active-indicator"
+                        style={{ borderRadius: 9999 }}
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                    <span className="nav-tab-label">{tab.label}</span>
+                  </NavLink>
+                ))}
+              </nav>
+
+              <a href="mailto:hello@avzkitchen.com" className="nav-mail">
+                hello@avzkitchen.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
