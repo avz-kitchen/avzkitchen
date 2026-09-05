@@ -88,7 +88,7 @@ const [isLoading, setIsLoading] = useState(true);
               <Route path="/portfolio" element={<Portfolio projects={projects} />} />
               <Route path="/portfolio/:projectUrl" element={<ProjectDetailRouter />} />
               <Route path="/bio" element={<About />} />
-              <Route path="/services" element={<ServicesPage />} />
+              {/* <Route path="/services" element={<ServicesPage />} /> */}
               <Route path="/contact" element={<ContactSection />} />
               <Route path="/resume" element={<Resume />} />
               <Route path="/productdesign" element={<UXPortfolio />} />

@@ -17,7 +17,7 @@ const navTabs = [
 
 const subheaderNavTabs = [
   { id: "/portfolio", label: "Portfolio" },
-  { id: "/services", label: "Services" },
+  // { id: "/services", label: "Services" },
   { id: "/bio", label: "Bio" },
   { id: "/contact", label: "Contact" },
 ];

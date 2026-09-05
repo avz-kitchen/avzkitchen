@@ -27,7 +27,7 @@ const Portfolio = ({ projects }) => {
 
   const handlePointerDown = (event) => {
     const node = tabsRef.current;
-    if (!node) return;
+    if (!node || window.matchMedia("(pointer: fine)").matches) return;
     dragState.current = {
       isDown: true,
       startX: event.clientX,
