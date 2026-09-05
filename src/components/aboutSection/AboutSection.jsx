@@ -38,11 +38,14 @@ const AboutSection = ({ isAboutPage }) => {
     <section className="about-section">
       <GridLayout className="responsive-grid">
         <div>
-          <div className="title">
+          <div className="title title-stack">
             <h1>
               Hello, {"I'm "}
-              <motion.b>Angelica Valenzuela</motion.b>
             </h1>
+            <div className="name-stack" aria-label="Angelica Valenzuela">
+              <motion.span className="name-line">Angelica</motion.span>
+              <motion.span className="name-line">Valenzuela</motion.span>
+            </div>
           </div>
           <div className="title">
             <h2>

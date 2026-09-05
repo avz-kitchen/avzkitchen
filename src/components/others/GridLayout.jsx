@@ -9,13 +9,26 @@ const GridLayout = ({ columns, children, gap = 20 }) => {
     gap: `${gap}px`,
   };
 
+  const layoutClasses = ["span-one-column", "span-two-columns", "span-three-columns", "span-four-columns", "hide-mobile"];
+
   return (
     <div className="grid-layout" style={gridStyle}>
-      {React.Children.map(children, (child, index) => (
-        <div key={index} className={`grid-item ${child.props.className || ""}`}>
-          {child}
-        </div>
-      ))}
+      {React.Children.map(children, (child, index) => {
+        const childClassName = child?.props?.className ?? "";
+        const wrapperClasses = ["grid-item"];
+
+        childClassName.split(/\s+/).forEach((className) => {
+          if (layoutClasses.includes(className) && className) {
+            wrapperClasses.push(className);
+          }
+        });
+
+        return (
+          <div key={index} className={wrapperClasses.join(" ")}>
+            {child}
+          </div>
+        );
+      })}
     </div>
   );
 };

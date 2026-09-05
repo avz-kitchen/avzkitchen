@@ -22,7 +22,7 @@ $grid-gap: 1rem;
   }
 
   @media (max-width: 900px) {
-    @include grid-container(1);
+    grid-template-columns: 1fr !important;
     width: 100%;
   }
 }

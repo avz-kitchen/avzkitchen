@@ -2,12 +2,18 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, search, hash } = useLocation();
 
   useEffect(() => {
-    // Instantly jump to the top-left of the page
-    window.scrollTo(0, 0);
-  }, [pathname]); // Fires every time the URL path changes
+    const scrollTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    const handle = window.requestAnimationFrame(scrollTop);
+    return () => window.cancelAnimationFrame(handle);
+  }, [pathname, search, hash]);
 
   return null;
 }

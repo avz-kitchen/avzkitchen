@@ -47,6 +47,7 @@ const Navbar = () => {
   const handleLinkClick = () => {
     setMenuOpen(false);
     document.body.classList.remove("menu-open");
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   };
 
   return (

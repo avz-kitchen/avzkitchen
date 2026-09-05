@@ -3,6 +3,36 @@
   display: grid;
   justify-items: center;
   align-items: center;
+
+  .grid-layout {
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+    align-items: start;
+    column-gap: 2rem;
+  }
+
+  .grid-item:first-child {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .xxl {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    font-size: clamp(3rem, 7vw, 10rem);
+    line-height: 0.8;
+  }
+
+  .xxl > span {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    white-space: nowrap;
+    margin-bottom: 0.08em;
+    line-height: 0.8;
+  }
+
     section{
       padding: 0;
       @media screen and (max-width: 900px) {

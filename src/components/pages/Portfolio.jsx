@@ -5,7 +5,7 @@ import "./Portfolio.scss";
 import ProjectJSONLD from "../structuredData/ProjectJSONLD";
 
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const TABS = [
   { label: "All", value: "All", hash: "" },
@@ -22,6 +22,37 @@ const TABS = [
 const Portfolio = ({ projects }) => {
 
   const [selectedTab, setSelectedTab] = useState("All");
+  const tabsRef = useRef(null);
+  const dragState = useRef({ isDown: false, startX: 0, startScrollLeft: 0 });
+
+  const handlePointerDown = (event) => {
+    const node = tabsRef.current;
+    if (!node) return;
+    dragState.current = {
+      isDown: true,
+      startX: event.clientX,
+      startScrollLeft: node.scrollLeft,
+    };
+    node.setPointerCapture?.(event.pointerId);
+    node.classList.add("dragging");
+  };
+
+  const handlePointerMove = (event) => {
+    const node = tabsRef.current;
+    if (!dragState.current.isDown || !node) return;
+    const delta = event.clientX - dragState.current.startX;
+    node.scrollLeft = dragState.current.startScrollLeft - delta;
+  };
+
+  const stopDragging = (event) => {
+    const node = tabsRef.current;
+    if (!node) return;
+    dragState.current.isDown = false;
+    node.classList.remove("dragging");
+    if (event?.pointerId !== undefined) {
+      node.releasePointerCapture?.(event.pointerId);
+    }
+  };
 
   // Set tab from hash on mount and when hash changes
 
@@ -102,13 +133,22 @@ const Portfolio = ({ projects }) => {
         </script>
       </Helmet>
       <h1 className="xxl">Portfolio</h1>
-      <div className="portfolio-tabs">
+      <div
+        ref={tabsRef}
+        className="portfolio-tabs"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={stopDragging}
+        onPointerLeave={stopDragging}
+        onPointerCancel={stopDragging}
+      >
         {TABS.map((tab) => (
           <button
             key={tab.value}
             className={`tag${selectedTab === tab.value ? " active" : ""}`}
             onClick={() => {
               setSelectedTab(tab.value);
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" });
               if (tab.hash) {
                 window.location.hash = tab.hash;
               } else {

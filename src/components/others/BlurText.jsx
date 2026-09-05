@@ -70,7 +70,15 @@ const BlurText = ({
   const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)));
 
   return (
-    <p ref={ref} className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        display: animateBy === 'words' ? 'block' : 'flex',
+        width: '100%',
+        ...(animateBy === 'words' ? { lineHeight: 0.8 } : { flexWrap: 'wrap', alignItems: 'flex-start', rowGap: '0.04em' })
+      }}
+    >
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
 
@@ -82,7 +90,6 @@ const BlurText = ({
         spanTransition.ease = easing;
 
         return (
-          <h1>
           <motion.span
             className="inline-block will-change-[transform,filter,opacity]"
             key={index}
@@ -90,14 +97,23 @@ const BlurText = ({
             animate={inView ? animateKeyframes : fromSnapshot}
             transition={spanTransition}
             onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
+            style={{
+              display: animateBy === 'words' ? 'block' : 'inline-block',
+              width: animateBy === 'words' ? 'fit-content' : 'auto',
+              maxWidth: '100%',
+              whiteSpace: 'nowrap',
+              overflowWrap: 'normal',
+              wordBreak: 'normal',
+              marginRight: animateBy === 'words' ? 0 : (index < elements.length - 1 ? '0.08em' : 0),
+              marginBottom: animateBy === 'words' && index < elements.length - 1 ? '0.06em' : 0,
+            }}
           >
             {segment === ' ' ? '\u00A0' : segment}
             {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
           </motion.span>
-          </h1>
         );
       })}
-    </p>
+    </div>
   );
 };
 
