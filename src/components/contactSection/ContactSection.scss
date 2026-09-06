@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   padding: clamp(3rem, 6vw, 6rem) 1rem;
-
   .contact-container {
     width: min(100%, 1200px);
     display: flex;
@@ -16,18 +15,21 @@
     text-align: center;
     padding: clamp(1.4rem, 3vw, 2.5rem);
     border-radius: 2rem;
-    background: linear-gradient(145deg, rgba(41, 47, 93, 0.96), rgba(50, 16, 44, 0.9));
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(145deg, rgba($color-navy, 0.96), rgba($color-plum, 0.9));
+    border: 1px solid rgba($color-white, 0.12);
 
+    h1{
+      color: $color-ivory;
+    }
     p {
       width: min(100%, 680px);
-      color: rgba(247, 244, 242, 0.8);
+      color: rgba($color-ivory, 0.8);
       line-height: 1.65;
       margin: 0;
     }
 
     a {
-      color: #f7f4f2;
+      color: $color-ivory;
       text-decoration: none;
       font-weight: 700;
 
@@ -52,22 +54,22 @@
       input,
       textarea {
         padding: 1rem 1.1rem;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba($color-white, 0.06);
+        border: 1px solid rgba($color-white, 0.14);
         border-radius: 1rem;
-        color: #f7f4f2;
+        color: $color-ivory;
         font-size: 1rem;
         width: 100%;
         box-sizing: border-box;
 
         &::placeholder {
-          color: rgba(247, 244, 242, 0.62);
+          color: rgba($color-ivory, 0.62);
         }
 
         &:focus {
           outline: none;
-          border-color: rgba(214, 184, 202, 0.9);
-          box-shadow: 0 0 0 3px rgba(214, 184, 202, 0.12);
+          border-color: rgba($color-blush, 0.9);
+          box-shadow: 0 0 0 3px rgba($color-blush, 0.12);
         }
       }
 
@@ -76,10 +78,10 @@
         resize: vertical;
       }
 
-      button {
+      .btn {
         padding: 1rem 2rem;
-        background: linear-gradient(135deg, #f7f4f2, #d8b3d0);
-        color: #292f5d;
+        background: linear-gradient(135deg, $color-ivory, $color-blush);
+        color: $color-navy;
         font-weight: 800;
         border: none;
         border-radius: 999px;
@@ -88,11 +90,11 @@
         min-width: 180px;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
-        box-shadow: 0 14px 28px rgba(214, 184, 202, 0.2);
+        box-shadow: 0 14px 28px rgba($color-blush, 0.2);
 
         &:hover {
           transform: translateY(-1px);
-          box-shadow: 0 18px 30px rgba(214, 184, 202, 0.26);
+          box-shadow: 0 18px 30px rgba($color-blush, 0.26);
         }
 
         &:focus {
@@ -101,12 +103,12 @@
       }
 
       .error-message {
-        color: #ffb4c7;
+        color: $color-rose;
         font-size: 0.875rem;
       }
 
       .success-message {
-        color: #b8f0c7;
+        color: $color-mint;
         font-size: 0.875rem;
       }
     }
@@ -138,7 +140,7 @@
             font-size: 0.95rem;
           }
 
-          button {
+          .btn {
             width: 100%;
             min-width: 0;
           }

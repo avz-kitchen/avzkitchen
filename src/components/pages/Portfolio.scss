@@ -169,12 +169,12 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: rgba(41, 47, 93, 0.9);
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     line-height: 1;
-    letter-spacing: 0.04em;
-    text-transform: none;
-    font-weight: 600;
-    padding: 0.8rem 1.2rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
     transition: all 0.2s ease;
 
     &:hover {

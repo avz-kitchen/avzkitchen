@@ -48,7 +48,7 @@ const Dropdown = ({ title, image, text, isFirst, isLast, index = 0 }) => {
   return (
     <div className="dropdown">
       <div className="dropdown-header" onClick={toggleDropdown}>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <span className={`dropdown-icon ${isOpen ? "open" : ""}`}>+</span>
       </div>
 

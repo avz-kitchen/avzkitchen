@@ -21,36 +21,36 @@
   }
 
   &.primary {
-    background: rgba(50, 16, 44, 0.96);
-    border-color: rgba(50, 16, 44, 0.18);
-    color: #f6eef3;
-    box-shadow: 0 10px 20px rgba(50, 16, 44, 0.12);
+    background: rgba($button-primary-bg, 0.96);
+    border-color: $button-primary-border;
+    color: $button-primary-text;
+    box-shadow: 0 10px 20px $button-primary-shadow;
 
     &:hover {
-      background: rgba(76, 14, 65, 1);
-      color: #fff;
-      box-shadow: 0 12px 24px rgba(50, 16, 44, 0.16);
+      background: rgba($button-primary-bg-hover, 1);
+      color: $color-white;
+      box-shadow: 0 12px 24px rgba($button-primary-bg, 0.16);
     }
   }
 
   &.secondary {
-    background: transparent;
-    color: $light-primary-color;
-    border: 2px solid $light-primary-color;
+    background: $button-secondary-bg;
+    color: $button-secondary-text;
+    border: 2px solid $button-secondary-border;
 
     &:hover {
-      background: $light-primary-color;
-      color: $light-background-color;
+      background: $button-secondary-hover-bg;
+      color: $button-secondary-hover-text;
     }
   }
 
   &.tertiary {
-    background: $dark-accent-color;
-    color: $dark-background-color;
+    background: $button-tertiary-bg;
+    color: $button-tertiary-text;
 
     &:hover {
-      background: $dark-text-color;
-      color: $dark-background-color;
+      background: $button-tertiary-hover-bg;
+      color: $button-tertiary-hover-text;
     }
   }
 

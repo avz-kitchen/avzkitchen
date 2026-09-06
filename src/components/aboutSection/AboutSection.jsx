@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import "../../App.scss";
 import { motion, useInView } from "framer-motion";
 import GridLayout from "../others/GridLayout";
+import Button from "../others/Button";
 import { Link } from "react-router-dom";
 const variants = {
   initial: {
@@ -69,15 +70,9 @@ const AboutSection = ({ isAboutPage }) => {
             alt="a Portrait of Angelica Valenzuela"
           />
           {!isAboutPage && (
-            <Link to="/about">
-              <button
-                style={{
-                  justifySelf: "center",
-                }}
-              >
-                About Me
-              </button>
-            </Link>
+            <Button variant="secondary" to="/about" style={{ justifySelf: "center" }}>
+              About Me
+            </Button>
           )}
         </div>
       </GridLayout>

@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Button from "../others/Button";
 import "./ContactSection.scss";
-import BlurText from "./../others/BlurText";
 
 const ContactSection = () => {
   const formRef = useRef();
@@ -61,7 +61,7 @@ const ContactSection = () => {
             {success && (
               <p className="success-message">Message sent successfully!</p>
             )}
-            <button>Send Message</button>
+            <Button variant="primary" type="submit">Send Message</Button>
           </motion.form>
         </div>
 

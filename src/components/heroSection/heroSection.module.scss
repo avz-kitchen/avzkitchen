@@ -59,9 +59,19 @@
   }
 
   .tag {
-    background-color: #8CBEB7;
-    padding: 4px 12px;
-    border-radius: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba($light-text-color, 0.18);
+    border-radius: 999px;
+    background: rgba($color-white, 0.35);
+    color: $light-text-color;
+    font-size: 0.72rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   .hero-image {

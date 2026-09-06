@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Button from "../others/Button";
+import ActionRow from "../others/ActionRow";
+import SectionHeading from "../others/SectionHeading";
 import GridLayout from "../others/GridLayout";
 import "./ServicesPage.scss";
 import ContactSection from "../contactSection/ContactSection";
-import Richtext from "../others/Richtext";
 
 const makePreview = (title, colors) => {
   const svg = `
@@ -152,12 +153,13 @@ const ServicesPage = () => {
             <h1>From ingredients to digital experiences.</h1>
        
 
-            <div className="cta-row">
-              <Button to="/contact">Book a discovery call</Button>
-              <a href="mailto:hello@avzkitchen.com?subject=Project%20Inquiry" className="inline-link">
-                hello@avzkitchen.com
-              </a>
-            </div>
+            <ActionRow
+              className="cta-row"
+              actions={[
+                { label: "Book a discovery call", to: "/contact", variant: "primary" },
+                { label: "hello@avzkitchen.com", href: "mailto:hello@avzkitchen.com?subject=Project%20Inquiry", variant: "secondary" },
+              ]}
+            />
 
 
           </div>
@@ -174,11 +176,10 @@ style={{ width: "100%", height: "100%", objectFit: "fit" }}>
            {/* <Richtext paragraph={serviceContent} tags={proofPoints} /> */}
 
       <section className="services-offers">
-        <div className="section-heading">
-          <h2>Everything needed to turn a good idea into a strong digital presence.</h2>
-                 {/* <p className="eyebrow">What’s on the menu</p> */}
-
-        </div>
+        <SectionHeading
+          title="Everything needed to turn a good idea into a strong digital presence."
+          align="center"
+        />
 
         <div className="service-tabs" role="tablist" aria-label="Service categories">
           <div className="tab-list">
@@ -217,10 +218,11 @@ style={{ width: "100%", height: "100%", objectFit: "fit" }}>
       </section>
 
       <section className="services-process">
-        <div className="section-heading narrow">
-          {/* <p className="eyebrow">The process</p> */}
-          <h2>A focused recipe for momentum.</h2>
-        </div>
+        <SectionHeading
+          title="A focused recipe for momentum."
+          align="center"
+          className="narrow"
+        />
 
         <div className="process-grid">
           {process.map(({ step, title, text }, index) => (

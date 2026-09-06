@@ -1,13 +1,52 @@
-$light-primary-color: #32102C;
-$light-background-color: #F2F2F2;
-$light-text-color: #292F5D;
-$light-secondary-color: #600d51;
+$color-plum: #32102C;
+$color-plum-deep: #4C0E41;
+$color-plum-soft: #600d51;
+$color-plum-muted: rgba($color-plum, 0.12);
 
-$dark-primary-color: #32102C;
-$dark-secondary-color: #a1819b;
-$dark-accent-color: #cd88c1;
-$dark-background-color: #292F5D;
-$dark-text-color: #F2F2F2;
+$color-navy: #292F5D;
+$color-navy-soft: rgba($color-navy, 0.12);
+$color-navy-strong: rgba($color-navy, 0.96);
+
+$color-sand: #F2F2F2;
+$color-sand-soft: rgba($color-sand, 0.35);
+$color-ivory: #F7F4F2;
+$color-ivory-soft: rgba($color-ivory, 0.8);
+
+$color-blush: #D8B3D0;
+$color-blush-strong: #CD88C1;
+$color-mint: #B8F0C7;
+$color-rose: #FFB4C7;
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$light-primary-color: $color-plum;
+$light-background-color: $color-sand;
+$light-text-color: $color-navy;
+$light-secondary-color: $color-plum-soft;
+
+$dark-primary-color: $color-plum;
+$dark-secondary-color: #A1819B;
+$dark-accent-color: $color-blush-strong;
+$dark-background-color: $color-navy;
+$dark-text-color: $color-sand;
+
+$button-primary-bg: $color-plum;
+$button-primary-bg-hover: $color-plum-deep;
+$button-primary-border: rgba($color-plum, 0.18);
+$button-primary-text: $color-ivory;
+$button-primary-shadow: rgba($color-plum, 0.12);
+
+$button-secondary-bg: transparent;
+$button-secondary-border: $color-plum;
+$button-secondary-text: $color-plum;
+$button-secondary-hover-bg: $color-plum;
+$button-secondary-hover-text: $color-sand;
+
+$button-tertiary-bg: $dark-accent-color;
+$button-tertiary-text: $color-navy;
+$button-tertiary-hover-bg: $color-ivory;
+$button-tertiary-hover-text: $color-navy;
 
 $font-primary: 'DM Sans', sans-serif;
 $font-secondary: 'IBM Plax Serif', serif;
@@ -18,6 +57,13 @@ $font-secondary: 'IBM Plax Serif', serif;
   --text-color: #{$light-text-color};
   --accent-color: #{$dark-primary-color};
   --button-color: #{$light-secondary-color};
+  --button-primary-bg: #{$button-primary-bg};
+  --button-primary-hover-bg: #{$button-primary-bg-hover};
+  --button-primary-text: #{$button-primary-text};
+  --button-secondary-border: #{$button-secondary-border};
+  --button-secondary-text: #{$button-secondary-text};
+  --button-tertiary-bg: #{$button-tertiary-bg};
+  --button-tertiary-text: #{$button-tertiary-text};
 }
 
 .dark-mode {
