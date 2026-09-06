@@ -9,6 +9,23 @@
   overflow-x: hidden;
 }
 
+.main-app-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.main-app-content.content-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.main-app-content.content-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 html, body, #root {
   height: auto;
   min-height: 100vh;

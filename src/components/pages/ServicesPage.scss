@@ -273,6 +273,18 @@
   }
 
   .process-card {
+    opacity: 0;
+    height:50vh;
+    justify-content: center;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--delay, 0ms);
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .step {
       display: inline-block;
       margin-bottom: 1rem;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Button from "../others/Button";
 import GridLayout from "../others/GridLayout";
@@ -95,7 +95,35 @@ const proofPoints = ["Brand clarity", "Conversion focus", "Fast execution", "Pre
 
 const ServicesPage = () => {
   const [activeTab, setActiveTab] = useState("shopify");
+  const [visibleCards, setVisibleCards] = useState([]);
   const activeService = tabs.find((tab) => tab.id === activeTab) || tabs[0];
+
+  useEffect(() => {
+    const grid = document.querySelector(".process-grid");
+
+    if (!grid) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+
+        if (!entry || !entry.isIntersecting) return;
+
+        process.forEach((_, index) => {
+          setTimeout(() => {
+            setVisibleCards((prev) => (prev.includes(index) ? prev : [...prev, index]));
+          }, index * 180);
+        });
+
+        observer.disconnect();
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(grid);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <main className="services-page">
@@ -198,8 +226,12 @@ const ServicesPage = () => {
         </div>
 
         <div className="process-grid">
-          {process.map(({ step, title, text }) => (
-            <div key={step} className="process-card">
+          {process.map(({ step, title, text }, index) => (
+            <div
+              key={step}
+              className={`process-card ${visibleCards.includes(index) ? "is-visible" : ""}`}
+              style={{ "--delay": `${index * 180}ms` }}
+            >
               <span className="step">{step}</span>
               <h3>{title}</h3>
               <p>{text}</p>

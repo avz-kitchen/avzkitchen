@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .footer {
-  color: $light-secondary-color;
+  color: $light-primary-color;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ margin: 0 auto;
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
     text-align: left;
-    height: 40vh;
+    height: 20vh;
     width: 100%;
     gap: 2rem;
     

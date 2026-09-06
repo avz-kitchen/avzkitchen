@@ -26,10 +26,21 @@ const HeroNew = ({ children, videoRef }) => {
       if (!videoRef || !videoRef.current) return;
 
       const scrollProgress = Math.min(window.scrollY / 500, 1);
-      const scale = 1 + scrollProgress * 0.2;
-      const translateY = scrollProgress * 28;
+      const startX = -160;
+      const endX = 180;
+      const startWidth = 440;
+      const endWidth = 820;
+      const startHeight = 440;
+      const endHeight = 492;
 
-      videoRef.current.style.transform = `translateY(${translateY}px) scale(${scale})`;
+      const x = startX + scrollProgress * (endX - startX);
+      const y = scrollProgress * 20;
+      const width = startWidth + scrollProgress * (endWidth - startWidth);
+      const height = startHeight + scrollProgress * (endHeight - startHeight);
+
+      videoRef.current.style.width = `${width}px`;
+      videoRef.current.style.height = `${height}px`;
+      videoRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     };
 
     window.addEventListener('mousemove', handleMouseMove);

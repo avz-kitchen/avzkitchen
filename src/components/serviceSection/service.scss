@@ -144,48 +144,84 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  word-break: break-word;  
+  word-break: break-word;
 }
 
 .service-list-item {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 2px dashed $light-primary-color;
+  border-bottom: 1px dashed rgba(50, 16, 44, 0.28);
   width: 100%;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 
   p {
     margin: 0;
-    line-height: 1.2;
-    word-break: break-word; // Ensures long text breaks
+    line-height: 1.5;
+    color: rgba(41, 47, 93, 0.8);
+    word-break: break-word;
   }
 }
+
 .two-column-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.5fr);
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: flex-start;
   width: 100%;
 }
 
 .two-column-list-left {
   h1 {
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
+    font-size: clamp(3.7rem, 8vw, 9rem);
+    line-height: 0.72;
+    letter-spacing: -0.07em;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $light-text-color;
   }
+
   p {
-    color: #555;
+    margin: 0;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    line-height: 1.45;
+    color: rgba(41, 47, 93, 0.75);
   }
 }
 
 .two-column-list-right {
   .service-list {
     list-style: none;
-    padding-left: 1.5rem;
+    padding: 0;
     margin: 0;
   }
+
   .service-list-item {
-    margin-bottom: 1rem;
+    margin: 0;
+    padding: 1.5rem 0 2rem;
+    border-top: 1px dashed rgba(50, 16, 44, 0.28);
+    border-bottom: 1px dashed rgba(50, 16, 44, 0.28);
     font-size: 1.1rem;
+
+    &:first-child {
+      border-top: 1px dashed rgba(50, 16, 44, 0.28);
+    }
+
+    h3 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.2rem, 4vw, 5rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: $light-text-color;
+    }
+
+    p {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      line-height: 1.55;
+      max-width: 42rem;
+    }
   }
 }
 
@@ -193,5 +229,13 @@
   .two-column-list {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .two-column-list-left h1 {
+    font-size: clamp(3rem, 18vw, 6rem);
+  }
+
+  .two-column-list-right .service-list-item h3 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
   }
 }
