@@ -53,8 +53,29 @@
     flex-direction: column;
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     align-items: center;
+    justify-content: center;
+  }
+
+  .hero-video-shell {
+    width: min(100%, 760px);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15, 18, 31, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(41, 47, 93, 0.04);
+    margin: 0 auto;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  .hero-video {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 32vw, 420px);
+    object-fit: cover;
+    background: rgba(41, 47, 93, 0.08);
   }
 
   .span-two-columns {
@@ -73,6 +94,19 @@
         margin-left: 0;
         max-width: 100%;
       }
+    }
+
+    .giant-name-container {
+      align-items: stretch;
+    }
+
+    .hero-video-shell {
+      width: 100%;
+      border-radius: 1.2rem;
+    }
+
+    .hero-video {
+      height: 220px;
     }
   }
 }

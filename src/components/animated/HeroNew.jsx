@@ -1,32 +1,44 @@
 import React, { useEffect, useRef } from 'react';
 import './HeroNew.scss';
 
-const HeroNew = ({ children }) => {
+const HeroNew = ({ children, videoRef }) => {
   const blobRef = useRef(null);
   const requestRef = useRef();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      
-      // We calculate the target position
+
       const targetX = (clientX - window.innerWidth / 2) / 25;
       const targetY = (clientY - window.innerHeight / 2) / 25;
 
-      // Using requestAnimationFrame for "Seated" levels of smoothness
       const updatePosition = () => {
         if (blobRef.current) {
           blobRef.current.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
         }
       };
-      
+
       cancelAnimationFrame(requestRef.current);
       requestRef.current = requestAnimationFrame(updatePosition);
     };
 
+    const handleScroll = () => {
+      if (!videoRef || !videoRef.current) return;
+
+      const scrollProgress = Math.min(window.scrollY / 500, 1);
+      const scale = 1 + scrollProgress * 0.2;
+      const translateY = scrollProgress * 28;
+
+      videoRef.current.style.transform = `translateY(${translateY}px) scale(${scale})`;
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(requestRef.current);
     };
   }, []);

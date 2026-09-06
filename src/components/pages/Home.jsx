@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../others/Header";
 import Button from "../others/Button";
@@ -11,6 +12,7 @@ import ContactSection from "../contactSection/ContactSection";
 import portfolioData from "../../data/data.json";
 
 const Home = () => {
+  const videoRef = useRef(null);
   const projects = portfolioData.portfolio;
   const headerTags = ["Branding", "Product Design", "Code", "E-commerce"];
   const headerContent = (
@@ -24,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-      <HeroNew>
+      <HeroNew videoRef={videoRef}>
         <div className="seated-hero-layout">
           <div className="hero-top-section">
             <GridLayout columns={4}>
@@ -42,7 +44,17 @@ const Home = () => {
           </div>
 
           <div className="giant-name-container">
-
+            <div className="hero-video-shell" ref={videoRef}>
+              <video
+                className="hero-video"
+                src="/optimized/avz-ktichening.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+            </div>
           </div>
         </div>
       </HeroNew>
