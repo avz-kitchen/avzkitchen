@@ -4,6 +4,7 @@ import Button from "../others/Button";
 import GridLayout from "../others/GridLayout";
 import "./ServicesPage.scss";
 import ContactSection from "../contactSection/ContactSection";
+import Richtext from "../others/Richtext";
 
 const makePreview = (title, colors) => {
   const svg = `
@@ -29,6 +30,14 @@ const makePreview = (title, colors) => {
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 };
+  const serviceContent = (
+    <span className="unified-paragraph">
+      I harvest <span className="type-word w-1">insights ✐</span>, 
+      craft <span className="type-word w-2">designs ✦</span>, 
+      and develop <span className="type-word w-3">tech ☍</span> 
+      — plating digital products and brands that leave a lasting taste ❋.
+    </span>
+  );
 
 const tabs = [
   {
@@ -91,6 +100,7 @@ const process = [
   },
 ];
 
+
 const proofPoints = ["Brand clarity", "Conversion focus", "Fast execution", "Premium design"];
 
 const ServicesPage = () => {
@@ -139,11 +149,8 @@ const ServicesPage = () => {
       <section className="services-hero">
         <GridLayout columns={2} gap={32}>
           <div className="hero-copy">
-            <h1>We turn ingredients into digital experiences that sell.</h1>
-            <p className="hero-text">
-              We harvest the ingredients—strategy, design, code, and clarity—then plate a digital presence that feels
-              premium, reads clearly, and converts attention into action.
-            </p>
+            <h1>From ingredients to digital experiences.</h1>
+       
 
             <div className="cta-row">
               <Button to="/contact">Book a discovery call</Button>
@@ -152,35 +159,25 @@ const ServicesPage = () => {
               </a>
             </div>
 
-            <ul className="proof-list">
-              {proofPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </div>
 
+          </div>
+                    
           <div className="hero-panel">
-            <div className="panel-card">
-              <p className="panel-label">The recipe</p>
-              <ul>
-                <li>Clear positioning so your offer makes sense at a glance</li>
-                <li>Design and UX that guide people toward the next step</li>
-                <li>Digital experiences built to feel premium and convert</li>
-                <li>Technical execution that keeps the experience polished and reliable</li>
-              </ul>
-              <div className="mini-cta">
-                <span>Ready to start cooking?</span>
-                <Button to="/contact" variant="secondary">Send a brief</Button>
-              </div>
-            </div>
+<video autoPlay loop muted playsInline
+style={{ width: "100%", height: "100%", objectFit: "fit" }}>
+            <source src="/optimized/avz-ktichening.webm" type="video/webm" />
+          </video>  
           </div>
         </GridLayout>
+
       </section>
+           {/* <Richtext paragraph={serviceContent} tags={proofPoints} /> */}
 
       <section className="services-offers">
         <div className="section-heading">
-          <p className="eyebrow">What’s on the menu</p>
           <h2>Everything needed to turn a good idea into a strong digital presence.</h2>
+                 {/* <p className="eyebrow">What’s on the menu</p> */}
+
         </div>
 
         <div className="service-tabs" role="tablist" aria-label="Service categories">
@@ -221,7 +218,7 @@ const ServicesPage = () => {
 
       <section className="services-process">
         <div className="section-heading narrow">
-          <p className="eyebrow">The process</p>
+          {/* <p className="eyebrow">The process</p> */}
           <h2>A focused recipe for momentum.</h2>
         </div>
 

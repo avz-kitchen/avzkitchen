@@ -1,87 +1,102 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=IBM+Plex+Serif:wght@400;500;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "./variables.scss";
-
 :root {
-  font-family: 'DM Sans', sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "IBM Plex Serif", serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+  --tracking-tight: -0.02em;
+  color: var(--text-color);
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  color: var(--text-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: auto;
+}
+
+body,
+p,
+li,
+a,
+span,
+label,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-sans);
   color: var(--text-color);
 }
 
-
-
-a {
-  font-weight: 500;
-  text-decoration: inherit;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-tight);
+  line-height: 0.9;
   color: var(--text-color);
-  font-family: 'DM Sans', monospace;
 }
 
 h1 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(2.5rem, 10vw, 8rem);
+  font-size: clamp(3rem, 7vw, 8rem);
+  font-weight: var(--font-weight-black);
   text-transform: uppercase;
-  line-height: 1;
-  text-align: left;
-
-}
-.giant-hero-text {
-h1 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(2.5rem, 10vw, 15rem);
-  text-transform: uppercase;
-  line-height: 1;
-  text-align: left;
-  transform: scaleY(1.9);    /* Stretches the height by 130% */
-  transform-origin: bottom;
-}
 }
 
 h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1.8rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
 }
 
 h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.2;
-  word-break: break-word;
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  font-weight: var(--font-weight-extra-bold);
+  text-transform: uppercase;
 }
 
 h4 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1.2rem, 4vw, 2rem);
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: var(--font-weight-bold);
 }
 
-h5, h6 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  font-weight: 400;
-  line-height: 1.2;
+h5,
+h6 {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: var(--font-weight-bold);
 }
 
 p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  line-height: 1.2;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
   margin: 0;
 }
 
 button {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: var(--font-weight-bold);
 }
 
 .underlined-b:hover {
@@ -94,11 +109,11 @@ button:focus-visible {
   outline: 2px auto -webkit-focus-ring-color;
 }
 
-
 @media (max-width: 480px) {
   h1 {
     font-size: clamp(1.2rem, 12vw, 5rem);
   }
+
   h2 {
     font-size: clamp(2rem, 3vw, 3rem);
   }
@@ -106,18 +121,20 @@ button:focus-visible {
   h4 {
     font-size: clamp(0.95rem, 3vw, 1.1rem);
   }
+
   button {
     font-size: clamp(0.9rem, 2vw, 1rem);
     padding: 12px;
   }
 }
 
-  ul {
-    margin: 0 0 0rem 1.2rem;
-    padding: 0;
-    list-style-type: disc;
-  }
-  li {
-    font-size: 1.2rem;
-    line-height: 1.2;
-  }
+ul {
+  margin: 0 0 0rem 1.2rem;
+  padding: 0;
+  list-style-type: disc;
+}
+
+li {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}

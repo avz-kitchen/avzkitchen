@@ -120,15 +120,11 @@ $padding: 2rem;
 
   h2 {
     margin: 0;
-    font-size: clamp(3.2rem, 7vw, 9rem);
-    line-height: 0.88;
-    letter-spacing: -0.07em;
     color: $dark-text-color;
   }
 
   .rich-text {
     margin: 0;
-    font-size: clamp(1.05rem, 1.45vw, 1.55rem);
     line-height: 1.5;
     color: rgba(41, 47, 93, 0.82);
     max-width: 100%;
@@ -172,9 +168,6 @@ $padding: 2rem;
     width: 100%;
     margin: 0;
     text-align: left;
-    font-size: clamp(2rem, 3vw, 3.2rem);
-    line-height: 0.95;
-    letter-spacing: -0.06em;
     color: $dark-text-color;
   }
 
@@ -231,9 +224,6 @@ $padding: 2rem;
 
       h3 {
         margin: 0;
-        font-size: clamp(1.5rem, 2.2vw, 2.6rem);
-        line-height: 1;
-        letter-spacing: -0.06em;
         color: #f9f4f6;
       }
 

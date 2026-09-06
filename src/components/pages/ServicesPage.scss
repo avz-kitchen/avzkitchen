@@ -22,16 +22,6 @@
     letter-spacing: 0.12em;
   }
 
-  h1,
-  h2,
-  h3,
-  p,
-  li,
-  a,
-  span {
-    color: #292f5d;
-  }
-
   .services-hero {
     .grid-layout {
       align-items: center;
@@ -39,24 +29,19 @@
     }
 
     .hero-copy {
-      max-width: 700px;
+      max-width: 760px;
     }
 
     h1 {
-      font-size: clamp(3.1rem, 5vw, 6.9rem);
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-      text-transform: uppercase;
       margin: 0 0 1.3rem;
-      max-width: 700px;
-      font-weight: 900;
+      max-width: 760px;
       overflow: visible;
     }
 
     .hero-text {
-      font-size: clamp(1rem, 1.45vw, 1.2rem);
-      line-height: 1.7;
-      max-width: 620px;
+      font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+      line-height: 1.5;
+      max-width: 700px;
       margin: 0 0 2rem;
       font-weight: 500;
       color: rgba(41, 47, 93, 0.82);
@@ -98,40 +83,57 @@
     .hero-panel {
       display: flex;
       justify-content: center;
+      width: 100%;
+    }
+
+    .hero-media {
+      display: block;
+      width: min(100%, 520px);
+      aspect-ratio: 5 / 3;
+      object-fit: cover;
+      border-radius: 1.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(41, 47, 93, 0.08);
+      box-shadow: 0 20px 50px rgba(41, 47, 93, 0.12);
+      filter: saturate(0.7) brightness(0.9) contrast(1.1) hue-rotate(-16deg);
     }
 
     .panel-card {
-      width: min(100%, 500px);
-      background: rgba(255, 255, 255, 0.28);
+      width: min(100%, 520px);
+      background: rgba(255, 255, 255, 0.18);
       border: 1px solid rgba(255, 255, 255, 0.45);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       padding: clamp(1.5rem, 2vw, 2.2rem);
       border-radius: 1.6rem;
+      box-shadow: 0 20px 42px rgba(41, 47, 93, 0.08);
 
       .panel-label {
-        margin: 0 0 1rem;
-        font-size: 0.74rem;
+        margin: 0 0 1.25rem;
+        font-size: 0.72rem;
         text-transform: uppercase;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.16em;
         font-weight: 800;
+        color: rgba(50, 16, 44, 0.82);
       }
 
       ul {
-        padding-left: 1.2rem;
+        padding-left: 1.4rem;
         margin: 0 0 1.5rem;
-        line-height: 1.9;
-        font-size: 1rem;
+        line-height: 1.7;
+        font-size: clamp(1.05rem, 1.7vw, 1.35rem);
       }
 
       .mini-cta {
         display: flex;
         flex-direction: column;
-        gap: 0.9rem;
+        gap: 1rem;
         align-items: flex-start;
 
         span {
           font-weight: 700;
+          font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+          line-height: 1.2;
         }
       }
     }
@@ -141,14 +143,10 @@
   .services-process {
     .section-heading {
       max-width: 770px;
-      margin-bottom: 2rem;
+      margin: 0 auto 2rem;
 
       h2 {
-        font-size: clamp(2rem, 4vw, 4rem);
-        line-height: 0.95;
-        letter-spacing: -0.06em;
-        text-transform: uppercase;
-        margin: 0;
+        text-align: center;
       }
     }
 
@@ -165,6 +163,8 @@
 
   .service-tabs {
     width: 100%;
+        margin: 0 auto;
+
   }
 
   .tab-list {
@@ -192,7 +192,8 @@
       background: rgba(41, 47, 93, 0.96);
       color: #f2f2f2;
       border-color: rgba(41, 47, 93, 0.96);
-      box-shadow: 0 12px 24px rgba(41, 47, 93, 0.14);
+      box-shadow: 0 14px 30px rgba(41, 47, 93, 0.18);
+      transform: translateY(-1px);
     }
   }
 
@@ -202,8 +203,11 @@
     gap: 1.5rem;
     border-radius: 1.5rem;
     padding: clamp(1rem, 2vw, 1.8rem);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 18px 38px rgba(41, 47, 93, 0.06);
   }
 
   .tab-copy {
@@ -222,10 +226,6 @@
 
     h3 {
       margin: 0 0 0.75rem;
-      font-size: clamp(2rem, 3vw, 3.6rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
-      text-transform: uppercase;
     }
 
     .tab-description {
@@ -254,10 +254,11 @@
       display: block;
       width: 100%;
       max-width: 100%;
-      border-radius: 1.1rem;
+      border-radius: 1.25rem;
       border: 1px solid rgba(41, 47, 93, 0.08);
       background: #f2f2f2;
-      box-shadow: 0 16px 38px rgba(41, 47, 93, 0.08);
+      box-shadow: 0 18px 42px rgba(41, 47, 93, 0.08);
+      transform: scale(1.01);
     }
   }
 
@@ -297,10 +298,6 @@
 
     h3 {
       margin: 0 0 0.75rem;
-      font-size: clamp(1.4rem, 2vw, 2rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      text-transform: uppercase;
     }
 
     p {
@@ -339,10 +336,6 @@
     h2 {
       margin: 0;
       max-width: 620px;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      text-transform: uppercase;
     }
 
     .cta-actions {

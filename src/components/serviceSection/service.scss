@@ -24,10 +24,6 @@
     width: 100%;
     max-width: 100%;
     overflow: visible;
-    font-size: clamp(2.8rem, 6vw, 6rem);
-    line-height: 0.82;
-    letter-spacing: -0.06em;
-    text-transform: uppercase;
     margin: 0;
   }
 
@@ -83,9 +79,6 @@
   [data-slot="title"] {
     color: $light-text-color;
     font-weight: 800;
-    font-size: clamp(1.3rem, 2vw, 2.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.04em;
     padding: 0;
   }
 
@@ -173,17 +166,11 @@
 .two-column-list-left {
   h1 {
     margin: 0 0 1rem;
-    font-size: clamp(3.7rem, 8vw, 9rem);
-    line-height: 0.72;
-    letter-spacing: -0.07em;
-    text-transform: uppercase;
-    font-weight: 900;
     color: $light-text-color;
   }
 
   p {
     margin: 0;
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
     line-height: 1.45;
     color: rgba(41, 47, 93, 0.75);
   }
@@ -209,11 +196,6 @@
 
     h3 {
       margin: 0 0 1rem;
-      font-size: clamp(2.2rem, 4vw, 5rem);
-      line-height: 0.9;
-      letter-spacing: -0.06em;
-      text-transform: uppercase;
-      font-weight: 900;
       color: $light-text-color;
     }
 
@@ -229,13 +211,5 @@
   .two-column-list {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-
-  .two-column-list-left h1 {
-    font-size: clamp(3rem, 18vw, 6rem);
-  }
-
-  .two-column-list-right .service-list-item h3 {
-    font-size: clamp(2rem, 8vw, 3.2rem);
   }
 }
