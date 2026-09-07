@@ -33,10 +33,10 @@ const makePreview = (title, colors) => {
 };
   const serviceContent = (
     <span className="unified-paragraph">
-      I harvest <span className="type-word w-1">insights ✐</span>, 
-      craft <span className="type-word w-2">designs ✦</span>, 
-      and develop <span className="type-word w-3">tech ☍</span> 
-      — plating digital products and brands that leave a lasting taste ❋.
+      I sift <span className="type-word w-1">insight ✐</span>,
+      stir <span className="type-word w-2">identity ✦</span>,
+      and shape <span className="type-word w-3">digital craft ☍</span>
+      — cooking experiences that feel memorable, clear, and deeply alive ❋.
     </span>
   );
 
@@ -44,41 +44,41 @@ const tabs = [
   {
     id: "shopify",
     label: "Shopify",
-    tag: "Kitchen station",
-    title: "Shopify design & setup",
+    tag: "Recipe station",
+    title: "Shopify storefront design & custom components",
     description:
-      "We build a storefront that feels premium, easy to trust, and smooth to shop—so the experience keeps the appetite going and the cart moving.",
-    bullets: ["Store design", "Collection pages", "Conversion fixes"],
+      "We design and build conversion-focused Shopify storefronts with custom components, premium UX, and cleaner customer journeys that feel polished across every product and collection page.",
+    bullets: ["Custom Shopify components", "Storefront UX", "Conversion-focused layout"],
     image: makePreview("Shopify", ["#EFD9EB", "#C9D9F5"]),
   },
   {
     id: "amazon",
     label: "Amazon",
-    tag: "Kitchen station",
-    title: "Amazon storefronts",
+    tag: "Brand pantry",
+    title: "Amazon A+ content & cross-channel brand consistency",
     description:
-      "We shape the brand story and storefront experience so your offer feels clearer, stronger, and more memorable from the first glance.",
-    bullets: ["Brand presentation", "Page structure", "Visual consistency"],
+      "We create Amazon A+ content, marketplace-ready visuals, and reusable templates that keep your brand consistent across channels, platforms, and product touchpoints while strengthening trust and clarity.",
+    bullets: ["Amazon A+ content", "Cross-channel brand consistency", "Reusable templates"],
     image: makePreview("Amazon", ["#F4E6C9", "#D7E9E5"]),
   },
   {
     id: "fullstack",
     label: "Full stack",
-    tag: "Kitchen station",
-    title: "Full stack development",
+    tag: "Kitchen lab",
+    title: "Custom web apps & scalable digital product builds",
     description:
-      "We turn ideas into functioning digital products with a polished front end and a strong technical base behind the scenes.",
-    bullets: ["Web apps", "Responsive build", "Technical execution"],
+      "We turn early ideas into polished digital products with a clean front end, strong technical foundations, and a scalable structure built for growth and long-term performance.",
+    bullets: ["Web app development", "Responsive builds", "Scalable systems"],
     image: makePreview("Full Stack", ["#D9E7F3", "#EAD8F0"]),
   },
   {
     id: "presence",
     label: "Digital presence",
-    tag: "Kitchen station",
-    title: "Brand identity & digital presence",
+    tag: "Atmosphere studio",
+    title: "Brand identity, landing pages & digital presence strategy",
     description:
-      "We season the strategy, design, and digital experience so your brand feels clear, premium, and ready to win attention.",
-    bullets: ["Brand strategy", "UX design", "Landing pages"],
+      "We refine the strategy, design, and digital atmosphere so your brand feels premium, consistent, and ready to hold attention across web, campaigns, and customer touchpoints.",
+    bullets: ["Brand strategy", "Landing page design", "Platform consistency"],
     image: makePreview("Presence", ["#F5D6D8", "#CFE0F9"]),
   },
 ];
@@ -86,18 +86,18 @@ const tabs = [
 const process = [
   {
     step: "01",
-    title: "Discover",
-    text: "We lock in your audience, offer, and goals so the project is built around real business outcomes.",
+    title: "Gather",
+    text: "We identify the ingredients: audience, offer, and ambition, so the direction is grounded in real momentum.",
   },
   {
     step: "02",
-    title: "Design",
-    text: "I shape the visual language, messaging, and product flow so the experience feels clear and premium.",
+    title: "Season",
+    text: "I shape the tone, flow, and visual rhythm so the experience feels clear, confident, and unmistakably yours.",
   },
   {
     step: "03",
-    title: "Launch",
-    text: "Your site or product is built, refined, and handed off with clear next steps to convert more attention into leads.",
+    title: "Serve",
+    text: "The final product is refined, polished, and handed off ready to attract attention and turn it into action.",
   },
 ];
 
@@ -150,8 +150,7 @@ const ServicesPage = () => {
       <section className="services-hero">
         <GridLayout columns={2} gap={32}>
           <div className="hero-copy">
-            <h1>From ingredients to digital experiences.</h1>
-       
+            <h1>From ingredients to high-converting digital experiences.</h1>
 
             <ActionRow
               className="cta-row"
@@ -166,7 +165,7 @@ const ServicesPage = () => {
                     
           <div className="hero-panel">
 <video autoPlay loop muted playsInline
-style={{ width: "100%", height: "100%", objectFit: "fit" }}>
+style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.25rem" }}>
             <source src="/optimized/avz-ktichening.webm" type="video/webm" />
           </video>  
           </div>
@@ -177,7 +176,7 @@ style={{ width: "100%", height: "100%", objectFit: "fit" }}>
 
       <section className="services-offers">
         <SectionHeading
-          title="Everything needed to turn a good idea into a strong digital presence."
+          title="The ingredients behind premium Shopify design, Amazon content, and digital growth."
           align="center"
         />
 
@@ -219,7 +218,7 @@ style={{ width: "100%", height: "100%", objectFit: "fit" }}>
 
       <section className="services-process">
         <SectionHeading
-          title="A focused recipe for momentum."
+          title="A focused recipe for brand clarity, conversion, and momentum."
           align="center"
           className="narrow"
         />
