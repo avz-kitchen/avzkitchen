@@ -35,7 +35,7 @@ const BrandingDetail = ({ project }) => {
       </div>
       <img src={project.design} className="full-image" />
 
-      <TextImage image={project.flow} text={project.text} />
+      <TextImage  image={project.flow} text={project.text} />
       <ShotDemo
         title={"Conclusion"}
         image={project.main}
