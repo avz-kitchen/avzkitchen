@@ -7,30 +7,6 @@ import GridLayout from "../others/GridLayout";
 import "./ServicesPage.scss";
 import ContactSection from "../contactSection/ContactSection";
 
-const makePreview = (title, colors) => {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640">
-      <defs>
-        <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stop-color="${colors[0]}"/>
-          <stop offset="100%" stop-color="${colors[1]}"/>
-        </linearGradient>
-      </defs>
-      <rect width="900" height="640" fill="#F2F2F2"/>
-      <rect x="40" y="40" width="820" height="560" rx="28" fill="url(#bg)"/>
-      <rect x="90" y="100" width="220" height="24" rx="12" fill="rgba(255,255,255,0.75)"/>
-      <rect x="90" y="145" width="140" height="18" rx="9" fill="rgba(255,255,255,0.6)"/>
-      <rect x="90" y="210" width="300" height="200" rx="20" fill="rgba(255,255,255,0.18)"/>
-      <rect x="430" y="210" width="320" height="160" rx="20" fill="rgba(255,255,255,0.18)"/>
-      <rect x="430" y="390" width="320" height="90" rx="18" fill="rgba(255,255,255,0.12)"/>
-      <rect x="90" y="440" width="520" height="18" rx="9" fill="rgba(255,255,255,0.52)"/>
-      <rect x="90" y="470" width="440" height="18" rx="9" fill="rgba(255,255,255,0.38)"/>
-      <text x="90" y="650" font-family="DM Sans, sans-serif" font-size="32" fill="rgba(41,47,93,0.9)" font-weight="700">${title}</text>
-    </svg>
-  `;
-
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-};
   const serviceContent = (
     <span className="unified-paragraph">
       I sift <span className="type-word w-1">insight ✐</span>,
@@ -40,6 +16,82 @@ const makePreview = (title, colors) => {
     </span>
   );
 
+const PlatformLogo = ({ type }) => {
+  const variants = {
+    shopify: (
+      <svg viewBox="0 0 64 64" className="platform-logo" aria-label="Shopify logo" role="img">
+        <rect x="8" y="8" width="48" height="48" rx="14" fill="#95BF47" />
+        <path d="M22 26L28 18L38 18L34 28L29 28L27 40L21 40L22 26ZM29 28H37L39 40H32L29 28Z" fill="#F7F8F3" />
+        <path d="M40 22L48 24L45 34L39 32L40 22Z" fill="#D9F3A7" />
+      </svg>
+    ),
+    amazon: (
+      <svg viewBox="0 0 64 64" className="platform-logo" aria-label="Amazon logo" role="img">
+        <rect x="8" y="8" width="48" height="48" rx="14" fill="#F3A847" />
+        <path d="M18 36C22 29 27 25 34 25C39 25 43 27 46 31" stroke="#FFF8F0" strokeWidth="4" strokeLinecap="round" fill="none" />
+        <path d="M22 42C27 45 32 47 39 47C43 47 46 45 49 42" stroke="#FFF8F0" strokeWidth="4" strokeLinecap="round" fill="none" />
+        <path d="M32 20L40 30H24L32 20Z" fill="#FFF8F0" />
+      </svg>
+    ),
+    fullstack: (
+      <svg viewBox="0 0 64 64" className="platform-logo" aria-label="Full stack logo" role="img">
+        <rect x="8" y="8" width="48" height="48" rx="14" fill="#4D5DFA" />
+        <path d="M22 22L16 32L22 42" stroke="#EEF1FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <path d="M42 22L48 32L42 42" stroke="#EEF1FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <path d="M36 18L28 46" stroke="#EEF1FF" strokeWidth="4" strokeLinecap="round" />
+      </svg>
+    ),
+    presence: (
+      <svg viewBox="0 0 64 64" className="platform-logo" aria-label="Digital presence logo" role="img">
+        <rect x="8" y="8" width="48" height="48" rx="14" fill="#D9718F" />
+        <circle cx="22" cy="24" r="7" fill="#FFF4F7" />
+        <circle cx="42" cy="24" r="7" fill="#FFF4F7" opacity="0.85" />
+        <path d="M18 41C21 35 27 31 32 31C38 31 44 35 46 41" stroke="#FFF4F7" strokeWidth="4" strokeLinecap="round" fill="none" />
+      </svg>
+    ),
+  };
+
+  return variants[type] || variants.shopify;
+};
+
+const ServiceMockup = ({ type }) => {
+  const accentMap = {
+    shopify: { header: "#95BF47", panel: "#F3F7EA", accent: "#E0F1BA" },
+    amazon: { header: "#F3A847", panel: "#FFF2E0", accent: "#FDE3B4" },
+    fullstack: { header: "#4D5DFA", panel: "#EEF1FF", accent: "#D9E2FF" },
+    presence: { header: "#D9718F", panel: "#FFF2F6", accent: "#F8D5E1" },
+  };
+
+  const colors = accentMap[type] || accentMap.shopify;
+
+  return (
+    <svg className="service-mockup" viewBox="0 0 420 300" role="img" aria-label={`${type} service preview`}>
+      <rect x="18" y="18" width="384" height="264" rx="24" fill="#F9F7F5" />
+      <rect x="18" y="18" width="384" height="52" rx="24" fill={colors.header} opacity="0.18" />
+      <rect x="36" y="35" width="72" height="18" rx="9" fill={colors.header} opacity="0.26" />
+      <rect x="124" y="35" width="90" height="18" rx="9" fill={colors.header} opacity="0.12" />
+      <rect x="226" y="35" width="120" height="18" rx="9" fill={colors.header} opacity="0.12" />
+
+      <rect x="36" y="92" width="126" height="160" rx="16" fill={colors.panel} />
+      <rect x="178" y="92" width="206" height="70" rx="16" fill={colors.accent} />
+      <rect x="178" y="176" width="206" height="76" rx="16" fill="#FFFFFF" />
+      <rect x="200" y="196" width="94" height="12" rx="6" fill="#D9DDE8" />
+      <rect x="200" y="216" width="156" height="12" rx="6" fill="#EDF0F7" />
+
+      <rect x="54" y="112" width="90" height="18" rx="9" fill={colors.header} opacity="0.2" />
+      <rect x="54" y="142" width="90" height="12" rx="6" fill="#DDE3EF" />
+      <rect x="54" y="164" width="80" height="12" rx="6" fill="#E7ECF5" />
+      <rect x="54" y="186" width="90" height="12" rx="6" fill="#E7ECF5" />
+      <rect x="54" y="208" width="74" height="12" rx="6" fill="#E7ECF5" />
+
+      <circle cx="300" cy="128" r="20" fill="#FFFFFF" opacity="0.7" />
+      <circle cx="322" cy="128" r="20" fill="#FFFFFF" opacity="0.5" />
+      <path d="M272 128C285 114 301 112 312 126" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M260 146H338" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" opacity="0.8" />
+    </svg>
+  );
+};
+
 const tabs = [
   {
     id: "shopify",
@@ -47,9 +99,9 @@ const tabs = [
     tag: "Recipe station",
     title: "Shopify storefront design & custom components",
     description:
-      "We design and build conversion-focused Shopify storefronts with custom components, premium UX, and cleaner customer journeys that feel polished across every product and collection page.",
-    bullets: ["Custom Shopify components", "Storefront UX", "Conversion-focused layout"],
-    image: makePreview("Shopify", ["#EFD9EB", "#C9D9F5"]),
+      "We design and build conversion-focused Shopify storefronts with custom components, premium UX, and cleaner customer journeys that feel polished across every product and collection page. We also audit the current experience to define quick wins and a practical rollout plan.",
+    bullets: ["Custom Shopify components", "Storefront UX", "UX audit & quick wins"],
+    platform: "shopify",
   },
   {
     id: "amazon",
@@ -59,7 +111,7 @@ const tabs = [
     description:
       "We create Amazon A+ content, marketplace-ready visuals, and reusable templates that keep your brand consistent across channels, platforms, and product touchpoints while strengthening trust and clarity.",
     bullets: ["Amazon A+ content", "Cross-channel brand consistency", "Reusable templates"],
-    image: makePreview("Amazon", ["#F4E6C9", "#D7E9E5"]),
+    platform: "amazon",
   },
   {
     id: "fullstack",
@@ -69,7 +121,7 @@ const tabs = [
     description:
       "We turn early ideas into polished digital products with a clean front end, strong technical foundations, and a scalable structure built for growth and long-term performance.",
     bullets: ["Web app development", "Responsive builds", "Scalable systems"],
-    image: makePreview("Full Stack", ["#D9E7F3", "#EAD8F0"]),
+    platform: "fullstack",
   },
   {
     id: "presence",
@@ -77,9 +129,9 @@ const tabs = [
     tag: "Atmosphere studio",
     title: "Brand identity, landing pages & digital presence strategy",
     description:
-      "We refine the strategy, design, and digital atmosphere so your brand feels premium, consistent, and ready to hold attention across web, campaigns, and customer touchpoints.",
-    bullets: ["Brand strategy", "Landing page design", "Platform consistency"],
-    image: makePreview("Presence", ["#F5D6D8", "#CFE0F9"]),
+      "We refine the strategy, design, and digital atmosphere so your brand feels premium, consistent, and ready to hold attention across web, campaigns, and customer touchpoints. Through UX audits, we identify quick wins and shape a phased rollout that improves performance without the guesswork.",
+    bullets: ["Brand strategy", "UX audits", "Quick wins & phased rollout"],
+    platform: "presence",
   },
 ];
 
@@ -87,22 +139,68 @@ const process = [
   {
     step: "01",
     title: "Gather",
-    text: "We identify the ingredients: audience, offer, and ambition, so the direction is grounded in real momentum.",
+    text: "We gather the ingredients: your brand, audience, product story, and design system cues so the direction is grounded in what matters most.",
   },
   {
     step: "02",
     title: "Season",
-    text: "I shape the tone, flow, and visual rhythm so the experience feels clear, confident, and unmistakably yours.",
+    text: "We shape the code, UX flow, and visual rhythm so the experience feels refined, intuitive, and unmistakably premium across every touchpoint.",
   },
   {
     step: "03",
     title: "Serve",
-    text: "The final product is refined, polished, and handed off ready to attract attention and turn it into action.",
+    text: "We launch with clarity, polish, and momentum—ready to turn attention into trust, clicks, and conversion.",
   },
 ];
 
 
 const proofPoints = ["Brand clarity", "Conversion focus", "Fast execution", "Premium design"];
+
+const faqItems = [
+  {
+    question: "What services does AVZKITCHEN offer?",
+    answer:
+      "AVZKITCHEN offers brand strategy, Shopify storefront design, custom ecommerce experiences, Amazon content, landing page design, and digital product development to help businesses improve visibility, trust, and conversion across the customer journey.",
+  },
+  {
+    question: "Why is custom Shopify design important for ecommerce growth?",
+    answer:
+      "Custom Shopify design helps brands create a more polished shopping experience, improve product clarity, strengthen brand perception, and guide customers more effectively from discovery to purchase. It is especially valuable for businesses that need a storefront that feels premium and performs well.",
+  },
+  {
+    question: "What is Amazon A+ content and why does it matter?",
+    answer:
+      "Amazon A+ content is a way to improve product detail pages with stronger storytelling, clearer messaging, and more engaging visuals. It helps brands communicate value more effectively, build trust, and improve the customer experience on Amazon and other sales channels.",
+  },
+  {
+    question: "How do you keep branding consistent across different channels?",
+    answer:
+      "We build scalable design systems and reusable templates so your brand stays consistent across Shopify, Amazon, landing pages, campaigns, and other digital touchpoints. This helps maintain clarity, improve recognition, and create a more cohesive customer experience.",
+  },
+  {
+    question: "What is included in a UX audit and quick win plan?",
+    answer:
+      "A UX audit reviews the current customer journey, identifies friction points, and highlights improvements that can increase clarity, trust, and conversion. We define the most impactful quick wins first and then map them into a phased rollout plan so teams can improve the experience without disrupting the whole system.",
+  },
+  {
+    question: "How do you approach a brand or digital project?",
+    answer:
+      "We begin by understanding the business goals, audience, and offer, then shape the strategy, design direction, and digital experience around those foundations. The result is a clearer, stronger, more conversion-focused experience that supports long-term growth.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: answer,
+    },
+  })),
+};
 
 const ServicesPage = () => {
   const [activeTab, setActiveTab] = useState("shopify");
@@ -142,15 +240,18 @@ const ServicesPage = () => {
         <title>Services | AVZKITCHEN – Design & Development for High-Converting Digital Products</title>
         <meta
           name="description"
-          content="AVZKITCHEN helps founders and businesses turn ideas into clear, premium digital experiences that attract leads and convert attention into action."
+          content="AVZKITCHEN helps founders and businesses with Shopify storefront design, custom Shopify components, Amazon A+ content, and digital presence strategy for better conversion and brand consistency."
         />
         <link rel="canonical" href="https://avzkitchen.com/services" />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <section className="services-hero">
         <GridLayout columns={2} gap={32}>
           <div className="hero-copy">
-            <h1>From ingredients to high-converting digital experiences.</h1>
+            <h1 style={{  fontSize: "6rem" }}>From ingredients to high-converting digital experiences.</h1>
 
             <ActionRow
               className="cta-row"
@@ -210,7 +311,10 @@ style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.2
             </div>
 
             <div className="tab-visual">
-              <img src={activeService.image} alt={activeService.title} />
+              <div className="platform-mark">
+                <PlatformLogo type={activeService.platform} />
+              </div>
+              <ServiceMockup type={activeService.platform} />
             </div>
           </div>
         </div>
@@ -238,7 +342,22 @@ style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.2
         </div>
       </section>
 
-<ContactSection />
+      <section className="services-faq">
+   <h3 style={{ marginBottom: "1rem" , width: "80%" ,textAlign: "left" }}>
+     Frequently asked questions about Shopify, Amazon, and digital growth.
+   </h3>
+
+        <div className="faq-list">
+          {faqItems.map(({ question, answer }) => (
+            <details className="faq-item" key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <ContactSection />
     </main>
   );
 };
