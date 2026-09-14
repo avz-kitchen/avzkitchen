@@ -96,9 +96,32 @@ $padding: 2rem;
   border-radius: 1.7rem;
   box-sizing: border-box;
   text-align: left;
+  overflow: hidden;
 
   &.no-image {
     grid-template-columns: 1fr;
+  }
+
+  .text-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .text-image-visual {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  p {
+    margin: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .text-media-copy {

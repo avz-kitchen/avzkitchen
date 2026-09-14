@@ -42,7 +42,7 @@ const ContactSection = () => {
       </Helmet>
       <div className="contact-container">
    
-                  <h1>Let's Collaborate</h1>
+                  <h1>Let's Cook</h1>
           <p>I’m always excited to take on new projects and partnerships. If you’re looking for a designer who blends creativity, technical expertise, and a focus on accessibility, let’s connect and bring your ideas to life.</p>
                   <a href="mailto:hello@avzkitchen.com">hello@avzkitchen.com</a>
 
@@ -54,9 +54,18 @@ const ContactSection = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 1 }}
           >
-            <input type="text" required placeholder="Name" name="name" />
-            <input type="email" required placeholder="Email" name="reply_to" />
-            <textarea rows={8} placeholder="Message" name="message" />
+            <input type="text" required placeholder="Name*" name="name" />
+            <input type="email" required placeholder="Email*" name="reply_to" />
+            <select name="subject" defaultValue="" required>
+              <option value="" disabled>Project type</option>
+              <option value="Quick UX audit">Quick UX audit</option>
+              <option value="Shopify / webshop design">Shopify / webshop design</option>
+              <option value="Brand strategy">Brand strategy</option>
+              <option value="Full-stack development">Full-stack development</option>
+              <option value="Digital presence / landing page">Digital presence / landing page</option>
+              <option value="Other">Other</option>
+            </select>
+            <textarea rows={8} required placeholder="Message*" name="message" />
             {error && <p className="error-message">Error sending message</p>}
             {success && (
               <p className="success-message">Message sent successfully!</p>
