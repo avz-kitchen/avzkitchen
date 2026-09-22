@@ -155,7 +155,7 @@ const ServicesPage = ({ locale = "en" }) => {
               className="cta-row"
               actions={[
                 { label: getUiText(locale, "services", "heroPrimary"), to: getLocalizedPath("/contact", locale), variant: "primary" },
-                { label: getUiText(locale, "services", "heroSecondary"), href: "mailto:hello@avzkitchen.com?subject=Project%20Inquiry", variant: "secondary" },
+                { label: getUiText(locale, "services", "quickAuditCta"), to: getLocalizedPath("/services/quick-ux-audit", locale), variant: "secondary" },
               ]}
             />
           </div>

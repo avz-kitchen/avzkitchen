@@ -1,0 +1,365 @@
+@import "../../variables.scss";
+
+.quick-audit-page {
+  width: 100%;
+  color: #1d1f3a;
+
+  .audit-hero,
+  .audit-benefits,
+  .audit-request {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(3rem, 5vw, 5rem) 0;
+  }
+
+  .audit-hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+    padding-top: clamp(4rem, 8vw, 7rem);
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    font-size: 0.72rem;
+    color: #600d51;
+  }
+
+  .audit-copy {
+    h1 {
+      margin: 0 0 1rem;
+      max-width: 720px;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      font-size: clamp(3.2rem, 7vw, 6.4rem);
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 0 0 2rem;
+      color: rgba(29, 31, 58, 0.75);
+      line-height: 1.7;
+      font-size: clamp(1.08rem, 1.7vw, 1.4rem);
+    }
+  }
+
+  .trust-pills {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0 0 2rem;
+
+    li {
+      background: rgba(96, 13, 81, 0.06);
+      border: 1px solid rgba(96, 13, 81, 0.12);
+      border-radius: 999px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #600d51;
+    }
+  }
+
+  .audit-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .audit-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .visual-card {
+    width: min(100%, 520px);
+    background: linear-gradient(135deg, rgba(96, 13, 81, 0.08), rgba(255, 255, 255, 0.7));
+    border: 1px solid rgba(96, 13, 81, 0.12);
+    box-shadow: 0 24px 60px rgba(29, 31, 58, 0.08);
+    border-radius: 1.5rem;
+    padding: clamp(1.5rem, 2vw, 2rem);
+
+    .card-label {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #600d51;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      div {
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(29, 31, 58, 0.1);
+        border-radius: 1rem;
+        padding: 1rem;
+
+        strong {
+          display: block;
+          font-size: clamp(2rem, 4vw, 3rem);
+          line-height: 1;
+          color: #1d1f3a;
+          margin-bottom: 0.5rem;
+        }
+
+        span {
+          color: rgba(29, 31, 58, 0.7);
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: rgba(29, 31, 58, 0.8);
+      line-height: 1.8;
+    }
+  }
+
+  .section-heading {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+
+    h2 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .narrow {
+    max-width: 680px;
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .benefit-card {
+    background: rgba(255, 255, 255, 0.46);
+    border: 1px solid rgba(29, 31, 58, 0.08);
+    border-radius: 1.4rem;
+    padding: 1.4rem;
+    box-shadow: 0 18px 32px rgba(29, 31, 58, 0.04);
+
+    .benefit-index {
+      display: inline-block;
+      color: #600d51;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    h3 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+    }
+
+    p {
+      margin: 0;
+      color: rgba(29, 31, 58, 0.72);
+      line-height: 1.7;
+    }
+  }
+
+  .audit-request {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .request-card {
+    background: linear-gradient(145deg, rgba($color-navy, 0.96), rgba($color-plum, 0.9));
+    border: 1px solid rgba($color-white, 0.12);
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba($color-plum, 0.12);
+    color: $color-ivory;
+    padding: clamp(1.5rem, 2vw, 2rem);
+
+    .request-copy {
+      margin-bottom: 2rem;
+
+      h2 {
+        margin: 0 0 0.8rem;
+        color: $color-ivory;
+      }
+
+      p {
+        margin: 0;
+        color: rgba($color-ivory, 0.8);
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .audit-sidebar {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(29, 31, 58, 0.08);
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(29, 31, 58, 0.04);
+    color: #1d1f3a;
+    padding: 1.5rem;
+  }
+
+  .audit-form {
+    display: grid;
+    gap: 1rem;
+
+    label {
+      display: grid;
+      gap: 0.55rem;
+      font-weight: 700;
+      color: $color-ivory;
+
+      span {
+        font-size: 0.95rem;
+        color: #ffffff;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba($color-white, 0.14);
+        border-radius: 1rem;
+        background: rgba($color-white, 0.06);
+        padding: 1rem 1.1rem;
+        font: inherit;
+        color: $color-ivory;
+        box-sizing: border-box;
+
+        &::placeholder {
+          color: rgba($color-ivory, 0.62);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: rgba($color-blush, 0.9);
+          box-shadow: 0 0 0 3px rgba($color-blush, 0.12);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  .form-status {
+    margin: 0;
+    color: $color-mint;
+    font-weight: 700;
+  }
+
+  .audit-submit {
+    justify-self: start;
+    background: linear-gradient(135deg, $color-ivory, $color-blush);
+    color: $color-navy;
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0 14px 28px rgba($color-blush, 0.2);
+  }
+
+  .audit-sidebar {
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #1d1f3a;
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0 0 1.25rem;
+      padding: 0;
+      display: grid;
+      gap: 0.7rem;
+
+      li {
+        position: relative;
+        padding-left: 1.35rem;
+        color: rgba(29, 31, 58, 0.8);
+        line-height: 1.6;
+
+        &::before {
+          content: "✓";
+          position: absolute;
+          left: 0;
+          color: #600d51;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .sidebar-note {
+      background: rgba(96, 13, 81, 0.05);
+      border: 1px solid rgba(96, 13, 81, 0.08);
+      border-radius: 1rem;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+
+      strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #1d1f3a;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.7;
+        color: rgba(29, 31, 58, 0.78);
+      }
+    }
+  }
+
+  @media (max-width: 920px) {
+    .audit-hero,
+    .audit-request,
+    .benefit-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .audit-hero {
+      padding-top: 3rem;
+    }
+
+    .request-card,
+    .audit-sidebar {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .audit-actions,
+    .field-row {
+      grid-template-columns: 1fr;
+      display: grid;
+    }
+  }
+}

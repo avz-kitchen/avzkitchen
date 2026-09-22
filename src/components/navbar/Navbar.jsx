@@ -55,9 +55,14 @@ const Navbar = ({ locale = "en" }) => {
 
   useEffect(() => {
     const normalizedPath = location.pathname.replace(/^\/de/, "") || "/";
-    const nextActiveTab = normalizedPath.startsWith("/portfolio")
-      ? "/portfolio"
-      : normalizedPath;
+
+    let nextActiveTab = normalizedPath;
+
+    if (normalizedPath.startsWith("/portfolio")) {
+      nextActiveTab = "/portfolio";
+    } else if (normalizedPath.startsWith("/services")) {
+      nextActiveTab = "/services";
+    }
 
     setActiveTab(nextActiveTab);
   }, [location.pathname]);

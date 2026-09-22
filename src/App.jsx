@@ -14,6 +14,7 @@ import Resume from "./components/pages/Resume";
 import UXPortfolio from "./components/pages/uxportfolio";
 import ScrollToTop from "./components/others/ScrollToTop";
 import ServicesPage from "./components/pages/ServicesPage";
+import QuickAuditPage from "./components/pages/QuickAuditPage";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
 import LegalPage from "./components/pages/LegalPage";
@@ -99,6 +100,8 @@ const App = () => {
             <Route path="/de/bio" element={<About locale="de" />} />
             <Route path="/services" element={<ServicesPage locale={locale} />} />
             <Route path="/de/services" element={<ServicesPage locale="de" />} />
+            <Route path="/services/quick-ux-audit" element={<QuickAuditPage locale={locale} />} />
+            <Route path="/de/services/quick-ux-audit" element={<QuickAuditPage locale="de" />} />
             <Route path="/contact" element={<ContactSection locale={locale} />} />
             <Route path="/de/contact" element={<ContactSection locale="de" />} />
             <Route path="/resume" element={<Resume locale={locale} />} />
