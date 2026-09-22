@@ -1,19 +1,30 @@
 .service-landing-page {
-  --page-bg: #f7f1eb;
-  --panel-bg: #1f1a2a;
-  --panel-ink: #f7f1eb;
-  --card-bg: rgba(255, 255, 255, 0.52);
+  --page-bg: transparent;
+  --panel-bg: transparent;
+  --panel-ink: #1f1a2a;
+  --card-bg: transparent;
   --line: rgba(31, 26, 42, 0.12);
   --text: #1f1a2a;
   --muted: #575369;
   --plum-soft: #8c6f9d;
   --sand: #e2d0bf;
-  --shadow: 0 20px 55px rgba(31, 26, 42, 0.1);
+  --shadow: none;
 
   color: var(--text);
-  background: linear-gradient(180deg, #f5efe9 0%, #f5f2f0 100%);
+  background: transparent;
   min-height: 100vh;
   padding: 0 1.25rem 4rem;
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 700ms ease, transform 700ms ease;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   .landing-hero {
     max-width: 1200px;
