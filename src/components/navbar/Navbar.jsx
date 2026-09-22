@@ -1,12 +1,13 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./navbar.scss";
 
 import { Link } from "react-router-dom";
-import CircularGallery from "../others/CircularGallery";
 import data from "../../data/data.json";
 import { getUiText, getLocalizedPath } from "../../i18n/content";
+
+const CircularGallery = lazy(() => import("../others/CircularGallery"));
 
 const navTabs = [
   { id: "/", labelKey: "visualStudio" },
@@ -84,13 +85,16 @@ const Navbar = ({ locale = "en" }) => {
   }, []);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    document.body.classList.toggle("menu-open", !menuOpen);
+    const nextOpenState = !menuOpen;
+    setMenuOpen(nextOpenState);
+    document.body.classList.toggle("menu-open", nextOpenState);
+    document.body.style.overflow = nextOpenState ? "hidden" : "auto";
   };
 
   const handleLinkClick = () => {
     setMenuOpen(false);
     document.body.classList.remove("menu-open");
+    document.body.style.overflow = "auto";
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   };
 
@@ -111,31 +115,6 @@ const Navbar = ({ locale = "en" }) => {
             </Link>
 
             <div className="subheader-row">
-             
-              <button
-                type="button"
-                onClick={handleLanguageToggle}
-                aria-label={locale === "de" ? "Switch to English" : "Switch to German"}
-                style={{
-                  background: "transparent",
-                  border: "1px solid rgba($color-navy)",
-                  color: "$color-navy-soft",
-                  borderRadius: "999px",
-                  padding: "0.3rem 0.8rem",
-                  fontSize: "0.72rem",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  cursor: "pointer",
-                  marginLeft: "0.75rem",
-                  width: "3.25rem",
-                  minWidth: "3.25rem",
-                  display: "inline-flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                {getUiText(locale, "nav", "languageToggle")}
-              </button>
               <nav className="subheader-nav" aria-label="Main navigation">
                 {subheaderNavTabs.map((tab) => (
                   <NavLink
@@ -189,93 +168,97 @@ const Navbar = ({ locale = "en" }) => {
 
 
       {/* Corner nav menu */}
-      <nav className={`corner-nav ${menuOpen ? "open" : ""}`}>
-        {navTabs.map((tab) => (
-          <div key={tab.id}>
-            <NavLink
-              to={getLocalizedPath(tab.id, locale)}
-              onClick={handleLinkClick}
-              className={`nav-tab ${activeTab === tab.id ? "active" : ""}`}
-              style={{
-                WebkitTapHighlightColor: "transparent",
-              }}
-            >
-              {activeTab === tab.id && (
-                <motion.span
-                  layoutId="mobile-bubble"
-                  className="active-indicator"
-                  style={{ borderRadius: 4 }}
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-              <span className="nav-tab-label">{getUiText(locale, "nav", tab.labelKey)}</span>
-            </NavLink>
-            
-            {/* Show gallery after Portfolio tab */}
-            {tab.id === "/portfolio" && featuredProjects.length > 0 && (
-              <div className="corner-nav-gallery">
-              <CircularGallery 
-                 items={featuredProjects}
-                    bend={1}
-                    textColor="#ffffff"
-                    borderRadius={0.05}
-                    font="bold 28px"
-                    size={160}
-                    scrollSpeed={2}
-                    scrollEase={0.05}
-                    onItemClick={handleProjectClick}
+      <nav className={`corner-nav ${menuOpen ? "open" : ""}`} aria-label="Mobile navigation">
+        <div className="corner-nav-inner">
+          {navTabs.map((tab) => (
+            <div key={tab.id}>
+              <NavLink
+                to={getLocalizedPath(tab.id, locale)}
+                onClick={handleLinkClick}
+                className={`nav-tab ${activeTab === tab.id ? "active" : ""}`}
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                }}
+              >
+                {activeTab === tab.id && (
+                  <motion.span
+                    layoutId="mobile-bubble"
+                    className="active-indicator"
+                    style={{ borderRadius: 4 }}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
-              </div>
-            )}
-          </div>
-        ))}
-        
-        <button
-          type="button"
-          onClick={handleLanguageToggle}
-          style={{
-            background: "transparent",
-            border: "1px solid rgba(255,255,255,0.3)",
-            color: "#f3efe8",
-            borderRadius: "999px",
-            padding: "0.5rem 0.9rem",
-            fontSize: "0.75rem",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            cursor: "pointer",
-            width: "3.25rem",
-            minWidth: "3.25rem",
-            display: "inline-flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {getUiText(locale, "nav", "languageToggle")}
-        </button>
+                )}
+                <span className="nav-tab-label">{getUiText(locale, "nav", tab.labelKey)}</span>
+              </NavLink>
 
-        {/* Social links in mobile nav */}
-        <div className="social-links">
-          <a
-            href="https://github.com/avz-kitchen"
-            target="_blank"
-            rel="noopener noreferrer"
+              {tab.id === "/portfolio" && featuredProjects.length > 0 && (
+                <div className="corner-nav-gallery">
+                  <Suspense fallback={<div className="corner-nav-gallery-placeholder" />}>
+                    <CircularGallery
+                      items={featuredProjects}
+                      bend={1}
+                      textColor="#ffffff"
+                      borderRadius={0.05}
+                      font="bold 28px"
+                      size={160}
+                      scrollSpeed={2}
+                      scrollEase={0.05}
+                      onItemClick={handleProjectClick}
+                    />
+                  </Suspense>
+                </div>
+              )}
+            </div>
+          ))}
+
+          <button
+            type="button"
+            onClick={handleLanguageToggle}
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(255,255,255,0.3)",
+              color: "#f3efe8",
+              borderRadius: "999px",
+              padding: "0.5rem 0.9rem",
+              fontSize: "0.75rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              cursor: "pointer",
+              width: "3.25rem",
+              minWidth: "3.25rem",
+              display: "inline-flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "0 auto",
+              textAlign: "center",
+            }}
           >
-            Github
-          </a>
-          <a
-            href="https://www.linkedin.com/in/avz-kitchen/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://www.instagram.com/artichoke.v/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
+            {getUiText(locale, "nav", "languageToggle")}
+          </button>
+
+          <div className="social-links">
+            <a
+              href="https://github.com/avz-kitchen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/avz-kitchen/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://www.instagram.com/artichoke.v/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+          </div>
         </div>
       </nav>
     </>

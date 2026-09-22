@@ -28,32 +28,17 @@ const App = () => {
   const currentLang = locale === "de" ? "de" : "en";
   const [isLoading, setIsLoading] = useState(true);
 
-// Effect 1: Handle the Loading Logic
   useEffect(() => {
-    const onPageLoad = () => {
-      // Minimum time of 1.5s so the pancake actually flips!
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1500);
-    };
+    const timer = window.setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
 
-    // If the window is already loaded (common during local dev/hot reload)
-    if (document.readyState === 'complete') {
-      onPageLoad();
-    } else {
-      window.addEventListener('load', onPageLoad);
-      return () => window.removeEventListener('load', onPageLoad);
-    }
-  }, []); // Empty array: only runs once on mount
+    return () => window.clearTimeout(timer);
+  }, []);
 
-  // Effect 2: Handle Scroll Locking
   useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [isLoading]); // Runs only when isLoading changes
+    document.body.style.overflow = isLoading ? 'hidden' : 'auto';
+  }, [isLoading]);
   return (
     <>
     {isLoading && <Preloader />}
