@@ -16,6 +16,7 @@ import ScrollToTop from "./components/others/ScrollToTop";
 import ServicesPage from "./components/pages/ServicesPage";
 import QuickAuditPage from "./components/pages/QuickAuditPage";
 import ServiceLandingPage from "./components/pages/ServiceLandingPage";
+import ShopifyDesignPage from "./components/pages/ShopifyDesignPage";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
 import LegalPage from "./components/pages/LegalPage";
@@ -43,47 +44,59 @@ const App = () => {
     <>
     {isLoading && <Preloader />}
         <Helmet htmlAttributes={{ lang: currentLang }}>
-        <title>AVZ Kitchen by Angelica Valenzuela | Digital UX/UI Design & Development Studio</title>
+          <title>Angelica Valenzuela (AVZ Kitchen) | UX/UI Design & Shopify Development</title>
           <meta name="robots" content="index, follow" />
-
-        <meta
-          name="description"
-          content="AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in custom UX/UI design, design systems, and frontend development for web and mobile apps."
-        />
-        <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Angelica Valenzuela",
-            "alternateName": "AVZ Kitchen",
-            "url": "https://avzkitchen.com",
-            "jobTitle": "UX/UI Designer & Frontend Developer",
-            "description": "AVZ Kitchen by Angelica Valenzuela creates digital products, design systems, Shopify experiences, and Amazon storefront design with a focus on clarity, accessibility, and conversion.",
-            "knowsAbout": [
-              "UX/UI design",
-              "Product design",
-              "Design systems",
-              "Brand strategy",
-              "Frontend development",
-              "Accessibility",
-              "Shopify UX design",
-              "Amazon storefront design",
-              "E-commerce design",
-              "Web design"
-            ],
-            "sameAs": [
-              "https://www.linkedin.com/in/avzkitchen",
-              "https://github.com/avz-kitchen",
-              "https://www.instagram.com/artichoke.v",
-              "https://www.twine.net/AngelicaValenzuela",
-              "https://www.xing.com/profile/Angelica_Valenzuela032612",
-              "https://www.behance.net/avzkitchen"
-            ]
-          }
-          `}
-        </script>
-      </Helmet>
+          <meta
+            name="description"
+            content="Angelica Valenzuela (AVZ Kitchen) is a freelance product designer and frontend developer creating UX/UI design, Shopify experiences, and Amazon storefront design for brands in Germany, DACH, and across Europe."
+          />
+          <script type="application/ld+json">
+            {`{
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": "https://avzkitchen.com/#person",
+                  "name": "Angelica Valenzuela",
+                  "alternateName": ["AVZ Kitchen", "AVZKITCHEN"],
+                  "url": "https://avzkitchen.com",
+                  "jobTitle": "Freelance Product Designer & Developer",
+                  "description": "Angelica Valenzuela is a freelance digital product designer and developer operating AVZ Kitchen, specializing in UX/UI design, design systems, Shopify experiences, and Amazon storefront design.",
+                  "knowsAbout": [
+                    "UX/UI design",
+                    "Product design",
+                    "Design systems",
+                    "Brand strategy",
+                    "Frontend development",
+                    "Accessibility",
+                    "Shopify UX design",
+                    "Amazon storefront design",
+                    "E-commerce design"
+                  ],
+                  "sameAs": [
+                    "https://www.linkedin.com/in/avzkitchen",
+                    "https://github.com/avz-kitchen",
+                    "https://www.instagram.com/artichoke.v",
+                    "https://www.twine.net/AngelicaValenzuela",
+                    "https://www.xing.com/profile/Angelica_Valenzuela032612",
+                    "https://www.behance.net/avzkitchen"
+                  ]
+                },
+                {
+                  "@type": "ProfessionalService",
+                  "@id": "https://avzkitchen.com/#organization",
+                  "name": "AVZ Kitchen",
+                  "alternateName": "Angelica Valenzuela Digital Studio",
+                  "url": "https://avzkitchen.com",
+                  "founder": {
+                    "@id": "https://avzkitchen.com/#person"
+                  },
+                  "description": "AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in custom UX/UI design, design systems, and frontend development for web and mobile apps."
+                }
+              ]
+            }`}
+          </script>
+        </Helmet>
       <div className={`main-app-content ${!isLoading ? 'content-visible' : 'content-hidden'}`}>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <ScrollToTop />
@@ -104,6 +117,8 @@ const App = () => {
             <Route path="/de/services/quick-ux-audit" element={<QuickAuditPage locale="de" />} />
             <Route path="/services/amazon" element={<ServiceLandingPage locale={locale} slug="amazon" />} />
             <Route path="/de/services/amazon" element={<ServiceLandingPage locale="de" slug="amazon" />} />
+            <Route path="/services/shopify-design" element={<ShopifyDesignPage locale={locale} />} />
+            <Route path="/de/services/shopify-design" element={<ShopifyDesignPage locale="de" />} />
             <Route path="/services/shopify-ux-design" element={<ServiceLandingPage locale={locale} slug="shopify-ux-design" />} />
             <Route path="/de/services/shopify-ux-design" element={<ServiceLandingPage locale="de" slug="shopify-ux-design" />} />
             <Route path="/services/shopify-ux-audit" element={<ServiceLandingPage locale={locale} slug="shopify-ux-audit" />} />

@@ -133,9 +133,9 @@ const Portfolio = ({ projects }) => {
   return (
     <section className="portfolio-page">
       <Helmet>
-        <title>AVZKITCHEN Portfolio | Angelica Valenzuela's Projects Freelance Product Design & Development</title>
-        <meta name="description" content="Explore Angelica Valenzuela's portfolio of digital product designs and development projects, featuring web apps, mobile experiences, and creative solutions." />
-        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica Valenzuela, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
+        <title>Angelica Valenzuela (AVZ Kitchen) | Portfolio of UX/UI Design & Shopify Projects</title>
+        <meta name="description" content="Explore the portfolio of Angelica Valenzuela (AVZ Kitchen), featuring UX/UI design, product design, Shopify experiences, and digital product development projects for brands in Germany and Europe." />
+        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica Valenzuela, AVZ Kitchen, UX, UI, Digital Products , Freelance, Front-End Development , Illustration , Amazon , Shopify" />
         <link rel="canonical" href="https://avzkitchen.com/portfolio" />
         <script type="application/ld+json">
           {JSON.stringify({

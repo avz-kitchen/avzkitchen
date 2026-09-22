@@ -209,7 +209,7 @@ const ServicesPage = ({ locale = "en" }) => {
       <section className="services-offers">
         <SectionHeading title={getUiText(locale, "services", "sectionTitle")} align="center" />
 
-        <div className="service-tabs" role="tablist" aria-label="Service categories">
+        <div className="service-tabs" role="tablist" aria-label="AVZ Kitchen service categories for Shopify, Amazon, design systems, and digital presence">
           <div className="tab-list">
             {serviceData.map((tab) => (
               <button
@@ -218,6 +218,7 @@ const ServicesPage = ({ locale = "en" }) => {
                 className={`tab-button ${activeTab === tab.id ? "active" : ""}`}
                 onClick={() => setActiveTab(tab.id)}
                 role="tab"
+                aria-label={`${tab.label} service`}
                 aria-selected={activeTab === tab.id}
               >
                 {tab.label}
@@ -225,7 +226,7 @@ const ServicesPage = ({ locale = "en" }) => {
             ))}
           </div>
 
-          <div className="tab-panel" role="tabpanel" aria-live="polite">
+          <div className="tab-panel" role="tabpanel" aria-live="polite" aria-label={`${activeServiceResolved.label} service details`}>
             <div className="tab-copy">
               <p className="card-tag">{activeServiceResolved.tag}</p>
               <h3>{activeServiceResolved.title}</h3>
@@ -238,7 +239,7 @@ const ServicesPage = ({ locale = "en" }) => {
               </ul>
 
               {currentSubpageLinks.length > 0 && (
-                <div className="tab-actions" aria-label="Related service subpages">
+                <div className="tab-actions" aria-label={`More ${activeServiceResolved.label} service details`}>
                   {currentSubpageLinks.map((link) => (
                     <Link
                       key={link.path}

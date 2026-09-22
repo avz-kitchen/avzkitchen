@@ -62,15 +62,16 @@ const Home = ({ locale = "en" }) => {
       <ServiceSection locale={locale} />
       <ContactSection locale={locale} />
             <Helmet>
-        <title>AVZKITCHEN | Angelica Valenzuela's Portfolio – Freelance Digital Product Designer & Developer</title>
-        <meta name="description" content="Angelica Valenzuela – Freelance Product Designer & Developer. Blending design, insights, and technology to craft digital products, e-commerce solutions, and brands that leave a lasting impression." />
-        <meta name="keywords" content="Branding, Product Design, Code,Digital Product Designer, Developer ,  Web Design , Portfolio, Angelica , Angelica Valenzuela, UX, UI, Digital Products , Freelance, Front-End Development , Illustration ,  Amazon , Shopify ,  Elementor" />
+        <title>Angelica Valenzuela (AVZ Kitchen) | Portfolio & Ecommerce Design</title>
+        <meta name="description" content="Angelica Valenzuela (AVZ Kitchen) is a freelance product designer and developer creating UX/UI design, Shopify experiences, and digital product design for brands in Germany and Europe." />
+        <meta name="keywords" content="Branding, Product Design, Code,Digital Product Designer, Developer ,  Web Design , Portfolio, Angelica , Angelica Valenzuela, AVZ Kitchen, UX, UI, Digital Products , Freelance, Front-End Development , Illustration ,  Amazon , Shopify ,  Elementor" />
         <link rel="canonical" href="https://avzkitchen.com" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Angelica Valenzuela",
+            "alternateName": ["AVZ Kitchen", "AVZKITCHEN"],
             "url": "https://avzkitchen.com",
             "jobTitle": "Freelance Product Designer & Developer",
             "sameAs": [

@@ -1,0 +1,260 @@
+.shopify-design-page {
+  --page-bg: transparent;
+  --panel-bg: rgba(255, 255, 255, 0.08);
+  --panel-border: rgba(255, 255, 255, 0.14);
+  --panel-text: #f6f0f5;
+  --muted: rgba(246, 240, 245, 0.72);
+  --dark-panel: linear-gradient(135deg, rgba(52, 36, 62, 0.92), rgba(22, 24, 36, 0.96));
+  --card-shadow: 0 24px 42px rgba(16, 13, 20, 0.18);
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem 5rem;
+  color: var(--panel-text);
+
+  .glass-card {
+    background: var(--dark-panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 1.5rem;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .shopify-hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .eyebrow {
+    margin: 0;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #d6b9d6;
+
+    &.small {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    max-width: 760px;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  .lead {
+    margin: 0;
+    max-width: 640px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1.08rem;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.35rem;
+  }
+
+  .hero-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .panel-card {
+    width: min(100%, 420px);
+    padding: 1.6rem 1.5rem;
+
+    .panel-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 700;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.35rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.65;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.56rem;
+        left: 0;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background: #d9b58d;
+      }
+    }
+  }
+
+  .info-section,
+  .cta-band {
+    padding: 1.8rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .info-section {
+    h2 {
+      margin: 0 0 0.9rem;
+      font-size: clamp(1.8rem, 2.2vw, 2.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.02rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .benefits-section {
+    margin-top: 3rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.25rem;
+
+    h2 {
+      margin: 0.4rem 0 0;
+      font-size: clamp(2rem, 2.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+    }
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .benefit-card {
+    padding: 1.5rem;
+
+    .benefit-index {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d6b9d6;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 0 0 0.7rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 1rem 0 1.1rem;
+  }
+
+  .tech-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: #f5f1f8;
+    font-weight: 600;
+    font-size: 0.78rem;
+  }
+
+  .cta-band {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+
+    h3 {
+      margin: 0.25rem 0 0;
+      font-size: clamp(1.6rem, 2vw, 2.5rem);
+      letter-spacing: -0.06em;
+      line-height: 1.08;
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .shopify-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .benefit-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-band {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding-top: 3rem;
+
+    .cta-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .panel-card,
+    .info-section,
+    .cta-band {
+      border-radius: 1.2rem;
+    }
+  }
+}

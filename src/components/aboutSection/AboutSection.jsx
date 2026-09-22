@@ -67,7 +67,7 @@ const AboutSection = ({ isAboutPage }) => {
           <img
             style={{ width: "85%" }}
             src="/about/avz-profile.png"
-            alt="a Portrait of Angelica Valenzuela"
+            alt="Portrait of Angelica Valenzuela (AVZ Kitchen)"
           />
           {!isAboutPage && (
             <Button variant="secondary" to="/about" style={{ justifySelf: "center" }}>

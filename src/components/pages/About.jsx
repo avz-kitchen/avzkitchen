@@ -37,9 +37,9 @@ const skills = [
   return (
     <div >
       <Helmet>
-        <title>AVZKITCHEN | About Angelica Valenzuela – Freelance Digital Product Designer & Developer</title>
-        <meta name="description" content="Learn about Angelica Valenzuela, a freelance product designer and developer blending strategy, design, and tech to create digital products that leave a lasting taste." />
-        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica , Angelica Valenzuela, UX, UI, Digital Products , Freelance, Front-End Development , Illustration" />
+        <title>About Angelica Valenzuela (AVZ Kitchen) | Freelance Designer & Developer</title>
+        <meta name="description" content="Learn about Angelica Valenzuela (AVZ Kitchen), a freelance product designer and frontend developer creating UX/UI design, digital products, and Shopify experiences for brands in Germany and Europe." />
+        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica , Angelica Valenzuela, AVZ Kitchen, UX, UI, Digital Products , Freelance, Front-End Development , Illustration" />
               <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://avzkitchen.com/bio" />
         <script type="application/ld+json">
