@@ -140,7 +140,7 @@ function renderRoute(route) {
 
   const shell = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
   const meta = routeMeta[route] || routeMeta['/'];
-  const { title, description, heading, intro } = meta;
+  const { title, description } = meta;
 
   const withTitle = shell.replace(/<title>.*?<\/title>/i, `<title>${title}</title>`);
   const withMeta = withTitle.replace(
@@ -153,16 +153,7 @@ function renderRoute(route) {
     `<head>\n    <meta name="robots" content="index, follow" />\n    <link rel="canonical" href="https://avzkitchen.com${basePath === '/' ? '' : basePath}" />`
   );
 
-  const bodyHtml = `
-    <main style="max-width: 760px; margin: 64px auto; padding: 0 20px; font-family: Arial, sans-serif; line-height: 1.6; color: #18151e;">
-      <h1 style="font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 1rem;">${heading}</h1>
-      <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #463d4c;">${intro}</p>
-      <p style="margin: 0;">${description}</p>
-    </main>
-  `;
-
-  const withBody = withCanonical.replace(/<body[^>]*>/i, `<body>${bodyHtml}`);
-  fs.writeFileSync(outputPath, withBody, 'utf8');
+  fs.writeFileSync(outputPath, withCanonical, 'utf8');
   console.log(`Prerendered ${route} -> ${outputPath}`);
 }
 
