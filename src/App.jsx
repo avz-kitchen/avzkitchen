@@ -22,6 +22,7 @@ const App = () => {
   const projects = portfolioData.portfolio;
   const location = useLocation();
   const locale = getLocaleFromPath(location.pathname);
+  const currentLang = locale === "de" ? "de" : "en";
   const [isLoading, setIsLoading] = useState(true);
 
 // Effect 1: Handle the Loading Logic
@@ -53,7 +54,7 @@ const App = () => {
   return (
     <>
     {isLoading && <Preloader />}
-        <Helmet>
+        <Helmet htmlAttributes={{ lang: currentLang }}>
         <title>Angelica Valenzuela | Freelance Product Designer & Developer</title>
           <meta name="robots" content="index, follow" />
 
@@ -82,9 +83,10 @@ const App = () => {
         </script>
       </Helmet>
       <div className={`main-app-content ${!isLoading ? 'content-visible' : 'content-hidden'}`}>
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <ScrollToTop />
         <Navbar locale={locale} />
-        <div className="page-wrapper">
+        <main id="main-content" className="page-wrapper" tabIndex="-1">
           <Routes>
             <Route path="/" element={<Home locale={locale} />} />
             <Route path="/de" element={<Home locale="de" />} />
@@ -105,7 +107,7 @@ const App = () => {
             <Route path="/data" element={<DataPrivacy locale={locale} />} />
             <Route path="/de/data" element={<DataPrivacy locale="de" />} />
           </Routes>
-        </div>
+        </main>
         <Footer locale={locale} />
       </div>
     
