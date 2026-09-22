@@ -11,9 +11,11 @@ const HeroNew = ({ children, videoRef }) => {
 
     if (prefersReducedMotion || isMobile) {
       if (videoRef && videoRef.current) {
-        videoRef.current.style.transform = 'none';
+        videoRef.current.style.transform = 'translate3d(0, 0, 0)';
         videoRef.current.style.width = '100%';
-        videoRef.current.style.height = 'auto';
+        videoRef.current.style.height = '100%';
+        videoRef.current.style.maxWidth = '100%';
+        videoRef.current.style.maxHeight = '100%';
       }
       return undefined;
     }

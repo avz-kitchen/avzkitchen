@@ -10,7 +10,7 @@ import { getUiText, getLocalizedPath } from "../../i18n/content";
 const CircularGallery = lazy(() => import("../others/CircularGallery"));
 
 const navTabs = [
-  { id: "/", labelKey: "visualStudio" },
+  { id: "/", labelKey: "home" },
   { id: "/portfolio", labelKey: "portfolio" },
   { id: "/bio", labelKey: "bio" },
   { id: "/services", labelKey: "services" },
