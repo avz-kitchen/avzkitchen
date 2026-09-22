@@ -1,9 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const DataPrivacy = () => {
   return (
-    <section style={{ textAlign: "left" }}>
-      <h1>Data Protection and Privacy</h1>
+    <>
+      <Helmet>
+        <title>AVZKITCHEN | Data Protection & Privacy</title>
+        <meta
+          name="description"
+          content="Read AVZKITCHEN's privacy policy and data protection information for website visitors and contacts."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://avzkitchen.com/data" />
+      </Helmet>
+
+      <section style={{ textAlign: "left" }}>
+        <h1>Data Protection and Privacy</h1>
       <p>
         We are very pleased about your interest in our company. Data protection
         has a particularly high priority for the management of AVZKITCHEN.
@@ -83,7 +95,8 @@ const DataPrivacy = () => {
         </a>
         .
       </p>
-    </section>
+      </section>
+    </>
   );
 };
 

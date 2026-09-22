@@ -40,6 +40,8 @@ const ContactSection = ({ locale = "en" }) => {
         <title>AVZKITCHEN | Contact Angelica Valenzuela Freelance Digital Product Designer & Developer</title>
         <meta name="description" content="Get in touch with Angelica Valenzuela for design and development projects, collaborations, or freelance opportunities." />
         <meta name="keywords" content="Angelica Valenzuela , contact digital designer, hire UI/UX developer,  hire designer , amazon specialist , Branding, Product Design, Code, Portfolio, Angelica, UX, UI, Digital Products , Front End Development , Amazon ,  Shopify , Elementor" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://avzkitchen.com/contact" />
       </Helmet>
       <div className="contact-container">
    
