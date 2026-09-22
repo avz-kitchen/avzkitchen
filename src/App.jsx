@@ -60,21 +60,17 @@ export const AppRoutes = () => {
                   "name": "Angelica Valenzuela",
                   "alternateName": ["AVZ Kitchen", "AVZKITCHEN"],
                   "url": "https://avzkitchen.com",
-                  "jobTitle": "Freelance Product Designer & Developer",
-                  "description": "Angelica Valenzuela is a freelance digital product designer and developer operating AVZ Kitchen, specializing in sustainable UX/UI design, low-carbon web development, and green e-commerce for eco-conscious brands.",
+                  "jobTitle": "Freelance Product Designer & Amazon Storefront Developer",
+                  "description": "Angelica Valenzuela is the founder of AVZ Kitchen, a digital studio focused on sustainable UX/UI design, low-carbon ecommerce experiences, Amazon storefront development, and conversion-driven digital products for eco-conscious brands.",
                   "knowsAbout": [
-                    "UX/UI design",
-                    "Sustainable Web Design",
-                    "Low-Carbon Web Development",
-                    "Green E-Commerce",
-                    "Product design",
-                    "Design systems",
-                    "Brand strategy",
-                    "Frontend development",
-                    "Accessibility",
-                    "Shopify UX design",
-                    "Amazon storefront design",
-                    "E-commerce design"
+                    "Amazon Storefront Design",
+                    "Amazon A+ Content Design",
+                    "Amazon Brand Registry",
+                    "Sustainable E-Commerce",
+                    "Eco-Friendly Brand Storytelling",
+                    "UX/UI Design",
+                    "Shopify Development",
+                    "Frontend Development"
                   ],
                   "sameAs": [
                     "https://www.linkedin.com/in/avzkitchen",
@@ -83,10 +79,13 @@ export const AppRoutes = () => {
                     "https://www.twine.net/AngelicaValenzuela",
                     "https://www.xing.com/profile/Angelica_Valenzuela032612",
                     "https://www.behance.net/avzkitchen"
-                  ]
+                  ],
+                  "founderOf": {
+                    "@id": "https://avzkitchen.com/#organization"
+                  }
                 },
                 {
-                  "@type": "ProfessionalService",
+                  "@type": "Organization",
                   "@id": "https://avzkitchen.com/#organization",
                   "name": "AVZ Kitchen",
                   "alternateName": "Angelica Valenzuela Digital Studio",
@@ -94,18 +93,30 @@ export const AppRoutes = () => {
                   "founder": {
                     "@id": "https://avzkitchen.com/#person"
                   },
-                  "description": "AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in sustainable UX/UI design, low-carbon Shopify development, and accessible digital products for eco-conscious brands across Germany, DACH, and Europe.",
+                  "description": "AVZ Kitchen is the digital studio founded by Angelica Valenzuela, specializing in sustainable UX/UI design, low-carbon Shopify development, Amazon storefront design, and accessible digital experiences for eco-conscious brands in Germany, DACH, and Europe.",
+                  "areaServed": ["Germany", "Austria", "Switzerland", "Europe"],
                   "knowsAbout": [
                     "Sustainable Web Design",
                     "Low-Carbon Web Development",
                     "Green E-Commerce",
-                    "UX/UI design",
-                    "Shopify UX design",
-                    "Amazon storefront design",
-                    "Design systems",
-                    "Frontend development",
+                    "Amazon Storefront Design",
+                    "Amazon A+ Content Design",
+                    "Shopify Development",
+                    "UX/UI Design",
                     "Accessibility"
+                  ],
+                  "sameAs": [
+                    "https://avzkitchen.com"
                   ]
+                },
+                {
+                  "@type": "Service",
+                  "name": "Sustainable Amazon Storefront & A+ Content Design",
+                  "provider": {
+                    "@id": "https://avzkitchen.com/#organization"
+                  },
+                  "areaServed": ["Germany", "Austria", "Switzerland", "Europe"],
+                  "description": "Custom Amazon Brand Store layouts and A+ Content designed for sustainable, eco-conscious brands selling on Amazon.de and European marketplaces."
                 }
               ]
             }`}
