@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
-import Header from "../others/Header";
 import Button from "../others/Button";
 import HeroNew from "./../animated/HeroNew";
 import BlurText from "./../others/BlurText";
