@@ -11,18 +11,21 @@
 .main-app-content {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transform: translateY(0);
+  transition: transform 0.35s ease;
 }
 
 .main-app-content.content-hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(12px);
   pointer-events: none;
 }
 
 .main-app-content.content-visible {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 html, body, #root {
