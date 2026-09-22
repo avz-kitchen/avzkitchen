@@ -58,12 +58,12 @@ const App = () => {
     <>
     {isLoading && <Preloader />}
         <Helmet htmlAttributes={{ lang: currentLang }}>
-        <title>Angelica Valenzuela | Freelance Product Designer & Developer</title>
+        <title>AVZ Kitchen by Angelica Valenzuela | Digital UX/UI Design & Development Studio</title>
           <meta name="robots" content="index, follow" />
 
         <meta
           name="description"
-          content="Angelica Valenzuela – Freelance Product Designer & Developer creating digital products, e-commerce solutions, and brands that leave a lasting impression."
+          content="AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in custom UX/UI design, design systems, and frontend development for web and mobile apps."
         />
         <script type="application/ld+json">
           {`
@@ -71,8 +71,22 @@ const App = () => {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Angelica Valenzuela",
+            "alternateName": "AVZ Kitchen",
             "url": "https://avzkitchen.com",
-            "jobTitle": "Freelance Product Designer & Developer",
+            "jobTitle": "UX/UI Designer & Frontend Developer",
+            "description": "AVZ Kitchen by Angelica Valenzuela creates digital products, design systems, Shopify experiences, and Amazon storefront design with a focus on clarity, accessibility, and conversion.",
+            "knowsAbout": [
+              "UX/UI design",
+              "Product design",
+              "Design systems",
+              "Brand strategy",
+              "Frontend development",
+              "Accessibility",
+              "Shopify UX design",
+              "Amazon storefront design",
+              "E-commerce design",
+              "Web design"
+            ],
             "sameAs": [
               "https://www.linkedin.com/in/avzkitchen",
               "https://github.com/avz-kitchen",

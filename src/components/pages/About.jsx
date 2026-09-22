@@ -48,6 +48,28 @@ const skills = [
             "@type": "AboutPage",
             "name": "About Angelica Valenzuela",
             "url": "https://avzkitchen.com/bio",
+            "description": "Angelica Valenzuela is a digital product designer and frontend developer creating strategy-led UX/UI experiences, design systems, and accessible digital products for brands and startups.",
+            "about": {
+              "@type": "Person",
+              "name": "Angelica Valenzuela",
+              "url": "https://avzkitchen.com",
+              "sameAs": ["https://avzkitchen.com"],
+              "description": "AVZ Kitchen by Angelica Valenzuela is a digital visual studio focused on UX/UI design, design systems, and frontend development.",
+              "knowsAbout": [
+                "UX/UI design",
+                "Product design",
+                "Design systems",
+                "Brand strategy",
+                "Information architecture",
+                "Frontend development",
+                "Accessibility",
+                "Creative direction",
+                "Web design",
+                "Mobile app design",
+                "Amazon storefront design",
+                "Shopify UX design"
+              ]
+            },
             "author": {
               "@type": "Person",
               "name": "Angelica Valenzuela",
