@@ -22,12 +22,12 @@ import DataPrivacy from "./components/pages/DataPrivacy";
 import LegalPage from "./components/pages/LegalPage";
 import { getLocaleFromPath, getLocalizedPath } from "./i18n/content";
 
-const App = () => {
+export const AppRoutes = () => {
   const projects = portfolioData.portfolio;
   const location = useLocation();
   const locale = getLocaleFromPath(location.pathname);
   const currentLang = locale === "de" ? "de" : "en";
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(typeof window === "undefined" ? false : true);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -165,7 +165,7 @@ const App = () => {
 export default function AppWrapper() {
   return (
     <Router>
-      <App />
+      <AppRoutes />
     </Router>
   );
 }

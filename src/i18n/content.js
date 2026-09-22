@@ -20,7 +20,7 @@ export const uiContent = {
       rights: "© {year} avzkitchen. All rights reserved.",
     },
     home: {
-      mission:
+      mission: 
         "I build bold digital experiences with a personal touch — blending strategy, design, and code into brands and products that feel memorable and convert.",
       bio: "❋ Bio",
       tags: ["Branding", "Product Design", "Code", "E-commerce"],

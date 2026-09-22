@@ -8,45 +8,45 @@ const services = {
   en: [
     {
       key: "brand-strategy",
-      title: "Brand Strategy – Selecting the Core Ingredients",
-      content: "Every successful product begins with clarity. I define your brand's purpose, audience, and values to create a strong foundation that informs every design and product decision.",
+      title: "Brand Strategy – Selecting Ethical & Sustainable Ingredients",
+      content: "Defining brand values, sustainable messaging, and transparent UX foundations for brands that want to grow with clarity, trust, and a lower-carbon digital footprint across Freiburg, Baden-Württemberg, DACH, and Europe.",
     },
     {
       key: "product-design",
-      title: "Product Design – Blending Flavors",
-      content: "Interfaces and interactions are crafted with care, combining usability, visual storytelling, and thoughtful detail to create experiences that resonate with users.",
+      title: "Product & UX Design – Blending Conscious Flavors",
+      content: "Crafting accessible, low-energy digital interfaces, design systems, and intuitive user flows that balance usability, sustainability, and conversion for modern ecommerce and product brands.",
     },
     {
       key: "coding",
-      title: "Coding – Bringing the Recipe to Life",
-      content: "Designs become tangible through clean, efficient code, delivering responsive, reliable, and high-performing digital products across all platforms.",
+      title: "E-Commerce & Coding – Bringing the Recipe to Life",
+      content: "Building lightweight, fast-loading Shopify webshops and sustainable web apps with clean frontend tech, thoughtful UX, and performance-first development for scalable growth.",
     },
     {
       key: "design-systems",
-      title: "Design Systems - The Finishing Touch",
-      content: "The finishing touch brings harmony to the table. I develop reusable components, visual systems, and guidelines that keep your brand consistent, scalable, and instantly recognizable.",
+      title: "Amazon Storefronts & A+ Content – Plating for Global Marketplaces",
+      content: "Designing high-converting Amazon Brand Stores and A+ Content for eco-friendly brands on Amazon.de and European marketplaces, with clear storytelling, trust-building layouts, and conversion-focused product presentation.",
     },
   ],
   de: [
     {
       key: "brand-strategy",
-      title: "Brandstrategie – Die Kernzutaten auswählen",
-      content: "Jedes erfolgreiche Produkt beginnt mit Klarheit. Ich definiere den Zweck, die Zielgruppe und die Werte deiner Marke, damit jede Design- und Produktentscheidung auf einer soliden Grundlage basiert.",
+      title: "Brandstrategie – Ethik und nachhaltige Zutaten auswählen",
+      content: "Markenwerte, nachhaltige Messaging-Strategien und transparente UX-Grundlagen definieren, damit Marken mit Klarheit, Vertrauen und einem niedrigeren digitalen Fußabdruck in Freiburg, Baden-Württemberg, DACH und Europa wachsen.",
     },
     {
       key: "product-design",
-      title: "Produktdesign – Aromen mischen",
-      content: "Interfaces und Interaktionen entstehen mit viel Sorgfalt und verbinden Nutzbarkeit, visuelles Storytelling und durchdachte Details zu Erlebnissen, die bei Nutzerinnen und Nutzern wirklich ankommen.",
+      title: "Produkt- & UX-Design – Bewusste Aromen mischen",
+      content: "Barrierefreie, energieeffiziente digitale Interfaces, Designsysteme und intuitive Nutzerflüsse entwickeln, die Nutzbarkeit, Nachhaltigkeit und Conversion in Einklang bringen.",
     },
     {
       key: "coding",
-      title: "Coding – Das Rezept zum Leben erwecken",
-      content: "Designs werden durch sauberen, effizienten Code greifbar und entstehen als responsive, zuverlässige und leistungsstarke digitale Produkte auf allen Plattformen.",
+      title: "E-Commerce & Coding – Das Rezept zum Leben erwecken",
+      content: "Leichte, schnell ladende Shopify-Webshops und nachhaltige Web-Apps mit sauberer Frontend-Technologie, durchdachter UX und performanceorientierter Entwicklung für skalierbares Wachstum bauen.",
     },
     {
       key: "design-systems",
-      title: "Designsysteme – Der letzte Schliff",
-      content: "Der letzte Schliff bringt Harmonie auf den Tisch. Ich entwickle wiederverwendbare Komponenten, visuelle Systeme und Richtlinien, damit deine Marke konsistent, skalierbar und sofort erkennbar bleibt.",
+      title: "Amazon Storefronts & A+-Content – Für globale Märkte anrichten",
+      content: "Hochkonvertierende Amazon Brand Stores und A+-Content für nachhaltige Marken auf Amazon.de und europäischen Märkten gestalten – mit klarer Storytelling, vertrauensbildenden Layouts und konversionsorientierter Produktpräsentation.",
     },
   ],
 };
@@ -58,12 +58,13 @@ const ServiceSection = ({ locale = "en" }) => {
     <section className="service-section">
       <GridLayout columns={2}>
         <BlurText
-          text={getUiText(locale, "home", "serviceHeading")}
+          text={"Cooking Up Sustainable Visual Experiences & Digital Products"}
           delay={200}
           animateBy="words"
           direction="top"
           className="xxl font-bold mb-8 "
         />
+
         <Accordion defaultExpandedKeys={["brand-strategy"]} className="w-full max-w-2xl">
           {translatedServices.map((service) => (
             <AccordionItem
