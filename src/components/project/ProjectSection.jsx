@@ -6,9 +6,10 @@ import Button from "../others/Button";
 import BlurText from "../others/BlurText";
 import CircularGallery from "../others/CircularGallery";
 import data from "../../data/data.json";
+import { getLocalizedPath, getUiText } from "../../i18n/content";
 import "../pages/Portfolio.scss";
 
-const ProjectSection = ({ projects }) => {
+const ProjectSection = ({ projects, locale = "en" }) => {
   const navigate = useNavigate();
   
   if (!Array.isArray(projects) || projects.length === 0) {
@@ -17,8 +18,8 @@ const ProjectSection = ({ projects }) => {
 
 
   const handleProjectClick = useCallback((link) => {
-    navigate(link);
-  }, [navigate]);
+    navigate(getLocalizedPath(link, locale));
+  }, [navigate, locale]);
 
   // Find the latest project
   const latestProjects = projects.filter((project) => project.isLatest);
@@ -30,15 +31,15 @@ const ProjectSection = ({ projects }) => {
       <GridLayout columns={4}>
 
           <BlurText
-          text="Selected Works"
+          text={getUiText(locale, "home", "selectedWorks")}
           delay={200}
           animateBy="words"
           direction="top"
           className="xxl font-bold mb-8 span-three-columns"
         />
-          <h4 className="">each a carefully plated experience from my visual kitchen.
+          <h4 className="">{getUiText(locale, "home", "portfolioIntro")}
           <br />
-          <Button variant="secondary" to="/portfolio" >See Portfolio</Button>
+          <Button variant="secondary" to={getLocalizedPath("/portfolio", locale)} >{getUiText(locale, "home", "seePortfolio")}</Button>
           <br />
           </h4>
 
@@ -48,7 +49,7 @@ const ProjectSection = ({ projects }) => {
         {latestProjects.map((latestProject) => (
           <Link
             key={latestProject.id}
-            to={`/portfolio/${latestProject.title.replace(/\s+/g, "-").toLowerCase()}`}
+            to={getLocalizedPath(`/portfolio/${latestProject.title.replace(/\s+/g, "-").toLowerCase()}`, locale)}
           >
             <div className="latest-project" style={{ width: '100%', position: 'relative' }}>
               <div

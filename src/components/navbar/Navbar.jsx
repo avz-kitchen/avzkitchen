@@ -6,28 +6,37 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 import CircularGallery from "../others/CircularGallery";
 import data from "../../data/data.json";
+import { getUiText, getLocalizedPath } from "../../i18n/content";
 
 const navTabs = [
-  { id: "/", label: "Visual Studio" },
-  { id: "/portfolio", label: "Portfolio" },
-  { id: "/bio", label: "Bio" },
-  { id: "/services", label: "Services" },
-  { id: "/contact", label: "Contact" },
+  { id: "/", labelKey: "visualStudio" },
+  { id: "/portfolio", labelKey: "portfolio" },
+  { id: "/bio", labelKey: "bio" },
+  { id: "/services", labelKey: "services" },
+  { id: "/contact", labelKey: "contact" },
 ];
 
 const subheaderNavTabs = [
-  { id: "/portfolio", label: "Portfolio" },
-  { id: "/services", label: "Services" },
-  { id: "/bio", label: "Bio" },
-  { id: "/contact", label: "Contact" },
+  { id: "/portfolio", labelKey: "portfolio" },
+  { id: "/services", labelKey: "services" },
+  { id: "/bio", labelKey: "bio" },
+  { id: "/contact", labelKey: "contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ locale = "en" }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState(location.pathname);
+  const [activeTab, setActiveTab] = useState(location.pathname.replace(/^\/de/, "") || "/");
+
+  const handleLanguageToggle = () => {
+    const targetLocale = locale === "de" ? "en" : "de";
+    const nextPath = getLocalizedPath(location.pathname, targetLocale);
+    navigate(nextPath);
+    setMenuOpen(false);
+    document.body.classList.remove("menu-open");
+  };
 
   // Get featured projects for gallery
   const featuredProjects = useMemo(() => {
@@ -45,11 +54,12 @@ const Navbar = () => {
   }, [navigate]);
 
   useEffect(() => {
-    const normalizedPath = location.pathname.startsWith("/portfolio")
+    const normalizedPath = location.pathname.replace(/^\/de/, "") || "/";
+    const nextActiveTab = normalizedPath.startsWith("/portfolio")
       ? "/portfolio"
-      : location.pathname;
+      : normalizedPath;
 
-    setActiveTab(normalizedPath);
+    setActiveTab(nextActiveTab);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -84,7 +94,7 @@ const Navbar = () => {
       <div className={`navbar ${menuOpen ? "menu-open" : ""} ${isScrolled ? "scrolled" : ""}`}>
         <div className="wrapper">
           <div className="brand-stack">
-            <Link to="/">
+            <Link to={getLocalizedPath("/", locale)}>
               <motion.span
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -96,13 +106,36 @@ const Navbar = () => {
             </Link>
 
             <div className="subheader-row">
-              <span className="studio-tag">Visual Studio</span>
-
+             
+              <button
+                type="button"
+                onClick={handleLanguageToggle}
+                aria-label={locale === "de" ? "Switch to English" : "Switch to German"}
+                style={{
+                  background: "transparent",
+                  border: "1px solid rgba($color-navy)",
+                  color: "$color-navy-soft",
+                  borderRadius: "999px",
+                  padding: "0.3rem 0.8rem",
+                  fontSize: "0.72rem",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                  marginLeft: "0.75rem",
+                  width: "3.25rem",
+                  minWidth: "3.25rem",
+                  display: "inline-flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {getUiText(locale, "nav", "languageToggle")}
+              </button>
               <nav className="subheader-nav" aria-label="Main navigation">
                 {subheaderNavTabs.map((tab) => (
                   <NavLink
                     key={tab.id}
-                    to={tab.id}
+                    to={getLocalizedPath(tab.id, locale)}
                     onClick={handleLinkClick}
                     className="nav-tab"
                     style={{
@@ -117,14 +150,15 @@ const Navbar = () => {
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
-                    <span className="nav-tab-label">{tab.label}</span>
+                    <span className="nav-tab-label">{getUiText(locale, "nav", tab.labelKey)}</span>
                   </NavLink>
                 ))}
               </nav>
 
               <a href="mailto:hello@avzkitchen.com" className="nav-mail">
-                hello@avzkitchen.com
+                {getUiText(locale, "nav", "email")}
               </a>
+
             </div>
           </div>
         </div>
@@ -154,7 +188,7 @@ const Navbar = () => {
         {navTabs.map((tab) => (
           <div key={tab.id}>
             <NavLink
-              to={tab.id}
+              to={getLocalizedPath(tab.id, locale)}
               onClick={handleLinkClick}
               className={`nav-tab ${activeTab === tab.id ? "active" : ""}`}
               style={{
@@ -169,7 +203,7 @@ const Navbar = () => {
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
-              <span className="nav-tab-label">{tab.label}</span>
+              <span className="nav-tab-label">{getUiText(locale, "nav", tab.labelKey)}</span>
             </NavLink>
             
             {/* Show gallery after Portfolio tab */}
@@ -191,6 +225,29 @@ const Navbar = () => {
           </div>
         ))}
         
+        <button
+          type="button"
+          onClick={handleLanguageToggle}
+          style={{
+            background: "transparent",
+            border: "1px solid rgba(255,255,255,0.3)",
+            color: "#f3efe8",
+            borderRadius: "999px",
+            padding: "0.5rem 0.9rem",
+            fontSize: "0.75rem",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            cursor: "pointer",
+            width: "3.25rem",
+            minWidth: "3.25rem",
+            display: "inline-flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {getUiText(locale, "nav", "languageToggle")}
+        </button>
+
         {/* Social links in mobile nav */}
         <div className="social-links">
           <a

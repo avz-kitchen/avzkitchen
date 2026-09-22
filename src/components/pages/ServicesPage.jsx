@@ -1,20 +1,11 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import Button from "../others/Button";
 import ActionRow from "../others/ActionRow";
 import SectionHeading from "../others/SectionHeading";
 import GridLayout from "../others/GridLayout";
 import "./ServicesPage.scss";
 import ContactSection from "../contactSection/ContactSection";
-
-  const serviceContent = (
-    <span className="unified-paragraph">
-      I sift <span className="type-word w-1">insight ✐</span>,
-      stir <span className="type-word w-2">identity ✦</span>,
-      and shape <span className="type-word w-3">digital craft ☍</span>
-      — cooking experiences that feel memorable, clear, and deeply alive ❋.
-    </span>
-  );
+import { getLocalizedPath, getUiText } from "../../i18n/content";
 
 const PlatformLogo = ({ type }) => {
   const variants = {
@@ -92,120 +83,14 @@ const ServiceMockup = ({ type }) => {
   );
 };
 
-const tabs = [
-  {
-    id: "shopify",
-    label: "Shopify",
-    tag: "Recipe station",
-    title: "Shopify storefront design & custom components",
-    description:
-      "We design and build conversion-focused Shopify storefronts with custom components, premium UX, and cleaner customer journeys that feel polished across every product and collection page. We also audit the current experience to define quick wins and a practical rollout plan.",
-    bullets: ["Custom Shopify components", "Storefront UX", "UX audit & quick wins"],
-    platform: "shopify",
-  },
-  {
-    id: "amazon",
-    label: "Amazon",
-    tag: "Brand pantry",
-    title: "Amazon A+ content & cross-channel brand consistency",
-    description:
-      "We create Amazon A+ content, marketplace-ready visuals, and reusable templates that keep your brand consistent across channels, platforms, and product touchpoints while strengthening trust and clarity.",
-    bullets: ["Amazon A+ content", "Cross-channel brand consistency", "Reusable templates"],
-    platform: "amazon",
-  },
-  {
-    id: "fullstack",
-    label: "Full stack",
-    tag: "Kitchen lab",
-    title: "Custom web apps & scalable digital product builds",
-    description:
-      "We turn early ideas into polished digital products with a clean front end, strong technical foundations, and a scalable structure built for growth and long-term performance.",
-    bullets: ["Web app development", "Responsive builds", "Scalable systems"],
-    platform: "fullstack",
-  },
-  {
-    id: "presence",
-    label: "Digital presence",
-    tag: "Atmosphere studio",
-    title: "Brand identity, landing pages & digital presence strategy",
-    description:
-      "We refine the strategy, design, and digital atmosphere so your brand feels premium, consistent, and ready to hold attention across web, campaigns, and customer touchpoints. Through UX audits, we identify quick wins and shape a phased rollout that improves performance without the guesswork.",
-    bullets: ["Brand strategy", "UX audits", "Quick wins & phased rollout"],
-    platform: "presence",
-  },
-];
-
-const process = [
-  {
-    step: "01",
-    title: "Gather",
-    text: "We gather the ingredients: your brand, audience, product story, and design system cues so the direction is grounded in what matters most.",
-  },
-  {
-    step: "02",
-    title: "Season",
-    text: "We shape the code, UX flow, and visual rhythm so the experience feels refined, intuitive, and unmistakably premium across every touchpoint.",
-  },
-  {
-    step: "03",
-    title: "Serve",
-    text: "We launch with clarity, polish, and momentum—ready to turn attention into trust, clicks, and conversion.",
-  },
-];
-
-
-const proofPoints = ["Brand clarity", "Conversion focus", "Fast execution", "Premium design"];
-
-const faqItems = [
-  {
-    question: "What services does AVZKITCHEN offer?",
-    answer:
-      "AVZKITCHEN offers brand strategy, Shopify storefront design, custom ecommerce experiences, Amazon content, landing page design, and digital product development to help businesses improve visibility, trust, and conversion across the customer journey.",
-  },
-  {
-    question: "Why is custom Shopify design important for ecommerce growth?",
-    answer:
-      "Custom Shopify design helps brands create a more polished shopping experience, improve product clarity, strengthen brand perception, and guide customers more effectively from discovery to purchase. It is especially valuable for businesses that need a storefront that feels premium and performs well.",
-  },
-  {
-    question: "What is Amazon A+ content and why does it matter?",
-    answer:
-      "Amazon A+ content is a way to improve product detail pages with stronger storytelling, clearer messaging, and more engaging visuals. It helps brands communicate value more effectively, build trust, and improve the customer experience on Amazon and other sales channels.",
-  },
-  {
-    question: "How do you keep branding consistent across different channels?",
-    answer:
-      "We build scalable design systems and reusable templates so your brand stays consistent across Shopify, Amazon, landing pages, campaigns, and other digital touchpoints. This helps maintain clarity, improve recognition, and create a more cohesive customer experience.",
-  },
-  {
-    question: "What is included in a UX audit and quick win plan?",
-    answer:
-      "A UX audit reviews the current customer journey, identifies friction points, and highlights improvements that can increase clarity, trust, and conversion. We define the most impactful quick wins first and then map them into a phased rollout plan so teams can improve the experience without disrupting the whole system.",
-  },
-  {
-    question: "How do you approach a brand or digital project?",
-    answer:
-      "We begin by understanding the business goals, audience, and offer, then shape the strategy, design direction, and digital experience around those foundations. The result is a clearer, stronger, more conversion-focused experience that supports long-term growth.",
-  },
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map(({ question, answer }) => ({
-    "@type": "Question",
-    name: question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: answer,
-    },
-  })),
-};
-
-const ServicesPage = () => {
+const ServicesPage = ({ locale = "en" }) => {
   const [activeTab, setActiveTab] = useState("shopify");
   const [visibleCards, setVisibleCards] = useState([]);
-  const activeService = tabs.find((tab) => tab.id === activeTab) || tabs[0];
+
+  const serviceData = getUiText(locale, "services", "tabs");
+  const processData = getUiText(locale, "services", "steps");
+  const faqItems = getUiText(locale, "services", "faq");
+  const activeServiceResolved = serviceData.find((tab) => tab.id === activeTab) || serviceData[0];
 
   useEffect(() => {
     const grid = document.querySelector(".process-grid");
@@ -218,7 +103,7 @@ const ServicesPage = () => {
 
         if (!entry || !entry.isIntersecting) return;
 
-        process.forEach((_, index) => {
+        processData.forEach((_, index) => {
           setTimeout(() => {
             setVisibleCards((prev) => (prev.includes(index) ? prev : [...prev, index]));
           }, index * 180);
@@ -232,7 +117,20 @@ const ServicesPage = () => {
     observer.observe(grid);
 
     return () => observer.disconnect();
-  }, []);
+  }, [processData]);
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  };
 
   return (
     <main className="services-page">
@@ -251,39 +149,31 @@ const ServicesPage = () => {
       <section className="services-hero">
         <GridLayout columns={2} gap={32}>
           <div className="hero-copy">
-            <h1 style={{  fontSize: "6rem" }}>From ingredients to high-converting digital experiences.</h1>
+            <h1 style={{ fontSize: "6rem" }}>{getUiText(locale, "services", "heroTitle")}</h1>
 
             <ActionRow
               className="cta-row"
               actions={[
-                { label: "Book a discovery call", to: "/contact", variant: "primary" },
-                { label: "hello@avzkitchen.com", href: "mailto:hello@avzkitchen.com?subject=Project%20Inquiry", variant: "secondary" },
+                { label: getUiText(locale, "services", "heroPrimary"), to: getLocalizedPath("/contact", locale), variant: "primary" },
+                { label: getUiText(locale, "services", "heroSecondary"), href: "mailto:hello@avzkitchen.com?subject=Project%20Inquiry", variant: "secondary" },
               ]}
             />
-
-
           </div>
-                    
+
           <div className="hero-panel">
-<video autoPlay loop muted playsInline
-style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.25rem" }}>
-            <source src="/optimized/avz-ktichening.webm" type="video/webm" />
-          </video>  
+            <video autoPlay loop muted playsInline style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.25rem" }}>
+              <source src="/optimized/avz-ktichening.webm" type="video/webm" />
+            </video>
           </div>
         </GridLayout>
-
       </section>
-           {/* <Richtext paragraph={serviceContent} tags={proofPoints} /> */}
 
       <section className="services-offers">
-        <SectionHeading
-          title="The ingredients behind premium Shopify design, Amazon content, and digital growth."
-          align="center"
-        />
+        <SectionHeading title={getUiText(locale, "services", "sectionTitle")} align="center" />
 
         <div className="service-tabs" role="tablist" aria-label="Service categories">
           <div className="tab-list">
-            {tabs.map((tab) => (
+            {serviceData.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
@@ -299,12 +189,12 @@ style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.2
 
           <div className="tab-panel" role="tabpanel" aria-live="polite">
             <div className="tab-copy">
-              <p className="card-tag">{activeService.tag}</p>
-              <h3>{activeService.title}</h3>
-              <p className="tab-description">{activeService.description}</p>
+              <p className="card-tag">{activeServiceResolved.tag}</p>
+              <h3>{activeServiceResolved.title}</h3>
+              <p className="tab-description">{activeServiceResolved.description}</p>
 
               <ul>
-                {activeService.bullets.map((bullet) => (
+                {activeServiceResolved.bullets.map((bullet) => (
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
@@ -312,29 +202,25 @@ style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.2
 
             <div className="tab-visual">
               <div className="platform-mark">
-                <PlatformLogo type={activeService.platform} />
+                <PlatformLogo type={activeTab} />
               </div>
-              <ServiceMockup type={activeService.platform} />
+              <ServiceMockup type={activeTab} />
             </div>
           </div>
         </div>
       </section>
 
       <section className="services-process">
-        <SectionHeading
-          title="A focused recipe for brand clarity, conversion, and momentum."
-          align="center"
-          className="narrow"
-        />
+        <SectionHeading title={getUiText(locale, "services", "processTitle")} align="center" className="narrow" />
 
         <div className="process-grid">
-          {process.map(({ step, title, text }, index) => (
+          {processData.map(({ title, text }, index) => (
             <div
-              key={step}
+              key={title}
               className={`process-card ${visibleCards.includes(index) ? "is-visible" : ""}`}
               style={{ "--delay": `${index * 180}ms` }}
             >
-              <span className="step">{step}</span>
+              <span className="step">{String(index + 1).padStart(2, "0")}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </div>
@@ -343,9 +229,9 @@ style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.2
       </section>
 
       <section className="services-faq">
-   <h3 style={{ marginBottom: "1rem" , width: "80%" ,textAlign: "left" }}>
-     Frequently asked questions about Shopify, Amazon, and digital growth.
-   </h3>
+        <h3 style={{ marginBottom: "1rem", width: "80%", textAlign: "left" }}>
+          {getUiText(locale, "services", "faqTitle")}
+        </h3>
 
         <div className="faq-list">
           {faqItems.map(({ question, answer }) => (
@@ -357,7 +243,7 @@ style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.2
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection locale={locale} />
     </main>
   );
 };

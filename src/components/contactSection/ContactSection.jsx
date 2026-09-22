@@ -4,9 +4,10 @@ import { Helmet } from "react-helmet";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../others/Button";
+import { getUiText } from "../../i18n/content";
 import "./ContactSection.scss";
 
-const ContactSection = () => {
+const ContactSection = ({ locale = "en" }) => {
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -42,9 +43,9 @@ const ContactSection = () => {
       </Helmet>
       <div className="contact-container">
    
-                  <h1>Let's Cook</h1>
-          <p>I’m always excited to take on new projects and partnerships. If you’re looking for a designer who blends creativity, technical expertise, and a focus on accessibility, let’s connect and bring your ideas to life.</p>
-                  <a href="mailto:hello@avzkitchen.com">hello@avzkitchen.com</a>
+                  <h1>{getUiText(locale, "contact", "heading")}</h1>
+          <p>{getUiText(locale, "contact", "intro")}</p>
+                  <a href="mailto:hello@avzkitchen.com">{getUiText(locale, "contact", "email")}</a>
 
         <div className="formContainer">
           <motion.form
@@ -54,23 +55,20 @@ const ContactSection = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 1 }}
           >
-            <input type="text" required placeholder="Name*" name="name" />
-            <input type="email" required placeholder="Email*" name="reply_to" />
+            <input type="text" required placeholder={getUiText(locale, "contact", "name")} name="name" />
+            <input type="email" required placeholder={getUiText(locale, "contact", "emailField")} name="reply_to" />
             <select name="subject" defaultValue="" required>
-              <option value="" disabled>Project type</option>
-              <option value="Quick UX audit">Quick UX audit</option>
-              <option value="Shopify / webshop design">Shopify / webshop design</option>
-              <option value="Brand strategy">Brand strategy</option>
-              <option value="Full-stack development">Full-stack development</option>
-              <option value="Digital presence / landing page">Digital presence / landing page</option>
-              <option value="Other">Other</option>
+              <option value="" disabled>{getUiText(locale, "contact", "projectType")}</option>
+              {getUiText(locale, "contact", "options").map((option) => (
+                <option key={option} value={option}>{option}</option>
+              ))}
             </select>
-            <textarea rows={8} required placeholder="Message*" name="message" />
-            {error && <p className="error-message">Error sending message</p>}
+            <textarea rows={8} required placeholder={getUiText(locale, "contact", "message")} name="message" />
+            {error && <p className="error-message">{getUiText(locale, "contact", "error")}</p>}
             {success && (
-              <p className="success-message">Message sent successfully!</p>
+              <p className="success-message">{getUiText(locale, "contact", "success")}</p>
             )}
-            <Button variant="primary" type="submit">Send Message</Button>
+            <Button variant="primary" type="submit">{getUiText(locale, "contact", "send")}</Button>
           </motion.form>
         </div>
 

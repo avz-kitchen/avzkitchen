@@ -10,17 +10,15 @@ import ProjectSection from "../project/ProjectSection";
 import ServiceSection from "../serviceSection/ServiceSection";
 import ContactSection from "../contactSection/ContactSection";
 import portfolioData from "../../data/data.json";
+import { getLocalizedPath, getUiText } from "../../i18n/content";
 
-const Home = () => {
+const Home = ({ locale = "en" }) => {
   const videoRef = useRef(null);
   const projects = portfolioData.portfolio;
-  const headerTags = ["Branding", "Product Design", "Code", "E-commerce"];
+  const headerTags = getUiText(locale, "home", "tags");
   const headerContent = (
     <span className="unified-paragraph">
-      I harvest <span className="type-word w-1">insights ✐</span>, 
-      craft <span className="type-word w-2">designs ✦</span>, 
-      and develop <span className="type-word w-3">tech ☍</span> 
-      — plating digital products and brands that leave a lasting taste ❋.
+      {getUiText(locale, "home", "header")}
     </span>
   );
 
@@ -34,10 +32,9 @@ const Home = () => {
               <div className="span-two-columns mission-container">
                 <div className="mission-glass-card">
                   <p className="unified-mission-text">
-                    I build bold digital experiences with a personal touch — blending strategy,
-                    design, and code into brands and products that feel memorable and convert.
+                    {getUiText(locale, "home", "mission")}
                   </p>
-                  <Button variant="primary" to="/bio">❋ Bio</Button>
+                  <Button variant="primary" to={getLocalizedPath("/bio", locale)}>{getUiText(locale, "home", "bio")}</Button>
                 </div>
               </div>
             </GridLayout>
@@ -61,9 +58,9 @@ const Home = () => {
 
       <Richtext paragraph={headerContent} tags={headerTags} />
 
-      <ProjectSection projects={projects || []} />
-      <ServiceSection/>
-      <ContactSection />
+      <ProjectSection projects={projects || []} locale={locale} />
+      <ServiceSection locale={locale} />
+      <ContactSection locale={locale} />
             <Helmet>
         <title>AVZKITCHEN | Angelica Valenzuela's Portfolio – Freelance Digital Product Designer & Developer</title>
         <meta name="description" content="Angelica Valenzuela – Freelance Product Designer & Developer. Blending design, insights, and technology to craft digital products, e-commerce solutions, and brands that leave a lasting impression." />

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 import Preloader from "./components/loader/Preloader";
@@ -16,10 +16,13 @@ import ScrollToTop from "./components/others/ScrollToTop";
 import ServicesPage from "./components/pages/ServicesPage";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
+import { getLocaleFromPath, getLocalizedPath } from "./i18n/content";
 
 const App = () => {
   const projects = portfolioData.portfolio;
-const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+  const locale = getLocaleFromPath(location.pathname);
+  const [isLoading, setIsLoading] = useState(true);
 
 // Effect 1: Handle the Loading Logic
   useEffect(() => {
@@ -79,24 +82,31 @@ const [isLoading, setIsLoading] = useState(true);
         </script>
       </Helmet>
       <div className={`main-app-content ${!isLoading ? 'content-visible' : 'content-hidden'}`}>
-        <Router>
-          <ScrollToTop />
-          <Navbar />
-          <div className="page-wrapper">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/portfolio" element={<Portfolio projects={projects} />} />
-              <Route path="/portfolio/:projectUrl" element={<ProjectDetailRouter />} />
-              <Route path="/bio" element={<About />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/contact" element={<ContactSection />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/productdesign" element={<UXPortfolio />} />
-              <Route path="/data" element={<DataPrivacy />} />
-            </Routes>
-          </div>
-          <Footer />
-        </Router>
+        <ScrollToTop />
+        <Navbar locale={locale} />
+        <div className="page-wrapper">
+          <Routes>
+            <Route path="/" element={<Home locale={locale} />} />
+            <Route path="/de" element={<Home locale="de" />} />
+            <Route path="/portfolio" element={<Portfolio projects={projects} locale={locale} />} />
+            <Route path="/de/portfolio" element={<Portfolio projects={projects} locale="de" />} />
+            <Route path="/portfolio/:projectUrl" element={<ProjectDetailRouter locale={locale} />} />
+            <Route path="/de/portfolio/:projectUrl" element={<ProjectDetailRouter locale="de" />} />
+            <Route path="/bio" element={<About locale={locale} />} />
+            <Route path="/de/bio" element={<About locale="de" />} />
+            <Route path="/services" element={<ServicesPage locale={locale} />} />
+            <Route path="/de/services" element={<ServicesPage locale="de" />} />
+            <Route path="/contact" element={<ContactSection locale={locale} />} />
+            <Route path="/de/contact" element={<ContactSection locale="de" />} />
+            <Route path="/resume" element={<Resume locale={locale} />} />
+            <Route path="/de/resume" element={<Resume locale="de" />} />
+            <Route path="/productdesign" element={<UXPortfolio locale={locale} />} />
+            <Route path="/de/productdesign" element={<UXPortfolio locale="de" />} />
+            <Route path="/data" element={<DataPrivacy locale={locale} />} />
+            <Route path="/de/data" element={<DataPrivacy locale="de" />} />
+          </Routes>
+        </div>
+        <Footer locale={locale} />
       </div>
     
     </>
@@ -105,4 +115,10 @@ const [isLoading, setIsLoading] = useState(true);
 
 
 
-export default App;
+export default function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
