@@ -44,11 +44,11 @@ const App = () => {
     <>
     {isLoading && <Preloader />}
         <Helmet htmlAttributes={{ lang: currentLang }}>
-          <title>Angelica Valenzuela (AVZ Kitchen) | UX/UI Design & Shopify Development</title>
+          <title>Angelica Valenzuela (AVZ Kitchen) | Sustainable UX/UI Design & Green E-Commerce</title>
           <meta name="robots" content="index, follow" />
           <meta
             name="description"
-            content="Angelica Valenzuela (AVZ Kitchen) is a freelance product designer and frontend developer creating UX/UI design, Shopify experiences, and Amazon storefront design for brands in Germany, DACH, and across Europe."
+            content="AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in sustainable UX/UI design, low-carbon Shopify development, and accessible digital products for eco-conscious brands across Germany, DACH, and Europe."
           />
           <script type="application/ld+json">
             {`{
@@ -61,9 +61,12 @@ const App = () => {
                   "alternateName": ["AVZ Kitchen", "AVZKITCHEN"],
                   "url": "https://avzkitchen.com",
                   "jobTitle": "Freelance Product Designer & Developer",
-                  "description": "Angelica Valenzuela is a freelance digital product designer and developer operating AVZ Kitchen, specializing in UX/UI design, design systems, Shopify experiences, and Amazon storefront design.",
+                  "description": "Angelica Valenzuela is a freelance digital product designer and developer operating AVZ Kitchen, specializing in sustainable UX/UI design, low-carbon web development, and green e-commerce for eco-conscious brands.",
                   "knowsAbout": [
                     "UX/UI design",
+                    "Sustainable Web Design",
+                    "Low-Carbon Web Development",
+                    "Green E-Commerce",
                     "Product design",
                     "Design systems",
                     "Brand strategy",
@@ -91,7 +94,18 @@ const App = () => {
                   "founder": {
                     "@id": "https://avzkitchen.com/#person"
                   },
-                  "description": "AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in custom UX/UI design, design systems, and frontend development for web and mobile apps."
+                  "description": "AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in sustainable UX/UI design, low-carbon Shopify development, and accessible digital products for eco-conscious brands across Germany, DACH, and Europe.",
+                  "knowsAbout": [
+                    "Sustainable Web Design",
+                    "Low-Carbon Web Development",
+                    "Green E-Commerce",
+                    "UX/UI design",
+                    "Shopify UX design",
+                    "Amazon storefront design",
+                    "Design systems",
+                    "Frontend development",
+                    "Accessibility"
+                  ]
                 }
               ]
             }`}
