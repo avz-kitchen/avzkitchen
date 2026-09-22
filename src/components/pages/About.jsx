@@ -3,90 +3,107 @@ import TechStack from "../aboutSection/TechStack";
 import AboutSection from "../aboutSection/AboutSection";
 import Richtext from "../others/Richtext";
 import TwoColumnList from "../others/TwoColumnList";
+import { getUiText } from "../../i18n/content";
 
-const About = () => {
-
-  const aboutText = "blending strategy, design & tech ☍ in my visual kitchen ✦, where ideas simmer, flavors merge, and every project is carefully plated. I transform concepts into digital experiences that are not only visually compelling but also intuitive, functional, and built to leave a lasting impression ☜.";
-  const headerTags = ["Branding", "Product Design", "Code"];
-const skills = [
-  {
-    title: "Brand & Design Systems ✐",
-    text: "I build cohesive design systems that give brands a clear, consistent voice across every touchpoint. From visual identity to reusable components, I ensure every element is carefully plated for impact and scalability.",
-  },
-  {
-    title: "UX/UI & Information Architecture ✦",
-    image: "/about/avz-glasses.png",
-    text: "I structure experiences that feel intuitive and engaging. By mapping flows, organizing content, and prioritizing clarity, I create interfaces that guide users effortlessly — every interaction thoughtfully crafted.",
-  },
-  {
-    title: "Accessibility & Inclusive Design ➹",
-    image: "/about/Avz-Illustration.png",
-    text: "Design should be for everyone. I focus on creating experiences that are accessible, inclusive, and usable by all, making sure every digital interaction is considerate and empowering.",
-  },
-  {
-    title: "Front-End Development & Code </> ",
-    text: "I bring designs to life with clean, efficient code. From responsive layouts to interactive components, I ensure that every project not only looks great but performs seamlessly across devices and platforms.",
-  },
-  {
-    title: "Creative Illustration & Visual Storytelling ✎",
-    text: "I translate ideas into visuals that connect and inspire. From illustrations to motion and iconography, I craft imagery that enhances storytelling and enriches user experiences.",
-  },
-];
-
+const About = ({ locale = "en" }) => {
+  const aboutText = getUiText(locale, "bio", "summary") || "Based in Freiburg im Breisgau, Baden-Württemberg, I work with impact-driven brands across Germany, the DACH region, and Europe as a Product Designer and Frontend Developer. At AVZ Kitchen, I blend strategy, design, and clean code to create sustainable UX/UI systems, high-converting Shopify experiences, and customer-first digital products that feel thoughtful, ethical, and built to last.";
+  const headerTags = getUiText(locale, "bio", "tags") || ["Product Designer", "Frontend Developer", "Freiburg", "DACH", "Europe"];
+  const pillars = getUiText(locale, "bio", "pillars") || [
+    {
+      title: "Sustainable Digital Design",
+      text: "I build low-carbon web apps, lightweight storefronts, and energy-efficient digital products with performance-first thinking and a smaller digital footprint.",
+    },
+    {
+      title: "E-Commerce Excellence",
+      text: "From custom Shopify OS 2.0 themes to Amazon Storefront and A+ Content design for Amazon.de and European marketplaces, every experience is shaped for trust, clarity, and conversion.",
+    },
+    {
+      title: "Ethical & Accessible UX",
+      text: "I design human-centered journeys with accessibility at the core, aligning with WCAG principles and creating transparent, inclusive interactions for real people.",
+    },
+  ];
 
   return (
-    <div >
+    <main aria-label={getUiText(locale, "bio", "sectionLabel") || "About Angelica Valenzuela and AVZ Kitchen"}>
       <Helmet>
-        <title>About Angelica Valenzuela (AVZ Kitchen) | Freelance Designer & Developer</title>
-        <meta name="description" content="Learn about Angelica Valenzuela (AVZ Kitchen), a freelance product designer and frontend developer creating UX/UI design, digital products, and Shopify experiences for brands in Germany and Europe." />
-        <meta name="keywords" content="Branding, Product Design, Code, Portfolio, Angelica , Angelica Valenzuela, AVZ Kitchen, UX, UI, Digital Products , Freelance, Front-End Development , Illustration" />
-              <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://avzkitchen.com/bio" />
+        <title>{getUiText(locale, "bio", "metaTitle") || "About Angelica Valenzuela | Freelance UX/UI Designer & Developer | AVZ Kitchen"}</title>
+        <meta
+          name="description"
+          content={getUiText(locale, "bio", "metaDescription") || "Meet Angelica Valenzuela, founder of AVZ Kitchen—a digital visual studio near Freiburg im Breisgau specializing in sustainable UX/UI design, Shopify development, and Amazon storefronts for eco-conscious DACH & European brands."}
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={locale === "de" ? "https://avzkitchen.com/de/bio" : "https://avzkitchen.com/bio"} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": "About Angelica Valenzuela",
-            "url": "https://avzkitchen.com/bio",
-            "description": "Angelica Valenzuela is a digital product designer and frontend developer creating strategy-led UX/UI experiences, design systems, and accessible digital products for brands and startups.",
-            "about": {
+            "@type": "ProfilePage",
+            "name": locale === "de" ? "Über Angelica Valenzuela" : "About Angelica Valenzuela",
+            "url": locale === "de" ? "https://avzkitchen.com/de/bio" : "https://avzkitchen.com/bio",
+            "description": locale === "de"
+              ? "Angelica Valenzuela ist die Gründerin von AVZ Kitchen, einem digitalen Visual Studio in Freiburg im Breisgau, das sich auf nachhaltiges UX/UI-Design, Shopify-Entwicklung und Amazon-Storefronts für öko-conscious Marken in DACH und Europa spezialisiert."
+              : "Angelica Valenzuela is the founder of AVZ Kitchen, a digital visual studio near Freiburg im Breisgau specializing in sustainable UX/UI design, Shopify development, and Amazon storefronts for eco-conscious DACH and European brands.",
+            "mainEntity": {
               "@type": "Person",
               "name": "Angelica Valenzuela",
+              "jobTitle": locale === "de" ? "Product Designer & Frontend Developer" : "Product Designer & Frontend Developer",
               "url": "https://avzkitchen.com",
-              "sameAs": ["https://avzkitchen.com"],
-              "description": "AVZ Kitchen by Angelica Valenzuela is a digital visual studio focused on UX/UI design, design systems, and frontend development.",
-              "knowsAbout": [
-                "UX/UI design",
-                "Product design",
-                "Design systems",
-                "Brand strategy",
-                "Information architecture",
-                "Frontend development",
-                "Accessibility",
-                "Creative direction",
-                "Web design",
-                "Mobile app design",
-                "Amazon storefront design",
-                "Shopify UX design"
-              ]
-            },
-            "author": {
-              "@type": "Person",
-              "name": "Angelica Valenzuela",
-              "url": "https://avzkitchen.com"
+              "description": locale === "de"
+                ? "Angelica Valenzuela ist Product Designer und Frontend Developer aus Freiburg im Breisgau, Deutschland. Sie entwickelt nachhaltige digitale Erlebnisse für ökologische Marken in DACH und Europa."
+                : "Angelica Valenzuela is a product designer and frontend developer based in Freiburg im Breisgau, Germany, creating sustainable digital experiences for eco-conscious brands across DACH and Europe.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Freiburg im Breisgau",
+                "addressLocality": "Freiburg im Breisgau",
+                "addressRegion": "Baden-Württemberg",
+                "postalCode": "79098",
+                "addressCountry": "DE"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/in/avzkitchen",
+                "https://github.com/avz-kitchen",
+                "https://www.instagram.com/artichoke.v",
+                "https://www.behance.net/avzkitchen"
+              ],
+              "worksFor": {
+                "@type": "ProfessionalService",
+                "name": "AVZ Kitchen",
+                "url": "https://avzkitchen.com",
+                "description": locale === "de"
+                  ? "AVZ Kitchen ist das digitale Visu-Studio von Angelica Valenzuela mit Fokus auf nachhaltiges UX/UI-Design, Shopify-Entwicklung und Amazon Storefront Design für Marken in DACH und Europa."
+                  : "AVZ Kitchen is the digital visual studio founded by Angelica Valenzuela, specializing in sustainable UX/UI design, Shopify development, and Amazon storefront design for DACH and European brands.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Freiburg im Breisgau",
+                  "addressLocality": "Freiburg im Breisgau",
+                  "addressRegion": "Baden-Württemberg",
+                  "postalCode": "79098",
+                  "addressCountry": "DE"
+                },
+                "areaServed": ["Germany", "Austria", "Switzerland", "Europe"],
+                "sameAs": [
+                  "https://avzkitchen.com"
+                ]
+              }
             }
           })}
         </script>
       </Helmet>
-      <AboutSection isAboutPage={true} />
-      <Richtext paragraph={aboutText} tags={headerTags} />
-      <TwoColumnList
-        heading="What I do"
-        items={skills}
-      />
-      <TechStack />
 
-    </div>
+      <AboutSection isAboutPage={true} locale={locale} />
+
+      <section aria-label={getUiText(locale, "bio", "sectionLabel") || "Angelica Valenzuela story and design philosophy"}>
+        <Richtext paragraph={<p>{aboutText}</p>} tags={headerTags} />
+      </section>
+
+      <TwoColumnList
+        heading={getUiText(locale, "bio", "corePillars") || "Core Pillars"}
+        description={getUiText(locale, "bio", "corePillarsDescription") || "Thoughtful design for sustainable growth, digital clarity, and meaningful customer experiences."}
+        items={pillars}
+        headingTag="h2"
+      />
+
+      <TechStack />
+    </main>
   );
 };
 

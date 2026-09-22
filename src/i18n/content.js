@@ -119,6 +119,33 @@ export const uiContent = {
       noteText: "This is a quick first-pass review meant to surface the most valuable improvements, not a full redesign scope.",
       contactCta: "Talk to Angelica",
     },
+    bio: {
+      heroTitle: "The Chef Behind the Visual Kitchen — Angelica Valenzuela",
+      rolePrefix: "a",
+      roles: ["Certified UX Designer", "Full-Stack Developer", "Illustrator"],
+      summary: "Based in Freiburg im Breisgau, Baden-Württemberg, I work with impact-driven brands across Germany, the DACH region, and Europe as a Certified UX Designer and Full-Stack Developer. At AVZ Kitchen, I blend strategy, design, and clean code to create sustainable UX/UI systems, high-converting Shopify experiences, and customer-first digital products that feel thoughtful, ethical, and built to last.",
+      tags: ["Certified UX Designer", "Full-Stack Developer", "Freiburg", "DACH", "Europe"],
+      sectionLabel: "About Angelica Valenzuela and AVZ Kitchen",
+      corePillars: "Core Pillars",
+      corePillarsDescription: "Thoughtful design for sustainable growth, digital clarity, and meaningful customer experiences.",
+      pillars: [
+        {
+          title: "Sustainable Digital Design",
+          text: "I build low-carbon web apps, lightweight storefronts, and energy-efficient digital products with performance-first thinking and a smaller digital footprint.",
+        },
+        {
+          title: "E-Commerce Excellence",
+          text: "From custom Shopify OS 2.0 themes to Amazon Storefront and A+ Content design for Amazon.de and European marketplaces, every experience is shaped for trust, clarity, and conversion.",
+        },
+        {
+          title: "Ethical & Accessible UX",
+          text: "I design human-centered journeys with accessibility at the core, aligning with WCAG principles and creating transparent, inclusive interactions for real people.",
+        },
+      ],
+      aboutButton: "About Me",
+      metaTitle: "About Angelica Valenzuela | Freelance UX/UI Designer & Developer | AVZ Kitchen",
+      metaDescription: "Meet Angelica Valenzuela, founder of AVZ Kitchen—a digital visual studio near Freiburg im Breisgau specializing in sustainable UX/UI design, Shopify development, and Amazon storefronts for eco-conscious DACH & European brands.",
+    },
   },
   de: {
     nav: {
@@ -239,6 +266,33 @@ export const uiContent = {
       noteTitle: "Kostenlos, schnell, nützlich",
       noteText: "Dies ist ein erster kurzer Review, der die wichtigsten Verbesserungen sichtbar macht – kein kompletter Redesign-Umfang.",
       contactCta: "Mit AVZKITCHEN sprechen",
+    },
+    bio: {
+      heroTitle: "Die Chef-Kreative hinter der Visual Kitchen — Angelica Valenzuela",
+      rolePrefix: "a",
+      roles: ["Zertifizierte UX Designerin", "Full-Stack Developerin", "Illustratorin"],
+      summary: "In Freiburg im Breisgau, Baden-Württemberg, arbeite ich mit wirkungsorientierten Marken in Deutschland, der DACH-Region und Europa zusammen. Bei AVZ Kitchen verbinde ich Strategie, Design und sauberen Code zu nachhaltigen UX/UI-Systemen, leistungsstarken Shopify-Erlebnissen und kundenzentrierten digitalen Produkten, die zugleich bewusst, inklusiv und langlebig sind. Als zertifizierte UX Designerin und Full-Stack Developerin kombiniere ich analytische Tiefe mit gestalterischem Feingefühl.",
+      tags: ["Zertifizierte UX Designerin", "Full-Stack Developerin", "Freiburg", "DACH", "Europa"],
+      sectionLabel: "Über Angelica Valenzuela und AVZ Kitchen",
+      corePillars: "Kernpfeiler",
+      corePillarsDescription: "Durchdachtes Design für nachhaltiges Wachstum, digitale Klarheit und sinnvolle Kundenerlebnisse.",
+      pillars: [
+        {
+          title: "Nachhaltiges digitales Design",
+          text: "Ich baue leichtgewichtige Web-Apps, Storefronts und energieeffiziente digitale Produkte mit performance-first Denken und geringerem digitalem Fußabdruck.",
+        },
+        {
+          title: "E-Commerce-Exzellenz",
+          text: "Von individuellen Shopify-Storefronts bis hin zu Amazon Storefront- und A+-Content-Design für Amazon.de und europäische Märkte: Jedes Erlebnis ist auf Vertrauen, Klarheit und Conversion ausgerichtet.",
+        },
+        {
+          title: "Ethische & barrierefreie UX",
+          text: "Ich gestalte nutzerzentrierte Journeys mit Barrierefreiheit im Fokus und orientiere mich dabei an WCAG-Prinzipien, um transparente und inklusive Interaktionen zu schaffen.",
+        },
+      ],
+      aboutButton: "Über mich",
+      metaTitle: "Über Angelica Valenzuela | Freelance UX/UI Designerin & Developerin | AVZ Kitchen",
+      metaDescription: "Erfahre mehr über Angelica Valenzuela, Gründerin von AVZ Kitchen – ein digitales Designstudio in Freiburg im Breisgau, spezialisiert auf nachhaltiges UX/UI-Design, Shopify-Entwicklung und Amazon-Storefronts für ökologische Marken in DACH und Europa.",
     },
   },
 };

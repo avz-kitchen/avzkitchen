@@ -5,53 +5,36 @@ import { motion, useInView } from "framer-motion";
 import GridLayout from "../others/GridLayout";
 import Button from "../others/Button";
 import { Link } from "react-router-dom";
-const variants = {
-  initial: {
-    x: -300,
-    y: 100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.1,
-    },
-  },
-};
-const roles = ["Designer", "Developer", "Illustrator"];
+import { getUiText, getLocalizedPath } from "../../i18n/content";
 
-const AboutSection = ({ isAboutPage }) => {
+const AboutSection = ({ isAboutPage, locale = "en" }) => {
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-80px" });
   const [currentRole, setCurrentRole] = useState(0);
+  const roleLabels = getUiText(locale, "bio", "roles") || ["Designer", "Developer", "Illustrator"];
+  const heroTitle = getUiText(locale, "bio", "heroTitle") || "The Chef Behind the Visual Kitchen — Angelica Valenzuela";
+  const aboutButton = getUiText(locale, "bio", "aboutButton") || "About Me";
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRole((prevRole) => (prevRole + 1) % roles.length);
-    }, 2000); // Change role every 2 seconds
+      setCurrentRole((prevRole) => (prevRole + 1) % roleLabels.length);
+    }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [roleLabels.length]);
+
   return (
     <section className="about-section">
       <GridLayout className="responsive-grid">
         <div>
           <div className="title title-stack">
-            <h1>
-              Hello, {"I'm "}
-            </h1>
-            <div className="name-stack" aria-label="Angelica Valenzuela">
-              <motion.span className="name-line">Angelica</motion.span>
-              <motion.span className="name-line">Valenzuela</motion.span>
-            </div>
+            <h1 aria-label={heroTitle}>{heroTitle}</h1>
+  
           </div>
           <div className="title">
-            <h2>
-              a {"< "}
-              <motion.b>{roles[currentRole]}</motion.b> {">"}
+            <h2 aria-label={roleLabels.join(", ")}>
+              {getUiText(locale, "bio", "rolePrefix") || "a"} {"< "}
+              <motion.b>{roleLabels[currentRole]}</motion.b> {">"}
             </h2>
           </div>
         </div>
@@ -70,8 +53,8 @@ const AboutSection = ({ isAboutPage }) => {
             alt="Portrait of Angelica Valenzuela (AVZ Kitchen)"
           />
           {!isAboutPage && (
-            <Button variant="secondary" to="/about" style={{ justifySelf: "center" }}>
-              About Me
+            <Button variant="secondary" to={getLocalizedPath("/bio", locale)} style={{ justifySelf: "center" }}>
+              {aboutButton}
             </Button>
           )}
         </div>

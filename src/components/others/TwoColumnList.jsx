@@ -1,11 +1,11 @@
 import "../serviceSection/service.scss";
 
-const TwoColumnList = ({ heading, description, items }) => (
-  <section className="service-section">
+const TwoColumnList = ({ heading, description, items, headingTag: HeadingTag = "h2" }) => (
+  <section className="service-section" aria-label={heading}>
     <div className="two-column-list">
       <div className="two-column-list-left">
-        <h1>{heading}</h1>
-        <p>{description}</p>
+        <HeadingTag>{heading}</HeadingTag>
+        {description && <p>{description}</p>}
       </div>
       <div className="two-column-list-right">
         <ul className="service-list">

@@ -6,14 +6,14 @@
   padding: clamp(1.5rem, 3vw, 3rem) 1rem 0;
 
   .richtext-paragraph {
-    font-size: clamp(1.2rem, 5vw, 3.3rem);
-    line-height: 1.15;
-    width: min(100%, 1000px);
+    font-size: clamp(1.1rem, 2vw, 2.2rem);
+    line-height: 1.45;
+    width: min(100%, 1100px);
     text-align: center;
     margin: 0 auto 1rem;
     color: $light-text-color;
     word-break: break-word;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
 
     span {
       display: inline-block;
@@ -59,8 +59,9 @@
 
   @media (max-width: 600px) {
     .richtext-paragraph {
-      font-size: clamp(1.05rem, 7vw, 1.6rem);
-      line-height: 1.2;
+      font-size: clamp(1.02rem, 5vw, 1.45rem);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
     }
 
     .richtext-tag {
