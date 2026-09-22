@@ -16,6 +16,7 @@ import ScrollToTop from "./components/others/ScrollToTop";
 import ServicesPage from "./components/pages/ServicesPage";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
+import LegalPage from "./components/pages/LegalPage";
 import { getLocaleFromPath, getLocalizedPath } from "./i18n/content";
 
 const App = () => {
@@ -106,6 +107,8 @@ const App = () => {
             <Route path="/de/productdesign" element={<UXPortfolio locale="de" />} />
             <Route path="/data" element={<DataPrivacy locale={locale} />} />
             <Route path="/de/data" element={<DataPrivacy locale="de" />} />
+            <Route path="/legal" element={<LegalPage locale={locale} />} />
+            <Route path="/de/legal" element={<LegalPage locale="de" />} />
           </Routes>
         </main>
         <Footer locale={locale} />

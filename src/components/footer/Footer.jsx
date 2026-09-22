@@ -39,7 +39,7 @@ const Footer = ({ locale = "en" }) => {
         <a href="https://www.instagram.com/artichoke.v/" target="_blank" rel="noopener noreferrer">
           {rightsText}
         </a>
-        <Link to={getLocalizedPath("/services", locale)}>{getUiText(locale, "footer", "legal")}</Link>
+        <Link to={getLocalizedPath("/legal", locale)}>{getUiText(locale, "footer", "legal")}</Link>
       </div>
     </footer>
   );
