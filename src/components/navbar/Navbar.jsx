@@ -115,6 +115,15 @@ const Navbar = ({ locale = "en" }) => {
             </Link>
 
             <div className="subheader-row">
+              <button
+                type="button"
+                onClick={handleLanguageToggle}
+                className="nav-language-toggle"
+                aria-label="Toggle language"
+              >
+                {getUiText(locale, "nav", "languageToggle")}
+              </button>
+
               <nav className="subheader-nav" aria-label="Main navigation">
                 {subheaderNavTabs.map((tab) => (
                   <NavLink
@@ -142,7 +151,6 @@ const Navbar = ({ locale = "en" }) => {
               <a href="mailto:hello@avzkitchen.com" className="nav-mail">
                 {getUiText(locale, "nav", "email")}
               </a>
-
             </div>
           </div>
         </div>
