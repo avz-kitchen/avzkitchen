@@ -199,7 +199,7 @@ const ServicesPage = ({ locale = "en" }) => {
           </div>
 
           <div className="hero-panel">
-            <video autoPlay loop muted playsInline style={{ width: "500px", height: "500px", objectFit: "cover", borderRadius: "1.25rem" }}>
+            <video className="hero-video" autoPlay loop muted playsInline>
               <source src="/optimized/avz-ktichening.webm" type="video/webm" />
             </video>
           </div>
