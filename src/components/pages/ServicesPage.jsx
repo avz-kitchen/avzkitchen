@@ -113,11 +113,22 @@ const ServicesPage = ({ locale = "en" }) => {
   const currentSubpageLinks = subpageLinks[activeTab] || [];
 
   useEffect(() => {
+    const currentPath = location.pathname.replace(/^\/de/, "");
+
+    const pathMatchedTab = Object.entries(subpageLinks).find(([, links]) =>
+      links.some((link) => link.path === currentPath)
+    )?.[0];
+
+    if (pathMatchedTab && serviceData.some((tab) => tab.id === pathMatchedTab)) {
+      setActiveTab(pathMatchedTab);
+      return;
+    }
+
     const activeTabFromState = location.state?.activeTab;
     if (activeTabFromState && serviceData.some((tab) => tab.id === activeTabFromState)) {
       setActiveTab(activeTabFromState);
     }
-  }, [location.state, serviceData]);
+  }, [location.pathname, location.state, serviceData, subpageLinks]);
 
   useEffect(() => {
     const grid = document.querySelector(".process-grid");

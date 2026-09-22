@@ -387,8 +387,8 @@ const ServiceLandingPage = ({ locale = "en", slug = "quick-ux-audit" }) => {
 
   const projectBuckets = {
     amazon: ["Amazon"],
-    "shopify-ux-design": ["E-Commerce", "Amazon"],
-    "shopify-ux-audit": ["E-Commerce", "Amazon"],
+    "shopify-ux-design": ["E-Commerce"],
+    "shopify-ux-audit": ["E-Commerce"],
     "landing-page-design": ["E-Commerce", "Branding"],
     "accessibility-audit": ["App", "Branding", "E-Commerce"],
     "quick-ux-audit": ["App", "Branding", "E-Commerce", "Amazon"],
