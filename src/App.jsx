@@ -15,6 +15,7 @@ import UXPortfolio from "./components/pages/uxportfolio";
 import ScrollToTop from "./components/others/ScrollToTop";
 import ServicesPage from "./components/pages/ServicesPage";
 import QuickAuditPage from "./components/pages/QuickAuditPage";
+import ServiceLandingPage from "./components/pages/ServiceLandingPage";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
 import LegalPage from "./components/pages/LegalPage";
@@ -102,6 +103,16 @@ const App = () => {
             <Route path="/de/services" element={<ServicesPage locale="de" />} />
             <Route path="/services/quick-ux-audit" element={<QuickAuditPage locale={locale} />} />
             <Route path="/de/services/quick-ux-audit" element={<QuickAuditPage locale="de" />} />
+            <Route path="/services/amazon" element={<ServiceLandingPage locale={locale} slug="amazon" />} />
+            <Route path="/de/services/amazon" element={<ServiceLandingPage locale="de" slug="amazon" />} />
+            <Route path="/services/shopify-ux-design" element={<ServiceLandingPage locale={locale} slug="shopify-ux-design" />} />
+            <Route path="/de/services/shopify-ux-design" element={<ServiceLandingPage locale="de" slug="shopify-ux-design" />} />
+            <Route path="/services/shopify-ux-audit" element={<ServiceLandingPage locale={locale} slug="shopify-ux-audit" />} />
+            <Route path="/de/services/shopify-ux-audit" element={<ServiceLandingPage locale="de" slug="shopify-ux-audit" />} />
+            <Route path="/services/accessibility-audit" element={<ServiceLandingPage locale={locale} slug="accessibility-audit" />} />
+            <Route path="/de/services/accessibility-audit" element={<ServiceLandingPage locale="de" slug="accessibility-audit" />} />
+            <Route path="/services/landing-page-design" element={<ServiceLandingPage locale={locale} slug="landing-page-design" />} />
+            <Route path="/de/services/landing-page-design" element={<ServiceLandingPage locale="de" slug="landing-page-design" />} />
             <Route path="/contact" element={<ContactSection locale={locale} />} />
             <Route path="/de/contact" element={<ContactSection locale="de" />} />
             <Route path="/resume" element={<Resume locale={locale} />} />

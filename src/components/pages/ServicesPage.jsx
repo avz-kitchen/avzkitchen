@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import ActionRow from "../others/ActionRow";
 import SectionHeading from "../others/SectionHeading";
@@ -84,6 +85,7 @@ const ServiceMockup = ({ type }) => {
 };
 
 const ServicesPage = ({ locale = "en" }) => {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState("shopify");
   const [visibleCards, setVisibleCards] = useState([]);
 
@@ -91,6 +93,31 @@ const ServicesPage = ({ locale = "en" }) => {
   const processData = getUiText(locale, "services", "steps");
   const faqItems = getUiText(locale, "services", "faq");
   const activeServiceResolved = serviceData.find((tab) => tab.id === activeTab) || serviceData[0];
+
+  const subpageLinks = {
+    shopify: [
+      { label: locale === "de" ? "Shopify UX Design" : "Shopify UX Design", path: "/services/shopify-ux-design", tabId: "shopify" },
+      { label: locale === "de" ? "Shopify UX Audit" : "Shopify UX Audit", path: "/services/shopify-ux-audit", tabId: "shopify" },
+    ],
+    amazon: [
+      { label: locale === "de" ? "Amazon A+-Content" : "Amazon A+ Content", path: "/services/amazon", tabId: "amazon" },
+      { label: locale === "de" ? "Amazon Storefront" : "Amazon Storefront", path: "/services/amazon", tabId: "amazon" },
+    ],
+    fullstack: [],
+    presence: [
+      { label: locale === "de" ? "Accessibility Review" : "Accessibility Audit", path: "/services/accessibility-audit", tabId: "presence" },
+      { label: locale === "de" ? "Landingpage Design" : "Landing Page Design", path: "/services/landing-page-design", tabId: "presence" },
+    ],
+  };
+
+  const currentSubpageLinks = subpageLinks[activeTab] || [];
+
+  useEffect(() => {
+    const activeTabFromState = location.state?.activeTab;
+    if (activeTabFromState && serviceData.some((tab) => tab.id === activeTabFromState)) {
+      setActiveTab(activeTabFromState);
+    }
+  }, [location.state, serviceData]);
 
   useEffect(() => {
     const grid = document.querySelector(".process-grid");
@@ -198,6 +225,22 @@ const ServicesPage = ({ locale = "en" }) => {
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
+
+              {currentSubpageLinks.length > 0 && (
+                <div className="tab-actions" aria-label="Related service subpages">
+                  {currentSubpageLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={getLocalizedPath(link.path, locale)}
+                      state={{ activeTab: link.tabId }}
+                      className="subpage-link"
+                      onClick={() => setActiveTab(link.tabId)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="tab-visual">
