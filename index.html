@@ -14,22 +14,16 @@
   <meta name="description" content="AVZ Kitchen by Angelica Valenzuela is a digital visual studio specializing in sustainable UX/UI design, low-carbon Shopify development, and accessible digital products for eco-conscious brands across Germany, DACH, and Europe." />
   <title>Angelica Valenzuela (AVZ Kitchen) | Sustainable UX/UI Design & Green E-Commerce</title>
   <script>
-    window.addEventListener('load', function () {
-      var loadUmami = function () {
-        var script = document.createElement('script');
-        script.defer = true;
-        script.src = 'https://cloud.umami.is/script.js';
-        script.dataset.websiteId = '112b6d90-6119-4cbf-8ab5-423ea98977ee';
-        document.head.appendChild(script);
-      };
-
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadUmami, { timeout: 2500 });
-      } else {
-        setTimeout(loadUmami, 2500);
-      }
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = window.gtag || gtag;
+    window.gtag('consent', 'default', {
+      'analytics_storage': 'denied'
     });
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-234CNNSFBK"></script>
 
 </head>
 

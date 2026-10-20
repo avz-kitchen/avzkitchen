@@ -34,7 +34,6 @@ body,
 p,
 li,
 a,
-span,
 label,
 input,
 textarea,
@@ -42,6 +41,12 @@ select,
 button {
   font-family: var(--font-sans);
   color: var(--text-color);
+  font-size: var(--font-size-body);
+}
+
+span {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 h1,
@@ -58,43 +63,43 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 8rem);
+  font-size: clamp(var(--type-scale-32), 7vw, var(--type-scale-64));
   font-weight: var(--font-weight-black);
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: clamp(2.2rem, 5vw, 5rem);
+  font-size: clamp(var(--type-scale-24), 5vw, var(--type-scale-48));
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
 }
 
 h3 {
-  font-size: clamp(1.6rem, 3vw, 3rem);
+  font-size: clamp(var(--type-scale-20), 3vw, var(--type-scale-32));
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
 }
 
 h4 {
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(var(--type-scale-16), 2vw, var(--type-scale-24));
   font-weight: var(--font-weight-bold);
 }
 
 h5,
 h6 {
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-size: var(--type-scale-16);
   font-weight: var(--font-weight-bold);
 }
 
 p {
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-size: var(--font-size-body);
   line-height: 1.55;
   margin: 0;
 }
 
 button {
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-size: var(--type-scale-16);
   font-weight: var(--font-weight-bold);
 }
 

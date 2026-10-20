@@ -20,7 +20,75 @@ import ShopifyDesignPage from "./components/pages/ShopifyDesignPage";
 import "./App.scss";
 import DataPrivacy from "./components/pages/DataPrivacy";
 import LegalPage from "./components/pages/LegalPage";
-import { getLocaleFromPath, getLocalizedPath } from "./i18n/content";
+import { getLocaleFromPath } from "./i18n/content";
+import { loadUmamiScript } from "./umami";
+
+const COOKIE_CONSENT_KEY = "avz-cookie-consent";
+
+const getStoredConsent = () => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  return window.localStorage.getItem(COOKIE_CONSENT_KEY);
+};
+
+const updateGoogleAnalyticsConsent = (consent) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  const status = consent === "granted" ? "granted" : "denied";
+  window.gtag("consent", "update", {
+    analytics_storage: status,
+  });
+
+  if (consent === "granted") {
+    window.gtag("config", "G-234CNNSFBK");
+  }
+};
+
+const applyAnalyticsConsent = (consent) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const value = consent === "granted" ? "granted" : "denied";
+  window.localStorage.setItem(COOKIE_CONSENT_KEY, value);
+  updateGoogleAnalyticsConsent(value);
+  if (value === "granted") {
+    loadUmamiScript();
+  }
+};
+
+function CookieBanner({ onAccept, onReject }) {
+  return (
+    <div className="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner">
+      <div className="cookie-banner__content">
+        <div>
+          <p className="cookie-banner__title">We use cookies</p>
+          <p className="cookie-banner__text">
+            We use analytics cookies to understand how visitors use the website and improve the experience.
+            You can review our <Link to="/data">data privacy policy</Link> at any time.
+          </p>
+        </div>
+        <div className="cookie-banner__actions">
+          <button type="button" className="cookie-banner__button cookie-banner__button--secondary" onClick={onReject}>
+            Reject
+          </button>
+          <button type="button" className="cookie-banner__button cookie-banner__button--primary" onClick={onAccept}>
+            Accept all
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export const AppRoutes = () => {
   const projects = portfolioData.portfolio;
@@ -28,6 +96,7 @@ export const AppRoutes = () => {
   const locale = getLocaleFromPath(location.pathname);
   const currentLang = locale === "de" ? "de" : "en";
   const [isLoading, setIsLoading] = useState(typeof window === "undefined" ? false : true);
+  const [cookieConsent, setCookieConsent] = useState(() => getStoredConsent());
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -40,6 +109,23 @@ export const AppRoutes = () => {
   useEffect(() => {
     document.body.style.overflow = isLoading ? 'hidden' : 'auto';
   }, [isLoading]);
+
+  useEffect(() => {
+    if (!cookieConsent) {
+      return;
+    }
+
+    applyAnalyticsConsent(cookieConsent);
+  }, [cookieConsent]);
+
+  const handleCookieAccept = () => {
+    setCookieConsent("granted");
+  };
+
+  const handleCookieReject = () => {
+    setCookieConsent("denied");
+  };
+
   return (
     <>
     {isLoading && <Preloader />}
@@ -125,6 +211,9 @@ export const AppRoutes = () => {
       <div className={`main-app-content ${!isLoading ? 'content-visible' : 'content-hidden'}`}>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <ScrollToTop />
+        {!cookieConsent && (
+          <CookieBanner onAccept={handleCookieAccept} onReject={handleCookieReject} />
+        )}
         <Navbar locale={locale} />
         <main id="main-content" className="page-wrapper" tabIndex="-1">
           <Routes>

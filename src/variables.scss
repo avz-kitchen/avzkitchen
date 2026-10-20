@@ -51,6 +51,23 @@ $button-tertiary-hover-text: $color-navy;
 $font-primary: 'DM Sans', sans-serif;
 $font-secondary: 'IBM Plax Serif', serif;
 
+$type-scale-14: 0.875rem;
+$type-scale-16: 1rem;
+$type-scale-20: 1.25rem;
+$type-scale-24: 1.5rem;
+$type-scale-32: 2rem;
+$type-scale-48: 3rem;
+$type-scale-64: 4rem;
+
+$space-4: 0.25rem;
+$space-8: 0.5rem;
+$space-12: 0.75rem;
+$space-16: 1rem;
+$space-24: 1.5rem;
+$space-32: 2rem;
+$space-48: 3rem;
+$space-64: 4rem;
+
 :root {
   --primary-color: #{$light-primary-color};
   --background-color: #{$light-background-color};
@@ -64,6 +81,31 @@ $font-secondary: 'IBM Plax Serif', serif;
   --button-secondary-text: #{$button-secondary-text};
   --button-tertiary-bg: #{$button-tertiary-bg};
   --button-tertiary-text: #{$button-tertiary-text};
+
+  --type-scale-14: #{$type-scale-14};
+  --type-scale-16: #{$type-scale-16};
+  --type-scale-20: #{$type-scale-20};
+  --type-scale-24: #{$type-scale-24};
+  --type-scale-32: #{$type-scale-32};
+  --type-scale-48: #{$type-scale-48};
+  --type-scale-64: #{$type-scale-64};
+
+  --space-4: #{$space-4};
+  --space-8: #{$space-8};
+  --space-12: #{$space-12};
+  --space-16: #{$space-16};
+  --space-24: #{$space-24};
+  --space-32: #{$space-32};
+  --space-48: #{$space-48};
+  --space-64: #{$space-64};
+
+  --font-size-body: var(--type-scale-16);
+  --font-size-label: var(--type-scale-14);
+  --font-size-lead: var(--type-scale-20);
+  --font-size-h4: var(--type-scale-24);
+  --font-size-h3: var(--type-scale-32);
+  --font-size-h2: var(--type-scale-48);
+  --font-size-h1: var(--type-scale-64);
 }
 
 .dark-mode {
